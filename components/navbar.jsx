@@ -10,7 +10,7 @@ function MainNavbar(props) {
     <Navbar collapseOnSelect={true}  expand="lg" fixed="top">
       <Container>
         <Navbar.Brand href="/">
-        <span style={{boxShadow: "inset 0 -20px 0 0 #7ed957",fontSize:"40px",fontWeight:"700"}}>easycommunity</span>
+        <span style={{boxShadow: "inset 0 -15px 0 0 #7ed957",fontSize:"40px",fontWeight:"700"}}>easycommunity</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={`${classes.Toggler}`} style={{ transform: "translateY(20%)" ,borderColor:"transparent",color: "#7ed957"}}>
         <i className="fa fa-bars"></i>
@@ -31,18 +31,12 @@ function MainNavbar(props) {
                 About
               </button>
             </Nav.Link>
-            <Nav.Link href="/pricing" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                pricing
-              </button>
-            </Nav.Link>
+
             <Nav.Link href="/support" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
-                support
+                Contact us
               </button>
             </Nav.Link>
             <Nav.Link href="" className={`${classes.a}`}>

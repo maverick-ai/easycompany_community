@@ -60,15 +60,11 @@ export default function Home() {
                     typewriter
                       .typeString("Join the  ")
                       .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">greatest travel community </span>'
+                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">most incredible travel community </span>'
                       )
                       .typeString(" on the ")
                       .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #7ed957;">planet</span>'
-                      )
-                      .typeString(" in just ")
-                      .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">10 seconds.</span>'
+                        '<span style="box-shadow: inset 0 -20px 0 0 #7ed957;">planet !</span>'
                       )
                       .pauseFor(1500)
                       .start();
@@ -97,12 +93,12 @@ export default function Home() {
       </Container>
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
-        <img src="/mountain.svg" className="img-fluid"/>
+        <img src="/mountain.png" className="img-fluid"/>
         </Row>
         <Row>
         <h1 className={`${styles.MountainHeading} text-center`}>
-              <span><span className={styles.underlineGreen}>Change is coming</span>
-              {" "}whether you like it or not
+              <span>Join the <span className={styles.underlineGreen}>greatest travel revolution</span>
+              {" "}on the planet
               </span>
             </h1>
         </Row>
@@ -309,9 +305,8 @@ export default function Home() {
           </Col>
           <Col md={true} className="align-self-center">
           <h1 className={`${styles.MountainHeading} text-center`}>
-              <span><span className={styles.underlineGreen}>Where our service is Operational and Live.</span>
+              <span>Our service is <span className={styles.underlineGreen}>Operational and Live everywhere</span>
               {" "}<span className={styles.underline}>
-                Where we are offline.
               </span>
               </span>
             </h1>
