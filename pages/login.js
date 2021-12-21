@@ -1,10 +1,17 @@
 import { useRef } from "react";
 import axios from "axios";
-export default function Login() {
+import {LogInURL, Host} from "../components/URLs";
+
+
+
+
+
+
+
+function Login() {
     
     const emailInputRef = useRef(null);
     const passwordInputRef = useRef(null);
-    const LogInUrl = "http://127.0.0.1:8000/api/login"
 
 
     async function performLogin() {
@@ -13,13 +20,14 @@ export default function Login() {
             password: passwordInputRef.current.value,
         });
 
-        axios.post(LogInUrl,{ crossdomain: true }, {
+        axios.post(LogInURL,{ crossdomain: true }, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': '*/*',
                 'Accept-Encoding': 'gzip, deflate, br',
                 'Connection': 'keep-alive',
-                'Host': '127.0.0.1:8000'
+                'Content-Length':credentials.length,
+                'Host': Host
             },
             body: credentials
         })
@@ -37,12 +45,15 @@ export default function Login() {
     return (
         <div className= "login-form">
             <h1>Login</h1>
-            <label for="email" >Email</label>
+            <label htmlFor="email" >Email</label>
             <input ref={emailInputRef} type="text" placeholder="Email" id="email"/>
-            <label for="password">Password</label>
+            <label htmlFor="password">Password</label>
             <input ref={passwordInputRef} type="password" placeholder="Password" id="password"/>
             <button onClick={performLogin}>Login</button>
 
         </div>
     )
 }
+
+
+export default Login;

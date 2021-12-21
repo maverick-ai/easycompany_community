@@ -48,7 +48,7 @@ export default function Home() {
           <Col md={true} className={`align-self-center `}>
             <h1 className={`${styles.MainHeading} `}>
               <span className={styles.underline}>
-                The rocket &#128640; that your restaurant needs
+                The rocket &#128640; that your travel experience needs
               </span>
             </h1>
           </Col>
@@ -58,21 +58,17 @@ export default function Home() {
                 <Typewriter
                   onInit={(typewriter) => {
                     typewriter
-                      .typeString("Create your  ")
+                      .typeString("Join the  ")
                       .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">own </span>'
+                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">greatest travel community </span>'
                       )
-                      .typeString("restaurant's ")
+                      .typeString(" on the ")
                       .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">food ordering </span>'
+                        '<span style="box-shadow: inset 0 -20px 0 0 #7ed957;">planet</span>'
                       )
-                      .typeString("web ")
+                      .typeString(" in just ")
                       .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">app </span>'
-                      )
-                      .typeString("in just ")
-                      .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">5 minutes.</span>'
+                        '<span style="box-shadow: inset 0 -20px 0 0 #ff5757;">10 seconds.</span>'
                       )
                       .pauseFor(1500)
                       .start();
@@ -86,14 +82,14 @@ export default function Home() {
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
           <Col md={true} className={`text-center`}>
-          <img src="/takinngOrder.svg" className="img-fluid"/>
+          <img src="/employee.svg" className="img-fluid"/>
           </Col>
           <Col md={true} className={`align-self-center text-center`}>
             <h1 className={`${styles.MainHeading} `}>
               <span>
-              Are you still taking food orders like in the{" "}
+              Are you still travelling like in the{" "}
               <span className={styles.underline}>
-              19th Century
+              2010s
               </span> ?</span>
             </h1>
           </Col>
@@ -326,7 +322,7 @@ export default function Home() {
         <button className={styles.seeHowButton}>see how ?</button>
       </div>
       <div className={`${styles.FreeFooterDiv} text-center`}>
-        <h1 className={styles.FreeFooter}><span style={{color:"grey"}}>Its</span> Free Forever <span style={{color:"grey"}}>for small businesses</span></h1>
+        <h1 className={styles.FreeFooter}><span style={{color:"grey"}}>Its</span> Free Forever <span style={{color:"grey"}}></span></h1>
       </div>
     </div>
   );

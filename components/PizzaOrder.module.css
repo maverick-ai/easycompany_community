@@ -1,0 +1,75 @@
+.FoodNameInsideScreen {
+    margin-top: 40px;
+  }
+  
+  .PizzaOrderFont {
+    font-size: 40px;
+    font-weight: 900;
+  }
+  
+  /* .FoodNameInsideScreen{
+      margin-top: 40px;
+    } */
+  
+  .FoodNameInsideScreen:before{
+      /* content: ' Pizza '; */
+      margin-top: 40px;
+      animation-duration: 17s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease-in-out;
+  }
+  
+  
+  .fadeIn{
+    margin-top: 40px;
+    opacity: 0;
+    transition:  opacity 0.5s;
+  }
+  .fadeOut{
+    margin-top: 40px;
+    opacity:1;
+    transition: opacity 0.5s;
+  }
+  
+  
+  .PizzaImg {
+    margin-top: 30px;
+    height: 150px;
+    width: 150px;
+    animation-name: PizzaImg;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+  @keyframes PizzaImg {
+    0% {
+      transform: translate(0, 0px);
+    }
+    50% {
+      transform: translate(0, 15px);
+    }
+    100% {
+      transform: translate(0, -0px);
+    }
+  }
+  .order {
+    margin-top: 5px;
+    padding: 10px 60px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #7ed957;
+    border: none;
+    border-radius: 50px;
+    box-shadow: 0 5px #999;
+  }
+  
+  .order:hover {background-color: #7ed957}
+  
+  .order:active {
+    background-color: #7ed957;
+    box-shadow: 0 2px #666;
+    transform: translateY(4px);
+  }

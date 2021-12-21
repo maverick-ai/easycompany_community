@@ -1,116 +1,118 @@
-.container {
-  padding: 0 2rem;
+.ParentDiv{
+  width: 100vw !important;
+  margin-top: 100px;
 }
 
-.main {
-  min-height: 100vh;
-  padding: 4rem 0;
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.MainHeading{
+  font-size: 50px;
+  font-weight: 800;
+  /* box-shadow: inset 0 -20px 0 0 red; */
 }
 
-.footer {
-  display: flex;
-  flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
-  justify-content: center;
-  align-items: center;
+.PizzaHeadingCol{
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
-.footer a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+.underline{
+  box-shadow: inset 0 -20px 0 0 #ff5757;
+}
+.underlineGreen{
+  box-shadow: inset 0 -20px 0 0 #7ed957;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.MainHeading{
+  margin-top: 0px;
+  margin-bottom: 50px;
 }
 
-.title a:hover,
-.title a:focus,
-.title a:active {
-  text-decoration: underline;
+.TakingOrderDiv{
+  margin-top: 50px;
+  /* padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 50px; */
 }
 
-.title {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+.ColMaxWidth{
+  max-width: 100vw !important;
 }
 
-.title,
-.description {
-  text-align: center;
+
+
+.MountainSVG{
+  margin-top: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-.description {
-  margin: 4rem 0;
-  line-height: 1.5;
-  font-size: 1.5rem;
+.MountainHeading{
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 50px;
+  font-size: 50px;
+  font-weight: 800;
+}
+.WeAreChangeDIV{
+  margin-top: 100px;
+  background: url('/cafe.jpg');
+  background-size: cover;
+  border-radius: 50px;
+  min-height: 600px;
+  padding: 10px 20px 10px;
+  background-position: 45% center;
+  overflow: hidden;
+}
+.WeAreChangeHeading{
+  font-size: 80px;
+  font-weight: 800;
+  color: white;
+}
+.WeAreChangeRow{
+  min-height: 600px;
 }
 
-.code {
-  background: #fafafa;
-  border-radius: 5px;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+.WeAreChangeUndedrline{
+  box-shadow: inset 0 -40px 0 0 #38b6ff;
+}
+.WeAreChangeOuterDIV{
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  max-width: 800px;
+.TypewritterDiv{
+  font-size: 40px;
+  font-weight: 900;
 }
 
-.card {
-  margin: 1rem;
-  padding: 1.5rem;
-  text-align: left;
-  color: inherit;
-  text-decoration: none;
-  border: 1px solid #eaeaea;
-  border-radius: 10px;
-  transition: color 0.15s ease, border-color 0.15s ease;
-  max-width: 300px;
+.seeHowDiv{
+  margin-top: 50px;
+  margin-bottom: 80px;
+}
+.seeHowButton{
+  border-radius: 50px;
+  font-size: 30px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  background-color: #7ed957;
+  outline: none !important;
 }
 
-.card:hover,
-.card:focus,
-.card:active {
-  color: #0070f3;
-  border-color: #0070f3;
+.seeHowButton:focus, .seeHowButton:active {
+  outline: none !important;
+  box-shadow: 0px 0px 0 2.5px black !important;
+}
+.FreeFooter{
+  font-size: 50px;
+  font-weight: 900;
+  color: white;
 }
 
-.card h2 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-}
-
-.card p {
-  margin: 0;
-  font-size: 1.25rem;
-  line-height: 1.5;
-}
-
-.logo {
-  height: 1em;
-  margin-left: 0.5rem;
-}
-
-@media (max-width: 600px) {
-  .grid {
-    width: 100%;
-    flex-direction: column;
-  }
+.FreeFooterDiv{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: black;
+  min-height: 80px;
+  width: 100%;
 }
