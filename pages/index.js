@@ -2,12 +2,10 @@ import styles from "../styles/Home.module.css";
 import MobilPhoneMockup from "../components/MobilePhoneMockup";
 import PizzaOrderScreen from "../components/PizzaOrder";
 import { Container, Row, Col } from "react-bootstrap";
-import dynamic from "next/dynamic";
 import Typewriter from "typewriter-effect";
 let Globe = () => null;
 if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
 import { useState, useEffect } from "react";
-import Image from 'next/image';
 
 export default function Home() {
   const [countries, setCountries] = useState({ features: [] });

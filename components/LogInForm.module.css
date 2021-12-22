@@ -1,0 +1,40 @@
+.containerForm {
+    top: 20%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    z-index: 2;
+    width: 350px;
+    height: 300px;
+    border-radius: 30px;
+    padding: 40px;
+    padding-top: 50px;
+    box-sizing: border-box;
+    background: rgb(27,26,28);
+    box-shadow: 14px 14px 20px #cbced1, -5px -5px 20px white;
+  } 
+
+  .RegisterLink{
+    color: white;
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+.buttonForm {
+    padding: 0;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    margin-top: 20px;
+    background: #f8f000;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 900;
+    transition: 0.5s;
+  }
+
+.buttonForm:hover {
+    box-shadow: none;
+  }
