@@ -2,6 +2,7 @@ import styles from "../styles/Home.module.css";
 import MobilPhoneMockup from "../components/MobilePhoneMockup";
 import "bootstrap/dist/css/bootstrap.min.css";
 import WorldLanguageAnimation from "../components/world";
+import TravellerWordAnimation from "../components/traveller";
 import { Container, Row, Col } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
 let Globe = () => null;
@@ -146,14 +147,23 @@ export default function Home() {
         <Col md={true} className={`align-self-center text-center`}>
             <h1 className={`${styles.MainHeading} ${styles.PizzaHeadingCol}`}>
               <span>
-              {`Take customer's orders online through your very own `}
+              {`Every `}
               <span className={styles.underlineGreen}>
-              web app
-              </span></span>
+              <TravellerWordAnimation />
+              </span>
+              {` has a `}
+              <span className={styles.underlineGreen}>
+              tab
+              </span>
+              {` open to `}
+              <span className={styles.underlineGreen}>
+              easycommunity
+              </span>
+              </span>
             </h1>
           </Col>
         <Col md={true} className={`text-center order-md-first`}>
-          <img src="/hiker.svg" className="img-fluid"/>
+          <img src="/apollo.svg" className={`img-fluid `}/>
           </Col>
           
         </Row>
@@ -312,7 +322,7 @@ export default function Home() {
               }}
             />
           </Col>
-          <Col md={true} className="align-self-center">
+          <Col md={true} className="align-self-center order-md-first">
           <h1 className={`${styles.MountainHeading} text-center`}>
               <span>Our service is <span className={styles.underlineGreen}>Operational and Live everywhere</span>
               {" "}<span className={styles.underline}>
