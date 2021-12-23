@@ -55,25 +55,24 @@
 }
 .WeAreChangeDIV{
   margin-top: 100px;
-  background: url('/cafe.jpg');
+  background: url('/world-map.png');
   background-size: cover;
-  border-radius: 50px;
-  min-height: 600px;
+  min-height: 700px;
   padding: 10px 20px 10px;
-  background-position: 45% center;
+  background-position: center center;
   overflow: hidden;
 }
 .WeAreChangeHeading{
   font-size: 80px;
   font-weight: 800;
-  color: white;
+  color: #7ed957;
 }
 .WeAreChangeRow{
   min-height: 600px;
 }
 
 .WeAreChangeUndedrline{
-  box-shadow: inset 0 -40px 0 0 #38b6ff;
+  box-shadow: inset 0 -35px 0 0 #38b6ff;
 }
 .WeAreChangeOuterDIV{
   padding-left: 10px;

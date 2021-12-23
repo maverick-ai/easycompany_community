@@ -1,6 +1,7 @@
 import styles from "../styles/Home.module.css";
 import MobilPhoneMockup from "../components/MobilePhoneMockup";
 import PizzaOrderScreen from "../components/PizzaOrder";
+import WorldLanguageAnimation from "../components/world";
 import { Container, Row, Col } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
 let Globe = () => null;
@@ -62,7 +63,7 @@ export default function Home() {
                       )
                       .typeString(" on the ")
                       .typeString(
-                        '<span style="box-shadow: inset 0 -20px 0 0 #7ed957;">planet !</span>'
+                        '<span style="box-shadow: inset 0 -20px 0 0 #7ed957;">planet!</span>'
                       )
                       .pauseFor(1500)
                       .start();
@@ -108,9 +109,7 @@ export default function Home() {
           }}>
         <Row className={`align-items-center ${styles.WeAreChangeRow}`}>
         <h1 className={`${styles.WeAreChangeHeading} text-center`}>
-              <span>We can <span className={styles.WeAreChangeUndedrline}>help</span>
-              {" "}you bring that <span className={styles.WeAreChangeUndedrline}>change.</span>
-              </span>
+          <WorldLanguageAnimation /> is <span className={styles.WeAreChangeUndedrline}>one</span>
             </h1>
         </Row>
       </Container>
