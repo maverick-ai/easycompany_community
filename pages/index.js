@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 import MobilPhoneMockup from "../components/MobilePhoneMockup";
-import PizzaOrderScreen from "../components/PizzaOrder";
+import "bootstrap/dist/css/bootstrap.min.css";
 import WorldLanguageAnimation from "../components/world";
 import { Container, Row, Col } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
@@ -76,10 +76,7 @@ export default function Home() {
       </Container>
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
-          <Col md={true} className={`text-center`}>
-          <img src="/employee.svg" className="img-fluid"/>
-          </Col>
-          <Col md={true} className={`align-self-center text-center`}>
+        <Col md={true} className={`align-self-center text-center `}>
             <h1 className={`${styles.MainHeading} `}>
               <span>
               Are you still travelling like in the{" "}
@@ -88,6 +85,10 @@ export default function Home() {
               </span> ?</span>
             </h1>
           </Col>
+          <Col md={true} className={`text-center order-md-first`}>
+          <img src="/employee.svg" className="img-fluid"/>
+          </Col>
+          
         </Row>
       </Container>
       <Container fluid="md" className={styles.TakingOrderDiv}>
@@ -96,7 +97,7 @@ export default function Home() {
         </Row>
         <Row>
         <h1 className={`${styles.MountainHeading} text-center`}>
-              <span>Join the <span className={styles.underlineGreen}>greatest travel revolution</span>
+        <span className={styles.underlineGreen}>Change is here.</span><span> Join the <span className={styles.underlineGreen}>greatest travel revolution</span>
               {" "}on the planet
               </span>
             </h1>
@@ -119,23 +120,30 @@ export default function Home() {
           <Col md={true} className={`align-self-center text-center`}>
             <h1 className={`${styles.MainHeading} `}>
               <span>
-              {`Make your restaurant's menu available through `}
+              {`Find the `}
               <span className={styles.underlineGreen}>
-              QR Code
-              </span></span>
+              best answer
+              </span>
+              {` to your `}
+              <span className={styles.underlineGreen}>
+              travel question
+              </span>
+              {` and `}
+              <span className={styles.underlineGreen}>
+              help
+              </span>
+              {` others answer theirs `}
+              </span>
             </h1>
           </Col>
           <Col md={true} className={`text-center`}>
-          <img src="/qrCode.svg" className="img-fluid"/>
+          <img src="/help.svg" className="img-fluid"/>
           </Col>
         </Row>
       </Container>
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
-        <Col md={true}>
-        <PizzaOrderScreen />
-          </Col>
-          <Col md={true} className={`align-self-center text-center`}>
+        <Col md={true} className={`align-self-center text-center`}>
             <h1 className={`${styles.MainHeading} ${styles.PizzaHeadingCol}`}>
               <span>
               {`Take customer's orders online through your very own `}
@@ -144,6 +152,10 @@ export default function Home() {
               </span></span>
             </h1>
           </Col>
+        <Col md={true} className={`text-center order-md-first`}>
+          <img src="/hiker.svg" className="img-fluid"/>
+          </Col>
+          
         </Row>
       </Container>
       <Container fluid="md" className="">
