@@ -1,5 +1,5 @@
 import classes from "./navbar.module.css";
-import Link from 'next/link';
+import "font-awesome/css/font-awesome.min.css";
 
 
 import { Navbar,Container,Nav } from "react-bootstrap";
@@ -21,7 +21,21 @@ function MainNavbar(props) {
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
-                How?
+                Questions?
+              </button>
+            </Nav.Link>
+            <Nav.Link href="/how" className={`${classes.a}`}>
+              <button
+                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
+              >
+                Ask
+              </button>
+            </Nav.Link>
+          <Nav.Link href="/how" className={`${classes.a}`}>
+              <button
+                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
+              >
+                Search
               </button>
             </Nav.Link>
             <Nav.Link href="/about" className={`${classes.a}`}>
@@ -31,19 +45,18 @@ function MainNavbar(props) {
                 About
               </button>
             </Nav.Link>
-
-            <Nav.Link href="/support" className={`${classes.a}`}>
+            <Nav.Link href="" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
-                Contact us
+                log in
               </button>
             </Nav.Link>
             <Nav.Link href="" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
-                log in
+               <i className="fa fa-trophy"></i>
               </button>
             </Nav.Link>
           </Nav>
