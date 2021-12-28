@@ -18,9 +18,10 @@ export default function Home() {
 
 
   useEffect(()=> {
-    if(localStorage.getItem("token")!==null){
-      router.push("/questions");
-    }
+    console.log(localStorage.getItem("token"));
+    // if(localStorage.getItem("token")!==undefined){
+    //   router.push("/questions");
+    // }
 
 
 

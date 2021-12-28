@@ -1,0 +1,80 @@
+.ParentDiv{
+    width: 100vw !important;
+    margin-top: 200px;
+  }
+
+ 
+
+  .mainHeading{
+      font-size: 50px;
+      font-weight: 700;
+  }
+
+  .titleRow{
+      margin-top: 50px;
+  }
+  .bodyRow{
+      margin-top: 40px;
+  }
+
+  .titleDiv{
+    max-width: 800px;
+  }
+
+  .bodyDiv{
+    max-width: 800px;
+  }
+
+
+  .titleInput{
+      border-radius: 15px;
+      border: 2px solid black;
+      padding-left: 10px;
+      width: 100%;
+      
+      
+  }
+  .titleInput:focus{
+    outline: none;
+}
+.titleParagraph{
+  margin-bottom: 4px;
+}
+.titleHeading{
+  margin-bottom: 8px;
+}
+
+  .bodyInput{
+    border-radius: 15px;
+    border: 2px solid black;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 100%;
+    max-width: 800px;
+    min-height:300px ;
+  }
+  .bodyInput{
+    outline: none;
+  }
+  .bodyParagraph{
+    margin-bottom: 4px;
+  }
+  .bodyHeading{
+    margin-bottom: 8px;
+  }
+
+  .underlineGreen{
+    box-shadow: inset 0 -20px 0 0 #7ed957;
+  }
+  .underlineRed{
+    box-shadow: inset 0 -20px 0 0 #ff5757;
+  }
+
+  .fadeIn::placeholder{
+    opacity: 0;
+    transition:  opacity 0.5s;
+  }
+  .fadeOut::placeholder{
+    opacity:1;
+    transition: opacity 0.5s;
+  }
