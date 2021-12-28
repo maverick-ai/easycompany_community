@@ -5,51 +5,43 @@ import WorldLanguageAnimation from "../components/world";
 import TravellerWordAnimation from "../components/traveller";
 import { Container, Row, Col } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
 let Globe = () => null;
-if (typeof window !== 'undefined') Globe = require('react-globe.gl').default;
+if (typeof window !== "undefined") Globe = require("react-globe.gl").default;
 
 export default function Home() {
   const [countries, setCountries] = useState({ features: [] });
   const [globeSize, setGlobeSize] = useState(400);
   const router = useRouter();
 
-
-
-  useEffect(()=> {
+  useEffect(() => {
     console.log(localStorage.getItem("token"));
     // if(localStorage.getItem("token")!==undefined){
     //   router.push("/questions");
     // }
 
-
-
     fetch("/ne_110m_admin_0_countries.geojson")
       .then((res) => res.json())
       .then(setCountries);
 
-
-    if( window.innerWidth<=768){
-      setGlobeSize(window.innerWidth)
-    }else if( window.innerWidth<=1000){
-      setGlobeSize(700)
+    if (window.innerWidth <= 768) {
+      setGlobeSize(window.innerWidth);
+    } else if (window.innerWidth <= 1000) {
+      setGlobeSize(700);
+    } else {
+      setGlobeSize(600);
     }
-    else{
-      setGlobeSize(600)
-    }
-    window.addEventListener('resize', ()=> {
-      if( window.innerWidth<=768){
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
         setGlobeSize(window.innerWidth);
-      }
-      else if( window.innerWidth<=1000){
+      } else if (window.innerWidth <= 1000) {
         setGlobeSize(700);
-      }
-      else{
+      } else {
         setGlobeSize(600);
       }
-    })
- }, []);
+    });
+  }, []);
 
   return (
     <div className={styles.ParentDiv}>
@@ -87,95 +79,93 @@ export default function Home() {
       </Container>
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
-        <Col md={true} className={`align-self-center text-center `}>
+          <Col md={true} className={`align-self-center text-center `}>
             <h1 className={`${styles.MainHeading} `}>
               <span>
-              Are you still travelling like in the{" "}
-              <span className={styles.underline}>
-              2010s
-              </span> ?</span>
+                Are you still travelling like in the{" "}
+                <span className={styles.underline}>2010s</span> ?
+              </span>
             </h1>
           </Col>
           <Col md={true} className={`text-center order-md-first`}>
-          <img src="/employee.svg" className="img-fluid"/>
+            <img src="/employee.svg" className="img-fluid" />
           </Col>
-          
         </Row>
       </Container>
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
-        <img src="/mountain.png" className="img-fluid"/>
+          <img src="/mountain.png" className="img-fluid" />
         </Row>
         <Row>
-        <h1 className={`${styles.MountainHeading} text-center`}>
-        <span className={styles.underlineGreen}>Change is here.</span><span> Join the <span className={styles.underlineGreen}>greatest travel revolution</span>
-              {" "}on the planet
-              </span>
-            </h1>
+          <h1 className={`${styles.MountainHeading} text-center`}>
+            <span className={styles.underlineGreen}>Change is here.</span>
+            <span>
+              {" "}
+              Join the{" "}
+              <span className={styles.underlineGreen}>
+                greatest travel revolution
+              </span>{" "}
+              on the planet
+            </span>
+          </h1>
         </Row>
       </Container>
-      <div className={styles.WeAreChangeOuterDIV}> 
-      <Container fluid="md" className={styles.WeAreChangeDIV}style={{
+      <div className={styles.WeAreChangeOuterDIV}>
+        <Container
+          fluid="md"
+          className={styles.WeAreChangeDIV}
+          style={{
             // background: `url('/cafe.jpg')`,
             backgroundSize: "cover",
-          }}>
-        <Row className={`align-items-center ${styles.WeAreChangeRow}`}>
-        <h1 className={`${styles.WeAreChangeHeading} text-center`}>
-          <WorldLanguageAnimation /> is <span className={styles.WeAreChangeUndedrline}>one</span>
+          }}
+        >
+          <Row className={`align-items-center ${styles.WeAreChangeRow}`}>
+            <h1 className={`${styles.WeAreChangeHeading} text-center`}>
+              <WorldLanguageAnimation /> is{" "}
+              <span className={styles.WeAreChangeUndedrline}>one</span>
             </h1>
-        </Row>
-      </Container>
+          </Row>
+        </Container>
       </div>
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
           <Col md={true} className={`align-self-center text-center`}>
             <h1 className={`${styles.MainHeading} `}>
               <span>
-              {`Find the `}
-              <span className={styles.underlineGreen}>
-              best answer
-              </span>
-              {` to your `}
-              <span className={styles.underlineGreen}>
-              travel question
-              </span>
-              {` and `}
-              <span className={styles.underlineGreen}>
-              help
-              </span>
-              {` others answer theirs `}
+                {`Find the `}
+                <span className={styles.underlineGreen}>best answer</span>
+                {` to your `}
+                <span className={styles.underlineGreen}>travel question</span>
+                {` and `}
+                <span className={styles.underlineGreen}>help</span>
+                {` others answer theirs `}
               </span>
             </h1>
           </Col>
           <Col md={true} className={`text-center`}>
-          <img src="/help.svg" className="img-fluid"/>
+            <img src="/help.svg" className="img-fluid" />
           </Col>
         </Row>
       </Container>
       <Container fluid="md" className={styles.TakingOrderDiv}>
         <Row>
-        <Col md={true} className={`align-self-center text-center`}>
+          <Col md={true} className={`align-self-center text-center`}>
             <h1 className={`${styles.MainHeading} ${styles.PizzaHeadingCol}`}>
               <span>
-              {`Every `}
-              <span className={styles.underlineGreen}>
-              <TravellerWordAnimation />
-              </span>
-              {` has a `}
-              <span className={styles.underlineGreen}>
-              tab
-              </span>
-              {` open to `}
-              <span className={styles.underlineGreen}>
-              easycommunity
-              </span>
+                {`Every `}
+                <span className={styles.underlineGreen}>
+                  <TravellerWordAnimation />
+                </span>
+                {` has a `}
+                <span className={styles.underlineGreen}>tab</span>
+                {` open to `}
+                <span className={styles.underlineGreen}>easycommunity</span>
               </span>
             </h1>
           </Col>
-        <Col md={true} className={`text-center order-md-first`}>
-          <img src="/apollo.svg" className={`img-fluid `}/>
+          <Col md={true} className={`text-center order-md-first`}>
+            <img src="/apollo.svg" className={`img-fluid `} />
           </Col>
-          
         </Row>
       </Container>
       <Container fluid="md" className="">
@@ -333,17 +323,23 @@ export default function Home() {
             />
           </Col>
           <Col md={true} className="align-self-center order-md-first">
-          <h1 className={`${styles.MountainHeading} text-center`}>
-              <span>Our service is <span className={styles.underlineGreen}>Operational and Live everywhere</span>
-              {" "}<span className={styles.underline}>
-              </span>
+            <h1 className={`${styles.MountainHeading} text-center`}>
+              <span>
+                Our service is{" "}
+                <span className={styles.underlineGreen}>
+                  Operational and Live everywhere
+                </span>{" "}
+                <span className={styles.underline}></span>
               </span>
             </h1>
           </Col>
         </Row>
       </Container>
       <div className={`${styles.FreeFooterDiv} text-center`}>
-        <h1 className={styles.FreeFooter}><span style={{color:"grey"}}>Its</span> Free Forever <span style={{color:"grey"}}></span></h1>
+        <h1 className={styles.FreeFooter}>
+          <span style={{ color: "grey" }}>Its</span> Free Forever{" "}
+          <span style={{ color: "grey" }}></span>
+        </h1>
       </div>
     </div>
   );

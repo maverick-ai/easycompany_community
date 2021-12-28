@@ -1,6 +1,7 @@
 .ParentDiv{
     width: 100vw !important;
     margin-top: 200px;
+    padding-bottom: 100px;
   }
 
  
@@ -22,6 +23,9 @@
   }
 
   .bodyDiv{
+    max-width: 800px;
+  }
+  .buttonDiv{
     max-width: 800px;
   }
 
@@ -62,6 +66,22 @@
   .bodyHeading{
     margin-bottom: 8px;
   }
+  .CategoriesHeading{
+    margin-bottom: 8px;
+  }
+  .CategoryInput{
+    border-radius: 15px;
+    border: 2px solid black;
+    padding-left: 10px;
+    width: 100%;
+    
+    
+}
+.CategoryInput:focus{
+  outline: none;}
+.CategoryParagraph{
+  margin-bottom: 4px;
+}
 
   .underlineGreen{
     box-shadow: inset 0 -20px 0 0 #7ed957;
@@ -77,4 +97,11 @@
   .fadeOut::placeholder{
     opacity:1;
     transition: opacity 0.5s;
+  }
+
+  .postButton{
+    background-color: white;
+    border: 2px solid black;
+    width: 100px;
+    border-radius: 15px;
   }

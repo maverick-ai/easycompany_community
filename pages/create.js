@@ -84,6 +84,26 @@ export default function Create() {
             </div>
           </Col>
         </Row>
+        <Row className={styles.bodyRow}>
+          <Col className={`align-self-center`}>
+            <div className={`${styles.bodyDiv} mx-auto`}>
+              <h2 className={styles.CategoriesHeading}>Category Tags</h2>
+              <p className={styles.CategoryParagraph}>
+              Think of Category Tags as Hashtags. It helps us to categories your post to reach the maximum audience.
+              </p>
+              <input
+                className={styles.CategoryInput}
+              />
+            </div>
+          </Col>
+        </Row>
+        <Row className={styles.bodyRow}>
+          <Col className={`align-self-center`}>
+            <div className={`${styles.buttonDiv} mx-auto`}>
+            <button className={`${styles.postButton}`}>Post</button>
+            </div>
+          </Col>
+        </Row>
       </Container>
     </div>
   );
