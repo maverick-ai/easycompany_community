@@ -1,75 +1,137 @@
-import { useRef } from "react";
-import axios from "axios";
+import styles from "../styles/Register.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col } from "react-bootstrap";
+import { useState, useEffect, useRef,forwardRef } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+import { CreatePostURL, Host } from "../components/constants";
 
-export default function Register(){
+let initialState = 0;
 
-    const RegisterUrl = "http://127.0.0.1:8000/api/registration/"
+export default function Register() {
+  const firstName = useRef();
+  const lastName = useRef();
+  const email = useRef();
+  const password = useRef();
 
-    const emailInputRef = useRef(null);
-    const password1InputRef = useRef(null);
-    const password2InputRef = useRef(null);
-    const genderInputRef = useRef(null);
-    const dateOfBirthInputRef = useRef(null);
-    const firstNameInputRef = useRef(null);
-    const lastNameInputRef = useRef(null);
-    const workInputRef = useRef(null);
-    const universityInputRef = useRef(null);
+  const [startDate, setStartDate] = useState(new Date());
 
-    async function performRegistration() {
-        const details = JSON.stringify({
-            email: emailInputRef.current.value,
-            password1: password1InputRef.current.value,
-            password2: password2InputRef.current.value,
-            gender: genderInputRef.current.value,
-            date_of_birth: dateOfBirthInputRef.current.value,
-            first_name: firstNameInputRef.current.value,
-            last_name: lastNameInputRef.current.value,
-            work: workInputRef.current.value,
-            university: universityInputRef.current.value
-        });
 
-        axios.post(LogInUrl, {
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': '*/*',
-                'Accept-Encoding': 'gzip, deflate, br',
-                'Connection': 'keep-alive',
-                'Host': '127.0.0.1:8000'
-            },
-            body: details
-        })
-        .then((response) => {
-            // dispatch({type: FOUND_USER, data: response.data[0]})
-            console.log(response.data);
-        })
-        .catch ((error) => {
-            // dispatch({type: ERROR_FINDING_USER})
-            console.log(error);
-        });
-    }
-    return (
-        <div className= "register-form">
-            <h1>Register</h1>
-            <label for="email" >Email</label>
-            <input ref={emailInputRef} type="text" placeholder="Email" id="email"/>
-            <label for="password1">Password</label>
-            <input ref={password1InputRef} type="password" placeholder="Password" id="password1"/>
-            <label for="password2" >Email</label>
-            <input ref={password2InputRef} type="password" placeholder="Retype Password" id="password2"/>
-            <label for="gender">Gender</label>
-            <input ref={genderInputRef} type="text" placeholder="Gender" id="gender"/>
-            <label for="date_of_birth">Date of Birth</label>
-            <input ref={dateOfBirthInputRef} type="date" placeholder="Date of Birth" id="date_of_birth"/>
-            <label for="first_name" >First Name</label>
-            <input ref={firstNameInputRef} type="text" placeholder="First Name" id="first_name"/>
-            <label for="last_name">Last Name</label>
-            <input ref={lastNameInputRef} type="text" placeholder="Last name" id="last_name"/>
-            <label for="work" >Work</label>
-            <input ref={workInputRef} type="text" placeholder="Work" id="work"/>
-            <label for="university">University</label>
-            <input ref={universityInputRef} type="text" placeholder="University" id="university"/>
-            <button onClick={performRegistration}>Register</button>
 
-        </div>
-    );
+  async function sendRegisterRequest() {
+    const post = JSON.stringify({
+      postByUser: firstName.current.value,
+      title: lastName.current.value,
+    });
+
+    const response = await fetch(CreatePostURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        Connection: "keep-alive",
+        "Content-Length": post.length,
+        Host: Host,
+      },
+      body: post,
+    });
+  }
+
+  return (
+    <div className={styles.ParentDiv}>
+      <Container fluid="md">
+        <Row className={styles.RegisterHeadingRow}>
+          <Col className={`align-self-center text-center`}>
+            <h1 className={styles.mainHeading}>
+              <span className={styles.underlineRed}>Register</span>
+            </h1>
+            <p>If you are batman your secret is safe with us</p>
+          </Col>
+        </Row>
+        <Row className="align-items-center">
+          <Col md={true} className={`text-center order-md-first`}>
+            <img src="/batman.svg" className="img-fluid" />
+          </Col>
+          <Col className={`align-self-center`}>
+            <Row className={styles.FirstNameRow}>
+              <Col className={`align-self-center `}>
+                <div className={`${styles.firstNameDiv} mx-auto`}>
+                  <h2 className={styles.titleHeading}>first name</h2>
+
+                  <input
+                    placeholder="Bruce"
+                    ref={firstName}
+                    className={`${styles.firstNameInput}`}
+                  />
+                </div>
+              </Col>
+            </Row>
+            <Row className={styles.LastNameRow}>
+              <Col className={`align-self-center`}>
+                <div className={`${styles.lastNameDiv} mx-auto`}>
+                  <h2 className={styles.lastNameHeading}>last name</h2>
+                  <input
+                    placeholder="Wayne"
+                    ref={lastName}
+                    className={`${styles.firstNameInput}`}
+                  />
+                </div>
+              </Col>
+            </Row>
+
+            <Row className={styles.LastNameRow}>
+              <Col className={`align-self-center`}>
+                <div className={`${styles.lastNameDiv} mx-auto`}>
+                  <h2 className={styles.lastNameHeading}>Date of Birth</h2>
+                  <DatePicker
+                    className={styles.DatePickerCustomStyle}
+                    maxDate={new Date()}
+                    selected={startDate}
+                    onChange={(date) => {setStartDate(date);console.log(date.getMonth());}}
+                    dateFormat="MMMM d, yyyy"
+                    showYearDropdown
+                    yearDropdownItemNumber={100}
+                    scrollableYearDropdown
+                  />
+                </div>
+              </Col>
+            </Row>
+            <Row className={styles.emailRow}>
+              <Col className={`align-self-center`}>
+                <div className={`${styles.emailDiv} mx-auto`}>
+                  <h2 className={styles.emailHeading}>email</h2>
+                  <input
+                    placeholder="bruce@wayne.com"
+                    ref={email}
+                    className={`${styles.emailInput}`}
+                  />
+                </div>
+              </Col>
+            </Row>
+            <Row className={styles.passwordRow}>
+              <Col className={`align-self-center`}>
+                <div className={`${styles.passwordDiv} mx-auto`}>
+                  <h2 className={styles.passwordHeading}>password</h2>
+                  <input
+                    placeholder="IamBatman123"
+                    type="password"
+                    ref={password}
+                    className={`${styles.passwordInput}`}
+                  />
+                </div>
+              </Col>
+            </Row>
+            <Row className={styles.bodyRow}>
+              <Col className={`align-self-center`}>
+                <div className={`${styles.buttonDiv} mx-auto`}>
+                  <button className={`${styles.postButton}`}>Post</button>
+                </div>
+              </Col>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
 }

@@ -1,7 +1,6 @@
 import styles from "../styles/Login.module.css";
 import LogInForm from "../components/LogInForm";
 import { useRef,useState } from "react";
-import axios from "axios";
 import { LogInURL, Host } from "../components/constants";
 import cookie from "cookie";
 import { useCookies } from "react-cookie"
@@ -40,7 +39,7 @@ function Login() {
       
       const data = await response.json();
       localStorage.setItem("token",data.key);
-      setCookie("token", JSON.stringify({token:data.key}), {
+      setCookie("token", JSON.stringify(data.key), {
         path: "/",
         maxAge: 2592000,
         sameSite: true,

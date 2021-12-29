@@ -1,0 +1,114 @@
+.ParentDiv {
+  width: 100vw !important;
+  margin-top: 150px;
+  padding-bottom: 100px;
+}
+
+.RegisterHeadingRow {
+  margin-bottom: 100px;
+}
+
+.mainHeading {
+  font-size: 50px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.FirstNameRow {
+  margin-top: 0px;
+}
+.LastNameRow {
+  margin-top: 40px;
+}
+.emailRow {
+    margin-top: 40px;
+  }
+.passwordRow {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+
+.firstNameDiv {
+  max-width: 800px;
+}
+
+.lastNameDiv {
+  max-width: 800px;
+}
+.emailDiv {
+    max-width: 800px;
+}
+.passwordDiv {
+    max-width: 800px;
+}
+
+
+.buttonDiv {
+  max-width: 800px;
+}
+
+.firstNameInput {
+  border-radius: 15px;
+  border: 2px solid black;
+  padding-left: 10px;
+  width: 100%;
+}
+.firstNameInput:focus {
+  outline: none;
+}
+
+.emailInput {
+    border-radius: 15px;
+    border: 2px solid black;
+    padding-left: 10px;
+    width: 100%;
+  }
+  .emailInput:focus {
+    outline: none;
+  }
+
+  .passwordInput {
+    border-radius: 15px;
+    border: 2px solid black;
+    padding-left: 10px;
+    width: 100%;
+  }
+  .passwordInput:focus {
+    outline: none;
+  }
+
+.lastNameHeading {
+  margin-bottom: 8px;
+}
+.emailHeading {
+    margin-bottom: 8px;
+  }
+  .passwordHeading {
+    margin-bottom: 8px;
+  }
+
+.underlineGreen {
+  box-shadow: inset 0 -20px 0 0 #7ed957;
+}
+.underlineRed {
+  box-shadow: inset 0 -20px 0 0 #ff5757;
+}
+
+.DatePickerCustomStyle {
+  border-radius: 15px;
+  border: 2px solid black;
+  padding-left: 10px;
+  width: 100%;
+  max-width: 800px;
+}
+.DatePickerCustomStyle:focus {
+  outline: none;
+}
+
+.postButton {
+  background-color: white;
+  border: 2px solid black;
+  width: 100px;
+  border-radius: 15px;
+}

@@ -24,7 +24,7 @@ function MainNavbar(props) {
                 Questions?
               </button>
             </Nav.Link>
-            <Nav.Link href="/how" className={`${classes.a}`}>
+            <Nav.Link href="/create" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
@@ -45,7 +45,7 @@ function MainNavbar(props) {
                 About
               </button>
             </Nav.Link>
-            <Nav.Link href="" className={`${classes.a}`}>
+            <Nav.Link href="/login" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
