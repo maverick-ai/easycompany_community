@@ -101,6 +101,8 @@
   padding-left: 10px;
   width: 100%;
   max-width: 800px;
+  background-color: white;
+  text-align: start;
 }
 .DatePickerCustomStyle:focus {
   outline: none;

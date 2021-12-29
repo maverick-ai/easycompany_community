@@ -6,7 +6,6 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { CreatePostURL, Host } from "../components/constants";
 
-let initialState = 0;
 
 export default function Register() {
   const firstName = useRef();
@@ -17,25 +16,34 @@ export default function Register() {
   const [startDate, setStartDate] = useState(new Date());
 
 
+  const DatePickerInput = forwardRef(({ value, onClick }, ref) => (
+    <button className={styles.DatePickerCustomStyle} onClick={onClick} ref={ref}>
+      {value}
+    </button>
+  ));
 
   async function sendRegisterRequest() {
-    const post = JSON.stringify({
-      postByUser: firstName.current.value,
-      title: lastName.current.value,
-    });
 
-    const response = await fetch(CreatePostURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-        "Content-Length": post.length,
-        Host: Host,
-      },
-      body: post,
-    });
+    const DateOfBirth=`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate()}`
+    console.log(DateOfBirth);
+
+    // const post = JSON.stringify({
+    //   postByUser: firstName.current.value,
+    //   title: lastName.current.value,
+    // });
+
+    // const response = await fetch(CreatePostURL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "*/*",
+    //     "Accept-Encoding": "gzip, deflate, br",
+    //     Connection: "keep-alive",
+    //     "Content-Length": post.length,
+    //     Host: Host,
+    //   },
+    //   body: post,
+    // });
   }
 
   return (
@@ -85,14 +93,17 @@ export default function Register() {
                 <div className={`${styles.lastNameDiv} mx-auto`}>
                   <h2 className={styles.lastNameHeading}>Date of Birth</h2>
                   <DatePicker
-                    className={styles.DatePickerCustomStyle}
+                  customInput={<DatePickerInput />}
+                    // className={styles.DatePickerCustomStyle}
                     maxDate={new Date()}
                     selected={startDate}
                     onChange={(date) => {setStartDate(date);console.log(date.getMonth());}}
                     dateFormat="MMMM d, yyyy"
                     showYearDropdown
+                    showMonthDropdown
                     yearDropdownItemNumber={100}
-                    scrollableYearDropdown
+                    // scrollableYearDropdown
+                    dropdownMode="select"
                   />
                 </div>
               </Col>
@@ -125,7 +136,7 @@ export default function Register() {
             <Row className={styles.bodyRow}>
               <Col className={`align-self-center`}>
                 <div className={`${styles.buttonDiv} mx-auto`}>
-                  <button className={`${styles.postButton}`}>Post</button>
+                  <button onClick={sendRegisterRequest} className={`${styles.postButton}`}>Sign Up</button>
                 </div>
               </Col>
             </Row>
