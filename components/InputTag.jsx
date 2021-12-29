@@ -54,6 +54,7 @@ function TagsInput(props) {
     ))}
     <input
         value={input}
+        className={styles.InputTags}
         placeholder="Enter a tag"
         onKeyDown={onKeyDown}
         onKeyUp={onKeyUp}

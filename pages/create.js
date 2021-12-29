@@ -2,6 +2,8 @@ import styles from "../styles/Create.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
+import TagsInput from "../components/InputTag";
+import {CreatePostURL,Host} from "../components/constants";
 
 
 let initialState = 0;
@@ -9,6 +11,8 @@ let initialState = 0;
 export default function Create() {
   const titleRef = useRef();
   const bodyRef = useRef();
+  const [input, setInput] = useState('');
+  const [tags, setTags] = useState([]);
   const [fadeState, setFadeState] = useState(false);
   const [travelQuestionState, setTravelQuestionState] = useState({
     title: "eg. What is the best beach in Southern part of India",
@@ -39,8 +43,33 @@ export default function Create() {
         setTravelQuestionState(travelQuestions[initialState % travelQuestions.length]);
         setFadeState(false);
       }, 1500);
-    }, 7500);
+    }, 8000);
   }, []);
+
+
+  async function createPostRequest(){
+    
+    const categories = [];
+    tags.map((tag) => {
+      categories.push({categoryForPost: tag});
+    });
+    const post=JSON.stringify({
+      postByUser: bodyRef.current.value,
+      title:titleRef.current.value,
+      categoryOfThePost:categories
+  });
+  
+  const response=await fetch(CreatePostURL,{method:'POST',headers:{
+    'Content-Type': 'application/json',
+    'Accept':'*/*',
+    'Accept-Encoding':'gzip, deflate, br',
+    'Connection': 'keep-alive',
+    'Content-Length':post.length,
+    'Host':Host
+  },body:post});
+
+
+}
 
   return (
     <div className={styles.ParentDiv}>
@@ -91,9 +120,7 @@ export default function Create() {
               <p className={styles.CategoryParagraph}>
               Think of Category Tags as Hashtags. It helps us to categories your post to reach the maximum audience.
               </p>
-              <input
-                className={styles.CategoryInput}
-              />
+              <TagsInput tags={tags} input={input} changeInput={setInput} changeTags={setTags} />
             </div>
           </Col>
         </Row>

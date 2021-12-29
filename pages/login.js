@@ -1,18 +1,18 @@
 import styles from "../styles/Login.module.css";
 import LogInForm from "../components/LogInForm";
-import { useRef } from "react";
+import { useRef,useState } from "react";
 import axios from "axios";
 import { LogInURL, Host } from "../components/URLs";
 
 function Login() {
   const emailInputRef=useRef();
   const passwordInputRef=useRef();
-  const history =useHistory();
+  // const history =useHistory();
   const [loginCorrectState,setloginCorrectState]=useState(true)
 
 
   function clickOnRegister(){
-    history.replace('/Registration');
+    // history.replace('/Registration');
   }
 
   async function performLogin(){
@@ -35,7 +35,7 @@ function Login() {
     if(response.ok){
       const data = await response.json();
       localStorage.setItem("token",data.key)
-      history.replace('/');
+      // history.replace('/');
 
     }
     else{
@@ -90,7 +90,7 @@ function Login() {
         <img
           className={styles.LogInImageStyle}
           alt="Scenic Background"
-          src={process.env.PUBLIC_URL + "/logIn.jpg"}
+          src={"/logIn.jpg"}
         />
         <LogInForm
           ClickOnRegisterLink={clickOnRegister}
@@ -99,20 +99,6 @@ function Login() {
           EmailRef={emailInputRef}
           PasswordRef={passwordInputRef}
         />
-      </div>
-
-      <div className="login-form">
-        <h1>Login</h1>
-        <label htmlFor="email">Email</label>
-        <input ref={emailInputRef} type="text" placeholder="Email" id="email" />
-        <label htmlFor="password">Password</label>
-        <input
-          ref={passwordInputRef}
-          type="password"
-          placeholder="Password"
-          id="password"
-        />
-        <button onClick={performLogin}>Login</button>
       </div>
     </div>
   );
