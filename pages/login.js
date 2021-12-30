@@ -4,11 +4,12 @@ import { useRef,useState } from "react";
 import { LogInURL, Host } from "../components/constants";
 import cookie from "cookie";
 import { useCookies } from "react-cookie"
+import { useRouter } from 'next/router';
 
 function Login() {
   const emailInputRef=useRef();
   const passwordInputRef=useRef();
-  // const history =useHistory();
+  const router = useRouter();
   const [loginCorrectState,setloginCorrectState]=useState(true)
   const [cookie, setCookie] = useCookies(["token"]);
 
@@ -44,7 +45,7 @@ function Login() {
         maxAge: 2592000,
         sameSite: true,
       })
-      console.log(cookie.parse(document.cookie));
+
       // history.replace('/');
 
     }

@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { RegisterUserURL, Host } from "../components/constants";
+import { useRouter } from 'next/router';
 
 export default function Register() {
   const [cookie, setCookie] = useCookies(["token"]);
@@ -13,6 +14,7 @@ export default function Register() {
   const lastName = useRef();
   const email = useRef();
   const password = useRef();
+  const router = useRouter();
   const regex = new RegExp(
     '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
     '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
@@ -32,6 +34,7 @@ export default function Register() {
   ));
 
   async function sendRegisterRequest() {
+
     const DateOfBirth = `${startDate.getFullYear()}-${
       startDate.getMonth() + 1
     }-${startDate.getDate()}`;
@@ -76,7 +79,7 @@ export default function Register() {
         maxAge: 2592000,
         sameSite: true,
       })
-      console.log(cookie.parse(document.cookie));
+      router.push("/");
 
     }
     else{

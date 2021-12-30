@@ -16,6 +16,8 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
+    var cookie = require('cookie');
+    const token=cookie.parse(document.cookie);
     console.log(localStorage.getItem("token"));
     // if(localStorage.getItem("token")!==undefined){
     //   router.push("/questions");
