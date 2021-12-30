@@ -95,6 +95,13 @@
   box-shadow: inset 0 -20px 0 0 #ff5757;
 }
 
+.Notification{
+  max-width: 800px;
+  background-color: #ff5757;
+  height: 50px;
+  border-radius: 15px;
+}
+
 .DatePickerCustomStyle {
   border-radius: 15px;
   border: 2px solid black;

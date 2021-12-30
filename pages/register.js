@@ -6,10 +6,11 @@ import { useCookies } from "react-cookie";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { RegisterUserURL, Host } from "../components/constants";
-import { useRouter } from 'next/router';
+import { useRouter } from "next/router";
 
 export default function Register() {
   const [cookie, setCookie] = useCookies(["token"]);
+  const [message, setMessage] = useState("");
   const firstName = useRef();
   const lastName = useRef();
   const email = useRef();
@@ -17,8 +18,9 @@ export default function Register() {
   const router = useRouter();
   const regex = new RegExp(
     '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
-    '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
-    '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$');
+      '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
+      "|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$"
+  );
 
 
   const [startDate, setStartDate] = useState(new Date());
@@ -34,7 +36,6 @@ export default function Register() {
   ));
 
   async function sendRegisterRequest() {
-
     const DateOfBirth = `${startDate.getFullYear()}-${
       startDate.getMonth() + 1
     }-${startDate.getDate()}`;
@@ -42,9 +43,8 @@ export default function Register() {
       regex.test(email.current.value) &&
       password.current.value !== "" &&
       firstName.current.value !== "" &&
-      lastName.current.value !== "" 
+      lastName.current.value !== ""
     ) {
-
       const userDetail = JSON.stringify({
         email: email.current.value,
         password1: password.current.value,
@@ -58,38 +58,33 @@ export default function Register() {
       });
 
       const response = await fetch(RegisterUserURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-        "Content-Length": userDetail.length,
-        Host: Host,
-      },
-      body: userDetail,
-    });
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "*/*",
+          "Accept-Encoding": "gzip, deflate, br",
+          Connection: "keep-alive",
+          "Content-Length": userDetail.length,
+          Host: Host,
+        },
+        body: userDetail,
+      });
 
-    if(response.ok){
-      var cookie = require('cookie');
-      const data = await response.json();
-      console.log(data.key);
-      setCookie("token", data.key, {
-        path: "/",
-        maxAge: 2592000,
-        sameSite: true,
-      })
-      router.push("/");
-
+      if (response.ok) {
+        var cookie = require("cookie");
+        const data = await response.json();
+        console.log(data.key);
+        setCookie("token", data.key, {
+          path: "/",
+          maxAge: 2592000,
+          sameSite: true,
+        });
+        router.push("/");
+      } else {
+        setMessage("Something went wrong");
+      }
     }
-    else{
-      console.log("Error");
-    }
-    
-    
-    }
-
-    
+    setMessage("Some fields are empty or the email is incorrect");
   }
 
   return (
@@ -101,6 +96,9 @@ export default function Register() {
               <span className={styles.underlineRed}>Register</span>
             </h1>
             <p>If you are batman your secret is safe with us</p>
+            <div className={`${styles.Notification}  mx-auto`} style={message===""?{display:"none"}:{display:"inline"}}>
+              <p>{message}</p>
+            </div>
           </Col>
         </Row>
         <Row className="align-items-center">

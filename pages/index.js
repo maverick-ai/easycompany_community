@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     var cookie = require('cookie');
     const token=cookie.parse(document.cookie);
-    console.log(localStorage.getItem("token"));
+    console.log(token);
     // if(localStorage.getItem("token")!==undefined){
     //   router.push("/questions");
     // }
@@ -170,7 +170,7 @@ export default function Home() {
           </Col>
         </Row>
       </Container>
-      <Container fluid="md" className="">
+      <Container fluid="md" className={styles.EarthContainer}>
         <Row>
           <Col md={true} className={styles.globeDiv}>
             <Globe
