@@ -39,7 +39,7 @@ function Login() {
       
       const data = await response.json();
       localStorage.setItem("token",data.key);
-      setCookie("token", JSON.stringify(data.key), {
+      setCookie("token", data.key, {
         path: "/",
         maxAge: 2592000,
         sameSite: true,

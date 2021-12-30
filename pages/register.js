@@ -1,49 +1,92 @@
 import styles from "../styles/Register.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
-import { useState, useEffect, useRef,forwardRef } from "react";
+import { useState, useRef, forwardRef } from "react";
+import { useCookies } from "react-cookie";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { CreatePostURL, Host } from "../components/constants";
-
+import { RegisterUserURL, Host } from "../components/constants";
 
 export default function Register() {
+  const [cookie, setCookie] = useCookies(["token"]);
   const firstName = useRef();
   const lastName = useRef();
   const email = useRef();
   const password = useRef();
+  const regex = new RegExp(
+    '^(([^<>()[\\]\\\\.,;:\\s@\\"]+(\\.[^<>()[\\]\\\\.,;:\\s@\\"]+)*)|' +
+    '(\\".+\\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\])' +
+    '|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))$');
+
 
   const [startDate, setStartDate] = useState(new Date());
 
-
   const DatePickerInput = forwardRef(({ value, onClick }, ref) => (
-    <button className={styles.DatePickerCustomStyle} onClick={onClick} ref={ref}>
+    <button
+      className={styles.DatePickerCustomStyle}
+      onClick={onClick}
+      ref={ref}
+    >
       {value}
     </button>
   ));
 
   async function sendRegisterRequest() {
+    const DateOfBirth = `${startDate.getFullYear()}-${
+      startDate.getMonth() + 1
+    }-${startDate.getDate()}`;
+    if (
+      regex.test(email.current.value) &&
+      password.current.value !== "" &&
+      firstName.current.value !== "" &&
+      lastName.current.value !== "" 
+    ) {
 
-    const DateOfBirth=`${startDate.getFullYear()}-${startDate.getMonth() + 1}-${startDate.getDate()}`
-    console.log(DateOfBirth);
+      const userDetail = JSON.stringify({
+        email: email.current.value,
+        password1: password.current.value,
+        password2: password.current.value,
+        gender: "M",
+        date_of_birth: DateOfBirth,
+        first_name: firstName.current.value,
+        last_name: lastName.current.value,
+        work: "Fighting criminals at night and running Wayne Enterprise in the day",
+        university: "League of shadows",
+      });
 
-    // const post = JSON.stringify({
-    //   postByUser: firstName.current.value,
-    //   title: lastName.current.value,
-    // });
+      const response = await fetch(RegisterUserURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "*/*",
+        "Accept-Encoding": "gzip, deflate, br",
+        Connection: "keep-alive",
+        "Content-Length": userDetail.length,
+        Host: Host,
+      },
+      body: userDetail,
+    });
 
-    // const response = await fetch(CreatePostURL, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "*/*",
-    //     "Accept-Encoding": "gzip, deflate, br",
-    //     Connection: "keep-alive",
-    //     "Content-Length": post.length,
-    //     Host: Host,
-    //   },
-    //   body: post,
-    // });
+    if(response.ok){
+      var cookie = require('cookie');
+      const data = await response.json();
+      console.log(data.key);
+      setCookie("token", data.key, {
+        path: "/",
+        maxAge: 2592000,
+        sameSite: true,
+      })
+      console.log(cookie.parse(document.cookie));
+
+    }
+    else{
+      console.log("Error");
+    }
+    
+    
+    }
+
+    
   }
 
   return (
@@ -93,11 +136,13 @@ export default function Register() {
                 <div className={`${styles.lastNameDiv} mx-auto`}>
                   <h2 className={styles.lastNameHeading}>Date of Birth</h2>
                   <DatePicker
-                  customInput={<DatePickerInput />}
+                    customInput={<DatePickerInput />}
                     // className={styles.DatePickerCustomStyle}
                     maxDate={new Date()}
                     selected={startDate}
-                    onChange={(date) => {setStartDate(date);console.log(date.getMonth());}}
+                    onChange={(date) => {
+                      setStartDate(date);
+                    }}
                     dateFormat="MMMM d, yyyy"
                     showYearDropdown
                     showMonthDropdown
@@ -113,6 +158,7 @@ export default function Register() {
                 <div className={`${styles.emailDiv} mx-auto`}>
                   <h2 className={styles.emailHeading}>email</h2>
                   <input
+                    type="email"
                     placeholder="bruce@wayne.com"
                     ref={email}
                     className={`${styles.emailInput}`}
@@ -136,7 +182,12 @@ export default function Register() {
             <Row className={styles.bodyRow}>
               <Col className={`align-self-center`}>
                 <div className={`${styles.buttonDiv} mx-auto`}>
-                  <button onClick={sendRegisterRequest} className={`${styles.postButton}`}>Sign Up</button>
+                  <button
+                    onClick={sendRegisterRequest}
+                    className={`${styles.postButton}`}
+                  >
+                    Sign Up
+                  </button>
                 </div>
               </Col>
             </Row>
