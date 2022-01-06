@@ -17,7 +17,7 @@ function MainNavbar(props) {
         </ Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
-          <Nav.Link href="/how" className={`${classes.a}`}>
+          <Nav.Link href="/search" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
@@ -31,7 +31,7 @@ function MainNavbar(props) {
                 Ask
               </button>
             </Nav.Link>
-          <Nav.Link href="/how" className={`${classes.a}`}>
+          <Nav.Link href="/search" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >
