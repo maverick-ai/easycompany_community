@@ -4,14 +4,23 @@ import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect, useRef } from "react";
 import TagsInput from "../components/InputTag";
 import {CreatePostURL,Host} from "../components/constants";
+import ReactMde from "react-mde";
+import ReactMarkdown from "react-markdown";
+import cookie from "cookie";
+import Router from 'next/router'
+import "react-mde/lib/styles/css/react-mde-all.css";
+import remarkGfm from "remark-gfm";
+import {getDefaultToolbarCommands} from "react-mde"
 
 
 let initialState = 0;
 
 export default function Create() {
+  
   const titleRef = useRef();
-  const bodyRef = useRef();
-  const [input, setInput] = useState('');
+
+  const [input, setInput] = useState("");
+  const [bodyvalue, setbValue] = useState("");
   const [tags, setTags] = useState([]);
   const [fadeState, setFadeState] = useState(false);
   const [travelQuestionState, setTravelQuestionState] = useState({
@@ -33,6 +42,8 @@ export default function Create() {
       body:"eg. I am planning a vaccation with my family to Carribean. I am taking my wife and my two 12 year old twins. I’m curious about which island to go and which is better family friendly ? Is there any important thing that I should remember while planning."
     }
   ];
+ 
+
 
   useEffect(() => {
     setInterval(() => {
@@ -44,6 +55,7 @@ export default function Create() {
         setFadeState(false);
       }, 1500);
     }, 8000);
+    console.log(getDefaultToolbarCommands());
   }, []);
 
 
@@ -54,22 +66,38 @@ export default function Create() {
       categories.push({categoryForPost: tag});
     });
     const post=JSON.stringify({
-      postByUser: bodyRef.current.value,
       title:titleRef.current.value,
-      categoryOfThePost:categories
+      categoryOfThePost:categories,
+      postByUser: bodyvalue,
   });
-  
-  const response=await fetch(CreatePostURL,{method:'POST',headers:{
-    'Content-Type': 'application/json',
-    'Accept':'*/*',
-    'Accept-Encoding':'gzip, deflate, br',
-    'Connection': 'keep-alive',
-    'Content-Length':post.length,
-    'Host':Host
-  },body:post});
-
-
+  console.log(post);
+  try{
+    const response=await fetch(CreatePostURL,{method:'POST',headers:{
+      'Content-Type': 'application/json',
+      'Accept':'*/*',
+      'Accept-Encoding':'gzip, deflate, br',
+      'Connection': 'keep-alive',
+      'Content-Length':post.length,
+      'Host':Host,
+      'Authorization':`Token ${cookie.parse(document.cookie).token}`
+    },body:post});
+    console.log(response);
+    if (response.status >= 400) {
+      console.log(1);
+      const router = Router;
+      router.push("/login")
+    }
+    else if (response.status >= 300) {
+      throw(response.status);
+    }
+  }
+  catch (err) {
+    console.log(err);
+  }
 }
+    
+   
+    const [selectedTab, setSelectedTab] = useState("write");
 
   return (
     <div className={styles.ParentDiv}>
@@ -90,6 +118,7 @@ export default function Create() {
                 person
               </p>
               <input
+              source="title"
                 placeholder={travelQuestionState.title}
                 ref={titleRef}
                 className={`${styles.titleInput} ${fadeState ? styles.fadeIn : styles.fadeOut}`}
@@ -105,11 +134,29 @@ export default function Create() {
                 Include all the information someone would need to answer your
                 question
               </p>
-              <textarea
-                placeholder={travelQuestionState.body}
-                ref={bodyRef}
-                className={`${styles.bodyInput} ${fadeState ? styles.fadeIn : styles.fadeOut}`}
+              
+              <div className="container">
+              <ReactMde
+                value={bodyvalue}
+                onChange={setbValue}
+                selectedTab={selectedTab}
+                onTabChange={setSelectedTab}
+                childProps= {
+                    {
+                      textArea: {
+                        placeholder: `${travelQuestionState.body}`,
+                        className: `${styles.bodyInput} ${fadeState ? styles.fadeIn : styles.fadeOut}`
+                      }
+                      
+                  }
+                }
+                toolbarCommands={[["header","bold", "italic","strikethrough"], ["link","quote","image"],["unordered-list","ordered-list","checked-list"]]}
+                generateMarkdownPreview={(markdown) =>
+                  Promise.resolve(<ReactMarkdown children={markdown} remarkPlugins={remarkGfm} />)
+                }
+              
               />
+                </div>
             </div>
           </Col>
         </Row>
@@ -127,7 +174,8 @@ export default function Create() {
         <Row className={styles.bodyRow}>
           <Col className={`align-self-center`}>
             <div className={`${styles.buttonDiv} mx-auto`}>
-            <button className={`${styles.postButton}`}>Post</button>
+            
+            <button onClick ={createPostRequest} className={`${styles.postButton}`}>Post</button>
             </div>
           </Col>
         </Row>

@@ -25,3 +25,24 @@ a {
 /* * {
   box-sizing: border-box;
 } */
+
+.mde-header {
+  background-color: #fff!important;
+  border-bottom: 0!important;
+}
+
+.react-mde {
+  border: 0!important;
+}
+
+.mde-preview-content {
+  border: 2px solid black!important;
+  border-radius: 15px!important;
+  min-height: 250px!important;
+}
+
+.mde-tabs button.selected {
+  border: 2px solid black!important;
+  border-radius: 15px!important;
+  padding-bottom: 0!important;
+}

@@ -95,7 +95,7 @@
     transition:  opacity 0.5s;
   }
   .fadeOut::placeholder{
-    opacity:1;
+    opacity: 1;
     transition: opacity 0.5s;
   }
 

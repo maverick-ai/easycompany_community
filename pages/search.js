@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { SearchURL } from "../components/constants";
+import Link from 'next/link'
 
 var page = 1;
 var str = "";
@@ -22,17 +23,33 @@ const Content = () => {
 
   const getMorePost = async () => {
     console.log(`?search_query=${str}&page=${page}`);
-    const res = await fetch(
-      SearchURL + `?search_query=${str}&page=${page}`
-    );
-    console.log(res);
-    const newPosts = await res.json();
-    if (newPosts.next)
-        page += 1;
-    else
-        setHasMore(false);
-    console.log(newPosts);
-    setPosts((post) => [...post, ...newPosts.results]);
+    try {
+      const res = await fetch(
+        SearchURL + `?search_query=${str}&page=${page}`
+      );
+      if (res.status >= 300) {
+        throw(res.status);
+      }
+      console.log(res);
+      const newPosts = await res.json();
+      if (newPosts.next)
+          page += 1;
+      else
+          setHasMore(false);
+      console.log(newPosts);
+      setPosts((post) => [...post, ...newPosts.results]);
+      
+    }
+    
+    catch (err) {
+      return {
+        redirect: {
+            destination: '/error',
+            permanent: false,
+        }
+    }
+      
+    }
   };
 
   return (
@@ -46,7 +63,6 @@ const Content = () => {
   
 
        {searched && <InfiniteScroll
-       height={120}
         dataLength={posts.length}
         next={getMorePost}
         hasMore={hasMore}
@@ -56,10 +72,10 @@ const Content = () => {
         {posts.map((data) => (
           <div key={data.pk}>
             <div className="back">
-            <p></p>
-              <strong> {data.title1}</strong> 
+              <Link href={`/posts/?postid=${data.pk}&page=1`}><a><strong> {data.title}</strong></a></Link>
+              <p>{data.upVoteNumber} Upvotes</p>
+              <p>{data.downVoteNumber} Downvotes</p>
             </div>
-            {data.completed}
           </div>
         ))}
       </InfiniteScroll>}
@@ -71,6 +87,7 @@ const Content = () => {
             background-color: dodgerblue;
             color: white;
             margin: 10px;
+            min-height: 20rem;
           }
         `}
       </style>
