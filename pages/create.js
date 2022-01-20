@@ -11,6 +11,8 @@ import Router from 'next/router'
 import "react-mde/lib/styles/css/react-mde-all.css";
 import remarkGfm from "remark-gfm";
 import {getDefaultToolbarCommands} from "react-mde"
+import {sendReq} from "../components/requests";
+import LoginPopUp from "../components/LogInPopUp";
 
 
 let initialState = 0;
@@ -72,31 +74,41 @@ export default function Create() {
   });
   console.log(post);
   try{
-    const response=await fetch(CreatePostURL,{method:'POST',headers:{
-      'Content-Type': 'application/json',
-      'Accept':'*/*',
-      'Accept-Encoding':'gzip, deflate, br',
-      'Connection': 'keep-alive',
-      'Content-Length':post.length,
-      'Host':Host,
-      'Authorization':`Token ${cookie.parse(document.cookie).token}`
-    },body:post});
-    console.log(response);
-    if (response.status >= 400) {
-      console.log(1);
-      const router = Router;
-      router.push("/login")
+    if(document.cookie){
+      const response = sendReq(CreatePostURL, document.cookie, "POST", post,setIsLoggedIn);
+      console.log(response);
+      if (response.status >= 400) {
+        console.log(1);
+        const router = Router;
+        router.push("/login")
+      }
+      else if (response.status >= 300) {
+        throw(response.status);
+      }
     }
-    else if (response.status >= 300) {
-      throw(response.status);
+    else{
+      setIsLoggedIn(false)
     }
+    
+    // const response=await fetch(CreatePostURL,{method:'POST',headers:{
+    //   'Content-Type': 'application/json',
+    //   'Accept':'*/*',
+    //   'Accept-Encoding':'gzip, deflate, br',
+    //   'Connection': 'keep-alive',
+    //   'Content-Length':post.length,
+    //   'Host':Host,
+    //   'Authorization':`Token ${cookie.parse(document.cookie).token}`
+    // },body:post});
+
+   
   }
   catch (err) {
     console.log(err);
+    
   }
 }
     
-   
+    const [isLoggedIn, setIsLoggedIn] = useState(true);
     const [selectedTab, setSelectedTab] = useState("write");
 
   return (
@@ -180,6 +192,7 @@ export default function Create() {
           </Col>
         </Row>
       </Container>
+      {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn}/>}
     </div>
   );
 }

@@ -9,24 +9,29 @@ import cookie from "cookie";
 import Pagination from "../components/Pagination";
 import DetailedPost from "../components/DetailedPost";
 import Solution from "../components/Solution";
+import {sendReq} from "../components/requests"
+import LoginPopUp from "../components/LogInPopUp";
+import { useState } from "react";
 
 
 
 const Post = ({ post, answers, solnComments, query }) => {
   
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+
   return (
     <div className="container-fluid" style={{ margin: "5rem" }}>
       {post.detail && <h1>Post NOT found.</h1>}
       {!post.detail && (
         <div className="post">
-        <DetailedPost data={post} />
+        <DetailedPost data={post} setLogin ={setIsLoggedIn}/>
           <div className="answers-container">
             <h2>Answers</h2>
             {!answers.count && <h2>No answers found</h2>}
             {answers.count > 0 && (
               <div className="post-answers">
                 {answers.results.map((answer,index) => (
-                  <Solution solution={answer} comments={solnComments[index]} key={answer.id}/>
+                  <Solution solution={answer} comments={solnComments[index]} key={answer.id} setLogin ={setIsLoggedIn} />
                 ))}
                 {answers.count > PageSize && (
                   <Pagination
@@ -40,6 +45,7 @@ const Post = ({ post, answers, solnComments, query }) => {
           </div>
       </div>
   )}
+  {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
 </div>
 );
 }
@@ -51,53 +57,29 @@ export async function getServerSideProps({ query, req }) {
   let answers = {};
   let solnComments = [];
   try {
-    if (req.headers.cookie) {
-      var resPost = await fetch(`${PostURL}${query.postid}/`, {
-        method: "GET",
-        headers: {
-          Accept: "*/*",
-          "Accept-Encoding": "gzip, deflate, br",
-          Connection: "keep-alive",
-          Host: Host,
-          Authorization: `Token ${cookie.parse(req.headers.cookie).token}`,
-        },
-      });
-    } else {
-      var resPost = await fetch(`${PostURL}${query.postid}/`);
-    }
-    post = await resPost.json();
+  
+    post = await sendReq(`${PostURL}${query.postid}/`, req.headers.cookie);
     if (!query.page) query.page = 1;
 
     if (post.detail) {
       console.log("No post");
     } else {
-      if (req.headers.cookie) {
-        var resAnswers = await fetch(
-          `${AnswersURL}${query.postid}/?page=${query.page}`,
-          {
-            method: "GET",
-            headers: {
-              Accept: "*/*",
-              "Accept-Encoding": "gzip, deflate, br",
-              Connection: "keep-alive",
-              Host: Host,
-              Authorization: `Token ${cookie.parse(req.headers.cookie).token}`,
-            },
-          }
-        );
-      } else {
-        var resAnswers = await fetch(
-          `${AnswersURL}${query.postid}/?page=${query.page}`
-        );
-      }
-      answers = await resAnswers.json();
+    
+      answers = await sendReq(`${AnswersURL}${query.postid}/?page=${query.page}`, req.headers.cookie)
       for (let i = 0; i < answers.results.length; i++) {
         solnComments.push(answers.results[i].comments);
       }
     }
   } catch (err) {
     console.log(err);
+    return {
+      redirect: {
+        destination: "/error",
+        permanent: false,
+      }
+    }
     console.log("HIIIIII");
+    console.log(post)
   }
   return {
     props: {

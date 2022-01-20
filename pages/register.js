@@ -57,18 +57,30 @@ export default function Register() {
         university: "League of shadows",
       });
 
-      const response = await fetch(RegisterUserURL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "*/*",
-          "Accept-Encoding": "gzip, deflate, br",
-          Connection: "keep-alive",
-          "Content-Length": userDetail.length,
-          Host: Host,
-        },
-        body: userDetail,
-      });
+
+      try {
+        const response = await fetch(RegisterUserURL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            Connection: "keep-alive",
+            "Content-Length": userDetail.length,
+            Host: Host,
+          },
+          body: userDetail,
+        });
+
+        if (response.status >= 300) {
+          throw(response.status);
+      }
+      }
+      catch (error) {
+        console.log(error);
+        alert("Error in registering user,Try again later.");
+      }
+      
 
       if (response.ok) {
         var cookie = require("cookie");

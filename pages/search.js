@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { SearchURL } from "../components/constants";
 import Link from 'next/link'
+import {sendReq} from "../components/requests";
 
 var page = 1;
 var str = "";
@@ -23,33 +24,13 @@ const Content = () => {
 
   const getMorePost = async () => {
     console.log(`?search_query=${str}&page=${page}`);
-    try {
-      const res = await fetch(
-        SearchURL + `?search_query=${str}&page=${page}`
-      );
-      if (res.status >= 300) {
-        throw(res.status);
-      }
-      console.log(res);
-      const newPosts = await res.json();
+      const newPosts = await sendReq(SearchURL + `?search_query=${str}&page=${page}`)
       if (newPosts.next)
           page += 1;
       else
           setHasMore(false);
       console.log(newPosts);
       setPosts((post) => [...post, ...newPosts.results]);
-      
-    }
-    
-    catch (err) {
-      return {
-        redirect: {
-            destination: '/error',
-            permanent: false,
-        }
-    }
-      
-    }
   };
 
   return (

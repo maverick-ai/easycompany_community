@@ -1,64 +1,39 @@
 import { DownVoteSolnURL,UpVoteSolnURL,SolutionCommentsURL,commentPageSize,Host } from "./constants";
-import {sendVote,addsolncomment} from "./requests";
+import {sendVote,addsolncomment,sendReq} from "./requests";
 import SolutionComment from "./SolutionComment";
 import { useState } from "react";
 import cookie from "cookie";
+import Link from "next/link"
 const Solution = (props)=>{
 
   const [solnComment, setsolnComment] = useState(props.comments);
   const [moreComments, setMoreComments] = useState(true);
 
     const getnewsolncomments = async (id) => {
-        try {
-          if (document.cookie) {
-            var response = await fetch(`${SolutionCommentsURL}${id}/?page=${solnComment.length / commentPageSize + 1}`, {
-              method: "GET",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "*/*",
-                "Accept-Encoding": "gzip, deflate, br",
-                Connection: "keep-alive",
-                Host: Host,
-                Authorization: `Token ${cookie.parse(document.cookie).token}`,
-              },
-            });
-          } else {
-            var response = await fetch(
-              `${SolutionCommentsURL}${id}/?page=${
-                solnComment.length / commentPageSize + 1
-              }`
-            );
-          }
-          const newsolncomments = await response.json();
-          if (newsolncomments.detail) {
-            console.log(newsolncomments.detail);
-            setMoreComments(false);
-          } else {
-            setsolnComment((old)=> [...old, ...newsolncomments.results])
-            }
-            console.log(solnComment);
-          }
-         catch (err) {
-          console.log(err);
+        const newsolncomments = await sendReq(`${SolutionCommentsURL}${id}/?page=${solnComment.length / commentPageSize + 1}`, document.cookie);
+        if (newsolncomments.detail) {
+          console.log(newsolncomments.detail);
           setMoreComments(false);
-        }
+        } else {
+          setsolnComment((old)=> [...old, ...newsolncomments.results])
+          }
+          console.log(solnComment);
       };
 
   return(
     <div className="Soln">
           <p>{props.solution.solutionByUser}</p>
-          <p>
-          Created By: {props.solution.first_name + " " + props.solution.last_name}
-          </p>
+          <Link href={`/profile?user=${props.solution.creator_by.creator_id}`}><p>{props.solution.creator_by.first_name + " " + props.solution.creator_by.last_name}</p></Link>
+          <p>User rating: {props.solution.creator_by.rating}</p>
           <p>{props.solution.upVoteNumber} Upvotes</p>
           <p>{props.solution.downVoteNumber} Downvotes</p>
           <button
-          onClick={() => sendVote(UpVoteSolnURL, props.solution.id)}
+          onClick={() => sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)}
           className="btn btn-primary">
           Upvote Answer
           </button>
           <button
-          onClick={() => sendVote(DownVoteSolnURL, props.solution.id)}
+          onClick={() => sendVote(DownVoteSolnURL, props.solution.id, props.setLogin)}
           className="btn btn-primary"
           >
           Downvote Answer
@@ -73,7 +48,8 @@ const Solution = (props)=>{
               addsolncomment(
               document.getElementById(`solnComment${props.solution.id}`)
                   .value,
-              props.solution.id
+              props.solution.id,
+              props.setLogin
               )
           }
           className="btn btn-primary"
@@ -84,7 +60,7 @@ const Solution = (props)=>{
           <div className="soln-comments-container">
           <h3>Comments</h3>
           {solnComment && solnComment.map((com) => (
-              <SolutionComment key={com.pk} comment={com} sendVote={sendVote} />
+              <SolutionComment key={com.pk} comment={com} sendVote={sendVote} setLogin={props.setLogin} />
           ))}
 
           {moreComments && solnComment.length && solnComment.length%commentPageSize==0 &&

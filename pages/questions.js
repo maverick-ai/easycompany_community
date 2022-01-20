@@ -2,14 +2,12 @@ import { PostListURL, PageSize } from "../components/constants"
 import Link from 'next/link'
 import Pagination from '../components/Pagination';
 import Router from 'next/router'
-
-
+import {sendReq} from "../components/requests";
 
 const Questions = ({questions, query}) => {
  
     return (
         <>
-            
             <div className="questions-list">
            
 
@@ -40,27 +38,25 @@ export default Questions;
 export async function getServerSideProps({ query }) {
     if (!query.page) 
         query.page=1;
-    try {
-        const res = await fetch(`${PostListURL}?page=${query.page}`);
-        const questions = await res.json();
-        console.log(questions);
-        if (res.status >= 300) {
-            throw(res.status);
-        }
-        return {
-            props: {
-                questions,
-                query,
-            }
-        }
+    let questions=[]
+    try{
+        questions = await sendReq(`${PostListURL}?page=${query.page}`)
     }
-    catch(err) {
-        console.log(err);
+
+    catch(err){
         return {
             redirect: {
-                destination: '/error',
+                destination: "/error",
                 permanent: false,
             }
         }
     }
+
+    return {
+        props: {
+            questions,
+            query,
+        }
+    }
+    
 }

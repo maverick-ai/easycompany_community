@@ -1,10 +1,11 @@
 import styles from "../styles/Login.module.css";
-import LogInForm from "../components/LogInForm";
 import { useRef,useState } from "react";
 import { LogInURL, Host } from "../components/constants";
 import cookie from "cookie";
 import { useCookies } from "react-cookie"
 import { useRouter } from 'next/router';
+import {sendReq} from "../components/requests";
+import LogInForm from "../components/LogInForm";
 
 function Login() {
   const emailInputRef=useRef();
@@ -12,19 +13,13 @@ function Login() {
   const router = useRouter();
   const [loginCorrectState,setloginCorrectState]=useState(true)
   const [cookie, setCookie] = useCookies(["token"]);
-
-
-  function clickOnRegister(){
-    // history.replace('/Registration');
-  }
-
+  
   async function performLogin(){
     const credentials=JSON.stringify({
       email: emailInputRef.current.value,
       password:passwordInputRef.current.value,
   });
   var cookie = require('cookie');
-
     const response=await fetch(LogInURL,{method:'POST',headers:{
       'Content-Type': 'application/json',
       'Accept':'*/*',
@@ -33,8 +28,6 @@ function Login() {
       'Content-Length':credentials.length,
       'Host':Host
     },body:credentials});
-
-
 
     if(response.ok){
       
@@ -45,9 +38,6 @@ function Login() {
         maxAge: 2592000,
         sameSite: true,
       })
-
-      // history.replace('/');
-
     }
     else{
       setloginCorrectState(false);
@@ -56,8 +46,6 @@ function Login() {
       },3000);
     }
   }
-
-
 
   return (
     <div>
@@ -71,7 +59,6 @@ function Login() {
           src={"/logIn.jpg"}
         />
         <LogInForm
-          ClickOnRegisterLink={clickOnRegister}
           LogInCorrect={loginCorrectState}
           performLogin={performLogin}
           EmailRef={emailInputRef}

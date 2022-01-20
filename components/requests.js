@@ -1,102 +1,211 @@
 import { AddSolnURL,AddPostcommentURL,AddSolncommentURL,Host } from "./constants";
 import cookie from "cookie"
+import router from "next/router";
 
-const sendVote = async (url, id) => {
-    try {
-      const response = await fetch(url + id + "/", {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "*/*",
-          "Accept-Encoding": "gzip, deflate, br",
-          Connection: "keep-alive",
-          "Content-Length": 0,
-          Host: Host,
-          Authorization: `Token ${cookie.parse(document.cookie).token}`,
-        },
-      });
-      const resVote = await response.json();
-      if (resVote.message) {
-        alert(resVote.message);
-      } else {
-        throw resVote;
+const sendReq = async(url, tokenCookie=null, method="GET", data=null, setfunc=null) => {
+  let response = {};
+  try {
+    if (data) {
+      if (tokenCookie) {
+        response = await fetch(url, {
+          method: method,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            Connection: "keep-alive",
+            "Content-Length": 0,
+            Host: Host,
+            Authorization: `Token ${cookie.parse(tokenCookie).token}`,
+          },
+          body: data
+        });
       }
-    } catch (err) {
-      console.log(err);
+      else {
+        response = await fetch(url, {
+          method: method,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            Connection: "keep-alive",
+            "Content-Length": 0,
+            Host: Host,
+          },
+          body: data
+        })
+      }
+      }
+    else {
+      if (tokenCookie) {
+        response = await fetch(url, {
+          method: method,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            Connection: "keep-alive",
+            "Content-Length": 0,
+            Host: Host,
+            Authorization: `Token ${cookie.parse(tokenCookie).token}`,
+          }
+        });
+      }
+      else {
+        response = await fetch(url, {
+          method: method,
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            Connection: "keep-alive",
+            "Content-Length": 0,
+            Host: Host,
+          }
+        })
+      }
     }
+    console.log(response);
+    if (response.status >=300) {
+      throw(response.status);
+    }
+  }
+  catch(err) {
+    console.log(err);
+    if (err === 403) {
+      if (setfunc){
+        setfunc(false);
+      }
+      else{
+        try {
+          router.push("/login");
+        }
+        catch {
+          throw ("redirect to login");
+        }
+      }
+    }
+    else {
+      try {
+        router.push("/error");
+      }
+      catch {
+        throw ("redirect error")
+      }
+    }
+    
+  }
+  try {
+    return await response.json()
+  }
+  catch{
+    console.log(response);
+    return response;
+  }
+}
+
+const sendVote = async (url, id, setFunc) => {
+      if (document.cookie){
+        const resVote = await sendReq(url + id + "/",  document.cookie, "PUT", null, setFunc);
+        if (resVote.message) {
+          alert(resVote.message);
+        }
+      }
+      else {
+        setFunc(false);
+      }
 };
 
-const addanswer = async (answer, id) => {
+const addanswer = async (answer, id, setFunc) => {
+  if (document.cookie) {
     const post = JSON.stringify({
       solutionByUser: answer,
       post: id,
     });
     console.log(post);
-    const res = await fetch(AddSolnURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-        "Content-Length": answer.length,
-        Host: Host,
-        Authorization: `Token ${cookie.parse(document.cookie).token}`,
-      },
-      body: post,
-    });
-  
-    console.log(res);
-  
+    const resAddAnswer = await sendReq(AddSolnURL, document.cookie, "POST", post, setFunc);
     window.location.reload();
+    // const res = await fetch(AddSolnURL, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "*/*",
+    //     "Accept-Encoding": "gzip, deflate, br",
+    //     Connection: "keep-alive",
+    //     "Content-Length": answer.length,
+    //     Host: Host,
+    //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
+    //   },
+    //   body: post,
+    // });
+  
+    // console.log(res);
+  }
+  else {
+    setFunc(false);
+  }
 };
   
-const addpostcomment = async (comment, id) => {
+const addpostcomment = async (comment, id, setFunc) => {
+  if (document.cookie) {
     const postComment = JSON.stringify({
-        commentByUser: comment,
-        post: id,
-    });
+      commentByUser: comment,
+      post: id,
+  });
+  const res = await sendReq(AddPostcommentURL, document.cookie, "POST", postComment, setFunc);
+  console.log(res);
 
-    const res = await fetch(AddPostcommentURL, {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json",
-        Accept: "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-        "Content-Length": comment.length,
-        Host: Host,
-        Authorization: `Token ${cookie.parse(document.cookie).token}`,
-        },
-        body: postComment,
-    });
-    console.log(res);
+  window.location.reload();
+  }
+  else{
+    setFunc(false);
+  }
+    
 
-    window.location.reload();
+    // const res = await fetch(AddPostcommentURL, {
+    //     method: "POST",
+    //     headers: {
+    //     "Content-Type": "application/json",
+    //     Accept: "*/*",
+    //     "Accept-Encoding": "gzip, deflate, br",
+    //     Connection: "keep-alive",
+    //     "Content-Length": comment.length,
+    //     Host: Host,
+    //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
+    //     },
+    //     body: postComment,
+    // });
+  
 };
 
-const addsolncomment = async (comment, id) => {
+const addsolncomment = async (comment, id, setFunc) => {
+
+  if (document.cookie) {
     const solncomment = JSON.stringify({
       commentByUser: comment,
       solution: id,
     });
-  
-    const res = await fetch(AddSolncommentURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        Connection: "keep-alive",
-        "Content-Length": comment.length,
-        Host: Host,
-        Authorization: `Token ${cookie.parse(document.cookie).token}`,
-      },
-      body: solncomment,
-    });
+    const res = await sendReq(AddSolncommentURL, document.cookie, "POST", solncomment, setFunc);
+    // const res = await fetch(AddSolncommentURL, {
+    //   method: "POST",
+    //   headers:  {
+    //     "Content-Type": "application/json",
+    //     Accept: "*/*",
+    //     "Accept-Encoding": "gzip, deflate, br",
+    //     Connection: "keep-alive",
+    //     "Content-Length": comment.length,
+    //     Host: Host,
+    //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
+    //   },
+    //   body: solncomment,
+    // });
     console.log(res);
 
     window.location.reload();
+  }
+  else {
+    setFunc(false);
+  }
   };
 
-export{sendVote,addanswer,addpostcomment,addsolncomment}
+export{sendVote,addanswer,addpostcomment,addsolncomment,sendReq}

@@ -1,6 +1,7 @@
 import styles from "./LogInForm.module.css";
 import EmailField from "./Email";
 import PasswordField from "./Password";
+import Link from "next/link";
 
 function LogInForm(props) {
   return (
@@ -25,9 +26,7 @@ function LogInForm(props) {
           </button>
           </div>
           <div style={{ paddingTop: "10px" }}>
-          <h4 onClick={(event)=>{
-            props.ClickOnRegisterLink();
-          }} className={styles.RegisterLink}><u>Not Registered? Sign up</u></h4>
+          <Link href={"/register"}><h4 className={styles.RegisterLink}><u>Not Registered? Sign up</u></h4></Link>
         </div>
       </form>
     </div>
