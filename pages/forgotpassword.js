@@ -24,7 +24,7 @@ const test = () => {
                 router.push("/login");
             }
             else {
-                router.push("/error");
+                router.push("/404");
             }
         }
     }

@@ -45,21 +45,23 @@ function TagsInput(props) {
 
 
     return (
-    <div className={styles.container}>
-    {tags.map((tag, index) => (
-        <div className={styles.tag} key={index}>
-            {tag}
-            <button onClick={() => deleteTag(index)}>x</button>
-        </div>
-    ))}
-    <input
-        value={input}
-        className={styles.InputTags}
-        placeholder="Enter a tag"
-        onKeyDown={onKeyDown}
-        onKeyUp={onKeyUp}
-        onChange={onChange}
-        />
+    <div className={styles.containerOutside}>
+      <div className={styles.container}>
+      {tags.map((tag, index) => (
+          <div className={styles.tag} key={index}>
+              {tag}
+              <button onClick={() => deleteTag(index)}>x</button>
+          </div>
+      ))}
+      <input
+          value={input}
+          className={styles.InputTags}
+          placeholder="Enter a tag"
+          onKeyDown={onKeyDown}
+          onKeyUp={onKeyUp}
+          onChange={onChange}
+          />
+    </div>
   </div>);
 }
 export default TagsInput; 

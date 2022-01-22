@@ -1,13 +1,21 @@
+.containerOutside{
+  width: 100%;
+  max-width: 100%;
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 15px;
+  color: black
+
+}
 .container {
     display: flex;
-    overflow: scroll;
+    overflow-x: auto;
     width: 100%;
     max-width: 100%;
-    padding-left: 14px;
-    border: 2px solid black;
+    /* border: 2px solid black;
     border-radius: 15px;
-    color: black
-  }
+    color: black */
+}
   
   .container input {
     width: 100%;

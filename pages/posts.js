@@ -1,4 +1,6 @@
 //import MiddlewarePlugin from "next/dist/build/webpack/plugins/middleware-plugin";
+import styles from "../styles/Post.module.css";
+
 import {
   Host,
   PostURL,
@@ -11,6 +13,7 @@ import DetailedPost from "../components/DetailedPost";
 import Solution from "../components/Solution";
 import {sendReq} from "../components/requests"
 import LoginPopUp from "../components/LogInPopUp";
+import { addanswer } from "../components/requests";
 import { useState } from "react";
 
 
@@ -20,19 +23,28 @@ const Post = ({ post, answers, solnComments, query }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
 
   return (
-    <div className="container-fluid" style={{ margin: "5rem" }}>
+    <div className={styles.postContainer}>
       {post.detail && <h1>Post NOT found.</h1>}
       {!post.detail && (
         <div className="post">
-        <DetailedPost data={post} setLogin ={setIsLoggedIn}/>
+        <DetailedPost className={styles.post} data={post} setLogin ={setIsLoggedIn}/>
           <div className="answers-container">
-            <h2>Answers</h2>
+            <h2 className={styles.answerTitle}>Answers</h2>
             {!answers.count && <h2>No answers found</h2>}
             {answers.count > 0 && (
               <div className="post-answers">
                 {answers.results.map((answer,index) => (
                   <Solution solution={answer} comments={solnComments[index]} key={answer.id} setLogin ={setIsLoggedIn} />
                 ))}
+                <textarea className={styles.answerInput} id="answer" type="text" placeholder="Answer!" />
+                <button
+                onClick={() =>
+                    addanswer(document.getElementById("answer").value, post.post_id, setIsLoggedIn)
+                }
+                className={styles.button} 
+                >
+                Add Answer
+                </button>
                 {answers.count > PageSize && (
                   <Pagination
                     currentPage={query.page}
@@ -74,7 +86,7 @@ export async function getServerSideProps({ query, req }) {
     console.log(err);
     return {
       redirect: {
-        destination: "/error",
+        destination: "/404",
         permanent: false,
       }
     }

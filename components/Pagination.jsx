@@ -35,7 +35,10 @@ const Pagination = (props) => {
 
         for (var i=0; i<PageNumberLimit && start+i<=props.count; i++){
             console.log("page" + (start+i));
-            pageNumber.push(<Link href={props.baseURL + "page=" + (start + i)}><a onClick={() => changePage(start + i)}>{start + i}</a></Link>)
+            if (start+i == currentPage)
+                pageNumber.push(<Link href={props.baseURL + "page=" + (start + i)}><a className="active" onClick={() => changePage(start + i)}>{start + i}</a></Link>)
+            else
+                pageNumber.push(<Link href={props.baseURL + "page=" + (start + i)}><a onClick={() => changePage(start + i)}>{start + i}</a></Link>)
         }
         if (currentPage<props.count) {
             console.log(currentPage);
@@ -49,26 +52,13 @@ const Pagination = (props) => {
     }, [start, currentPage])
 
     return (
-        <>
-        <div className="pagination">
-        {pageLinks.map((url) => {
-            return url
-        })}
+        <div className="pagination-container">
+            <div className="pagination">
+            {pageLinks.map((url) => {
+                return url
+            })}
+            </div>
         </div>
-        <style jsx>
-            {`
-            .pagination a:first-child {
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-              }
-              
-            .pagination a:last-child {
-            border-top-right-radius: 5px;
-            border-bottom-right-radius: 5px;
-            }
-            `}
-        </style>
-        </>
     )
 }
 

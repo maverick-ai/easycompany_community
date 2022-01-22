@@ -147,7 +147,6 @@ export default function Create() {
                 question
               </p>
               
-              <div className="container">
               <ReactMde
                 value={bodyvalue}
                 onChange={setbValue}
@@ -168,7 +167,6 @@ export default function Create() {
                 }
               
               />
-                </div>
             </div>
           </Col>
         </Row>

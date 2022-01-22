@@ -1,9 +1,12 @@
+import styles from "../styles/Post.module.css";
 import { DownVoteSolnURL,UpVoteSolnURL,SolutionCommentsURL,commentPageSize,Host } from "./constants";
 import {sendVote,addsolncomment,sendReq} from "./requests";
 import SolutionComment from "./SolutionComment";
 import { useState } from "react";
 import cookie from "cookie";
 import Link from "next/link"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import {faChevronUp,faChevronDown} from "@fortawesome/free-solid-svg-icons";
 const Solution = (props)=>{
 
   const [solnComment, setsolnComment] = useState(props.comments);
@@ -21,57 +24,56 @@ const Solution = (props)=>{
       };
 
   return(
-    <div className="Soln">
-          <p>{props.solution.solutionByUser}</p>
-          <Link href={`/profile?user=${props.solution.creator_by.creator_id}`}><p>{props.solution.creator_by.first_name + " " + props.solution.creator_by.last_name}</p></Link>
-          <p>User rating: {props.solution.creator_by.rating}</p>
-          <p>{props.solution.upVoteNumber} Upvotes</p>
-          <p>{props.solution.downVoteNumber} Downvotes</p>
-          <button
-          onClick={() => sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)}
-          className="btn btn-primary">
-          Upvote Answer
-          </button>
-          <button
-          onClick={() => sendVote(DownVoteSolnURL, props.solution.id, props.setLogin)}
-          className="btn btn-primary"
-          >
-          Downvote Answer
-          </button>
-          <input
-          id={`solnComment${props.solution.id}`}
-          type="text"
-          placeholder="Add Comment"
-          />
-          <button
-          onClick={() =>
-              addsolncomment(
-              document.getElementById(`solnComment${props.solution.id}`)
-                  .value,
-              props.solution.id,
-              props.setLogin
-              )
-          }
-          className="btn btn-primary"
-          >
-          Add Comment
-          </button>
+    <div className={`Soln ${styles.solution}`}>
+          <div className="row"> 
+              <div className={`col-3 col-sm-2 col-md-1 ${styles.solnvotecol}`}>
+              <FontAwesomeIcon className={props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon} icon={faChevronUp}  onClick={() => sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)} />
+              <p className={styles.voteText}>{props.solution.upVoteNumber - props.solution.downVoteNumber}</p>
+              <FontAwesomeIcon className={props.solution.downvoted ? styles.downVotedIcon : styles.VoteIcon} icon={faChevronDown}  onClick={() => sendVote(DownVoteSolnURL, props.solution.id, props.setLogin)} />
+              </div>
+              <div className={`col-9 col-sm-10 col-md-11 ${styles.solncol}`}>
+              <p className={styles.solutionBody}>{props.solution.solutionByUser}</p>
+              <Link href={`/profile?user=${props.solution.creator_by.creator_id}`}><p>- <span className={styles.userName}>{props.solution.creator_by.first_name + " " + props.solution.creator_by.last_name}</span></p></Link>
+                <div className="soln-comments-container">
+                <hr></hr>
+                <h3 className={styles.commentTitle}>Comments</h3>
+                <div className={styles.inputall}>
+                <input 
+                    className={styles.Input}
+                    id={`solnComment${props.solution.id}`}
+                    type="text"
+                    placeholder="Comment!"
+                    />
+                    <button
+                    onClick={() =>
+                      addsolncomment(
+                      document.getElementById(`solnComment${props.solution.id}`)
+                          .value,
+                      props.solution.id,
+                      props.setLogin
+                      )
+                    }
+                    className={styles.button} 
+                    >
+                    Add Comment
+                    </button>
+                  </div>
+                {solnComment && solnComment.map((com) => (
+                <SolutionComment key={com.pk} comment={com} sendVote={sendVote} setLogin={props.setLogin} />
+                ))}
 
-          <div className="soln-comments-container">
-          <h3>Comments</h3>
-          {solnComment && solnComment.map((com) => (
-              <SolutionComment key={com.pk} comment={com} sendVote={sendVote} setLogin={props.setLogin} />
-          ))}
-
-          {moreComments && solnComment.length && solnComment.length%commentPageSize==0 &&
-              <button
-              onClick={() => getnewsolncomments(props.solution.id)}
-              className="btn btn-primary"
-              >
-              Load more comments
-              </button>
-          }
-          {(!moreComments || solnComment.length%commentPageSize!=0 || !solnComment.length) && <p>No More solution Comments</p>}
+                {moreComments && solnComment.length!=0 && solnComment.length%commentPageSize==0 &&
+                <button
+                onClick={() => getnewsolncomments(props.solution.id)}
+                className={styles.button} 
+                >
+                Load more comments
+                </button>
+                }
+                {/* {(!moreComments || solnComment.length%commentPageSize!=0 || !solnComment.length) && <h4 className={styles.nomore}>......</h4>  
+                } */}
+                </div>
+          </div>
       </div>
   </div>
   );

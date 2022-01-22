@@ -4,6 +4,9 @@ import "font-awesome/css/font-awesome.css";
 import MainNavbar from "../components/navbar";
 import Head from 'next/head';
 import { CookiesProvider } from "react-cookie";
+import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
+import { config } from "@fortawesome/fontawesome-svg-core";
+config.autoAddCss = false;
 
 
 function MyApp({ Component, pageProps }) {
@@ -18,6 +21,7 @@ function MyApp({ Component, pageProps }) {
       'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
       })(window,document,'script','dataLayer','GTM-MXX23MB');`}}>
       </script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <meta charSet="UTF-8"></meta>
       </Head>
       <body>

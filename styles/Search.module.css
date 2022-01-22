@@ -1,0 +1,146 @@
+.questionsList{
+    width: 100vw !important;
+    margin: auto;
+    margin-top: 100px;
+    max-width: 1000px;
+}
+  
+.MainHeading{
+    font-size: 50px;
+    font-weight: 800;
+    margin-top: 0px;
+    margin-bottom: 50px;
+    /* box-shadow: inset 0 -20px 0 0 red; */
+}
+
+.title{
+    font-size: 36px;
+}
+
+.underline{
+    box-shadow: inset 0 -20px 0 0 #ff5757;
+}
+.underlineGreen{
+    box-shadow: inset 0 -20px 0 0 #7ed957;
+}
+
+
+.searchbox{
+    font-size: 25px;
+    border-radius: 15px;
+    border: 2px solid black;
+    padding-left: 10px;
+    width: 100%;
+}
+.searchbutton{
+    margin: 10px;
+    margin-top: 20px;
+    margin-left: 0;
+    background-color: white;
+    border: 2px solid black;
+    width: 100px;
+    border-radius: 15px;
+  }
+
+.searchtext{
+    font-size: 25px;
+    color: black;
+    margin:10px;
+    margin-left: 0;
+}
+.load {
+    margin:auto; 
+    text-align: center;
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+  }
+  .load{
+    justify-content: center;
+    display: inline-block;
+    margin:auto; 
+    text-align: center;
+    width: 80px;
+    height: 80px;
+  }
+
+  
+
+.qbox{
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.qcard{
+    border-radius: 50px;
+    border: 2px solid black;
+    padding: 10px;
+    margin: 12px;
+    margin-bottom: 30px;
+}
+
+.qcard:hover{
+    transform: scale(1.02);
+    cursor: pointer;
+    transition: 0.2s;
+    box-shadow: 2px 2px 5px grey, -2px -2px 5px grey;
+}
+
+.votebox {
+    width: 100%;
+    margin: 20px;
+
+}
+.voteText{
+    position: relative;
+    font-size: 20px;
+    font-weight: 800;
+    bottom: 3px;
+    margin: 0;
+}
+
+.upVoteNum {
+    margin: 10px 0;
+}
+
+.questionsList{
+    padding : 10px;
+}
+.category{
+    padding: 2px 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    border-radius: 15px;
+    font-size: 15px;
+    font-weight: 800;
+    color: white;
+    background-color: #7ed957;
+}
+.catlist{
+    display: flex;
+
+}
+.upVoteIcon{
+    color: #7ed957;
+    padding-left:5px ;
+    font-size: 30px;
+    padding-bottom: 0;
+}
+.downVoteIcon{
+    color: #ff5757;
+    padding-left:5px ;
+    font-size: 30px;
+    padding-bottom: 0;
+}
+
+.nopost{
+    color: #ff5757;
+    font-size: 35px;
+    font-weight: 800;
+    text-align: center;
+}
+
+.voteCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

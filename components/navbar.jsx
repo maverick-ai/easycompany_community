@@ -9,7 +9,7 @@ function MainNavbar(props) {
   return (
     <Navbar collapseOnSelect={true}  expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="/questions?page=1">
+        <Navbar.Brand href="/">
         <span style={{boxShadow: "inset 0 -15px 0 0 #7ed957",fontSize:"40px",fontWeight:"700"}}>easycommunity</span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" className={`${classes.Toggler}`} style={{ transform: "translateY(20%)" ,borderColor:"transparent",color: "#7ed957"}}>
@@ -17,7 +17,7 @@ function MainNavbar(props) {
         </ Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
-          <Nav.Link href="/search" className={`${classes.a}`}>
+          <Nav.Link href="/questions?page=1" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >

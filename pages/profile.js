@@ -82,7 +82,7 @@ export async function getServerSideProps({query, req}){
         else {
             return {
                 redirect: {
-                destination: "/error",
+                destination: "/404",
                 permanent: false,
                 }
             }

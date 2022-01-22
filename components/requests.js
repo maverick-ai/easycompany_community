@@ -87,7 +87,7 @@ const sendReq = async(url, tokenCookie=null, method="GET", data=null, setfunc=nu
     }
     else {
       try {
-        router.push("/error");
+        router.push("/404");
       }
       catch {
         throw ("redirect error")
