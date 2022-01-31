@@ -3,21 +3,35 @@ import { sendReq } from "../../components/requests";
 import {useState} from "react"
 import Link from "next/link"
 import Pagination from '../../components/Pagination';
+import styles from "../../styles/Questions.module.css"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import {faArrowAltCircleUp,faArrowAltCircleDown} from "@fortawesome/free-solid-svg-icons";
 
 
 const UserPosts = ({userPosts, query, login}) => {  
     const [isLoggedIn, setIsLoggedIn] = useState(login);
 
     return(
-    <div className="user-posts-list">
+    <div className={`${styles.questionsList} container`}>
         <div className="questions-list">
             {userPosts.count &&
                 userPosts.results.map((data) => (
-                <div key={data.pk}>
-                    <Link href={`/posts/?postid=${data.pk}&page=1`}><a><strong> {data.title}</strong></a></Link>
-                    <p>{data.upVoteNumber} Upvotes</p>
-                    <p>{data.downVoteNumber} Downvotes</p>
+                <Link href={`/posts/?postid=${data.pk}&page=1`}><div className={`row ${styles.qcard}`} key={data.pk}>
+                <div className={`col-3 col-sm-2 ${styles.voteCol}`}>
+                    <FontAwesomeIcon className={styles.upVoteIcon} icon={faArrowAltCircleUp} />
+                    <p className={styles.voteText}>{data.upVoteNumber - data.downVoteNumber}</p>
+                    <FontAwesomeIcon className={styles.downVoteIcon} icon={faArrowAltCircleDown}/>
                 </div>
+
+                <div className={`col-9 col-sm-10 ${styles.qbox}`}>
+                    <p className={styles.title}><strong> {data.title.length>60?data.title.substring(0,60) + " ...": data.title}</strong></p>
+                    <div className={`category-list ${styles.catlist}`}>
+                        {data.categoryOfThePost.map((category)=> (
+                            <p className={styles.category}>{category.categoryForPost}</p>
+                        ))}
+                    </div>
+                </div> 
+                </div></Link>
             ))
             }
         </div>

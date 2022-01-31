@@ -52,7 +52,7 @@ function MainNavbar(props) {
                 log in
               </button>
             </Nav.Link>
-            <Nav.Link href="" className={`${classes.a}`}>
+            <Nav.Link href="/profile" className={`${classes.a}`}>
               <button
                 className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
               >

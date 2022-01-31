@@ -109,6 +109,8 @@ const sendVote = async (url, id, setFunc) => {
         const resVote = await sendReq(url + id + "/",  document.cookie, "PUT", null, setFunc);
         if (resVote.message) {
           alert(resVote.message);
+          if(resVote.message!="Creator cannot vote")
+          window.location.reload();
         }
       }
       else {
@@ -124,7 +126,9 @@ const addanswer = async (answer, id, setFunc) => {
     });
     console.log(post);
     const resAddAnswer = await sendReq(AddSolnURL, document.cookie, "POST", post, setFunc);
-    window.location.reload();
+    if (!resAddAnswer.status){
+      window.location.reload();
+    }
     // const res = await fetch(AddSolnURL, {
     //   method: "POST",
     //   headers: {
@@ -153,13 +157,15 @@ const addpostcomment = async (comment, id, setFunc) => {
       post: id,
   });
   const res = await sendReq(AddPostcommentURL, document.cookie, "POST", postComment, setFunc);
-  console.log(res);
-
-  window.location.reload();
+  console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+  if (!res.status){
+    window.location.reload();
   }
+}
   else{
     setFunc(false);
   }
+  
     
 
     // const res = await fetch(AddPostcommentURL, {
@@ -200,8 +206,10 @@ const addsolncomment = async (comment, id, setFunc) => {
     //   body: solncomment,
     // });
     console.log(res);
-
-    window.location.reload();
+    if (!res.status){
+      window.location.reload();
+    }
+    
   }
   else {
     setFunc(false);

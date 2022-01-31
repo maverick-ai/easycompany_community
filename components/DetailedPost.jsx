@@ -8,20 +8,15 @@ import PostComment from "./PostComments"
 import cookie from "cookie"
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import {faChevronUp,faChevronDown} from "@fortawesome/free-solid-svg-icons";
+import {faChevronUp,faChevronDown,faCheck} from "@fortawesome/free-solid-svg-icons";
 
 
 const DetailedPost = (props) => {
 
-    const [postComment, setpostComment] = useState(props.data.comments);
-    const [moreComments, setMoreComments] = useState(true);
+    const [postComment, setpostComment] = useState(props.data.comments.comments);
 
     const getnewpostcomments = async (id, i) => {
       const newComments = await sendReq(`${PostCommentsURL}${id}/?page=${postComment.length / commentPageSize + 1}`, document.cookie);
-      if (newComments.detail) {
-          console.log(newComments.detail);
-          setMoreComments(false);
-      }
       if (newComments.results) {
         setpostComment((old) => [...old, ...newComments.results]);
       }
@@ -33,7 +28,7 @@ const DetailedPost = (props) => {
                 <div className={`col-3 col-sm-2 col-md-1 ${styles.colPaddingLeft}`}>
                     <FontAwesomeIcon className={props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon} icon={faChevronUp}  onClick={() => sendVote(UpVotePostURL, props.data.post_id, props.setLogin)} />
                     <p className={styles.voteText}>{props.data.upVoteNumber - props.data.downVoteNumber}</p>
-                    <FontAwesomeIcon className={props.data.downvoted? styles.downVotedIcon: styles.VoteIcon} icon={faChevronDown} onClick={() => sendVote(UpVotePostURL, props.data.post_id, props.setLogin)}/>
+                    <FontAwesomeIcon className={props.data.downvoted? styles.downVotedIcon: styles.VoteIcon} icon={faChevronDown} onClick={() => sendVote(DownVotePostURL, props.data.post_id, props.setLogin)}/>
                 </div>
                 <div className={`col-9 col-sm-10 col-md-11 ${styles.colPaddingRight}`}>
                     <h1 className={styles.posttitle}>{props.data.title}</h1>
@@ -53,7 +48,7 @@ const DetailedPost = (props) => {
                     <div className="post-comments-container">
                         <h2 className={styles.commentTitle}>Comments</h2>
                         <div className={styles.inputall}></div>
-                        <input className={styles.Input} id="postComment" type="text" placeholder="Comment!" />
+                        <input className={`${styles.Input} ${styles.commentInput}`} id="postComment" type="text" placeholder="Comment!" />
                         <button
                         onClick={() =>
                             addpostcomment(
@@ -72,17 +67,14 @@ const DetailedPost = (props) => {
                             <PostComment key={com.pk} comment={com} sendVote={sendVote} setLogin={props.setLogin}/>
                             ))}
                             
-                        {moreComments && postComment.length!=0 && (postComment.length%commentPageSize==0) && (
+                        {postComment && postComment.length < props.data.comments.count && (postComment.length%commentPageSize==0) && (
                             <button
                             onClick={() => getnewpostcomments(props.data.post_id)}
-                            className={styles.button} 
+                            className={`${styles.button} ${styles.commentButton}`} 
                             >
                             Load more comments
                             </button>)
                         }
-                        {/* { (!moreComments || !postComment.length || postComment.length%commentPageSize!=0) &&
-                            <h4 className={styles.nomore}>......</h4>  
-                        } */}
                     </div>
                 </div>
             </div>

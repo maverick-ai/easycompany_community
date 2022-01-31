@@ -7,8 +7,41 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { RegisterUserURL, Host } from "../components/constants";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import publicIp from 'public-ip';
 
-export default function Register() {
+
+
+function Register(req) {
+  //NextRequest
+  let userDetails = {}
+  useEffect(async()=>{
+    userDetails.os = navigator.oscpu
+    userDetails.ip = await publicIp.v4();
+    let userAgent = navigator.userAgent;
+    let browserName="";
+    if(userAgent.match(/chrome|chromium|crios/i)){
+      browserName = "Chrome";
+    }else if(userAgent.match(/firefox|fxios/i)){
+      browserName = "Firefox";
+    }  else if(userAgent.match(/safari/i)){
+      browserName = "Safari";
+    }else if(userAgent.match(/opr\//i)){
+      browserName = "Opera";
+    } else if(userAgent.match(/edg/i)){
+      browserName = "Edge";
+    }else if(userAgent.match(/trident/i)){
+      browserName = "Trident";
+    }else if(userAgent.match(/msie/i)){
+      browserName = "IE";
+    }
+    userDetails.browser = browserName;
+    
+  },[])   
+
+
+  // console.log(navigator.platform);
+  
   const [cookie, setCookie] = useCookies(["token"]);
   const [message, setMessage] = useState("");
   const firstName = useRef();
@@ -36,6 +69,7 @@ export default function Register() {
   ));
 
   async function sendRegisterRequest() {
+    // console.log(await publicIp.v4());
     const DateOfBirth = `${startDate.getFullYear()}-${
       startDate.getMonth() + 1
     }-${startDate.getDate()}`;
@@ -55,11 +89,12 @@ export default function Register() {
         last_name: lastName.current.value,
         work: "Fighting criminals at night and running Wayne Enterprise in the day",
         university: "League of shadows",
+        userdetails: userDetails
       });
 
-
+      const response ="";
       try {
-        const response = await fetch(RegisterUserURL, {
+         response = await fetch(RegisterUserURL, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -73,25 +108,37 @@ export default function Register() {
         });
 
         if (response.status >= 300) {
-          throw(response.status);
+          throw(response);
       }
       }
       catch (error) {
-        console.log(error);
-        alert("Error in registering user,Try again later.");
+        try{
+          const res = await error.json()
+          console.log(res);
+          if (res.non_field_errors)
+            alert(res.non_field_errors);
+          else if (res.password1)
+            alert(res.password1);
+          else if (res.email)
+            alert(res.email);
+          else
+            alert("Cannot register user right now, please try again later");
+        }
+        catch {
+          console.log(error);
+          alert(error);
+        }
       }
       
 
       if (response.ok) {
-        var cookie = require("cookie");
         const data = await response.json();
-        console.log(data.key);
         setCookie("token", data.key, {
           path: "/",
           maxAge: 2592000,
           sameSite: true,
         });
-        router.push("/");
+        router.push("/questions");
       } else {
         setMessage("Something went wrong");
       }
@@ -210,3 +257,6 @@ export default function Register() {
     </div>
   );
 }
+
+export default Register;
+

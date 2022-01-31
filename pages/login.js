@@ -4,7 +4,6 @@ import { LogInURL, Host } from "../components/constants";
 import cookie from "cookie";
 import { useCookies } from "react-cookie"
 import { useRouter } from 'next/router';
-import {sendReq} from "../components/requests";
 import LogInForm from "../components/LogInForm";
 
 function Login() {
@@ -19,7 +18,6 @@ function Login() {
       email: emailInputRef.current.value,
       password:passwordInputRef.current.value,
   });
-  var cookie = require('cookie');
     const response=await fetch(LogInURL,{method:'POST',headers:{
       'Content-Type': 'application/json',
       'Accept':'*/*',
@@ -30,16 +28,16 @@ function Login() {
     },body:credentials});
 
     if(response.ok){
-      
       const data = await response.json();
-      localStorage.setItem("token",data.key);
       setCookie("token", data.key, {
         path: "/",
         maxAge: 2592000,
         sameSite: true,
       })
+      router.push("/questions");
     }
     else{
+      alert("Incorrect email or password");
       setloginCorrectState(false);
       setTimeout(()=>{
         setloginCorrectState(true)

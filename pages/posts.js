@@ -1,5 +1,9 @@
 //import MiddlewarePlugin from "next/dist/build/webpack/plugins/middleware-plugin";
 import styles from "../styles/Post.module.css";
+import "react-mde/lib/styles/css/react-mde-all.css";
+import remarkGfm from "remark-gfm";
+import ReactMde from "react-mde";
+import ReactMarkdown from "react-markdown";
 
 import {
   Host,
@@ -21,40 +25,60 @@ import { useState } from "react";
 const Post = ({ post, answers, solnComments, query }) => {
   
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [ansValue, setAnsValue] = useState("");
+  const [selectedTab, setSelectedTab] = useState("write");
 
   return (
     <div className={styles.postContainer}>
       {post.detail && <h1>Post NOT found.</h1>}
       {!post.detail && (
         <div className="post">
-        <DetailedPost className={styles.post} data={post} setLogin ={setIsLoggedIn}/>
+        <DetailedPost className={styles.post} data={post}  setLogin ={setIsLoggedIn}/>
           <div className="answers-container">
             <h2 className={styles.answerTitle}>Answers</h2>
             {!answers.count && <h2>No answers found</h2>}
             {answers.count > 0 && (
               <div className="post-answers">
                 {answers.results.map((answer,index) => (
-                  <Solution solution={answer} comments={solnComments[index]} key={answer.id} setLogin ={setIsLoggedIn} />
+                  <Solution solution={answer}  currentuser={post.current_user} accepted ={post.acceptedSoln} creator={post.creator_by.creator_id}  comments={solnComments[index]} key={answer.id} setLogin ={setIsLoggedIn} />
                 ))}
-                <textarea className={styles.answerInput} id="answer" type="text" placeholder="Answer!" />
-                <button
-                onClick={() =>
-                    addanswer(document.getElementById("answer").value, post.post_id, setIsLoggedIn)
-                }
-                className={styles.button} 
-                >
-                Add Answer
-                </button>
-                {answers.count > PageSize && (
-                  <Pagination
-                    currentPage={query.page}
-                    count={Math.ceil(answers.count / PageSize)}
-                    baseURL={`/posts?postid=${query.postid}&`}
-                  />
-                )}
-            </div>
+              </div>
             )}
-          </div>
+            <ReactMde
+            value={ansValue}
+            onChange={setAnsValue}
+            selectedTab={selectedTab}
+            onTabChange={setSelectedTab}
+            childProps= {
+                {
+                  textArea: {
+                    placeholder: "Answer!",
+                    className: `${styles.bodyInput}`
+                  }
+              }
+            }
+            toolbarCommands={[["header","bold", "italic","strikethrough"], ["link","quote","image"],["unordered-list","ordered-list","checked-list"]]}
+            generateMarkdownPreview={(markdown) =>
+              Promise.resolve(<ReactMarkdown children={markdown} remarkPlugins={remarkGfm} />)
+            }
+          
+          />
+            <button
+            onClick={() =>
+                addanswer(ansValue, post.post_id, setIsLoggedIn)
+            }
+            className={styles.button} 
+            >
+            Add Answer
+            </button>
+            {answers.count > PageSize && (
+              <Pagination
+                currentPage={query.page}
+                count={Math.ceil(answers.count / PageSize)}
+                baseURL={`/posts?postid=${query.postid}&`}
+              />
+            )}
+        </div>
       </div>
   )}
   {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}

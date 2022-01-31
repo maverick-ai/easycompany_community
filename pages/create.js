@@ -13,6 +13,7 @@ import remarkGfm from "remark-gfm";
 import {getDefaultToolbarCommands} from "react-mde"
 import {sendReq} from "../components/requests";
 import LoginPopUp from "../components/LogInPopUp";
+import router from "next/router";
 
 
 let initialState = 0;
@@ -73,17 +74,10 @@ export default function Create() {
       postByUser: bodyvalue,
   });
   console.log(post);
-  try{
     if(document.cookie){
-      const response = sendReq(CreatePostURL, document.cookie, "POST", post,setIsLoggedIn);
-      console.log(response);
-      if (response.status >= 400) {
-        console.log(1);
-        const router = Router;
-        router.push("/login")
-      }
-      else if (response.status >= 300) {
-        throw(response.status);
+      const response = await sendReq(CreatePostURL, document.cookie, "POST", post,setIsLoggedIn);
+      if (!response.status){
+        router.push(`/posts?postid=${response.post_id}&page=1`);
       }
     }
     else{
@@ -99,13 +93,6 @@ export default function Create() {
     //   'Host':Host,
     //   'Authorization':`Token ${cookie.parse(document.cookie).token}`
     // },body:post});
-
-   
-  }
-  catch (err) {
-    console.log(err);
-    
-  }
 }
     
     const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -173,7 +160,7 @@ export default function Create() {
         <Row className={styles.bodyRow}>
           <Col className={`align-self-center`}>
             <div className={`${styles.bodyDiv} mx-auto`}>
-              <h2 className={styles.CategoriesHeading}>Category Tags</h2>
+              <h2 className={styles.CategoriesHeading}>category tags</h2>
               <p className={styles.CategoryParagraph}>
               Think of Category Tags as Hashtags. It helps us to categories your post to reach the maximum audience.
               </p>

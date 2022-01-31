@@ -12,14 +12,12 @@ const Questions = ({questions, query}) => {
  
     return (
         <div className={`${styles.questionsList} container`}>
-        {questions.count &&
+        {questions.count!=0 &&
             questions.results.map((data) => (
             <Link href={`/posts/?postid=${data.pk}&page=1`}><div className={`row ${styles.qcard}`} key={data.pk}>
             <div className={`col-3 col-sm-2 ${styles.voteCol}`}>
                 <FontAwesomeIcon className={styles.upVoteIcon} icon={faArrowAltCircleUp} />
-                <p className={`${styles.voteText}`}>{data.upVoteNumber}</p>
-                <div className={styles.hrDiv}></div>
-                <p className={styles.voteText}>{data.downVoteNumber}</p>
+                <p className={styles.voteText}>{data.upVoteNumber - data.downVoteNumber}</p>
                 <FontAwesomeIcon className={styles.downVoteIcon} icon={faArrowAltCircleDown}/>
             </div>
 
@@ -27,7 +25,7 @@ const Questions = ({questions, query}) => {
                 <p className={styles.title}><strong> {data.title.length>60?data.title.substring(0,60) + " ...": data.title}</strong></p>
                 <div className={`category-list ${styles.catlist}`}>
                     {data.categoryOfThePost.map((category)=> (
-                        <p className={styles.category}>{category.categoryForPost}</p>
+                        <p className={styles.category} key={category.categoryOfThePost}>{category.categoryForPost}</p>
                     ))}
                 </div>
             </div>

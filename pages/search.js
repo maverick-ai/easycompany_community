@@ -56,8 +56,7 @@ const Content = () => {
           <Link href={`/posts/?postid=${data.pk}&page=1`}><div className={`row ${styles.qcard}`} key={data.pk}>
             <div className={`col-3 col-md-2 ${styles.voteCol}`}>
               <FontAwesomeIcon className={styles.upVoteIcon} icon={faArrowAltCircleUp} />
-              <p className={`${styles.voteText} ${styles.upVoteNum}`}>{data.upVoteNumber}</p>
-              <p className={styles.voteText}>{data.downVoteNumber}</p>
+              <p className={styles.voteText}>{data.upVoteNumber - data.downVoteNumber}</p>
               <FontAwesomeIcon className={styles.downVoteIcon} icon={faArrowAltCircleDown}/>
             </div>
 
