@@ -92,7 +92,7 @@ function Register(req) {
         userdetails: userDetails
       });
 
-      const response ="";
+      let response ="";
       try {
          response = await fetch(RegisterUserURL, {
           method: "POST",
