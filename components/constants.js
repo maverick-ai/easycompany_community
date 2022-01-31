@@ -1,8 +1,8 @@
-const DomainURL = 'http://127.0.0.1:8000/';
+const DomainURL = 'backend.easycompany.space';
 const CreatePostURL=`${DomainURL}api/create_post/`;
 const LogInURL = `${DomainURL}api/login/`;
 const RegisterUserURL = `${DomainURL}api/registration/`;
-const Host="127.0.0.1:8000";
+const Host="backend.easycompany.space";
 const SearchURL=`${DomainURL}api/search_vector/`;
 const PostURL=`${DomainURL}api/post/`;
 const AnswersURL=`${DomainURL}api/solutions/`;
@@ -30,7 +30,7 @@ const PasswordResetPost=`${DomainURL}api/password/reset/confirm`;
 const PasswordResetGet=`${DomainURL}api/password/reset/`;
 const AcceptSolnURL=`${DomainURL}api/accept_soln/`;
 
-const PageSize=10;
+const PageSize=20;
 const commentPageSize=3;
 const PageNumberLimit=5;
 
