@@ -1,4 +1,4 @@
-const DomainURL = 'backend.easycompany.space';
+const DomainURL = 'https://backend.easycompany.space/';
 const CreatePostURL=`${DomainURL}api/create_post/`;
 const LogInURL = `${DomainURL}api/login/`;
 const RegisterUserURL = `${DomainURL}api/registration/`;
