@@ -121,6 +121,18 @@ function Register(req) {
             alert(res.password1);
           else if (res.email)
             alert(res.email);
+          else if (res.first_name)
+            alert(res.first_name);
+          else if (res.last_name)
+            alert(res.last_name);
+          else if (res.date_of_birth)
+            alert(res.date_of_birth);
+          else if (res.gender)
+            alert(res.gender);
+          else if (res.work)
+            alert(res.work);
+          else if (res.university)
+            alert(res.university);
           else
             alert("Cannot register user right now, please try again later");
         }
