@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:media="http://search.yahoo.com/mrss/"
+xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+xmlns:dcterms="http://purl.org/dc/terms/"
+xmlns:spotify="http://www.spotify.com/ns/rss"
+xmlns:psc="http://podlove.org/simple-chapters/"
+version="2.0">
+  <channel>
+    <title>easycompany</title>
+    <itunes:owner>
+        <itunes:email>sbansal793@gmail.com</itunes:email>
+    </itunes:owner>
+    <itunes:author>Sarthak Bansal</itunes:author>
+    <description>easycompany is the perfect online community for travellers. Our community of travellers are always here to help, whether you're looking for advice or answers on where to stay or how to get around. With easycompany, you'll never have to worry about planning your next trip again! Our mobile application is the solution for anyone looking to find travel partners. Whether you're a group of friends looking to explore a new destination together, or a solo traveler in search of someone to share the experience with, easycompany has you covered. With our user-friendly platform, it's never been easier to connect with likeminded people and plan your dream trip.</description>
+    <itunes:image href="https://easycompany.sgp1.cdn.digitaloceanspaces.com/easycompany.space/logo/easylogo.jpg"/>
+    <language>en-us</language>
+    <link>https://easycompany.space/</link>
+    <item>
+      <title>How to Become a Travel Influencer: The Ultimate Guide (ft Ami Bhat)</title>
+      <description>If you want to be a travel influencer and make money with your blog, vlog, or social media account- this video is for you. In this interview Ami Bhat shares her top tips for becoming a professional travel blogger!</description>
+      <pubDate>Tue, 29 Mar 2022 4:00:00 GMT</pubDate>
+      <enclosure url="https://easycompany.sgp1.cdn.digitaloceanspaces.com/easycompany.space/Podcast/PodcastWithAmi.mp3"
+                 type="audio/mpeg" length="34216300"/>
+      <itunes:duration>26:19</itunes:duration>
+      <guid isPermaLink="false">dzpodtop10</guid>
+    </item>
+  </channel>
+</rss>
