@@ -207,8 +207,8 @@ export default function Home() {
             ></input>
           </Col>
         </Row>
-        <Row className={styles.RowInput}>
-          <Col className={`${styles.InputHeadingDiv}`}>
+        <Row className={`${styles.RowInput}`}>
+          <Col className={`${styles.InputHeadingDiv}`}  align="center">
            <button className={styles.grad}>Right Now! Chek your travel score</button>
           </Col>
         </Row>
