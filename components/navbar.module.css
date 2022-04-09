@@ -6,7 +6,7 @@
   }
 
   .logoImage {
-    height: 50px;
+    /* transform:translateY(15%) ; */
   }
 
   .btn:focus, .btn:active {
@@ -20,6 +20,13 @@
 
   .Toggler:focus, .Toggler:active {
     box-shadow: 0px 0px 0 1.5px transparent !important;
+  }
+
+
+  .Gradientbars{
+    background: -webkit-linear-gradient(0deg,#E32A34, #B50EAE);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
 
   .spanButton{

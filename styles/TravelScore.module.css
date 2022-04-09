@@ -2,6 +2,11 @@
     padding: 0px;
 }
 
+.RowMainTextDiv{
+  padding-left: 20px;
+  right: 20px;
+}
+
 .PaperPlane{
     display: inline-block;
     height:50px;
@@ -14,7 +19,7 @@
   }
   
   .MainHeading{
-    font-size: 50px;
+    font-size: 64px;
     font-weight: 800;
     display:block;
     max-width: fit-content;
