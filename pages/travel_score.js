@@ -19,7 +19,7 @@ export default function Home() {
     startLng: (Math.random() - 0.5) * 360,
     endLat: (Math.random() - 0.5) * 180,
     endLng: (Math.random() - 0.5) * 360,
-    color: ["#E32A34",'#B50EAE' ]
+    color: ["#E32A34", "#B50EAE"],
   }));
 
   useEffect(() => {
@@ -64,14 +64,21 @@ export default function Home() {
                 />
               </Col>
             </Row>
+            <Row className={styles.RowSubMainTextDiv}>
+              <Col className={`${styles.MainHeadingDiv}`}>
+                <h3 className={`${styles.MainSubHeading} `}>
+                See how your travel compared to other people. How do you measure up? Are you a world traveler or a armchair adventurer?
+                </h3>
+              </Col>
+            </Row>
           </Col>
           <Col md={true} className={styles.globeCol}>
-          <Globe
-            arcsData={arcsData}
-            arcColor={'color'}
-            arcDashLength={() => Math.random()}
-            arcDashGap={() => Math.random()}
-            arcDashAnimateTime={() => Math.random() * 4000 + 500}
+            <Globe
+              arcsData={arcsData}
+              arcColor={"color"}
+              arcDashLength={() => Math.random()}
+              arcDashGap={() => Math.random()}
+              arcDashAnimateTime={() => Math.random() * 4000 + 500}
               width={globeSize}
               height={globeSize}
               backgroundColor="rgba(0,0,0,0)"
@@ -80,26 +87,132 @@ export default function Home() {
               hexPolygonResolution={3}
               hexPolygonMargin={0.3}
               hexPolygonColor={(x) => {
-                return ['#B50EAE', '#CC1C71', '#D92350', '#E32A34'][Math.round(Math.random() * 3)]
-              
+                return ["#B50EAE", "#CC1C71", "#D92350", "#E32A34"][
+                  Math.round(Math.random() * 3)
+                ];
               }}
             />
           </Col>
         </Row>
-      </Container>
-      <Container fluid="md" className={styles.TakingOrderDiv}>
-        <Row>
-          <Col md={true} className={`align-self-center text-center `}>
-            <h1 className={`${styles.MainHeading} `}>
-              <span>
-                Are you still travelling like in the{" "}
-                <span className={styles.underline}>2010s</span> ?
-              </span>
-            </h1>
+        <Row className={styles.RowInput}>
+          <Col className={`${styles.InputHeadingDiv}`}>
+            <p className={`${styles.InputHeading} `}>
+              How many days do you go for travel in a year ? (in days)
+            </p>
+            <input
+              className={`${styles.InputStyle} `}
+              type="number"
+              name="DaysInAYear"
+              min="0"
+              max="365"
+              placeholder="18"
+            ></input>
+          </Col>
+        </Row>
+        <Row className={styles.RowInput}>
+          <Col className={`${styles.InputHeadingDiv}`}>
+            <p className={`${styles.InputHeading} `}>
+            What is the longest time you have spent on any of your trips? (in days)
+            </p>
+            <input
+              className={`${styles.InputStyle} `}
+              type="number"
+              name="LongestTrip"
+              min="0"
+              max="365"
+              placeholder="9"
+            ></input>
+          </Col>
+        </Row>
+        <Row className={styles.RowInput}>
+          <Col className={`${styles.InputHeadingDiv}`}>
+            <p className={`${styles.InputHeading} `}>
+            How much you spent generally on a 3 day trip? (in Rupees)
+            </p>
+            <input
+              className={`${styles.InputStyle} `}
+              type="number"
+              name="Budget"
+              min="0"
+              max="365"
+              placeholder="8000"
+            ></input>
+          </Col>
+        </Row>
+        <Row className={styles.RowInput}>
+          <Col className={`${styles.InputHeadingDiv}`}>
+            <p className={`${styles.InputHeading} `}>
+            How many places you have traveled to?
+            </p>
+            <input
+              className={`${styles.InputStyle} `}
+              type="number"
+              name="DaysInAYear"
+              min="0"
+              max="365"
+              placeholder="21"
+            ></input>
+          </Col>
+        </Row>
+        <Row className={styles.RowInput}>
+          <Col className={`${styles.MainHeadingDiv}`}>
+            <p className={`${styles.InputHeading} `}>
+            Have you travelled to outside India?
+            </p>
+            <tbody>
+          <tr>
+          <div className={styles.tableRowPadding}></div>
+            <td>
+              <label className={styles.RadioButtonLabel}>
+              <input
+             
+                type="radio"
+                name="OutsideIndia"
+              />
+              <span className={`${styles.checkmark}`}> </span>
+              </label>
+            </td>
+            <td>
+            <span className={styles.labelClassName}>Yes</span>
+            </td>
+          </tr>
+          <tr>
+            <div className={styles.tableRowPadding}></div>
+            <td>
+              <label className={styles.RadioButtonLabel}>
+              <input
+                type="radio"
+                name="OutsideIndia"
+              />
+              <span className={`${styles.checkmark}`}> </span>
+              </label>
+            </td>
+            <td>
+              <span className={styles.labelClassName}>No</span>
+            </td>
+          </tr>
+        </tbody>
+          </Col>
+        </Row>
+        <Row className={styles.RowInput}>
+          <Col className={`${styles.InputHeadingDiv}`}>
+            <p className={`${styles.InputHeading} `}>
+            Your email address: 
+            </p>
+            <input
+              className={`${styles.InputStyle} `}
+              type="text"
+              name="email"
+              placeholder="abc@email.com"
+            ></input>
+          </Col>
+        </Row>
+        <Row className={styles.RowInput}>
+          <Col className={`${styles.InputHeadingDiv}`}>
+           <button className={styles.grad}>Right Now! Chek your travel score</button>
           </Col>
         </Row>
       </Container>
-      
     </div>
   );
 }
