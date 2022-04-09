@@ -127,7 +127,7 @@ export default function Home() {
         <Row className={styles.RowInput}>
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
-            How much you spent generally on a 3 day trip? (in Rupees)
+            How much you spent generally on a 4day/3night trip? (in Rupees)
             </p>
             <input
               className={`${styles.InputStyle} `}
