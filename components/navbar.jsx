@@ -13,7 +13,8 @@ function MainNavbar(props) {
           <Image
             className={classes.logoImage}
             alt="logo"
-            src={Logo}
+            src="/easycommunity.png"
+            // src={Logo}
             height={50}
             width={230}
             quality={100}
