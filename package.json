@@ -33,6 +33,7 @@
     "react-mde": "^11.5.0",
     "remark-gfm": "^3.0.1",
     "sass": "^1.45.1",
+    "sharp": "^0.30.3",
     "typewriter-effect": "^2.18.2"
   },
   "devDependencies": {
