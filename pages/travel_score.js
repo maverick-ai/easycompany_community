@@ -14,6 +14,8 @@ if (typeof window !== "undefined") Globe = require("react-globe.gl").default;
 export default function Home() {
   const [countries, setCountries] = useState({ features: [] });
   const [globeSize, setGlobeSize] = useState(400);
+  const [open, setOpen] = useState(false);
+  const closeModal = () => setOpen(false);
   const router = useRouter();
   const N = 20;
   const arcsData = [...Array(N).keys()].map(() => ({
@@ -46,6 +48,11 @@ export default function Home() {
       }
     });
   }, []);
+
+
+  async function handleSubmit(){
+    setOpen(true);
+  }
 
   return (
     <div className={styles.ParentDiv}>
@@ -211,8 +218,8 @@ export default function Home() {
         </Row>
         <Row className={`${styles.RowInput}`}>
           <Col className={`${styles.InputHeadingDiv}`} align="center">
-            <button className={styles.grad}>Check out your travel score, Right Now!</button>
-            <Popup trigger={<button className={styles.grad}>Check out your travel score, Right Now!</button>} position="center center" modal
+            <button onClick={handleSubmit} className={styles.grad} >Check out your travel score, Right Now!</button>
+            <Popup open={open} position="center center" modal onClose={closeModal} closeOnDocumentClick
               nested>
               <div className={`${styles.PopupMainDiv}`}>
                 <div className={`${styles.PopupMainDiv} popup-btn-container`}>
