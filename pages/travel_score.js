@@ -6,6 +6,8 @@ import PaperPlane from "../public/paperplane.png";
 import Typewriter from "typewriter-effect";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 let Globe = () => null;
 if (typeof window !== "undefined") Globe = require("react-globe.gl").default;
 
@@ -67,7 +69,7 @@ export default function Home() {
             <Row className={styles.RowSubMainTextDiv}>
               <Col className={`${styles.MainHeadingDiv}`}>
                 <h3 className={`${styles.MainSubHeading} `}>
-                See how your travel compared to other people. How do you measure up? Are you a world traveler or a armchair adventurer?
+                  See how your travel compared to other people. How do you measure up? Are you a world traveler or a armchair adventurer?
                 </h3>
               </Col>
             </Row>
@@ -112,7 +114,7 @@ export default function Home() {
         <Row className={styles.RowInput}>
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
-            What is the longest time you have spent on any of your trips? (in days)
+              What is the longest time you have spent on any of your trips? (in days)
             </p>
             <input
               className={`${styles.InputStyle} `}
@@ -127,7 +129,7 @@ export default function Home() {
         <Row className={styles.RowInput}>
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
-            How much you spent generally on a 4day/3night trip? (in Rupees)
+              How much you spent generally on a 4day/3night trip? (in Rupees)
             </p>
             <input
               className={`${styles.InputStyle} `}
@@ -142,7 +144,7 @@ export default function Home() {
         <Row className={styles.RowInput}>
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
-            How many places you have traveled to?
+              How many places you have traveled to?
             </p>
             <input
               className={`${styles.InputStyle} `}
@@ -157,47 +159,47 @@ export default function Home() {
         <Row className={styles.RowInput}>
           <Col className={`${styles.MainHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
-            Have you travelled to outside India?
+              Have you travelled to outside India?
             </p>
             <tbody>
-          <tr>
-          <div className={styles.tableRowPadding}></div>
-            <td>
-              <label className={styles.RadioButtonLabel}>
-              <input
-             
-                type="radio"
-                name="OutsideIndia"
-              />
-              <span className={`${styles.checkmark}`}> </span>
-              </label>
-            </td>
-            <td>
-            <span className={styles.labelClassName}>Yes</span>
-            </td>
-          </tr>
-          <tr>
-            <div className={styles.tableRowPadding}></div>
-            <td>
-              <label className={styles.RadioButtonLabel}>
-              <input
-                type="radio"
-                name="OutsideIndia"
-              />
-              <span className={`${styles.checkmark}`}> </span>
-              </label>
-            </td>
-            <td>
-              <span className={styles.labelClassName}>No</span>
-            </td>
-          </tr>
-        </tbody>
+              <tr>
+                <div className={styles.tableRowPadding}></div>
+                <td>
+                  <label className={styles.RadioButtonLabel}>
+                    <input
+
+                      type="radio"
+                      name="OutsideIndia"
+                    />
+                    <span className={`${styles.checkmark}`}> </span>
+                  </label>
+                </td>
+                <td>
+                  <span className={styles.labelClassName}>Yes</span>
+                </td>
+              </tr>
+              <tr>
+                <div className={styles.tableRowPadding}></div>
+                <td>
+                  <label className={styles.RadioButtonLabel}>
+                    <input
+                      type="radio"
+                      name="OutsideIndia"
+                    />
+                    <span className={`${styles.checkmark}`}> </span>
+                  </label>
+                </td>
+                <td>
+                  <span className={styles.labelClassName}>No</span>
+                </td>
+              </tr>
+            </tbody>
           </Col>
         </Row>
         <Row className={styles.RowInput}>
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
-            Your email address: 
+              Your email address:
             </p>
             <input
               className={`${styles.InputStyle} `}
@@ -208,8 +210,28 @@ export default function Home() {
           </Col>
         </Row>
         <Row className={`${styles.RowInput}`}>
-          <Col className={`${styles.InputHeadingDiv}`}  align="center">
-           <button className={styles.grad}>Check out your travel score, Right Now!</button>
+          <Col className={`${styles.InputHeadingDiv}`} align="center">
+            <button className={styles.grad}>Check out your travel score, Right Now!</button>
+            <Popup trigger={<button className={styles.grad}>Check out your travel score, Right Now!</button>} position="center center" modal
+              nested>
+              <div className={`${styles.PopupMainDiv}`}>
+                <div className={`${styles.PopupMainDiv} popup-btn-container`}>
+                  <p>Vaccination Form</p>
+                  <button className="close">  &times;  </button>
+                </div>
+                <div className="popup-form">
+                  <div className="popup-form-group">
+                    <label>Vaccine Name :</label>
+                    <input type="text" className="popup-form-control" placeholder="Vaccine name" />
+                  </div>
+                  <div className="popup-form-group">
+                    <label>Vaccine Date :</label>
+                    <input type="text" className="popup-form-control" placeholder='Date of Vaccinations' onFocus={e => e.target.type = "date"} />
+                  </div>
+                </div>
+                <button type="button" className="popup-form-btn">Add</button>
+              </div>
+            </Popup>
           </Col>
         </Row>
       </Container>
