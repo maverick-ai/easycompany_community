@@ -6,8 +6,9 @@ import PaperPlane from "../public/paperplane.png";
 import Typewriter from "typewriter-effect";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import Popup from 'reactjs-popup';
-import 'reactjs-popup/dist/index.css';
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
+import { CircularProgressbar, buildStyles,CircularProgressbarWithChildren } from "react-circular-progressbar";
 let Globe = () => null;
 if (typeof window !== "undefined") Globe = require("react-globe.gl").default;
 
@@ -49,8 +50,7 @@ export default function Home() {
     });
   }, []);
 
-
-  async function handleSubmit(){
+  async function handleSubmit() {
     setOpen(true);
   }
 
@@ -76,7 +76,8 @@ export default function Home() {
             <Row className={styles.RowSubMainTextDiv}>
               <Col className={`${styles.MainHeadingDiv}`}>
                 <h3 className={`${styles.MainSubHeading} `}>
-                  See how your travel compared to other people. How do you measure up? Are you a world traveler or a armchair adventurer?
+                  See how your travel compared to other people. How do you
+                  measure up? Are you a world traveler or a armchair adventurer?
                 </h3>
               </Col>
             </Row>
@@ -121,7 +122,8 @@ export default function Home() {
         <Row className={styles.RowInput}>
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
-              What is the longest time you have spent on any of your trips? (in days)
+              What is the longest time you have spent on any of your trips? (in
+              days)
             </p>
             <input
               className={`${styles.InputStyle} `}
@@ -173,11 +175,7 @@ export default function Home() {
                 <div className={styles.tableRowPadding}></div>
                 <td>
                   <label className={styles.RadioButtonLabel}>
-                    <input
-
-                      type="radio"
-                      name="OutsideIndia"
-                    />
+                    <input type="radio" name="OutsideIndia" />
                     <span className={`${styles.checkmark}`}> </span>
                   </label>
                 </td>
@@ -189,10 +187,7 @@ export default function Home() {
                 <div className={styles.tableRowPadding}></div>
                 <td>
                   <label className={styles.RadioButtonLabel}>
-                    <input
-                      type="radio"
-                      name="OutsideIndia"
-                    />
+                    <input type="radio" name="OutsideIndia" />
                     <span className={`${styles.checkmark}`}> </span>
                   </label>
                 </td>
@@ -205,9 +200,7 @@ export default function Home() {
         </Row>
         <Row className={styles.RowInput}>
           <Col className={`${styles.InputHeadingDiv}`}>
-            <p className={`${styles.InputHeading} `}>
-              Your email address:
-            </p>
+            <p className={`${styles.InputHeading} `}>Your email address:</p>
             <input
               className={`${styles.InputStyle} `}
               type="text"
@@ -218,25 +211,47 @@ export default function Home() {
         </Row>
         <Row className={`${styles.RowInput}`}>
           <Col className={`${styles.InputHeadingDiv}`} align="center">
-            <button onClick={handleSubmit} className={styles.grad} >Check out your travel score, Right Now!</button>
-            <Popup open={open} position="center center" modal onClose={closeModal} closeOnDocumentClick
-              nested>
-              <div className={`${styles.PopupMainDiv}`}>
-                <div className={`${styles.PopupMainDiv} popup-btn-container`}>
-                  <p>Vaccination Form</p>
-                  <button className="close">  &times;  </button>
+            <button onClick={handleSubmit} className={styles.grad}>
+              Check out your travel score, Right Now!
+            </button>
+            <Popup
+              open={open}
+              position="center center"
+              modal
+              onClose={closeModal}
+              closeOnDocumentClick
+              nested
+            >
+              <div>
+                <h3 className={styles.TravelScoreStarterHeading}>
+                  Your Travel Score
+                </h3>
+                <div className={styles.ScoreCard}>
+                <CircularProgressbarWithChildren
+                  value={23}
+                  circleRatio={0.7}
+                  styles={buildStyles({
+                    // Rotation of path and trail, in number of turns (0-1)
+                    rotation: 0.65,
+
+                    // Whether to use rounded or flat corners on the ends - can use 'butt' or 'round'
+                    strokeLinecap: "butt",
+
+                    // Text size
+                    textSize: "32px",
+
+                    // How long animation takes to go from one percentage to another, in seconds
+                    pathTransitionDuration: 0.5,
+
+                    // Can specify path transition in more detail, or remove it entirely
+                    // pathTransition: 'none',
+
+                    // Colors
+                    pathColor: `white`,
+                    trailColor: "rgba(0, 0, 0, 0.23)",
+                  })}
+                ><p className={styles.TravelScoreHeading}>23<span className={styles.SpanScore}>/100</span></p></CircularProgressbarWithChildren>
                 </div>
-                <div className="popup-form">
-                  <div className="popup-form-group">
-                    <label>Vaccine Name :</label>
-                    <input type="text" className="popup-form-control" placeholder="Vaccine name" />
-                  </div>
-                  <div className="popup-form-group">
-                    <label>Vaccine Date :</label>
-                    <input type="text" className="popup-form-control" placeholder='Date of Vaccinations' onFocus={e => e.target.type = "date"} />
-                  </div>
-                </div>
-                <button type="button" className="popup-form-btn">Add</button>
               </div>
             </Popup>
           </Col>

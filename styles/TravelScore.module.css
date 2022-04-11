@@ -132,7 +132,23 @@
    text-decoration: none;
  }
 
-.PopupMainDiv{
-  border-radius: 32px;
-  background-color: #4c4;
+ .TravelScoreHeading{
+   color: white;
+   font-size: 64px;
+   font-weight: bold;
+ }
+ .TravelScoreStarterHeading{
+  color: white;
+  font-size: 28px;
+  font-weight: w100;
+  text-align: center;
+}
+.ScoreCard{
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+.SpanScore{
+  font-size: 16px;
 }
