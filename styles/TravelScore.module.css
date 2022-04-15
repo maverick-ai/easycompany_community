@@ -127,7 +127,7 @@
  }
 
  .grad:hover {
-   background-position: right center; /* change the direction of the change here */
+   background-position: center center; /* change the direction of the change here */
    color: #fff;
    text-decoration: none;
  }
@@ -152,3 +152,30 @@
 .SpanScore{
   font-size: 16px;
 }
+
+.RowButtonCheckApp{
+  margin-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+.gradRedirect {background-image: -webkit-linear-gradient(0deg,#E32A34, #B50EAE)}
+.gradRedirect {
+   
+   padding: 8px 32px;
+   text-align: center;
+   transition: 0.5s;
+   background-size: 200% auto;
+   color: white;            
+   border-radius: 32px;
+   border: 2px solid white;
+   display: block;
+ }
+
+ .gradRedirect:hover {
+   background-position: center center; /* change the direction of the change here */
+   color: #fff;
+   text-decoration: none;
+ }
