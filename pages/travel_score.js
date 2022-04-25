@@ -20,6 +20,7 @@ export default function Home() {
   const longestTripRef=useRef();
   const budgetRef=useRef();
   const placesTravelledToRef=useRef();
+  const [travelledOutsideIndia, setTravelledOutsideIndia] = useState(false);
   const closeModal = () => setOpen(false);
   const router = useRouter();
   const N = 20;
@@ -61,6 +62,91 @@ export default function Home() {
   }
 
   async function handleSubmit() {
+    var travelDaysInAYear=0;
+    var longestTrip=0;
+    var budget=0;
+    var placesTravelledTo=0;
+    var travelledOutside=0;
+    var score=0;
+
+    if(+travelDaysInAYearRef.current.value <=7){
+      travelDaysInAYear=5;
+    }
+    else if (+travelDaysInAYearRef.current.value <=10) {
+      travelDaysInAYear=10;
+    }else if (+travelDaysInAYearRef.current.value <=20) {
+      travelDaysInAYear=15;
+    }
+     else {
+      travelDaysInAYear=20;
+    }
+
+    if(+longestTripRef.current.value <=3){
+      longestTrip=5;
+    }
+    else if (+longestTripRef.current.value <=7) {
+      longestTrip=10;
+    }else if (+longestTripRef.current.value <=14) {
+      longestTrip=15;
+    }
+     else {
+      longestTrip=20;
+    }
+
+    if(+budgetRef.current.value <=4000){
+      budget=10;
+    }
+    else if (+budgetRef.current.value <=10000) {
+      budget=15;
+    }else if (+budgetRef.current.value <=16000) {
+      budget=20;
+    }
+     else {
+      budget=5;
+    }
+
+    if(+budgetRef.current.value <=4000){
+      budget=10;
+    }
+    else if (+budgetRef.current.value <=10000) {
+      budget=15;
+    }else if (+budgetRef.current.value <=16000) {
+      budget=20;
+    }
+     else {
+      budget=5;
+    }
+
+    if(+placesTravelledToRef.current.value <=10){
+      placesTravelledTo=5;
+    }
+    else if (+placesTravelledToRef.current.value <=16) {
+      placesTravelledTo=10;
+    }else if (+placesTravelledToRef.current.value <=22) {
+      placesTravelledTo=15;
+    }
+    else if (+placesTravelledToRef.current.value <=25) {
+      placesTravelledTo=20;
+    }
+    else if (+placesTravelledToRef.current.value <=30) {
+      placesTravelledTo=25;
+    }
+     else {
+      placesTravelledTo=30;
+    }
+
+
+
+    if(travelledOutsideIndia===true){
+      travelledOutside=10;
+    }
+     else {
+      travelledOutside=0;
+    }
+
+
+    score= travelDaysInAYear + longestTrip + budget + placesTravelledTo + travelledOutside;
+    console.log(score)
     setOpen(true);
   }
 
@@ -184,12 +270,13 @@ export default function Home() {
             <p className={`${styles.InputHeading} `}>
               Have you travelled to outside India?
             </p>
+            <table>
             <tbody>
               <tr>
                 <div className={styles.tableRowPadding}></div>
                 <td>
                   <label className={styles.RadioButtonLabel}>
-                    <input type="radio" value={"Yes"} name="OutsideIndia" />
+                    <input onClick={()=>{setTravelledOutsideIndia(true)}} type="radio" value={"Yes"} name="OutsideIndia" />
                     <span className={`${styles.checkmark}`}> </span>
                   </label>
                 </td>
@@ -201,7 +288,7 @@ export default function Home() {
                 <div className={styles.tableRowPadding}></div>
                 <td>
                   <label className={styles.RadioButtonLabel}>
-                    <input type="radio" value={"No"}  name="OutsideIndia" />
+                    <input onClick={()=>{setTravelledOutsideIndia(false)}} type="radio" value={"No"}  name="OutsideIndia" />
                     <span className={`${styles.checkmark}`}> </span>
                   </label>
                 </td>
@@ -210,6 +297,7 @@ export default function Home() {
                 </td>
               </tr>
             </tbody>
+            </table>
           </Col>
         </Row>
         <Row className={styles.RowInput}>
@@ -268,7 +356,7 @@ export default function Home() {
                 </div>
                 <Row className={`${styles.RowButtonCheckApp}`}>
                 <Col className={`${styles.InputHeadingDiv}`} align="center"><button onClick={Redirect} className={styles.gradRedirect}>
-              Check out our app
+              Improve your travel score
             </button></Col>
                 
                 </Row>
