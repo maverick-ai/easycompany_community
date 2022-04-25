@@ -5,7 +5,7 @@ import Image from "next/image";
 import PaperPlane from "../public/paperplane.png";
 import Typewriter from "typewriter-effect";
 import { useRouter } from "next/router";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import { CircularProgressbar, buildStyles,CircularProgressbarWithChildren } from "react-circular-progressbar";
@@ -16,6 +16,10 @@ export default function Home() {
   const [countries, setCountries] = useState({ features: [] });
   const [globeSize, setGlobeSize] = useState(400);
   const [open, setOpen] = useState(false);
+  const travelDaysInAYearRef=useRef();
+  const longestTripRef=useRef();
+  const budgetRef=useRef();
+  const placesTravelledToRef=useRef();
   const closeModal = () => setOpen(false);
   const router = useRouter();
   const N = 20;
@@ -110,13 +114,14 @@ export default function Home() {
               How many days do you go for travel in a year ? (in days)
             </p>
             <input
+            ref={travelDaysInAYearRef}
               className={`${styles.InputStyle} `}
               type="number"
               name="DaysInAYear"
               min="0"
               max="365"
               placeholder="18"
-            ></input>
+             />
           </Col>
         </Row>
         <Row className={styles.RowInput}>
@@ -126,13 +131,14 @@ export default function Home() {
               days)
             </p>
             <input
+            ref={longestTripRef}
               className={`${styles.InputStyle} `}
               type="number"
               name="LongestTrip"
               min="0"
               max="365"
               placeholder="9"
-            ></input>
+              />
           </Col>
         </Row>
         <Row className={styles.RowInput}>
@@ -141,13 +147,14 @@ export default function Home() {
               How much you spent generally on a 4day/3night trip? (in Rupees)
             </p>
             <input
+            ref={budgetRef}
               className={`${styles.InputStyle} `}
               type="number"
               name="Budget"
               min="0"
               max="365"
               placeholder="8000"
-            ></input>
+              />
           </Col>
         </Row>
         <Row className={styles.RowInput}>
@@ -156,13 +163,14 @@ export default function Home() {
               How many places you have traveled to?
             </p>
             <input
+            ref={placesTravelledToRef}
               className={`${styles.InputStyle} `}
               type="number"
               name="DaysInAYear"
               min="0"
               max="365"
               placeholder="21"
-            ></input>
+              />
           </Col>
         </Row>
         <Row className={styles.RowInput}>
@@ -175,7 +183,7 @@ export default function Home() {
                 <div className={styles.tableRowPadding}></div>
                 <td>
                   <label className={styles.RadioButtonLabel}>
-                    <input type="radio" name="OutsideIndia" />
+                    <input type="radio" value={"Yes"} name="OutsideIndia" />
                     <span className={`${styles.checkmark}`}> </span>
                   </label>
                 </td>
@@ -187,7 +195,7 @@ export default function Home() {
                 <div className={styles.tableRowPadding}></div>
                 <td>
                   <label className={styles.RadioButtonLabel}>
-                    <input type="radio" name="OutsideIndia" />
+                    <input type="radio" value={"No"}  name="OutsideIndia" />
                     <span className={`${styles.checkmark}`}> </span>
                   </label>
                 </td>
@@ -206,7 +214,7 @@ export default function Home() {
               type="text"
               name="email"
               placeholder="abc@email.com"
-            ></input>
+              />
           </Col>
         </Row>
         <Row className={`${styles.RowInput}`}>
