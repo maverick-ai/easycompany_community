@@ -20,6 +20,8 @@ export default function Home() {
   const longestTripRef=useRef();
   const budgetRef=useRef();
   const placesTravelledToRef=useRef();
+  const emailRef=useRef();
+  const [travelScore, setTravelScore] = useState(0);
   const [travelledOutsideIndia, setTravelledOutsideIndia] = useState(false);
   const closeModal = () => setOpen(false);
   const router = useRouter();
@@ -62,6 +64,7 @@ export default function Home() {
   }
 
   async function handleSubmit() {
+
     var travelDaysInAYear=0;
     var longestTrip=0;
     var budget=0;
@@ -146,8 +149,33 @@ export default function Home() {
 
 
     score= travelDaysInAYear + longestTrip + budget + placesTravelledTo + travelledOutside;
-    console.log(score)
+    setTravelScore(score);
     setOpen(true);
+    const credentials=JSON.stringify({
+      email: emailRef.current.value,
+      travel_score:score,
+      fields:{
+        "travelDaysInAYear":travelDaysInAYear,
+        "longestTrip":longestTrip,
+        "budget":budget,
+        "placesTravelledTo":placesTravelledTo,
+        "travelledOutside":travelledOutside,
+      }
+  });
+    const response=await fetch("http://127.0.0.1:8000/api/travel_score/",{method:'POST',headers:{
+      'Content-Type': 'application/json',
+      'Accept':'*/*',
+      'Accept-Encoding':'gzip, deflate, br',
+      'Connection': 'keep-alive',
+      'Content-Length':credentials.length,
+      'Host':"127.0.0.1:8000"
+    },body:credentials});
+
+
+    console.log(response.ok);
+
+
+
   }
 
   return (
@@ -304,6 +332,7 @@ export default function Home() {
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>Your email address:</p>
             <input
+            ref={emailRef}
               className={`${styles.InputStyle} `}
               type="text"
               name="email"
@@ -330,7 +359,7 @@ export default function Home() {
                 </h3>
                 <div className={styles.ScoreCard}>
                   <CircularProgressbarWithChildren
-                    value={23}
+                    value={travelScore}
                     circleRatio={0.7}
                     styles={buildStyles({
                       // Rotation of path and trail, in number of turns (0-1)
@@ -352,7 +381,7 @@ export default function Home() {
                       pathColor: `white`,
                       trailColor: "rgba(0, 0, 0, 0.23)",
                     })}
-                  ><p className={styles.TravelScoreHeading}>23<span className={styles.SpanScore}>/100</span></p></CircularProgressbarWithChildren>
+                  ><p className={styles.TravelScoreHeading}>{travelScore}<span className={styles.SpanScore}>/100</span></p></CircularProgressbarWithChildren>
                 </div>
                 <Row className={`${styles.RowButtonCheckApp}`}>
                 <Col className={`${styles.InputHeadingDiv}`} align="center"><button onClick={Redirect} className={styles.gradRedirect}>
