@@ -12,7 +12,7 @@ import { CircularProgressbar, buildStyles, CircularProgressbarWithChildren } fro
 let Globe = () => null;
 if (typeof window !== "undefined") Globe = require("react-globe.gl").default;
 
-export default function Home() {
+export default function TravelScore() {
   const [countries, setCountries] = useState({ features: [] });
   const [globeSize, setGlobeSize] = useState(400);
   const [open, setOpen] = useState(false);
