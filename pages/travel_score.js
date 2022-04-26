@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import PaperPlane from "../public/paperplane.png";
-import Typewriter from "typewriter-effect";
+import { TravelScoreURL, Host } from "../components/constants";
 import { useRouter } from "next/router";
 import { useState, useEffect, useRef } from "react";
 import Popup from "reactjs-popup";
@@ -155,20 +155,20 @@ export default function TravelScore() {
       email: emailRef.current.value,
       travel_score:score,
       fields:{
-        "travelDaysInAYear":travelDaysInAYear,
-        "longestTrip":longestTrip,
-        "budget":budget,
-        "placesTravelledTo":placesTravelledTo,
-        "travelledOutside":travelledOutside,
+        "travelDaysInAYear":+travelDaysInAYearRef.current.value,
+        "longestTrip":+longestTripRef.current.value,
+        "budget":+budgetRef.current.value,
+        "placesTravelledTo":+placesTravelledToRef.current.value,
+        "travelledOutside":travelledOutsideIndia,
       }
   });
-    const response=await fetch("http://127.0.0.1:8000/api/travel_score/",{method:'POST',headers:{
+    const response=await fetch(TravelScoreURL,{method:'POST',headers:{
       'Content-Type': 'application/json',
       'Accept':'*/*',
       'Accept-Encoding':'gzip, deflate, br',
       'Connection': 'keep-alive',
       'Content-Length':credentials.length,
-      'Host':"127.0.0.1:8000"
+      'Host':Host
     },body:credentials});
 
 

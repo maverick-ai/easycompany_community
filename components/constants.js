@@ -29,9 +29,10 @@ const PublicUserSolutionsURL=`${DomainURL}api/public_user_solns/`;
 const PasswordResetPost=`${DomainURL}api/password/reset/confirm`;
 const PasswordResetGet=`${DomainURL}api/password/reset/`;
 const AcceptSolnURL=`${DomainURL}api/accept_soln/`;
+const TravelScoreURL=`${DomainURL}api/travel_score/`;
 
 const PageSize=20;
 const commentPageSize=3;
 const PageNumberLimit=5;
 
-export {CreatePostURL,Host,LogInURL,RegisterUserURL,SearchURL,PostURL,AnswersURL,PageSize,PostListURL,PageNumberLimit,UpVotePostURL,DownVotePostURL,UpVoteSolnURL,DownVoteSolnURL,UpVotePostCommentURL,DownVotePostCommentURL,UpVoteSolnCommentURL,DownVoteSolnCommentURL, AddSolnURL,AddPostcommentURL,AddSolncommentURL,PostCommentsURL,SolutionCommentsURL,commentPageSize,UserProfileURL,UserPostsURL,UserSolutionsURL,PublicUserProfileURL,PublicUserPostsURL,PublicUserSolutionsURL,PasswordResetPost,PasswordResetGet,AcceptSolnURL};
+export {CreatePostURL,Host,LogInURL,RegisterUserURL,SearchURL,PostURL,AnswersURL,PageSize,PostListURL,PageNumberLimit,UpVotePostURL,DownVotePostURL,UpVoteSolnURL,DownVoteSolnURL,UpVotePostCommentURL,DownVotePostCommentURL,UpVoteSolnCommentURL,DownVoteSolnCommentURL, AddSolnURL,AddPostcommentURL,AddSolncommentURL,PostCommentsURL,SolutionCommentsURL,commentPageSize,UserProfileURL,UserPostsURL,UserSolutionsURL,PublicUserProfileURL,PublicUserPostsURL,PublicUserSolutionsURL,PasswordResetPost,PasswordResetGet,AcceptSolnURL,TravelScoreURL};
