@@ -16,6 +16,7 @@ export default function TravelScore() {
   const [countries, setCountries] = useState({ features: [] });
   const [globeSize, setGlobeSize] = useState(400);
   const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
   const travelDaysInAYearRef=useRef();
   const longestTripRef=useRef();
   const budgetRef=useRef();
@@ -23,7 +24,7 @@ export default function TravelScore() {
   const emailRef=useRef();
   const [travelScore, setTravelScore] = useState(0);
   const [travelledOutsideIndia, setTravelledOutsideIndia] = useState(false);
-  const closeModal = () => setOpen(false);
+  const closeModal = () => {setOpen(false);setMessage("")};
   const router = useRouter();
   const N = 20;
   const arcsData = [...Array(N).keys()].map(() => ({
@@ -57,6 +58,14 @@ export default function TravelScore() {
     });
   }, []);
 
+  function emailValidation(){
+    const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    if(emailRef.current.value==="" || regex.test(emailRef.current.value) === false){
+        return false;
+    }
+    return true;
+}
+
 
 
   function Redirect(){
@@ -65,7 +74,8 @@ export default function TravelScore() {
 
   async function handleSubmit() {
 
-    var travelDaysInAYear=0;
+    if(emailValidation()){
+      var travelDaysInAYear=0;
     var longestTrip=0;
     var budget=0;
     var placesTravelledTo=0;
@@ -172,9 +182,11 @@ export default function TravelScore() {
     },body:credentials});
 
 
-    console.log(response.ok);
-
-
+    }
+    else{
+      setOpen(true);
+      setMessage("email incorrect")
+    }
 
   }
 
@@ -355,10 +367,11 @@ export default function TravelScore() {
             >
               <div>
                 <h3 className={styles.TravelScoreStarterHeading}>
-                  Your Travel Score
+                  {message===""?`Your Travel Score`:message}
                 </h3>
                 <div className={styles.ScoreCard}>
-                  <CircularProgressbarWithChildren
+                  {
+                    message==="" && <CircularProgressbarWithChildren
                     value={travelScore}
                     circleRatio={0.7}
                     styles={buildStyles({
@@ -382,6 +395,7 @@ export default function TravelScore() {
                       trailColor: "rgba(0, 0, 0, 0.23)",
                     })}
                   ><p className={styles.TravelScoreHeading}>{travelScore}<span className={styles.SpanScore}>/100</span></p></CircularProgressbarWithChildren>
+                  }
                 </div>
                 <Row className={`${styles.RowButtonCheckApp}`}>
                 <Col className={`${styles.InputHeadingDiv}`} align="center"><button onClick={Redirect} className={styles.gradRedirect}>
