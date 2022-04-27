@@ -256,7 +256,7 @@ export default function TravelScore() {
              />
           </Col>
         </Row>
-        <Row className={styles.RowInput}>
+        <Row className={`${styles.RowInput}`}>
           <Col className={`${styles.InputHeadingDiv}`}>
             <p className={`${styles.InputHeading} `}>
               What is the longest time you have spent on any of your trips? (in
