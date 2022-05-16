@@ -9,8 +9,6 @@
 html,
 body {
   background-color: black;
-  padding: 0;
-  margin: 0;
   width: 100vw;
   max-width: 100vw !important;
   overflow-x: hidden  !important;
@@ -21,19 +19,23 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
-/* * {
+* {
+  padding: 0;
+  margin: 0;
   box-sizing: border-box;
-} */
+}
 
 .mde-header {
-  background-color: #fff!important;
+  background-color: transparent !important;
+  /* background: transparent; */
   border-bottom: 0!important;
 }
 
 .react-mde {
   border: 0!important;
+  width: 100%;
 }
+
 
 .mde-preview-content {
   border: 2px solid black!important;
@@ -45,6 +47,7 @@ a {
   border: 2px solid black!important;
   border-radius: 15px!important;
   padding-bottom: 0!important;
+  width: 5rem !important;
 }
 
 .pagination {
@@ -87,4 +90,8 @@ a {
 hr {
   width: 95% !important;
   
+}
+
+.tagsinput_InputTags__R6MRb{
+  background-color: transparent !important;
 }
