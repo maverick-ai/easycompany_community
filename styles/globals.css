@@ -29,6 +29,7 @@ a {
   background-color: transparent !important;
   /* background: transparent; */
   border-bottom: 0!important;
+  background: grey !important;
 }
 
 .react-mde {

@@ -1,0 +1,355 @@
+// .ParentDiv{
+//     width: 100vw !important;
+//     margin-top: 200px;
+//     padding-bottom: 100px;
+//   }
+
+//   .mainHeading{
+//       font-size: 50px;
+//       font-weight: 700;
+//   }
+
+//   .titleRow{
+//       margin-top: 50px;
+//   }
+//   .bodyRow{
+//       margin-top: 40px;
+//   }
+
+//   .titleDiv{
+//     max-width: 1000px;
+//   }
+
+//   .bodyDiv{
+//     max-width: 1000px;
+//   }
+//   .buttonDiv{
+//     max-width: 1000px;
+//   }
+
+
+//   .titleInput{
+//       border-radius: 15px;
+//       border: 2px solid black;
+//       padding-left: 10px;
+//       width: 100%;
+//       padding: 10px;
+      
+      
+//   }
+//   .titleInput:focus{
+//     outline: none;
+// }
+// .titleParagraph{
+//   margin-bottom: 4px;
+// }
+// .titleHeading{
+//   margin-bottom: 8px;
+// }
+
+//   .bodyInput{
+//     border-radius: 15px;
+//     border: 2px solid black;
+//     padding: 15px 10px;
+//     /* padding-left: 10px; */
+//     /* padding-top: 5px; */
+//     width: 100%;
+//     /* max-width: 1000px; */
+//     /* min-height:300px ; */
+//     background-color: transparent;
+//   }
+//   .bodyInput{
+//     outline: none;
+//   }
+//   .bodyParagraph{
+//     margin-bottom: 4px;
+//   }
+//   .bodyHeading{
+//     margin-bottom: 8px;
+//   }
+//   .CategoriesHeading{
+//     margin-bottom: 8px;
+//   }
+//   .CategoryInput{
+//     border-radius: 15px;
+//     border: 2px solid black;
+//     padding-left: 10px;
+//     width: 100%;
+    
+    
+// }
+// .CategoryInput:focus{
+//   outline: none;}
+// .CategoryParagraph{
+//   margin-bottom: 4px;
+// }
+
+//   .underlineGreen{
+//     box-shadow: inset 0 -20px 0 0 #7ed957;
+//   }
+//   .underlineRed{
+//     box-shadow: inset 0 -20px 0 0 #ff5757;
+//   }
+
+//   .fadeIn::placeholder{
+//     opacity: 0;
+//     transition:  opacity 0.5s;
+//   }
+//   .fadeOut::placeholder{
+//     opacity: 1;
+//     transition: opacity 0.5s;
+//   }
+
+//   .postButton{
+//     background-color: white;
+//     border: 2px solid black;
+//     width: 100px;
+//     border-radius: 15px;
+//   }
+
+.Main {
+  height: 100vh;
+  width: 100vw;
+  margin-top: 3rem;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    padding-top: 13rem;
+    padding-left: 0;
+    margin: 2rem 0 0 0;
+  }
+}
+
+.Section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0 2rem;
+
+  div {
+    h3 {
+      font-size: 1.563rem;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.655em;
+      padding: 1rem 0;
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 724px) {
+        font-size: 0.7rem;
+      }
+      @media (max-width: 400px) {
+        font-size: 0.4rem;
+        /* margin-top: 0.5rem; */
+      }
+    }
+
+    div {
+      h1 {
+        font-size: 6rem;
+        @media (max-width: 1024px) {
+          font-size: 4rem;
+        }
+        @media (max-width: 724px) {
+          font-size: 3.5rem;
+        }
+        @media (max-width: 400px) {
+          font-size: 2.5rem;
+          /* margin-top: 1rem; */
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    margin-top: 4rem;
+    padding: 0;
+  }
+
+}
+
+.RightSection {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  padding: 0 2rem;
+
+  div {
+    h3 {
+      font-size: 1.563rem;
+      color: rgba(255, 255, 255, 0.5);
+      letter-spacing: 0.655em;
+      padding: 1rem 0;
+      @media (max-width: 1024px) {
+        font-size: 1rem;
+      }
+      @media (max-width: 724px) {
+        font-size: 0.7rem;
+      }
+      @media (max-width: 400px) {
+        font-size: 0.4rem;
+        /* margin-top: 0.5rem; */
+      }
+    }
+
+    div {
+      h1 {
+        font-size: 6rem;
+        @media (max-width: 1024px) {
+          font-size: 4rem;
+        }
+        @media (max-width: 724px) {
+          font-size: 3.5rem;
+        }
+        @media (max-width: 400px) {
+          font-size: 2.5rem;
+          /* margin-top: 1rem; */
+        }
+      }
+    }
+  }
+  @media (max-width: 1024px) {
+    margin-top: 4rem;
+    padding: 0;
+  }
+
+  align-items: flex-start;
+  justify-content: space-evenly;
+  padding-left: 5rem;
+  height: 75%;
+  @media (max-width: 1024px) {
+    padding-left: 1rem;
+  }
+  @media (max-width: 400) {
+    padding-left: 0.6rem;
+  }
+
+}
+
+.Partition {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 500px;
+  border-radius: 40px;
+  border-right: 1px solid #fafafa;
+  border-left: 1px solid #b4b4b4;
+  background: linear-gradient(
+    to bottom,
+    rgba(237, 60, 85, 1),
+    rgba(169, 46, 167, 1)
+  );
+  padding: 0;
+}
+
+.Entry {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  @media (max-width: 724px) {
+    font-size: 0.7rem;
+  }
+  @media (max-width: 400px) {
+    h1 {
+      /* margin-top: 0.5rem; */
+      font-size: 1rem;
+    }
+    margin-top: 0.7rem;
+  }
+
+  input, textarea {
+    width: 100%;
+    color: white;
+    background: transparent;
+  }
+
+
+}
+
+.Buttons {
+  display: flex;
+
+}
+
+.Button {
+  background: linear-gradient(to right, #e32a34 0%, #b50eae 100%);
+  border-radius: 40px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font: 0.8rem "Oswald", Helvetica;
+  height: 40px;
+  width: 9vw;
+  min-width: 90px;
+  letter-spacing: 1px;
+  margin-right: 2rem;
+  padding: 2px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    align-items: center;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+    font-size: 1.2em;
+    background: transparent;
+  }
+  &:hover span {
+    background: #000000;
+    /* background: transparent; */
+  }
+
+}
+
+.InvertedButton {
+  background: linear-gradient(to right, #e32a34 0%, #b50eae 100%);
+  border-radius: 40px;
+  box-sizing: border-box;
+  color: #ffffff;
+  font: 0.8rem "Oswald", Helvetica;
+  height: 40px;
+  width: 9vw;
+  min-width: 90px;
+  letter-spacing: 1px;
+  margin-right: 2rem;
+  padding: 2px;
+  position: relative;
+  cursor: pointer;
+
+  span {
+    align-items: center;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    transition: background 0.5s ease;
+    width: 100%;
+    font-size: 1.2em;
+    background: transparent;
+  }
+  &:hover span {
+    background: #000000;
+    /* background: transparent; */
+  }
+  span {
+    background: #000000;
+  }
+  &:hover span {
+    background: transparent;
+  }
+
+
+}
