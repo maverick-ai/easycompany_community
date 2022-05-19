@@ -7,6 +7,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
+import Landing from '../components/homepage/Landing'
+
 let Globe = () => null;
 if (typeof window !== "undefined") Globe = require("react-globe.gl").default;
 
@@ -56,6 +58,7 @@ export default function Home() {
   return (
     <div className={styles.ParentDiv}>
       <Container fluid="md">
+        <Landing/>
         <Row>
           <Col md={true} className={`align-self-center `}>
             <h1 className={`${styles.MainHeading} `}>
