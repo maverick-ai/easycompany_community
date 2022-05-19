@@ -25,3 +25,16 @@
   .spanButton{
     color:white;
   }
+
+  .a{
+    border-radius: 10px;
+    margin-left: 1rem;
+    /* padding: 0 2rem; */
+    /* width: 5rem; */
+    transition: all 0.3s ease;
+  }
+
+  .a:hover {
+    /* background:red; */
+    background: grey;
+  }

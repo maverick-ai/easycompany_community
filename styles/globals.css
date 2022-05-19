@@ -35,17 +35,18 @@ a, a:hover {
 
 
 .mde-header {
-  background-color: transparent !important;
-  /* background: transparent; */
   border-bottom: 0!important;
-  background: transparent !important;
+  background: none !important;
+}
+
+.mde-header * {
+  color: white !important;
 }
 
 .react-mde {
   border: 0!important;
   width: 100%;
 }
-
 
 .mde-preview-content {
   border: 2px solid black!important;
@@ -54,9 +55,9 @@ a, a:hover {
 }
 
 .mde-tabs button.selected {
-  border: 2px solid black!important;
+  border: 2px solid white!important;
   border-radius: 15px!important;
-  padding-bottom: 0!important;
+  padding-top: 2px !important;
   width: 5rem !important;
 }
 

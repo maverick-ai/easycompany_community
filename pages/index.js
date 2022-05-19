@@ -7,7 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
-import Landing from '../components/homepage/Landing'
+import Landing from "../components/homepage/Landing";
 
 let Globe = () => null;
 if (typeof window !== "undefined") Globe = require("react-globe.gl").default;
@@ -22,12 +22,12 @@ export default function Home() {
     startLng: (Math.random() - 0.5) * 360,
     endLat: (Math.random() - 0.5) * 180,
     endLng: (Math.random() - 0.5) * 360,
-    color: ["#E32A34",'#B50EAE' ]
+    color: ["#E32A34", "#B50EAE"],
   }));
 
   useEffect(() => {
-    var cookie = require('cookie');
-    const token=cookie.parse(document.cookie);
+    var cookie = require("cookie");
+    const token = cookie.parse(document.cookie);
     console.log(token);
     // if(localStorage.getItem("token")!==undefined){
     //   router.push("/questions");
@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className={styles.ParentDiv}>
       <Container fluid="md">
-        <Landing/>
+        <Landing />
         <Row>
           <Col md={true} className={`align-self-center `}>
             <h1 className={`${styles.MainHeading} `}>
@@ -185,11 +185,11 @@ export default function Home() {
         <Row>
           <Col md={true} className={styles.globeDiv}>
             <Globe
-            arcsData={arcsData}
-            arcColor={'color'}
-            arcDashLength={() => Math.random()}
-            arcDashGap={() => Math.random()}
-            arcDashAnimateTime={() => Math.random() * 4000 + 500}
+              arcsData={arcsData}
+              arcColor={"color"}
+              arcDashLength={() => Math.random()}
+              arcDashGap={() => Math.random()}
+              arcDashAnimateTime={() => Math.random() * 4000 + 500}
               width={globeSize}
               height={globeSize}
               backgroundColor="rgba(0,0,0,0)"
@@ -198,7 +198,9 @@ export default function Home() {
               hexPolygonResolution={3}
               hexPolygonMargin={0.3}
               hexPolygonColor={(x) => {
-                return ['#B50EAE', '#CC1C71', '#D92350', '#E32A34'][Math.round(Math.random() * 3)]
+                return ["#B50EAE", "#CC1C71", "#D92350", "#E32A34"][
+                  Math.round(Math.random() * 3)
+                ];
                 // switch (x.properties.SOVEREIGNT) {
                 //   case "India":
                 //     return `#7ed957`;
@@ -342,8 +344,8 @@ export default function Home() {
             />
           </Col>
           <Col md={true} className="align-self-center order-md-first">
-            <h1 className={`${styles.MountainHeading}`} >
-            The answer to all your travel problems
+            <h1 className={`${styles.MountainHeading}`}>
+              The answer to all your travel problems
               {/* <span>
                 Our service is{" "}
                 <span className={styles.underlineGreen}>

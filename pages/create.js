@@ -10,6 +10,7 @@ import remarkGfm from "remark-gfm";
 import { getDefaultToolbarCommands } from "react-mde";
 import { sendReq } from "../components/requests";
 import LoginPopUp from "../components/LogInPopUp";
+import { Container } from "react-bootstrap";
 import router from "next/router";
 
 let initialState = 0;
@@ -87,7 +88,7 @@ export default function Create() {
   const [selectedTab, setSelectedTab] = useState("write");
 
   return (
-    <div className={styles.Main}>
+    <Container className={styles.Main}>
       <div className={styles.Section}>
         <div>
           <h3>ASK THE COMMUNITY</h3>
@@ -159,6 +160,6 @@ export default function Create() {
         </div>
       </div>
       {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
-    </div>
+    </Container>
   );
 }
