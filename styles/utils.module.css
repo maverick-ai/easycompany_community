@@ -28,9 +28,9 @@
 	height: 100%;
 	transition: background .5s ease;
 	width: 100%;
-	background: #000000;
+	background: transparent;
 }
 
 .btn:hover span {
-	background: transparent;
+	background: #000000;
 }

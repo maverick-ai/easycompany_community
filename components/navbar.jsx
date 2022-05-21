@@ -24,7 +24,7 @@ function MainNavbar(props) {
   return (
     <Navbar collapseOnSelect={true} expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/" className={classes.logo}>
           <img src="/icons/EASYCOMMUNITY_ICON.png" alt="Company logo" />
         </Navbar.Brand>
         <Navbar.Toggle
@@ -34,12 +34,13 @@ function MainNavbar(props) {
             transform: "translateY(20%)",
             borderColor: "transparent",
             color: "white",
+            // marginTop: "2px",
           }}
         >
           <i className="fa fa-bars"></i>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto">
+          <Nav className="m-auto" style={{ justifyContent: "center" }}>
             {NavLinks.map(({ name, path }) => (
               <Nav.Link
                 href={path}
@@ -52,7 +53,7 @@ function MainNavbar(props) {
               </Nav.Link>
             ))}
 
-            <Nav.Link href="/login">
+            <Nav.Link href="/login" className={classes.login}>
               <GradientBtn>Log in</GradientBtn>
             </Nav.Link>
           </Nav>
