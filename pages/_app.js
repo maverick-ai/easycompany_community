@@ -11,7 +11,7 @@ config.autoAddCss = false;
 function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>
-      <div>
+      <>
         <Head>
           <script
             dangerouslySetInnerHTML={{
@@ -27,7 +27,7 @@ function MyApp({ Component, pageProps }) {
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
             integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
             crossOrigin="anonymous"
-            referrerpolicy="no-referrer"
+            referrerPolicy="no-referrer"
           />
           <meta charSet="UTF-8"></meta>
         </Head>
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }) {
           <MainNavbar />
           <Component {...pageProps} />
         </body>
-      </div>
+      </>
     </CookiesProvider>
   );
 }

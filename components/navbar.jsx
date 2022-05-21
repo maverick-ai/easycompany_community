@@ -1,10 +1,26 @@
-import classes from "./navbar.module.css";
+import classes from "./navbar.module.scss";
 import "font-awesome/css/font-awesome.min.css";
 import GradientBtn from "../components/GradienButton";
-
+import { useRouter } from "next/router";
 import { Navbar, Container, Nav } from "react-bootstrap";
 
+const NavLinks = [
+  {
+    path: "/questions",
+    name: "Questions",
+  },
+  {
+    path: "/create",
+    name: "Ask",
+  },
+  {
+    path: "/search",
+    name: "Search",
+  },
+];
+
 function MainNavbar(props) {
+  const router = useRouter();
   return (
     <Navbar collapseOnSelect={true} expand="lg" fixed="top">
       <Container>
@@ -17,7 +33,6 @@ function MainNavbar(props) {
           style={{
             transform: "translateY(20%)",
             borderColor: "transparent",
-            // color: "#7ed957",
             color: "white",
           }}
         >
@@ -25,41 +40,19 @@ function MainNavbar(props) {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="m-auto">
-            {/* <Nav.Link href="/home" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
+            {NavLinks.map(({ name, path }) => (
+              <Nav.Link
+                href={path}
+                key={name}
+                className={`${router.pathname === path ? classes.active : ""} ${
+                  classes.navLink
+                }`}
               >
-                Home
-              </button>
-            </Nav.Link> */}
-            <Nav.Link href="/questions?page=1" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                Questions
-              </button>
-            </Nav.Link>
-            <Nav.Link href="/create" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                Ask
-              </button>
-            </Nav.Link>
-            <Nav.Link href="/search" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                Search
-              </button>
-            </Nav.Link>
+                <p>{name}</p>
+              </Nav.Link>
+            ))}
 
             <Nav.Link href="/login">
-              {/* <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                Log in
-              </button> */}
               <GradientBtn>Log in</GradientBtn>
             </Nav.Link>
           </Nav>

@@ -1,5 +1,4 @@
 import styles from "../styles/Create.module.scss";
-// import "bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect, useRef } from "react";
 import TagsInput from "../components/InputTag";
 import { CreatePostURL, Host } from "../components/constants";
