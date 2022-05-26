@@ -1,9 +1,15 @@
 //import MiddlewarePlugin from "next/dist/build/webpack/plugins/middleware-plugin";
 import styles from "../styles/Post.module.css";
+import Styles from "../styles/utils.module.css";
 import "react-mde/lib/styles/css/react-mde-all.css";
 import remarkGfm from "remark-gfm";
 import ReactMde from "react-mde";
+import 'react-mde/lib/styles/css/react-mde.css';
+import 'react-mde/lib/styles/css/react-mde-toolbar.css';
+import 'react-mde/lib/styles/css/react-mde-editor.css';
+import 'react-mde/lib/styles/css/react-mde-preview.css';
 import ReactMarkdown from "react-markdown";
+import GradientBtn from "../components/GradienButton";
 
 import {
   Host,
@@ -15,15 +21,16 @@ import cookie from "cookie";
 import Pagination from "../components/Pagination";
 import DetailedPost from "../components/DetailedPost";
 import Solution from "../components/Solution";
-import {sendReq} from "../components/requests"
+import { sendReq } from "../components/requests"
 import LoginPopUp from "../components/LogInPopUp";
 import { addanswer } from "../components/requests";
 import { useState } from "react";
+import { Container, Col, Row } from "react-bootstrap";
 
 
 
 const Post = ({ post, answers, solnComments, query }) => {
-  
+
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [ansValue, setAnsValue] = useState("");
   const [selectedTab, setSelectedTab] = useState("write");
@@ -33,44 +40,61 @@ const Post = ({ post, answers, solnComments, query }) => {
       {post.detail && <h1>Post NOT found.</h1>}
       {!post.detail && (
         <div className="post">
-        <DetailedPost className={styles.post} data={post}  setLogin ={setIsLoggedIn}/>
+          <DetailedPost className={styles.post} data={post} setLogin={setIsLoggedIn} />
           <div className="answers-container">
-            <h2 className={styles.answerTitle}>Answers</h2>
-            {!answers.count && <h2>No answers found</h2>}
-            {answers.count > 0 && (
-              <div className="post-answers">
-                {answers.results.map((answer,index) => (
-                  <Solution solution={answer}  currentuser={post.current_user} accepted ={post.acceptedSoln} creator={post.creator_by.creator_id}  comments={solnComments[index]} key={answer.id} setLogin ={setIsLoggedIn} />
-                ))}
-              </div>
-            )}
-            <ReactMde
-            value={ansValue}
-            onChange={setAnsValue}
-            selectedTab={selectedTab}
-            onTabChange={setSelectedTab}
-            childProps= {
-                {
-                  textArea: {
-                    placeholder: "Answer!",
-                    className: `${styles.bodyInput}`
+            <Container>
+              <Col lg={{ span: 8, offset: 1 }}>
+                <h2 className={styles.answerTitle}>Answers</h2>
+              </Col>
+            </Container>
+            <Container>
+              <Col lg={{ span: 8, offset: 1 }}>
+                {!answers.count && <h2>No answers found</h2>}
+              </Col>
+              {answers.count > 0 && (
+                <div className="post-answers">
+                  {answers.results.map((answer, index) => (
+                    <Solution solution={answer} currentuser={post.current_user} accepted={post.acceptedSoln} creator={post.creator_by.creator_id} comments={solnComments[index]} key={answer.id} setLogin={setIsLoggedIn} />
+                  ))}
+                </div>
+              )}</Container>
+            <Container>
+              <Col lg={{ span: 10, offset: 1 }}>
+                <ReactMde
+                  value={ansValue}
+                  onChange={setAnsValue}
+                  selectedTab={selectedTab}
+                  onTabChange={setSelectedTab}
+                  childProps={
+                    {
+                      textArea: {
+                        placeholder: "Your Answer",
+                        className: `${styles.bodyInput}`
+                      }
+                    }
                   }
-              }
-            }
-            toolbarCommands={[["header","bold", "italic","strikethrough"], ["link","quote","image"],["unordered-list","ordered-list","checked-list"]]}
-            generateMarkdownPreview={(markdown) =>
-              Promise.resolve(<ReactMarkdown children={markdown} remarkPlugins={remarkGfm} />)
-            }
-          
-          />
-            <button
-            onClick={() =>
-                addanswer(ansValue, post.post_id, setIsLoggedIn)
-            }
-            className={styles.button} 
-            >
-            Add Answer
-            </button>
+                  toolbarCommands={[["header", "bold", "italic", "strikethrough"], ["link", "quote", "image"], ["unordered-list", "ordered-list", "checked-list"]]}
+                  generateMarkdownPreview={(markdown) =>
+                    Promise.resolve(<ReactMarkdown children={markdown} remarkPlugins={remarkGfm} />)
+                  }
+
+                />
+              </Col>
+            </Container>
+            <Container>
+              <Row>
+                <Col lg={{ span: 1, offset: 1 }} style={{ marginBottom: "50px", marginTop: "25px" }}>
+                  <button
+                    onClick={() =>
+                      addanswer(ansValue, post.post_id, setIsLoggedIn)
+                    }
+                    className={Styles.btn}
+                  >
+                    Add Answer
+                  </button>
+                </Col>
+              </Row>
+            </Container>
             {answers.count > PageSize && (
               <Pagination
                 currentPage={query.page}
@@ -78,12 +102,12 @@ const Post = ({ post, answers, solnComments, query }) => {
                 baseURL={`/posts?postid=${query.postid}&`}
               />
             )}
+          </div>
         </div>
-      </div>
-  )}
-  {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
-</div>
-);
+      )}
+      {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
+    </div>
+  );
 }
 
 export default Post;
@@ -93,14 +117,14 @@ export async function getServerSideProps({ query, req }) {
   let answers = {};
   let solnComments = [];
   try {
-  
+
     post = await sendReq(`${PostURL}${query.postid}/`, req.headers.cookie);
     if (!query.page) query.page = 1;
 
     if (post.detail) {
       console.log("No post");
     } else {
-    
+
       answers = await sendReq(`${AnswersURL}${query.postid}/?page=${query.page}`, req.headers.cookie)
       for (let i = 0; i < answers.results.length; i++) {
         solnComments.push(answers.results[i].comments);
