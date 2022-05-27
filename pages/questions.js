@@ -1,75 +1,101 @@
 import styles from "../styles/Questions.module.scss";
 import { PostListURL, PageSize } from "../components/constants";
-import Link from "next/link";
-import Pagination from "../components/Pagination";
-import { sendReq } from "../components/requests";
-import { Container, Row } from "react-bootstrap";
 
+import { sendReq } from "../components/requests";
+import { Container, Row, Col } from "react-bootstrap";
+import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
+import QuestionBox from "./questions/questionBox";
+import React, { useState, useEffect, useMemo } from "react";
+import { CSSGrid, measureItems, makeResponsive } from "react-stonecutter";
+import Pagination from "../components/Pagination";
 const Questions = ({ questions, query }) => {
-  // console.log(questions);
+  const enterExitStyles = [
+    "Simple",
+    "Skew",
+    "Newspaper",
+    "Fold Up",
+    "From Center",
+    "From Left to Right",
+    "From Top",
+    "From Bottom",
+  ];
+  const [offset, setOffset] = useState(0);
+  const newOffset = query.page * PageSize - PageSize;
+  const endoffset = offset + PageSize;
+  useEffect(() => {
+    setOffset(newOffset);
+  }, [query.page]);
+
+  // memo controlled grid
+  const gridrefresh = useMemo(() => {
+    return questions.results
+      .slice(newOffset, endoffset)
+      .map(
+        (
+          {
+            upVoteNumber,
+            downVoteNumber,
+            postByUser,
+            creator_by,
+            viewedByTheUsers,
+            categoryOfThePost,
+            ...data
+          },
+          index
+        ) => (
+          <li key={index}>
+            <QuestionBox
+              data={data}
+              categoryOfThePost={categoryOfThePost}
+              upVoteNumber={upVoteNumber}
+              downVoteNumber={downVoteNumber}
+              viewsbytheuser={viewedByTheUsers}
+              postByUser={postByUser}
+            />
+          </li>
+        )
+      );
+  }, [questions.results]);
+  const gridEnterExitStyle = enterExitStyles[0];
+  const Grid = makeResponsive(measureItems(CSSGrid), {
+    maxWidth: 1920,
+    minPadding: 100,
+  });
+
   return (
-    <Container style={{ marginTop: "8rem" }}>
-      <h1>Top Questions</h1>
-      {questions.count != 0 &&
-        questions.results.map(
-          (
-            {
-              upVoteNumber,
-              downVoteNumber,
-              creator_by,
-              viewedByTheUsers,
-              categoryOfThePost,
-              ...data
-            },
-            index
-          ) => (
-            <div key={creator_by.creator_id}>
-              <div className={styles.wrapper}>
-                <div className={styles.left}>
-                  <Link
-                    href={`/posts/?postid=${data.pk}&page=1`}
-                    className={styles.title}
-                  >
-                    {data.title.length > 60
-                      ? data.title.substring(0, 60) + " ..."
-                      : data.title}
-                  </Link>
-                  <ul>
-                    {categoryOfThePost.map(({ categoryForPost }) => (
-                      <li key={categoryForPost}>{categoryForPost}</li>
-                    ))}
-                  </ul>
-                </div>
-                <div className={styles.right}>
-                  <ul>
-                    <li>
-                      {upVoteNumber - downVoteNumber} Votes{" "}
-                      <img
-                        src="/icons/arrow_upward.svg"
-                        alt="upward arrow icon"
-                      />{" "}
-                    </li>
-                    <li>
-                      1 Answer <img src="/icons/answer.svg" alt="answer icon" />
-                    </li>
-                    <li>
-                      {viewedByTheUsers} Views{" "}
-                      <img src="/icons/eye.svg" alt="eye icon" />
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          )
+    <React.Fragment>
+      <div className={styles.emptybox}></div>
+
+      <Container>
+        <h1 className={styles.headingtop}>Top Questions</h1>
+        <Grid
+          className={styles.gridClass}
+          component="ul"
+          columns={3}
+          columnWidth={420}
+          gutterWidth={20}
+          gutterHeight={20}
+          itemHeight={316}
+          enter={gridEnterExitStyle.enter}
+          entered={gridEnterExitStyle.entered}
+          exit={gridEnterExitStyle.exit}
+          duration={400}
+          springConfig={{ stiffness: 60, damping: 12 }}
+        >
+          {gridrefresh}
+        </Grid>
+      </Container>
+      <div className={styles.page}>
+        {/* paginating */}
+        {questions.count > PageSize && (
+          <Pagination
+            currentPage={query.page}
+            count={Math.ceil(questions.count / PageSize)}
+            baseURL={`/questions?`}
+          />
         )}
-      {questions.count > PageSize && (
-        <Pagination
-          currentPage={query.page}
-          count={Math.ceil(questions.count / PageSize)}
-          baseURL={`/questions?`}
-        />
-      )}
-    </Container>
+      </div>
+    </React.Fragment>
   );
 };
 
