@@ -19,42 +19,40 @@ const Questions = ({ questions, query }) => {
     "From Top",
     "From Bottom",
   ];
-  const [offset, setOffset] = useState(0);
-  const newOffset = query.page * PageSize - PageSize;
-  const endoffset = offset + PageSize;
-  useEffect(() => {
-    setOffset(newOffset);
-  }, [query.page]);
+  // const [offset, setOffset] = useState(0);
+  // const newOffset = query.page * PageSize - PageSize;
+  // const endoffset = offset + PageSize;
+  // useEffect(() => {
+  //   setOffset(newOffset);
+  // }, [query.page]);
 
   // memo controlled grid
   const gridrefresh = useMemo(() => {
-    return questions.results
-      .slice(newOffset, endoffset)
-      .map(
-        (
-          {
-            upVoteNumber,
-            downVoteNumber,
-            postByUser,
-            creator_by,
-            viewedByTheUsers,
-            categoryOfThePost,
-            ...data
-          },
-          index
-        ) => (
-          <li key={index}>
-            <QuestionBox
-              data={data}
-              categoryOfThePost={categoryOfThePost}
-              upVoteNumber={upVoteNumber}
-              downVoteNumber={downVoteNumber}
-              viewsbytheuser={viewedByTheUsers}
-              postByUser={postByUser}
-            />
-          </li>
-        )
-      );
+    return questions.results.map(
+      (
+        {
+          upVoteNumber,
+          downVoteNumber,
+          postByUser,
+          creator_by,
+          viewedByTheUsers,
+          categoryOfThePost,
+          ...data
+        },
+        index
+      ) => (
+        <li key={index}>
+          <QuestionBox
+            data={data}
+            categoryOfThePost={categoryOfThePost}
+            upVoteNumber={upVoteNumber}
+            downVoteNumber={downVoteNumber}
+            viewsbytheuser={viewedByTheUsers}
+            postByUser={postByUser}
+          />
+        </li>
+      )
+    );
   }, [questions.results]);
   const gridEnterExitStyle = enterExitStyles[0];
   const Grid = makeResponsive(measureItems(CSSGrid), {
@@ -64,7 +62,11 @@ const Questions = ({ questions, query }) => {
 
   return (
     <React.Fragment>
-      <div className={styles.emptybox}></div>
+      <Row>
+        <Col>
+          <div className={styles.emptybox}></div>
+        </Col>
+      </Row>
 
       <Container>
         <h1 className={styles.headingtop}>Top Questions</h1>
