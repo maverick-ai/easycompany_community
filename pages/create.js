@@ -9,7 +9,7 @@ import remarkGfm from "remark-gfm";
 import { getDefaultToolbarCommands } from "react-mde";
 import { sendReq } from "../components/requests";
 import LoginPopUp from "../components/LogInPopUp";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import router from "next/router";
 
 let initialState = 0;
@@ -88,76 +88,93 @@ export default function Create() {
 
   return (
     <Container className={styles.Main}>
-      <div className={styles.Section}>
-        <div>
-          <h3>ASK THE COMMUNITY</h3>
-          <div>
-            <h1>The</h1>
-            <h1>Community</h1>
-            <h1>Will Answer</h1>
+      <Row>
+        <Col>
+          <div className={styles.Section}>
+            <div>
+              <h3>ASK THE COMMUNITY</h3>
+              <div>
+                <h1>The</h1>
+                <h1>Community</h1>
+                <h1>Will Answer</h1>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
-      <div className={styles.Partition} />
-      <div className={styles.RightSection}>
-        <div className={styles.Entry}>
-          <h2>What's your Question?</h2>
-          <input
-            source="title"
-            placeholder={travelQuestionState.title}
-            ref={titleRef}
-            className={`${styles.titleInput} ${
-              fadeState ? styles.fadeIn : styles.fadeOut
-            }`}
-          />
-        </div>
-        <div className={styles.Entry}>
-          <h2>Tag your question.</h2>
-          <p>Think of these tags as Hashtags to increase the reach.</p>
-          <TagsInput
-            tags={tags}
-            input={input}
-            changeInput={setInput}
-            changeTags={setTags}
-          />
-        </div>
-        <div className={styles.Entry}>
-          <h2>Description</h2>
-          <p>Provide any clarifications needed to answer.</p>
-          <ReactMde
-            value={bodyvalue}
-            onChange={setbValue}
-            selectedTab={selectedTab}
-            onTabChange={setSelectedTab}
-            childProps={{
-              textArea: {
-                placeholder: `${travelQuestionState.body}`,
-                className: `${styles.bodyInput} ${
-                  fadeState ? styles.fadeIn : styles.fadeOut
-                }`,
-              },
-            }}
-            toolbarCommands={[
-              ["header", "bold", "italic", "strikethrough"],
-              ["link", "quote", "image"],
-              ["unordered-list", "ordered-list", "checked-list"],
-            ]}
-            generateMarkdownPreview={(markdown) =>
-              Promise.resolve(
-                <ReactMarkdown children={markdown} remarkPlugins={remarkGfm} />
-              )
-            }
-          />
-        </div>
-        <div className={styles.Buttons}>
-          <div className={styles.Button} onClick={createPostRequest}>
-            <span>Submit</span>
+        </Col>
+        <div className={styles.Partition} />
+        <Col>
+          <div className={styles.RightSection}>
+            <div style={{ marginTop: "150px" }} />
+            <Row>
+              <Col>
+                <div className={styles.Entry}>
+                  <h2>What's your Question?</h2>
+                  <input
+                    source="title"
+                    placeholder={travelQuestionState.title}
+                    ref={titleRef}
+                    className={`${styles.titleInput} ${fadeState ? styles.fadeIn : styles.fadeOut
+                      }`}
+                  />
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className={styles.Entry}>
+                  <h2>Tag your question.</h2>
+                  <p>Think of these tags as Hashtags to increase the reach.</p>
+                  <TagsInput
+                    tags={tags}
+                    input={input}
+                    changeInput={setInput}
+                    changeTags={setTags}
+                  />
+                </div>
+              </Col>
+            </Row>
+            <Row>
+              <Col>
+                <div className={styles.Entry}>
+                  <h2>Description</h2>
+                  <p>Provide any clarifications needed to answer.</p>
+                  <ReactMde
+                    value={bodyvalue}
+                    onChange={setbValue}
+                    selectedTab={selectedTab}
+                    onTabChange={setSelectedTab}
+                    childProps={{
+                      textArea: {
+                        placeholder: `${travelQuestionState.body}`,
+                        className: `${styles.bodyInput} ${fadeState ? styles.fadeIn : styles.fadeOut
+                          }`,
+                      },
+                    }}
+                    toolbarCommands={[
+                      ["header", "bold", "italic", "strikethrough"],
+                      ["link", "quote", "image"],
+                      ["unordered-list", "ordered-list", "checked-list"],
+                    ]}
+                    generateMarkdownPreview={(markdown) =>
+                      Promise.resolve(
+                        <ReactMarkdown children={markdown} remarkPlugins={remarkGfm} />
+                      )
+                    }
+                  />
+                </div>
+              </Col>
+            </Row>
+            <div className={styles.Buttons}>
+              <div className={styles.Button} onClick={createPostRequest}>
+                <span>Submit</span>
+              </div>
+              <div className={styles.InvertedButton}>
+                <span>Reset</span>
+              </div>
+            </div>
           </div>
-          <div className={styles.InvertedButton}>
-            <span>Reset</span>
-          </div>
-        </div>
-      </div>
+        </Col>
+      </Row>
       {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
     </Container>
   );
