@@ -41,9 +41,9 @@
     margin-right: 10px;
     padding: 0 10px;
     padding-right: 2px;
-    border: 1px solid #7ed957;
+    border: 1px solid rgba(112, 112, 112, 0.3);
     border-radius: 15px;
-    background-color: #7ed957;
+    background-color: rgba(112, 112, 112, 0.3);
     white-space: nowrap;
     color: white;
   }

@@ -6,7 +6,7 @@
 
   width: 1300px;
   height: 327px;
-  background-image: url(../public/bkgpic.png);
+  background-image: url(../public/Frame1.png);
   margin: 155px auto 110px;
   background-size: 100% 100%;
 }
@@ -120,7 +120,7 @@
 
 .questionsList {
   padding: 10px;
-  background: linear-gradient(274.53deg, #e42874 -38.82%, #b50eae 152.21%);
+  /* background: linear-gradient(274.53deg, #e42874 -38.82%, #b50eae 152.21%); */
 
   border-radius: 16px;
 }
