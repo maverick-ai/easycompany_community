@@ -1,5 +1,5 @@
 import styles from "../styles/Search.module.css";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { SearchURL } from "../components/constants";
 
@@ -9,15 +9,16 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/dist/client/image";
 import { CSSGrid, measureItems, makeResponsive } from "react-stonecutter";
 import SearchBox from "./searchbox";
+import { useRouter } from "next/router";
 
 var page = 1;
-var str = "";
 
 const Content = () => {
   const [posts, setPosts] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [searched, setSearched] = useState(false);
-  const [query, setQuery] = useState("goa");
+  const router = useRouter();
+  const [query, setQuery] = useState(router.query.search);
 
   const enterExitStyles = [
     "Simple",
@@ -38,16 +39,15 @@ const Content = () => {
   const newSearch = () => {
     page = 1;
     setHasMore(true);
-    str = query;
     setPosts([]);
     setSearched(true);
     getMorePost();
   };
 
   const getMorePost = async () => {
-    console.log(`?search_query=${str}&page=${page}`);
+    console.log(`?search_query=${query}&page=${page}`);
     const newPosts = await sendReq(
-      SearchURL + `?search_query=${str}&page=${page}`
+      SearchURL + `?search_query=${query}&page=${page}`
     );
     if (newPosts.next) page += 1;
     else setHasMore(false);

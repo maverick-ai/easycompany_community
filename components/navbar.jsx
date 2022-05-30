@@ -14,7 +14,7 @@ const NavLinks = [
     name: "Ask",
   },
   {
-    path: "/search",
+    path: "/search_new",
     name: "Search",
   },
 ];
