@@ -12,6 +12,13 @@
   /* background: inherit; */
 }
 
+.image-tip{
+  color: gray;
+  background-color: #121212!important;
+  border: 2px solid grey!important;
+  border-radius: 15px;
+}
+
 html,
 body {
   background-color: #121212;
@@ -66,17 +73,20 @@ a:hover {
 
 .pagination {
   display: flex;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pagination a {
-  float: left;
   padding: 8px 16px;
+  margin:auto;
 }
 .controllerL {
-  margin-right: 0;
+  margin: auto;
 }
 .controllerR {
-  margin-left: auto;
+  margin: auto;
 }
 
 .pagination a.active {
