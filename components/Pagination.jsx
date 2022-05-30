@@ -53,6 +53,12 @@ const Pagination = (props) => {
       );
     }
 
+    if (currentPage === 1) {
+      pageNumber.push(
+        <div style={{width:"41.3px",height:"40px", margin:"auto"}} />
+      );
+    }
+
     for (var i = 0; i < PageNumberLimit && start + i <= props.count; i++) {
       console.log("page" + (start + i));
       if (start + i == currentPage)
@@ -70,6 +76,13 @@ const Pagination = (props) => {
           </Link>
         );
     }
+
+    if (currentPage === props.count) {
+      pageNumber.push(
+        <div style={{width:"41.3px",height:"40px", margin:"auto"}} />
+      );
+    }
+
     if (currentPage < props.count) {
       console.log(currentPage);
       pageNumber.push(

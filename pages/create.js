@@ -164,7 +164,7 @@ export default function Create() {
                 </div>
               </Col>
             </Row>
-            <div className={styles.Buttons}>
+            <div className={styles.Buttons} style={{marginBottom:"20px"}}>
               <div className={styles.Button} onClick={createPostRequest}>
                 <span>Submit</span>
               </div>

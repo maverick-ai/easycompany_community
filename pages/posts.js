@@ -192,13 +192,15 @@ const Post = ({ post, answers, solnComments, query }) => {
                 </Col>
               </Row>
             </Container>
-            {answers.count > PageSize && (
-              <Pagination
-                currentPage={query.page}
-                count={Math.ceil(answers.count / PageSize)}
-                baseURL={`/posts?postid=${query.postid}&`}
-              />
-            )}
+            <div className={styles.page}>
+              {answers.count > PageSize && (
+                <Pagination
+                  currentPage={query.page}
+                  count={Math.ceil(answers.count / PageSize)}
+                  baseURL={`/posts?postid=${query.postid}&`}
+                />
+              )}
+            </div>
           </div>
         </div>
       )}
