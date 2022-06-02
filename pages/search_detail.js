@@ -1,5 +1,5 @@
 import styles from "../styles/Search.module.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { SearchURL } from "../components/constants";
 
@@ -11,7 +11,7 @@ import { CSSGrid, measureItems, makeResponsive } from "react-stonecutter";
 import SearchBox from "./searchbox";
 import { useRouter } from "next/router";
 
-var page = 1;
+// var page = 1;
 
 const Content = () => {
   const [posts, setPosts] = useState([]);
@@ -19,6 +19,8 @@ const Content = () => {
   const [searched, setSearched] = useState(false);
   const router = useRouter();
   const [query, setQuery] = useState(router.query.search);
+
+  const [page, setPage] = useState(1);
 
   const enterExitStyles = [
     "Simple",
@@ -49,12 +51,15 @@ const Content = () => {
     const newPosts = await sendReq(
       SearchURL + `?search_query=${query}&page=${page}`
     );
-    if (newPosts.next) page += 1;
-    else setHasMore(false);
+    if (newPosts.next) {
+      setPage(page + 1);
+    } else setHasMore(false);
     console.log(newPosts);
     setPosts((post) => [...post, ...newPosts.results]);
   };
+
   useEffect(newSearch, []);
+  const newSearchCall = useCallback(() => newSearch, [newSearch]);
 
   function onChangeHandler(props) {
     setQuery(props.target.value);
@@ -69,7 +74,7 @@ const Content = () => {
             <Col lg={{ span: 6, offset: 3 }}>
               <div className={styles.searchbox}>
                 <Row>
-                  <Col lg={10} md={9} sm={9} xs={9}>
+                  <Col lg={9} md={9} sm={9} xs={9}>
                     <input
                       className={styles.searchInput}
                       id="query"
@@ -80,14 +85,14 @@ const Content = () => {
                       required
                     />
                   </Col>
-                  <Col lg={2} md={3} sm={3} xs={3}>
+                  <Col lg={3} md={3} sm={3} xs={3}>
                     <div className={styles.ImgQues}>
                       <Image
                         src={"/Vector.png"}
                         height={18.76}
                         width={18.76}
                         quality={100}
-                        onClick={newSearch}
+                        onClick={newSearchCall}
                       />
                     </div>
                   </Col>
@@ -105,7 +110,7 @@ const Content = () => {
           </Col>
         </Row>
         <Row>
-          <div>
+          <div className={styles.searchoverlay}>
             {searched && (
               <InfiniteScroll
                 dataLength={posts.length}

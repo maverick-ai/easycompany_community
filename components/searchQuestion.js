@@ -1,12 +1,13 @@
 import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
-import styles from "../styles/Questions.module.scss";
+import styles from "../styles/searchQuestion.module.scss";
 import Image from "next/image";
 
 import { Container, Col, Row } from "react-bootstrap";
 import React from "react";
 
-const SearchBox = (props) => {
+const SearchQuestion = (props) => {
+  console.log(props.data);
   return (
     <React.Fragment>
       <div className={styles.wrapper}>
@@ -22,16 +23,16 @@ const SearchBox = (props) => {
             <Image
               quality={100}
               src="/av_timer.png"
-              height={15}
-              width={15}
+              height={10}
+              width={10}
             ></Image>
           </div>
           <p className={styles.timerP}>1 Hour</p>
         </div>
         <div className={styles.para}>
           <p>
-            {props.postByUser.length > 150
-              ? props.postByUser.substring(0, 150) + " ..."
+            {props.postByUser.length > 100
+              ? props.postByUser.substring(0, 100) + " ..."
               : props.postByUser}
           </p>
         </div>
@@ -54,11 +55,11 @@ const SearchBox = (props) => {
             >
               <div className={`${styles.votebox} ${styles.listItem}`}>
                 <span>1 Answer</span>{" "}
-                <img src="/icons/answer.svg" alt="answer icon" />
+                {/* <img src="/icons/answer.svg" alt="answer icon" /> */}
               </div>
             </div>
           </Col>
-          <Col>
+          {/* <Col>
             <div
               className={styles.button1}
               style={{ backgroundColor: "#121212" }}
@@ -68,11 +69,11 @@ const SearchBox = (props) => {
                 <img src="/icons/eye.svg" alt="eye icon" />
               </div>
             </div>
-          </Col>
+          </Col> */}
         </Row>
       </div>
     </React.Fragment>
   );
 };
 
-export default SearchBox;
+export default SearchQuestion;
