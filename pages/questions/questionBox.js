@@ -7,6 +7,7 @@ import { Container, Col, Row } from "react-bootstrap";
 import React from "react";
 
 const QuestionBox = (props) => {
+  console.log(props.data);
   return (
     <React.Fragment>
       <div className={styles.wrapper}>

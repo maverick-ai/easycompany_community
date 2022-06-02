@@ -1,0 +1,75 @@
+.smalldiv1 {
+  width: 60px;
+  height: 128px;
+  background: url(../public/apollo-photography-axL38h7YDdk-unsplash\ 1.png);
+  border-radius: 8px;
+  /* transform: matrix(1, 0, 0, 1, 0, 0); */
+  background-size: 100% 100%;
+  margin-top: 0;
+  margin-left: 8%;
+}
+.rectangle {
+  position: relative;
+  margin-left: 50%;
+}
+.smalldiv2 {
+  position: relative;
+  width: 90px;
+  height: 158px;
+  background: url(../public/apollo-photography-axL38h7YDdk-unsplash\ 1.png);
+  border-radius: 8px;
+  /* transform: matrix(1, 0, 0, 1, 0, 0); */
+  background-size: 100% 100%;
+  margin-top: 5%;
+  margin-left: 80%;
+}
+.halo {
+  background-image: linear-gradient(184.98deg, #e42833 26.7%, #b50eae 29.92%);
+  z-index: -1;
+}
+
+.halo1 {
+  height: 130px;
+  width: 62px;
+  background-image: linear-gradient(184.98deg, #e42833 26.7%, #b50eae 29.92%);
+  padding: 1px;
+}
+.transform {
+  z-index: -1;
+  border-radius: 8px;
+  transform: matrix(1, 0.2, 0, 0.9, 0, 0);
+}
+.questionBox {
+  margin-left: auto;
+  margin-right: auto;
+  transform: matrix(1, 0.27, 0, 0.97, 0, 0);
+}
+.pinkpole {
+  position: absolute;
+  z-index: 1;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 50px;
+  z-index: 1;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+}
+
+.border1 {
+  width: 272px;
+  height: 172px;
+  background-image: linear-gradient(184.98deg, #e42833 26.7%, #b50eae 29.92%);
+  z-index: -1;
+  border-radius: 2px;
+}
+.border2 {
+  width: 270px;
+  height: 170px;
+  background-color: #121212;
+  z-index: -1;
+  margin-top: 10px;
+  border-radius: 2px;
+}
+.inner {
+  z-index: 2;
+  margin-top: 30px;
+}

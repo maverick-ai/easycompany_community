@@ -63,7 +63,7 @@ const Content = () => {
             <Col lg={{ span: 6, offset: 3 }}>
               <div className={styles.searchbox}>
                 <Row>
-                  <Col lg={10} md={9} sm={9} xs={9}>
+                  <Col lg={10} md={8} sm={8} xs={6}>
                     <input
                       className={styles.searchInput}
                       id="query"
@@ -73,7 +73,7 @@ const Content = () => {
                       required
                     />
                   </Col>
-                  <Col lg={2} md={3} sm={3} xs={3}>
+                  <Col lg={2} md={4} sm={4} xs={6}>
                     <div className={styles.ImgQues}>
                       <Image
                         src={"/Vector.png"}
