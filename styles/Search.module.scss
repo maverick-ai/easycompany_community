@@ -29,7 +29,6 @@
   background: #121212;
   border-radius: 36px;
   height: 37px;
-
 }
 
 .mobileInput {
@@ -239,4 +238,8 @@
     #e32a34 100%,
     #e32a34 100%
   );
+}
+.london {
+  transform: rotate(-50deg) !important;
+  font-family: "Gloria Hallelujah", cursive !important;
 }

@@ -1,4 +1,4 @@
-import styles from "../styles/Search.module.css";
+import styles from "../styles/Search.module.scss";
 import React, { useState, useEffect, useCallback } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { SearchURL } from "../components/constants";
