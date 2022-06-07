@@ -30,13 +30,17 @@ const QuestionBox = (props) => {
           <p className={styles.timerP}>1 Hour</p>
         </div>
         <div className={styles.para}>
-          <p>
+          <span>
             {props.postByUser.length > 150
               ? props.postByUser.substring(0, 150) + " ..."
               : props.postByUser}
-          </p>
+          </span>
         </div>
-
+        <div style={{ width: "90%", height: "40px", marginTop: "auto" }}>
+          {props.categoryOfThePost.map(({ categoryForPost }) => {
+            return <span className={styles.tags}>{categoryForPost}</span>;
+          })}
+        </div>
         <Row className={styles.buttonRow}>
           <Col>
             <div

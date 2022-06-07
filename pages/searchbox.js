@@ -64,7 +64,7 @@ const SearchBox = (props) => {
               style={{ backgroundColor: "#121212" }}
             >
               <div className={`${styles.votebox} ${styles.listItem}`}>
-                {props.viewsbytheuser}{" "}
+                <span>{props.viewedByTheUsers}</span>
                 <img src="/icons/eye.svg" alt="eye icon" />
               </div>
             </div>

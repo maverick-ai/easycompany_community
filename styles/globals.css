@@ -4,6 +4,18 @@
   font-style: normal;
   font-display: swap;
 }
+@font-face {
+  font-family: "Gloria Hallelujah";
+  font-weight: 400;
+  src: url("/fonts/Gloria_Hallelujah/GloriaHallelujah-Regular.ttf");
+  font-display: swap;
+}
+@font-face {
+  font-family: "Poppins";
+  src: url("/fonts/Poppins/Poppins-Regular.ttf");
+  font-display: swap;
+  font-weight: 400;
+}
 
 * {
   padding: 0;
@@ -12,10 +24,10 @@
   /* background: inherit; */
 }
 
-.image-tip{
+.image-tip {
   color: gray;
-  background-color: #121212!important;
-  border: 2px solid grey!important;
+  background-color: #121212 !important;
+  border: 2px solid grey !important;
   border-radius: 15px;
 }
 
@@ -80,7 +92,7 @@ a:hover {
 
 .pagination a {
   padding: 8px 16px;
-  margin:auto;
+  margin: auto;
 }
 .controllerL {
   margin: auto;
