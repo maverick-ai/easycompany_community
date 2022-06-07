@@ -4,6 +4,7 @@ import router from "next/router";
 
 const sendReq = async(url, tokenCookie=null, method="GET", data=null, setfunc=null) => {
   let response = {};
+
   try {
     if (data) {
       if (tokenCookie) {
@@ -52,16 +53,16 @@ const sendReq = async(url, tokenCookie=null, method="GET", data=null, setfunc=nu
         });
       }
       else {
+        const headers = new Headers({
+          "Content-Type": "application/json",
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip,deflate,br",
+          "Connection": "keep-alive",
+          "Host":Host
+        });
         response = await fetch(url, {
           method: method,
-          headers: {
-            "Content-Type": "application/json",
-            Accept: "*/*",
-            "Accept-Encoding": "gzip, deflate, br",
-            Connection: "keep-alive",
-            "Content-Length": 0,
-            Host: Host,
-          }
+          headers: headers
         })
       }
     }
