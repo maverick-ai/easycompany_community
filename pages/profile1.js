@@ -3,6 +3,15 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/dist/client/image";
 import styles from "../styles/Profile.module.css";
 import Box from "./questions/box";
+import { Chart } from "../components/chart";
+import {
+  UserProfileURL,
+  UserPostsURL,
+  UserSolutionsURL,
+  PublicUserProfileURL,
+  PublicUserSolutionsURL,
+  PublicUserPostsURL,
+} from "../components/constants";
 
 function Profile1() {
   return (
@@ -86,49 +95,47 @@ function Profile1() {
             </Row>
           </Col>
         </Row>
+
+        {/* medal row  */}
         <Row className={styles.medalRow}>
           <Col styles={{ paddingLeft: "50px" }}>
             <div className={styles.medalbox}>
-              <div style={{ display: "flex" }}>
-                <div style={{ paddingTop: "47px", marginLeft: "auto" }}>
-                  <Image
-                    src="/goldmedal.svg"
-                    height={87}
-                    width={128}
-                    quality={100}
-                  />{" "}
-                </div>
-                <div
-                  style={{
-                    marginLeft: "10px",
-                    marginRight: "auto",
-                    marginTop: "69px",
-                  }}
-                >
-                  <h1>Gold Medal</h1>{" "}
+              <div
+                style={{
+                  paddingTop: "47px",
+                  marginRight: "auto",
+                  marginLeft: "30px",
+                  display: "flex",
+                }}
+              >
+                <img
+                  src="/goldmedal.svg"
+                  alt="medal"
+                  style={{ width: "51px", height: "35px" }}
+                />
+                <div style={{ padding: "7px 10px 0" }}>
+                  <h5 style={{ fontSize: "20px" }}>lorem ipsum</h5>
                 </div>
               </div>
             </div>
           </Col>
           <Col>
             <div className={styles.medalbox1}>
-              <div style={{ display: "flex" }}>
-                <div style={{ paddingTop: "47px", marginLeft: "auto" }}>
-                  <Image
-                    src="/goldmedal.svg"
-                    height={87}
-                    width={128}
-                    quality={100}
-                  />{" "}
-                </div>
-                <div
-                  style={{
-                    marginLeft: "10px",
-                    marginRight: "auto",
-                    marginTop: "69px",
-                  }}
-                >
-                  <h1>Gold Medal</h1>{" "}
+              <div
+                style={{
+                  paddingTop: "47px",
+                  marginRight: "auto",
+                  marginLeft: "30px",
+                  display: "flex",
+                }}
+              >
+                <img
+                  src="/goldmedal.svg"
+                  alt="medal"
+                  style={{ width: "51px", height: "35px" }}
+                />
+                <div style={{ padding: "7px 10px 0" }}>
+                  <h5 style={{ fontSize: "20px" }}>lorem ipsum</h5>
                 </div>
               </div>
             </div>
@@ -208,16 +215,24 @@ function Profile1() {
                 <Col lg={{ offset: 3 }}>
                   <div style={{ display: "flex" }}>
                     {" "}
-                    <h3>score</h3> <h3>88</h3>
+                    <h3>score</h3> <h3>888</h3>
                   </div>
                 </Col>
               </Row>
             </div>
           </Col>
+
+          {/* reputation chart ------------- */}
           <Col>
-            <div className={styles.medalbox1}></div>
+            <div className={styles.medalbox1}>
+              <div className={styles.chart}>
+                {/* <Chart chartdata={data}/> */}
+              </div>
+            </div>
           </Col>
         </Row>
+
+        {/* -----------  */}
         <Row className={styles.medalRow}>
           <Col styles={{ paddingLeft: "50px" }}>
             <div className={styles.medalbox}></div>

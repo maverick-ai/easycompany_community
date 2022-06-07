@@ -6,7 +6,7 @@ function MobileCard() {
       <div className={styles.card}>
         <div className={styles.dream}>
           <h2
-            style={{ width: "150px", marginLeft: "40%", position: "absolute" }}
+            style={{ width: "140px", marginLeft: "40%", position: "absolute" }}
           >
             My dream trip
           </h2>

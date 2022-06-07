@@ -10,6 +10,7 @@ import Image from "next/dist/client/image";
 import { CSSGrid, measureItems, makeResponsive } from "react-stonecutter";
 import SearchBox from "./searchbox";
 import { useRouter } from "next/router";
+import Link from "next/dist/client/link";
 
 // var page = 1;
 
@@ -38,33 +39,36 @@ const Content = () => {
     minPadding: 100,
   });
 
+  const getMorePost = async () => {
+    const newPosts = await sendReq(
+      SearchURL + `?search_query=${query}&page=${page}`
+    );
+
+    console.log(newPosts);
+    setPosts((post) => [...post, ...newPosts.results]);
+    setPage((page = page + 1));
+    console.log("getMorePost");
+    console.log(page);
+  };
+
   const newSearch = () => {
-    page = 1;
+    setPage((page = 1));
+    console.log("newSearch");
+    console.log(page);
     setHasMore(true);
     setPosts([]);
     setSearched(true);
     getMorePost();
   };
-
-  const getMorePost = async () => {
-    console.log(`?search_query=${query}&page=${page}`);
-    const newPosts = await sendReq(
-      SearchURL + `?search_query=${query}&page=${page}`
-    );
-    if (newPosts.next) {
-      setPage(page + 1);
-    } else setHasMore(false);
-    console.log(newPosts);
-    setPosts((post) => [...post, ...newPosts.results]);
-  };
-
-  useEffect(newSearch, []);
-  const newSearchCall = useCallback(() => newSearch, [newSearch]);
+  console.log(posts.length);
 
   function onChangeHandler(props) {
     setQuery(props.target.value);
   }
 
+  useEffect(newSearch, []);
+
+  // const newSearchCall = useCallback(() => newSearch, [query]);
   return (
     // search-bar
     <React.Fragment>
@@ -92,7 +96,7 @@ const Content = () => {
                         height={18.76}
                         width={18.76}
                         quality={100}
-                        onClick={newSearchCall}
+                        onClick={newSearch}
                       />
                     </div>
                   </Col>
@@ -143,7 +147,8 @@ const Content = () => {
                   duration={400}
                   springConfig={{ stiffness: 60, damping: 12 }}
                 >
-                  {console.log(posts)}
+                  {console.log(".....po...")}
+                  {console.log()}
                   {posts.map(
                     (
                       {
@@ -164,6 +169,7 @@ const Content = () => {
                           upVoteNumber={upVoteNumber}
                           downVoteNumber={downVoteNumber}
                           postByUser={postByUser}
+                          viewedByTheUsers={viewedByTheUsers}
                         />
                       </li>
                     )
@@ -179,3 +185,26 @@ const Content = () => {
 };
 
 export default Content;
+
+// export async function getServerSideProps({ query }) {
+//   if (!query.page) query.page = 1;
+//   try {
+//     const searchResult = await sendReq(
+//       SearchURL + `?search_query=${query}&page=${1}`
+//     );
+//   } catch (err) {
+//     return {
+//       redirect: {
+//         destination: "/404",
+//         permanent: false,
+//       },
+//     };
+//   }
+
+//   return {
+//     props: {
+//       question: searchResult.results,
+//       query,
+//     },
+//   };
+// }

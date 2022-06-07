@@ -69,6 +69,20 @@
   border-width: 1px;
   border-radius: 50%;
 }
+@media only screen and (max-width: 991px) {
+  .imgBorder {
+    border-radius: 50%;
+    border-radius: 120px;
+    border-width: 2px;
+    border-color: aliceblue;
+    border-style: dashed;
+    width: 220px;
+    height: 220px;
+    padding-top: 12px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 .imgBorder {
   border-radius: 50%;
   border-radius: 120px;
@@ -81,6 +95,24 @@
 }
 .nameRow {
   margin-top: 30px;
+}
+.emptybox1 {
+  width: 27px;
+}
+@media only screen and (max-width: 991px) {
+  .emptybox1 {
+    width: 0;
+  }
+}
+.name {
+  font-size: 36px;
+}
+@media only screen and (max-width: 991px) {
+  .name {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+  }
 }
 .imgWrap {
   padding-top: 2px;
@@ -100,27 +132,62 @@
   background-image: linear-gradient(284.11deg, #e42833 20.44%, #b50eae 129.2%);
   color: aliceblue;
 }
+@media only screen and (max-width: 991px) {
+  .button1 {
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+  }
+}
 .medalWrap {
   display: flex;
   margin-top: 81px;
 }
 .medalbox {
   width: 530px;
-  height: 300px;
+  height: 323px;
   border-radius: 16px;
   background-color: black;
-  margin-left: auto;
+  margin: 0 auto;
   color: aliceblue;
+  margin-bottom: 5%;
 }
 .medalbox1 {
   width: 530px;
-  height: 300px;
+  height: 323px;
   border-radius: 16px;
   background-color: black;
+  margin: 0 auto;
+  margin-bottom: 5%;
 }
 .smallBox {
   width: 53px;
   height: 43px;
   background-image: linear-gradient(116.6deg, #b50eae -56.74%, #e42833 135.97%);
   border-radius: 4px;
+}
+.chart {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.gradientText {
+  background-image: linear-gradient(200.73deg, #e42833 45.4%, #b50eae 55.32%);
+  color: transparent;
+  background-clip: text;
+}
+.chartBox {
+  width: 89px;
+  height: 33px;
+  background-image: linear-gradient(
+    280.85deg,
+    #e42833 -26.64%,
+    #b50eae 132.86%
+  );
+  border-radius: 4px;
+  text-align: center;
+  padding-top: 5px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
