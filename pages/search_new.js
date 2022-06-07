@@ -5,7 +5,7 @@ import Link from "next/dist/client/link";
 import { Container, Row, Col } from "react-bootstrap";
 import Styles from "../styles/utils.module.css";
 import MobileCard from "/components/mobileSearchCard";
-import style from "../styles/Search_new.module.css";
+import style from "../styles/Search_new.module.scss";
 import SearchQuestion from "../components/searchQuestion";
 import SearchQuestion2 from "../components/searchQuestion2";
 
@@ -15,7 +15,7 @@ function search_1() {
     const [winWidth, setWinWidth] = useState();
 
     const datanew = {
-        pk : "fa63ddb2-a291-46fe-9d2a-dab875338086",
+        pk: "fa63ddb2-a291-46fe-9d2a-dab875338086",
         title: "goa 4",
         votes: 0,
     };
@@ -175,10 +175,10 @@ function search_1() {
             }
             {
                 (winWidth > 576) && (
-                    <Container style={{ marginTop: "80px" }}>
+                    <div style={{ marginTop: "120px" }}>
                         <Row>
                             <Col lg="5">
-                                <div>
+                                <div style={{ marginLeft: "80px" }}>
                                     <div style={{ marginTop: "160px", fontSize: "18px" }}>
                                         <p>Find Answers To Your Questions</p>
                                     </div>
@@ -194,7 +194,7 @@ function search_1() {
                                         Search
                                     </h1>
                                 </div>
-                                <div style={{ marginTop: "18px" }}>
+                                <div style={{ marginTop: "18px", marginLeft: "80px", marginRight: "60px" }}>
                                     <div className={styles.newSearchBox}>
                                         <div className={styles.ImgQues1}>
                                             <Image
@@ -229,6 +229,9 @@ function search_1() {
                                         <button className={styles.submitButton}>Submit</button>
                                     </Link>
                                 </div>
+                                <div style={{transform:"rotate(90deg)", width:"450px", marginTop:"-90px"}}>
+                                <MobileCard />
+                                </div>
                             </Col>
                             <Col>
                                 <Row>
@@ -250,7 +253,7 @@ function search_1() {
                                         </div>
                                     </Col>
                                     <Col>
-                                        <div className={style.questionBox}>
+                                        <div className={style.questionBox} style={{ marginLeft: "0" }}>
                                             <div className={style.border1}>
                                                 <div className={style.border2}>
                                                     <div className={style.inner}>
@@ -268,8 +271,22 @@ function search_1() {
                                     </Col>
                                 </Row>
                                 <Row style={{ marginTop: "50px" }}>
-                                    <Col lg={{ offset: 4 }}>
-                                        <div className={style.questionBox}>
+                                    <Col lg={{ span: 2 }}>
+                                        <div className={style.img1_bor1}>
+                                            <div className={style.img1_bor2}>
+                                                <div className={style.img1}>
+                                                    <Image
+                                                        src="/apollo-photography-axL38h7YDdk-unsplash.png"
+                                                        height={128}
+                                                        width={80}
+                                                        quality={100}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                    <Col lg={{ span: 4, offset: 1 }}>
+                                        <div className={style.questionBox} style={{ marginLeft: "0" }}>
                                             <SearchQuestion2
                                                 data={datanew}
                                                 upVoteNumber={22}
@@ -279,24 +296,51 @@ function search_1() {
                                             />
                                         </div>
                                         <div className={style.pinkpole}>
-                                            <Image
-                                                src="/pinkpole.svg"
-                                                height={230}
-                                                width={195}
-                                                quality={100}
-                                            ></Image>
+                                        <img src="/pole.svg"/>
+                                        </div>
+                                    </Col>
+                                    <Col>
+                                        <div className={style.questionBox}>
+                                            <SearchQuestion2
+                                                data={datanew}
+                                                upVoteNumber={22}
+                                                downVoteNumber={10}
+                                                viewsbytheuser={20}
+                                                postByUser="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                                            />
                                         </div>
                                     </Col>
                                 </Row>
                                 <Row style={{ marginTop: "50px" }}>
-                                    {/* <div className={style.smalldiv1}></div>
-            <div className={style.questionBox}></div> */}
+                                    <Col lg={{ span: 3 }}>
+                                        <div className={style.questionBox}>
+                                            <SearchQuestion
+                                                data={datanew}
+                                                upVoteNumber={22}
+                                                downVoteNumber={10}
+                                                viewsbytheuser={20}
+                                                postByUser="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
+                                            />{" "}
+                                        </div>
+                                    </Col>
+                                    <Col lg={{ offset: 5 }}>
+                                        <div className={style.img2_bor1}>
+                                            <div className={style.img2_bor2}>
+                                                <div className={style.img2}>
+                                                    <Image
+                                                        src="/kilarov.png"
+                                                        height={176}
+                                                        width={128}
+                                                        quality={100}
+                                                    />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Col>
                                 </Row>
-
-                                {/* <div className={style.smalldiv2}></div> */}
                             </Col>
                         </Row>
-                    </Container>
+                    </div>
                 )
             }
         </div>

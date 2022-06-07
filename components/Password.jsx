@@ -8,7 +8,7 @@ function PasswordField(props) {
     <div className={`${styles.password} ${props.LogInCorrect===true?'':'false'}`}>
     <div className={styles.field}>
         <input ref={props.PasswordRef} id="password1" type="password" required />
-        <label htmlFor="password1">Password</label>
+        <label htmlFor="password1">Type your password ...</label>
     </div>
     <div className={styles.fold}>
         <span></span>
