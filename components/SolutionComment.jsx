@@ -14,15 +14,15 @@ const SolutionComment = (props) => {
 
   useEffect(() => {
     if (window.innerWidth <= 1200) {
-      setWinWidth(window.innerWidth);
+      setWinWidth(true);
     } else {
-      setWinWidth(window.innerWidth);
+      setWinWidth(false);
     }
     window.addEventListener("resize", () => {
       if (window.innerWidth <= 1200) {
-        setWinWidth(window.innerWidth);
+        setWinWidth(true);
       } else {
-        setWinWidth(window.innerWidth);
+        setWinWidth(false);
       }
     });
   }, []);
@@ -30,7 +30,7 @@ const SolutionComment = (props) => {
 
   return (
     <div className="row">
-      {props.imgIdx % 2 === 0 && winWidth >= 1200 && (
+      {props.imgIdx % 2 === 0 && !winWidth && (
         <Container>
           <Row>
             <Col lg={{ span: 8, offset: 1 }} >
@@ -60,7 +60,7 @@ const SolutionComment = (props) => {
         </Container>
       )
       }
-      {props.imgIdx % 2 !== 0 && winWidth >= 1200 && (
+      {props.imgIdx % 2 !== 0 && !winWidth && (
         <Container>
           <Row>
             <Col lg={{ span: 8, offset: 1 }}>
@@ -88,7 +88,7 @@ const SolutionComment = (props) => {
           </Row>
         </Container>
       )}
-      {winWidth <= 1200 && (
+      {winWidth && (
         <Container>
           <Row>
             <div className={`${Styles.commentboxdiv}`}>

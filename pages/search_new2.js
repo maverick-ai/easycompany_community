@@ -1,4 +1,4 @@
-import styles from "../styles/Search.module.css";
+import styles from "../styles/Search.module.scss";
 import { useState, useEffect } from "react";
 import Image from "next/dist/client/image";
 import Link from "next/dist/client/link";
@@ -22,22 +22,22 @@ function search_1() {
 
     useEffect(() => {
         if (window.innerWidth <= 1020) {
-            setWinWidth(window.innerWidth);
+            setWinWidth(true);
         } else {
-            setWinWidth(window.innerWidth);
+            setWinWidth(false);
         }
         window.addEventListener("resize", () => {
             if (window.innerWidth <= 1020) {
-                setWinWidth(window.innerWidth);
+                setWinWidth(true);
             } else {
-                setWinWidth(window.innerWidth);
+                setWinWidth(false);
             }
         });
     }, []);
 
     return (
         <div>
-            {(winWidth <= 1020) && (
+            {(winWidth) && (
                 <Container>
                     <Row>
                         <Col>
@@ -104,29 +104,31 @@ function search_1() {
                         </Col>
                     </Row>
                     <div style={{ width: "300px", height: "300px", marginLeft: "auto", marginRight: "auto" }}>
-                        <div style={{ position: "relative", top: "20%", left: "30%" }}>
-                            <Image
-                                src="/Par_s.png"
-                                height={40}
-                                width={110}
-                                quality={100}
-                            />
+                        <div style={{ position: "relative", top: "10%", left: "30%" }}>
+                            <span
+                                style={{
+                                    fontFamily: "Gloria Hallelujah,cursive",
+                                    fontSize: "40px",
+                                }}
+                            >
+                                Par
+                            </span>
                         </div>
-                        <div style={{ position: "relative", top: "0", left: "52%" }}>
-                            <Image
-                                src="/tower.png"
-                                height={60}
-                                width={27}
-                                quality={100}
-                            />
+                        <div style={{ position: "relative", top: "-10%", left: "52%" }}>
+                            <Image src="/Group.svg" height={60} width={27} quality={100} />
                         </div>
-                        <div style={{ position: "relative", top: "0", left: "-20%" }}>
-                            <Image
-                                src="/London.png"
-                                height={130}
-                                width={100}
-                                quality={100}
-                            />
+                        <div style={{ position: "relative", top: "-31%", left: "60%" }}>
+                            <span
+                                style={{
+                                    fontFamily: "Gloria Hallelujah,cursive",
+                                    fontSize: "40px",
+                                }}
+                            >
+                                s
+                            </span>
+                        </div>
+                        <div className={styles.london} style={{ position: "relative", top: "-40%", left: "-35%" }}>
+                            <span style={{ fontSize: "40px" }}>London</span>
                         </div>
                         <div style={{ position: "relative", top: "45%", left: "-12%" }}>
                             <Image
@@ -136,7 +138,7 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{ position: "relative", top: "-67%", left: "-7%" }}>
+                        <div style={{ position: "relative", top: "-72%", left: "-7%" }}>
                             <Image
                                 src="/Crown.png"
                                 height={50}
@@ -144,13 +146,12 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{ position: "relative", top: "-75%", left: "85%" }}>
-                            <Image
-                                src="/Rome.png"
-                                height={100}
-                                width={100}
-                                quality={100}
-                            />
+                        <div style={{
+                            position: "relative", top: "-50%", left: "75%", transform: "rotate(45deg)",
+                            fontSize: "40px",
+                            fontFamily: "'Gloria Hallelujah', cursive",
+                        }}>
+                            <span>Rome</span>
                         </div>
                         <div style={{ position: "relative", top: "-65%", left: "80%" }}>
                             <Image
@@ -160,7 +161,7 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{ position: "relative", top: "-125%", left: "100%" }}>
+                        <div style={{ position: "relative", top: "-115%", left: "100%" }}>
                             <Image
                                 src="/rome_build.png"
                                 height={60}
@@ -176,7 +177,7 @@ function search_1() {
             )
             }
             {
-                (winWidth > 1020) && (
+                (!winWidth) && (
                     <div style={{ marginTop: "120px" }}>
                         <Row>
                             <Col lg="5">
@@ -346,7 +347,7 @@ function search_1() {
                     </div>
                 )
             }
-        </div>
+        </div >
 
     );
 }

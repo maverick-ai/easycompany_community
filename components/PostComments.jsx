@@ -14,15 +14,15 @@ const PostComment = (props) => {
 
     useEffect(() => {
         if (window.innerWidth <= 1200) {
-            setWinWidth(window.innerWidth);
+            setWinWidth(true);
         } else {
-            setWinWidth(window.innerWidth);
+            setWinWidth(false);
         }
         window.addEventListener("resize", () => {
             if (window.innerWidth <= 1200) {
-                setWinWidth(window.innerWidth);
+                setWinWidth(true);
             } else {
-                setWinWidth(window.innerWidth);
+                setWinWidth(false);
             }
         });
     }, []);
@@ -31,7 +31,7 @@ const PostComment = (props) => {
     return (
         <div className="row post-comment">
 
-            {props.imgIdx % 2 === 0 && winWidth >= 1200 && (
+            {props.imgIdx % 2 === 0 && !winWidth && (
 
                 <Container>
                     <Row>
@@ -61,7 +61,7 @@ const PostComment = (props) => {
                     </Row>
                 </Container>)
             }
-            {props.imgIdx % 2 !== 0 && winWidth >= 1200 && (
+            {props.imgIdx % 2 !== 0 && !winWidth && (
                 <Container>
                     <Row>
                         <Col lg={{ span: 8, offset: 1 }}>
@@ -89,7 +89,7 @@ const PostComment = (props) => {
                     </Row>
                 </Container>
             )}
-            {winWidth <= 1200 && (
+            {winWidth && (
                 <Container>
                     <Row>
                         <div className={`${Styles.commentboxdiv}`}>

@@ -170,16 +170,13 @@ function search_1() {
 
           {/* --------------rome ------------------- */}
           <div
-            style={{
-              position: "absolute",
-              top: "54%",
-              left: "72%",
+
+          >
+            <span style={{
               transform: "rotate(45deg)",
               fontSize: "40px",
               fontFamily: "'Gloria Hallelujah', cursive",
-            }}
-          >
-            <span>Rome</span>
+            }}>Rome</span>
           </div>
           <div style={{ position: "absolute", top: "72%", left: "74%" }}>
             <Image
