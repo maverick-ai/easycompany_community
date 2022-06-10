@@ -9,14 +9,14 @@ function LogInForm(props) {
       <form className="form">
         <p>Email Address</p>
         <EmailField EmailRef={props.EmailRef} />
-        <div style={{ paddingTop: "30px" }}>
+        <div style={{ paddingTop: "25px" }}>
         <p>Password</p>
           <PasswordField
             LogInCorrect={props.LogInCorrect}
             PasswordRef={props.PasswordRef}
           />
         </div>
-        <div style={{ paddingTop: "30px" }}>
+        <div style={{ paddingTop: "25px" }}>
           <button
             onClick={(event) => {
               event.preventDefault();

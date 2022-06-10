@@ -178,18 +178,18 @@ function search_1() {
             }
             {
                 (!winWidth) && (
-                    <div style={{ marginTop: "120px" }}>
+                    <div style={{ marginTop: "110px" }}>
                         <Row>
                             <Col lg="5">
-                                <div style={{ marginLeft: "80px" }}>
-                                    <div style={{ marginTop: "160px", fontSize: "18px" }}>
+                                <div style={{ marginLeft: "50px" }}>
+                                    <div style={{ marginTop: "60px", fontSize: "14px" }}>
                                         <p>Find Answers To Your Questions</p>
                                     </div>
 
                                     <h1
                                         style={{
                                             marginTop: "0",
-                                            fontSize: "70px",
+                                            fontSize: "50px",
                                             fontWeight: "700",
                                             fontFamily: "Poppins, sans-serif",
                                         }}
@@ -197,7 +197,7 @@ function search_1() {
                                         Search
                                     </h1>
                                 </div>
-                                <div style={{ marginTop: "18px", marginLeft: "80px", marginRight: "60px" }}>
+                                <div style={{ marginTop: "0", marginLeft: "50px", marginRight: "60px" }}>
                                     <div className={styles.newSearchBox}>
                                         <div className={styles.ImgQues1}>
                                             <Image
@@ -213,7 +213,7 @@ function search_1() {
                                             style={{
                                                 backgroundColor: "black",
                                                 width: "80%",
-                                                height: "60px",
+                                                height: "50px",
                                             }}
                                             id="query"
                                             type="text"
@@ -224,16 +224,16 @@ function search_1() {
                                         />
                                     </div>
                                     <Link
-                                        style={{ zIndex: "200" }}
+                                        style={{ zIndex: "5" }}
                                         href={{
                                             pathname: "/search_detail",
                                             query: data,
                                         }}
                                     >
-                                        <button className={styles.submitButton}>Submit</button>
+                                        <button style={{ zIndex: "90" }} className={styles.submitButton}>Submit</button>
                                     </Link>
                                 </div>
-                                <div style={{ transform: "rotate(90deg)", width: "450px", marginTop: "-90px" }}>
+                                <div style={{ transform: "rotate(90deg)", width: "100px", marginTop: "-110px", marginLeft:"170px" }}>
                                     <MobileCard />
                                 </div>
                             </Col>
@@ -331,8 +331,8 @@ function search_1() {
                                                 <div className={style.img2}>
                                                     <Image
                                                         src="/kilarov.png"
-                                                        height={176}
-                                                        width={128}
+                                                        height={140}
+                                                        width={102}
                                                         quality={100}
                                                     />
                                                 </div>
@@ -347,7 +347,7 @@ function search_1() {
                     </div>
                 )
             }
-        </div >
+        </div>
 
     );
 }

@@ -47,9 +47,9 @@
   background: red;
 }
 .qtitle {
-  font-size: 24px;
+  font-size: 21px;
   line-height: 20px;
-  margin-top: 10px;
+  margin-top: 8px;
   margin-right: auto;
   margin-left: 24px;
 }
@@ -104,12 +104,13 @@
   margin-bottom: auto;
 
   margin-right: auto;
-  font-size: 14px;
+  font-size: 10px;
+  padding-bottom: 0;
 }
 .votebox {
-  width: 80px;
-  height: 35px;
-  padding-top: 10px;
+  width: 70px;
+  height: 27px;
+  padding-top: 7px;
 
   text-align: center;
   background-color: #121212;
@@ -196,8 +197,8 @@
   border: 2px solid black;
   align-items: center;
 
-  width: 350px;
-  height: 250px;
+  width: 300px;
+  height: 150px;
   flex-direction: column;
 }
 

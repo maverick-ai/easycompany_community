@@ -75,7 +75,8 @@
 .pinkpole {
   position: absolute;
   z-index: 1;
-  height: 290px;
+  height: 220px;
+  width: 70px;
   margin-left: 95px;
   margin-bottom: 0;
   padding-bottom: 0;
@@ -86,8 +87,8 @@
 .border1 {
   background-image: linear-gradient(184.98deg, #e42833 26.7%, #b50eae 29.92%);
   z-index: -1;
-  width: 272px;
-  height: 152px;
+  width: 210px;
+  height: 120px;
   border-radius: 8px;
   padding: 1px 1px 1px 0px;
 }
@@ -96,9 +97,9 @@
   background-color: #121212;
   z-index: -1;
   border-radius: 8px;
-  padding-top: 30px;
-  width: 270px;
-  height: 150px;
+  padding-top: 15px;
+  width: 208px;
+  height: 118px;
 }
 
 .inner {
@@ -133,8 +134,8 @@
 .img2_bor1 {
   background-image: linear-gradient(184.98deg, #e42833 26.7%, #b50eae 29.92%);
   z-index: -1;
-  width: 150px;
-  height: 178px;
+  width: 120px;
+  height: 148px;
   border-radius: 8px;
   padding: 1px 1px 1px 0px;
   transform: matrix(1, 0.27, 0, 0.97, 0, 0);
@@ -144,10 +145,10 @@
   background-color: #121212;
   z-index: -1;
   border-radius: 8px;
-  width: 148px;
-  height: 176px;
+  width: 118px;
+  height: 146px;
   padding-top: 15px;
-  padding-left: -10px;
+  padding-left: -12px;
 }
 
 .img2 {

@@ -11,7 +11,6 @@ config.autoAddCss = false;
 function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>
-      <>
         <Head>
           <script
             dangerouslySetInnerHTML={{
@@ -41,7 +40,6 @@ function MyApp({ Component, pageProps }) {
           <MainNavbar />
           <Component {...pageProps} />
         </body>
-      </>
     </CookiesProvider>
   );
 }

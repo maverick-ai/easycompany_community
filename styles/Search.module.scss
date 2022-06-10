@@ -11,6 +11,10 @@
   background-size: 100% 100%;
 }
 
+.body{
+  height: 100vh;
+}
+
 .MainHeading {
   font-size: 50px;
   font-weight: 800;
@@ -82,13 +86,14 @@
   margin-left: 60%;
 }
 .ImgQues1 {
-  margin-top: 22px;
-  margin-left: 25px;
+  margin-top: 17px;
+  margin-left: 20px;
+  margin-right: 5px;
 }
 .newSearchBox {
   display: flex;
   flex-direction: row;
-  height: 60px;
+  height: 50px;
   background-color: black;
   border-radius: 12px;
 }
@@ -105,7 +110,7 @@
 }
 .searchInput1 {
   width: 100%;
-  height: 50px;
+  height: 40px;
 
   background-color: black;
   border-width: 0;
@@ -227,7 +232,7 @@
 .submitButton {
   width: 160px;
   height: 40px;
-  margin-top: 48px;
+  margin-top: 38px;
   border-radius: 40px;
   font-weight: 500;
   font-size: 15px;

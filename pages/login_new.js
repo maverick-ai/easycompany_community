@@ -71,34 +71,34 @@ function Login() {
                             </text>
                         </svg>
                     </div>
-                    <Row style={{ paddingTop: "355px" }}>
+                    <Row style={{ paddingTop: "250px" }}>
                         <ToggleSwitchToSignUp/>
                     </Row>
-                    <div style={{position:"absolute", bottom:"0" , left:"29%"}}>
-                    <img src="/loginNoodle.svg"/>
+                    <div style={{position:"absolute", bottom:"0" , left:"32%"}}>
+                    <img style={{width:"65%"}} src="/loginNoodle.svg"/>
                     </div>
-                    <div style={{position:"absolute", top:"0" , left:"0"}}>
-                    <img src="/LoginNoodle2.svg"/>
+                    <div style={{position:"absolute", top:"5%" , left:"0"}}>
+                    <img style={{width:"65%"}} src="/LoginNoodle2.svg"/>
                     </div>
                     <div style={{position:"absolute", bottom:"0%" , left:"0%"}}>
-                    <img src="/loginBall.svg"/>
+                    <img style={{width:"65%"}} src="/loginBall.svg"/>
                     </div>
                     <div style={{position:"absolute", bottom:"35%" , left:"33%"}}>
-                    <img src="/ballouter.svg"/>
+                    <img style={{width:"65%"}} src="/ballouter.svg"/>
                     </div>
-                    <div style={{position:"absolute", bottom:"36%" , left:"31.2%"}}>
-                    <img src="/ball2.svg"/>
+                    <div style={{position:"absolute", bottom:"36%" , left:"31.4%"}}>
+                    <img style={{width:"65%"}} src="/ball2.svg"/>
                     </div>
                     <div style={{position:"absolute", top:"10%" , left:"36%"}}>
-                    <img src="/loginprop.svg"/>
+                    <img style={{width:"65%"}} src="/loginprop.svg"/>
                     </div>
                 </div>
             </Col>
             <Col>
                 <Container>
-                    <Row style={{ marginTop: "200px" }}>
+                    <Row style={{ marginTop: "150px" }}>
                         <Col lg={{ span: 6, offset: 2 }}>
-                            <h1 style={{ fontSize: "55px" }}>Log <span className={styles.In}>In</span></h1>
+                            <h1 style={{ fontSize: "45px" }}>Log <span className={styles.In}>In</span></h1>
                         </Col>
                     </Row>
                     <Row>

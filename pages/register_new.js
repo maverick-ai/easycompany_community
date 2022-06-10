@@ -179,34 +179,34 @@ function Register(req) {
                             </text>
                         </svg>
                     </div>
-                    <Row style={{ paddingTop: "355px" }}>
+                    <Row style={{ paddingTop: "250px" }}>
                         <ToggleSwitchBack />
                     </Row>
-                    <div style={{position:"absolute", bottom:"0" , left:"29%"}}>
-                    <img src="/loginNoodle.svg"/>
+                    <div style={{position:"absolute", bottom:"0" , left:"32%"}}>
+                    <img style={{width:"65%"}} src="/loginNoodle.svg"/>
                     </div>
-                    <div style={{position:"absolute", top:"0" , left:"0"}}>
-                    <img src="/LoginNoodle2.svg"/>
+                    <div style={{position:"absolute", top:"5%" , left:"0"}}>
+                    <img style={{width:"65%"}} src="/LoginNoodle2.svg"/>
                     </div>
                     <div style={{position:"absolute", bottom:"0%" , left:"0%"}}>
-                    <img src="/loginBall.svg"/>
+                    <img style={{width:"65%"}} src="/loginBall.svg"/>
                     </div>
                     <div style={{position:"absolute", bottom:"35%" , left:"33%"}}>
-                    <img src="/ballouter.svg"/>
+                    <img style={{width:"65%"}} src="/ballouter.svg"/>
                     </div>
-                    <div style={{position:"absolute", bottom:"36%" , left:"31.2%"}}>
-                    <img src="/ball2.svg"/>
+                    <div style={{position:"absolute", bottom:"36%" , left:"31.4%"}}>
+                    <img style={{width:"65%"}} src="/ball2.svg"/>
                     </div>
                     <div style={{position:"absolute", top:"10%" , left:"36%"}}>
-                    <img src="/loginprop.svg"/>
+                    <img style={{width:"65%"}} src="/loginprop.svg"/>
                     </div>
                 </div>
             </Col>
             <Col>
                 <Container>
-                    <Row style={{ marginTop: "110px" }}>
+                    <Row style={{ marginTop: "90px" }}>
                         <Col lg={{ span: 6, offset: 2 }}>
-                            <h1 style={{ fontSize: "55px" }}>Sign <span className={styles.In}>Up</span></h1>
+                            <h1 style={{ fontSize: "45px" }}>Sign <span className={styles.In}>Up</span></h1>
                         </Col>
                     </Row>
                     <Row className={styles.FirstNameRow}>

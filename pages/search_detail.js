@@ -46,7 +46,13 @@ const Content = () => {
 
     console.log(newPosts);
     setPosts((post) => [...post, ...newPosts.results]);
-    setPage((page = page + 1));
+    if (newPosts.next !== null) {
+      setPage((page = page + 1));
+      setHasMore(true);
+    }
+    else {
+      setHasMore(false);
+    }
     console.log("getMorePost");
     console.log(page);
   };
@@ -72,114 +78,122 @@ const Content = () => {
   return (
     // search-bar
     <React.Fragment>
-      <Container>
-        <Row>
-          <div className={styles.questionsList}>
-            <Col lg={{ span: 6, offset: 3 }}>
-              <div className={styles.searchbox}>
-                <Row>
-                  <Col lg={9} md={9} sm={9} xs={9}>
-                    <input
-                      className={styles.searchInput}
-                      id="query"
-                      type="text"
-                      autoComplete="query"
-                      value={query}
-                      onChange={onChangeHandler}
-                      required
-                    />
-                  </Col>
-                  <Col lg={3} md={3} sm={3} xs={3}>
-                    <div className={styles.ImgQues}>
-                      <Image
-                        src={"/Vector.png"}
-                        height={18.76}
-                        width={18.76}
-                        quality={100}
-                        onClick={newSearch}
+      <div id="scrollableDiv" style={{
+        height: '100vh',
+        overflow: 'auto',
+        display: 'flex',
+        flexDirection: 'column',
+      }}>
+        <Container>
+          <Row>
+            <div className={styles.questionsList}>
+              <Col lg={{ span: 6, offset: 3 }}>
+                <div className={styles.searchbox}>
+                  <Row>
+                    <Col lg={9} md={9} sm={9} xs={9}>
+                      <input
+                        className={styles.searchInput}
+                        id="query"
+                        type="text"
+                        autoComplete="query"
+                        value={query}
+                        onChange={onChangeHandler}
+                        required
                       />
-                    </div>
-                  </Col>
-                </Row>
-              </div>
-            </Col>
-          </div>
-        </Row>
-      </Container>
-      {/* // end_searchbox */}
-      <Container>
-        <Row>
-          <Col>
-            <h1>Trending Questions</h1>
-          </Col>
-        </Row>
-        <Row>
-          <div className={styles.searchoverlay}>
-            {searched && (
-              <InfiniteScroll
-                dataLength={posts.length}
-                next={getMorePost}
-                hasMore={hasMore}
-                loader={
-                  <div class="d-flex justify-content-center">
-                    <div
-                      className={`spinner-grow text-success ${styles.load}`}
-                      role="status"
-                    >
-                      <span class="sr-only">Loading...</span>
-                    </div>
-                  </div>
-                }
-                endMessage={<h4 className={styles.nopost}>......</h4>}
-              >
-                {" "}
-                <Grid
-                  className={styles.gridClass}
-                  component="ul"
-                  columns={3}
-                  columnWidth={420}
-                  gutterWidth={20}
-                  gutterHeight={20}
-                  itemHeight={316}
-                  enter={gridEnterExitStyle.enter}
-                  entered={gridEnterExitStyle.entered}
-                  exit={gridEnterExitStyle.exit}
-                  duration={400}
-                  springConfig={{ stiffness: 60, damping: 12 }}
-                >
-                  {console.log(".....po...")}
-                  {console.log()}
-                  {posts.map(
-                    (
-                      {
-                        upVoteNumber,
-                        downVoteNumber,
-                        postByUser,
-                        creator_by,
-                        viewedByTheUsers,
-                        categoryOfThePost,
-                        ...data
-                      },
-                      index
-                    ) => (
-                      <li key={index}>
-                        <SearchBox
-                          data={data}
-                          categoryOfThePost={categoryOfThePost}
-                          upVoteNumber={upVoteNumber}
-                          downVoteNumber={downVoteNumber}
-                          postByUser={postByUser}
-                          viewedByTheUsers={viewedByTheUsers}
+                    </Col>
+                    <Col lg={3} md={3} sm={3} xs={3}>
+                      <div className={styles.ImgQues}>
+                        <Image
+                          src={"/Vector.png"}
+                          height={18.76}
+                          width={18.76}
+                          quality={100}
+                          onClick={newSearch}
                         />
-                      </li>
-                    )
-                  )}
-                </Grid>
-              </InfiniteScroll>
-            )}
-          </div>
-        </Row>
-      </Container>
+                      </div>
+                    </Col>
+                  </Row>
+                </div>
+              </Col>
+            </div>
+          </Row>
+        </Container>
+        {/* // end_searchbox */}
+        <Container>
+          <Row>
+            <Col>
+              <h1>Trending Questions</h1>
+            </Col>
+          </Row>
+          <Row>
+            <div className={styles.searchoverlay}>
+              {searched && (
+                <InfiniteScroll
+                  dataLength={posts.length}
+                  next={getMorePost}
+                  style={{ display: 'flex', flexDirection: 'column' }}
+                  hasMore={hasMore}
+                  loader={
+                    <div class="d-flex justify-content-center">
+                      <div
+                        className={`spinner-grow text-success ${styles.load}`}
+                        role="status"
+                      >
+                        <span class="sr-only">Loading...</span>
+                      </div>
+                    </div>
+                  }
+                  scrollableTarget="scrollableDiv"
+                >
+                  {" "}
+                  <Grid
+                    className={styles.gridClass}
+                    component="ul"
+                    columns={3}
+                    columnWidth={400}
+                    gutterWidth={20}
+                    gutterHeight={20}
+                    itemHeight={316}
+                    enter={gridEnterExitStyle.enter}
+                    entered={gridEnterExitStyle.entered}
+                    exit={gridEnterExitStyle.exit}
+                    duration={400}
+                    springConfig={{ stiffness: 60, damping: 12 }}
+                  >
+                    {console.log(".....po...")}
+                    {console.log()}
+                    {posts.map(
+                      (
+                        {
+                          upVoteNumber,
+                          downVoteNumber,
+                          postByUser,
+                          creator_by,
+                          viewedByTheUsers,
+                          categoryOfThePost,
+                          ...data
+                        },
+                        index
+                      ) => (
+                        <li key={index}>
+                          <SearchBox
+                            data={data}
+                            categoryOfThePost={categoryOfThePost}
+                            upVoteNumber={upVoteNumber}
+                            downVoteNumber={downVoteNumber}
+                            postByUser={postByUser}
+                            viewedByTheUsers={viewedByTheUsers}
+                          />
+                        </li>
+                      )
+                    )}
+                  </Grid>
+                </InfiniteScroll>
+              )}
+            </div>
+          </Row>
+        </Container>
+      </div>
     </React.Fragment>
   );
 };

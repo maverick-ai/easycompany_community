@@ -1,28 +1,13 @@
 import styles from "../styles/Post.module.css";
 import { Row, Col, Container } from "react-bootstrap";
 import Image from "next/image";
-import CommentImage from "./DetailedPostComponents/CommentImage";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { sendVote, addpostcomment, sendReq } from "./requests";
-import {
-  UpVotePostURL,
-  DownVotePostURL,
-  PostCommentsURL,
-  commentPageSize,
-  Host,
-} from "./constants";
+import { UpVotePostURL, DownVotePostURL } from "./constants";
 import PostComment from "./PostComments";
-import cookie from "cookie";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import {
-  faChevronUp,
-  faChevronDown,
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import GradientBtn from "./GradienButton";
 
 const DetailedPost = (props) => {
   const [postComment, setpostComment] = useState(props.data.comments.comments);
@@ -163,8 +148,8 @@ const DetailedPost = (props) => {
               </Row>
               <Row>
                 <div className={`${styles.catList} category-list`}>
-                  {props.data.categoryOfThePost.map((category) => (
-                    <p className={styles.category}>
+                  {props.data.categoryOfThePost.map((category, index) => (
+                    <p key={index} className={styles.category}>
                       {category.categoryForPost}
                     </p>
                   ))}
