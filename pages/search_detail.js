@@ -7,7 +7,7 @@ import { sendReq } from "../components/requests";
 
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/dist/client/image";
-import { CSSGrid, measureItems, makeResponsive } from "react-stonecutter";
+import Masonry from "react-masonry-component";
 import SearchBox from "./searchbox";
 import { useRouter } from "next/router";
 import Link from "next/dist/client/link";
@@ -34,10 +34,6 @@ const Content = () => {
     "From Bottom",
   ];
   const gridEnterExitStyle = enterExitStyles[7];
-  const Grid = makeResponsive(measureItems(CSSGrid), {
-    maxWidth: 1920,
-    minPadding: 100,
-  });
 
   const getMorePost = async () => {
     const newPosts = await sendReq(
@@ -49,8 +45,7 @@ const Content = () => {
     if (newPosts.next !== null) {
       setPage((page = page + 1));
       setHasMore(true);
-    }
-    else {
+    } else {
       setHasMore(false);
     }
     console.log("getMorePost");
@@ -78,12 +73,15 @@ const Content = () => {
   return (
     // search-bar
     <React.Fragment>
-      <div id="scrollableDiv" style={{
-        height: '100vh',
-        overflow: 'auto',
-        display: 'flex',
-        flexDirection: 'column',
-      }}>
+      <div
+        id="scrollableDiv"
+        style={{
+          height: "100vh",
+          overflow: "auto",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <Container>
           <Row>
             <div className={styles.questionsList}>
@@ -126,71 +124,59 @@ const Content = () => {
             </Col>
           </Row>
           <Row>
-            <div className={styles.searchoverlay}>
-              {searched && (
-                <InfiniteScroll
-                  dataLength={posts.length}
-                  next={getMorePost}
-                  style={{ display: 'flex', flexDirection: 'column' }}
-                  hasMore={hasMore}
-                  loader={
-                    <div class="d-flex justify-content-center">
-                      <div
-                        className={`spinner-grow text-success ${styles.load}`}
-                        role="status"
-                      >
-                        <span class="sr-only">Loading...</span>
-                      </div>
+            {searched && (
+              <InfiniteScroll
+                dataLength={posts.length}
+                next={getMorePost}
+                hasMore={hasMore}
+                loader={
+                  <div class="d-flex justify-content-center">
+                    <div
+                      className={`spinner-grow text-success ${styles.load}`}
+                      role="status"
+                    >
+                      <span class="sr-only">Loading...</span>
                     </div>
-                  }
-                  scrollableTarget="scrollableDiv"
-                >
-                  {" "}
-                  <Grid
-                    className={styles.gridClass}
-                    component="ul"
-                    columns={3}
-                    columnWidth={400}
-                    gutterWidth={20}
-                    gutterHeight={20}
-                    itemHeight={316}
-                    enter={gridEnterExitStyle.enter}
-                    entered={gridEnterExitStyle.entered}
-                    exit={gridEnterExitStyle.exit}
-                    duration={400}
-                    springConfig={{ stiffness: 60, damping: 12 }}
-                  >
-                    {console.log(".....po...")}
-                    {console.log()}
-                    {posts.map(
-                      (
-                        {
-                          upVoteNumber,
-                          downVoteNumber,
-                          postByUser,
-                          creator_by,
-                          viewedByTheUsers,
-                          categoryOfThePost,
-                          ...data
-                        },
-                        index
-                      ) => (
-                        <li key={index}>
-                          <SearchBox
-                            data={data}
-                            categoryOfThePost={categoryOfThePost}
-                            upVoteNumber={upVoteNumber}
-                            downVoteNumber={downVoteNumber}
-                            postByUser={postByUser}
-                            viewedByTheUsers={viewedByTheUsers}
-                          />
-                        </li>
-                      )
-                    )}
-                  </Grid>
-                </InfiniteScroll>
-              )}
-            </div>
+                  </div>
+                }
+                endMessage={<h4 className={styles.nopost}>......</h4>}
+                scrollableTarget="scrollableDiv"
+              >
+                <Masonry className={styles.masonryGrid}>
+                  {posts.map(
+                    (
+                      {
+                        upVoteNumber,
+                        downVoteNumber,
+                        postByUser,
+                        creator_by,
+                        viewedByTheUsers,
+                        categoryOfThePost,
+                        ...data
+                      },
+                      index
+                    ) => (
+                      <div
+                        style={{
+                          padding: "0 5px",
+                          marginLeft: "auto",
+                          marginRight: "auto",
+                        }}
+                      >
+                        <SearchBox
+                          data={data}
+                          categoryOfThePost={categoryOfThePost}
+                          upVoteNumber={upVoteNumber}
+                          downVoteNumber={downVoteNumber}
+                          postByUser={postByUser}
+                          viewedByTheUsers={viewedByTheUsers}
+                        />
+                      </div>
+                    )
+                  )}
+                </Masonry>
+              </InfiniteScroll>
+            )}
           </Row>
         </Container>
       </div>

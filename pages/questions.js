@@ -6,7 +6,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
 import QuestionBox from "./questions/questionBox";
 import React, { useState, useEffect, useMemo } from "react";
-import { CSSGrid, measureItems, makeResponsive } from "react-stonecutter";
+import Masonry from "react-masonry-component";
+
 import Pagination from "../components/Pagination";
 
 const Questions = ({ questions, query }) => {
@@ -42,7 +43,13 @@ const Questions = ({ questions, query }) => {
         },
         index
       ) => (
-        <li key={index}>
+        <div
+          style={{
+            padding: "0 5px",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
           <QuestionBox
             data={data}
             categoryOfThePost={categoryOfThePost}
@@ -51,15 +58,10 @@ const Questions = ({ questions, query }) => {
             viewsbytheuser={viewedByTheUsers}
             postByUser={postByUser}
           />
-        </li>
+        </div>
       )
     );
   }, [questions.results]);
-  const gridEnterExitStyle = enterExitStyles[0];
-  const Grid = makeResponsive(measureItems(CSSGrid), {
-    maxWidth: 1920,
-    minPadding: 100,
-  });
 
   return (
     <React.Fragment>
@@ -71,22 +73,7 @@ const Questions = ({ questions, query }) => {
 
       <Container>
         <h1 className={styles.headingtop}>Top Questions</h1>
-        <Grid
-          className={styles.gridClass}
-          component="ul"
-          columns={3}
-          columnWidth={420}
-          gutterWidth={20}
-          gutterHeight={20}
-          itemHeight={316}
-          enter={gridEnterExitStyle.enter}
-          entered={gridEnterExitStyle.entered}
-          exit={gridEnterExitStyle.exit}
-          duration={400}
-          springConfig={{ stiffness: 60, damping: 12 }}
-        >
-          {gridrefresh}
-        </Grid>
+        <Masonry className={styles.masonryGrid}>{gridrefresh}</Masonry>
       </Container>
       <div className={styles.page}>
         {/* paginating */}

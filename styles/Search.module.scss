@@ -11,7 +11,7 @@
   background-size: 100% 100%;
 }
 
-.body{
+.body {
   height: 100vh;
 }
 
@@ -247,4 +247,26 @@
 .london {
   transform: rotate(-50deg) !important;
   font-family: "Gloria Hallelujah", cursive !important;
+}
+@media screen and (min-width: 1200px) and (max-width: 1400px) {
+  .masonryGrid {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .masonryGrid {
+    margin-left: 20%;
+  }
+}
+@media screen and (max-width: 760px) {
+  .masonryGrid {
+    margin-left: 10%;
+  }
+}
+@media screen and (max-width: 560px) {
+  .masonryGrid {
+    margin-left: 3%;
+    margin-right: auto;
+  }
 }

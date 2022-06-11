@@ -37,7 +37,7 @@ const SearchBox = (props) => {
         </div>
 
         <Row className={styles.buttonRow}>
-          <Col>
+          <Col xs={4}>
             <div
               style={{ backgroundColor: "#121212" }}
               className={styles.button1}
@@ -47,7 +47,7 @@ const SearchBox = (props) => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col xs={4}>
             <div
               className={styles.button1}
               style={{ backgroundColor: "#121212" }}
@@ -58,7 +58,7 @@ const SearchBox = (props) => {
               </div>
             </div>
           </Col>
-          <Col>
+          <Col xs={4}>
             <div
               className={styles.button1}
               style={{ backgroundColor: "#121212" }}
