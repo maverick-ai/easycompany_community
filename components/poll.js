@@ -33,7 +33,6 @@ function PollBox_A(props) {
     { label: "1", value: countA },
     { label: "2", value: countB },
     { label: "3", value: countC },
-    { label: "3", value: countC },
   ];
 
   return (
@@ -86,7 +85,11 @@ function PollBox_A(props) {
         {toggled && (
           <div
             onClick={onClickHandler}
-            style={{ marginTop: "-30px", marginLeft: "30px" }}
+            style={{
+              marginTop: "-30px",
+              marginLeft: "30px",
+              marginBottom: "-20px",
+            }}
           >
             <PollChart dataPoints={chartDataPoints} />
           </div>

@@ -10,7 +10,7 @@ const PollChartBar = (props) => {
       style={{
         height: "100%",
         display: "flex",
-        marginRight: "10px",
+        marginRight: "50px",
         padding: "15px 15px 15px",
         marginLeft: "5px",
         flexDirection: "row",
