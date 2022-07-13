@@ -15,18 +15,21 @@
 }
 
 .FirstNameRow {
-  margin-top: 0px;
+  margin-top: 20px;
 }
+
 .LastNameRow {
-  margin-top: 40px;
+  margin-top: 20px;
 }
+
 .emailRow {
-    margin-top: 40px;
-  }
+  margin-top: 20px;
+}
+
 .passwordRow {
-    margin-top: 40px;
-    margin-bottom: 40px;
-  }
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 
 
 .firstNameDiv {
@@ -36,11 +39,13 @@
 .lastNameDiv {
   max-width: 800px;
 }
+
 .emailDiv {
-    max-width: 800px;
+  max-width: 800px;
 }
+
 .passwordDiv {
-    max-width: 800px;
+  max-width: 800px;
 }
 
 
@@ -49,53 +54,68 @@
 }
 
 .firstNameInput {
-  border-radius: 15px;
+  border-radius: 12px;
   border: 2px solid black;
   padding-left: 10px;
-  width: 100%;
+  width: 80%;
+  line-height: 45px;
+  background-color: black;
+  color: white;
 }
+
 .firstNameInput:focus {
   outline: none;
 }
 
 .emailInput {
-    border-radius: 15px;
-    border: 2px solid black;
-    padding-left: 10px;
-    width: 100%;
-  }
-  .emailInput:focus {
-    outline: none;
-  }
+  border-radius: 12px;
+  border: 2px solid black;
+  padding-left: 10px;
+  width: 80%;
+  line-height: 45px;
+  background-color: black;
+  color: white;
+}
 
-  .passwordInput {
-    border-radius: 15px;
-    border: 2px solid black;
-    padding-left: 10px;
-    width: 100%;
-  }
-  .passwordInput:focus {
-    outline: none;
-  }
+.emailInput:focus {
+  outline: none;
+}
+
+.passwordInput {
+  border-radius: 12px;
+  border: 2px solid black;
+  padding-left: 10px;
+  width: 80%;
+  line-height: 45px;
+  background-color: black;
+  color: white;
+}
+
+.passwordInput:focus {
+  outline: none;
+}
 
 .lastNameHeading {
   margin-bottom: 8px;
 }
+
 .emailHeading {
-    margin-bottom: 8px;
-  }
-  .passwordHeading {
-    margin-bottom: 8px;
-  }
+  margin-bottom: 8px;
+}
+
+.passwordHeading {
+  margin-bottom: 8px;
+}
 
 .underlineGreen {
   box-shadow: inset 0 -20px 0 0 #7ed957;
 }
+
 .underlineRed {
   box-shadow: inset 0 -20px 0 0 #ff5757;
 }
 
-.Notification{
+.Notification {
   max-width: 800px;
   background-color: #ff5757;
   height: 50px;
@@ -103,14 +123,17 @@
 }
 
 .DatePickerCustomStyle {
-  border-radius: 15px;
+  border-radius: 12px;
   border: 2px solid black;
   padding-left: 10px;
-  width: 100%;
+  width: 80%;
   max-width: 800px;
-  background-color: white;
   text-align: start;
+  line-height: 45px;
+  background-color: black;
+  color: white;
 }
+
 .DatePickerCustomStyle:focus {
   outline: none;
 }
@@ -120,4 +143,49 @@
   border: 2px solid black;
   width: 100px;
   border-radius: 15px;
+}
+
+.bkimg {
+  background: linear-gradient(90deg, rgba(227, 42, 54, 0.9) 0%, rgba(181, 14, 174, 0.9) 100%);
+  box-shadow: 40px 4px 60px rgba(0, 0, 0, 0.41);
+  height: 100vh;
+  width: 100%;
+}
+
+.In {
+  background: linear-gradient(90deg, #E32A36 27.78%, #B50EAE 68.89%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.buttonForm {
+  padding: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  margin-top: 15px;
+  background: linear-gradient(90deg, #E32A36 0%, #B50EAE 95.14%);
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.56);
+  color: white;
+  height: 45px;
+  width: 80%;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 400;
+  transition: 0.5s;
+}
+
+.buttonForm:hover {
+  box-shadow: none;
+}
+.cirText{
+  position: absolute;
+  top: 40%;
+  left: 45.5%;
+  fill: currentColor;
+  height: auto;
+  max-width: 2vmin;
+  transform-origin: center;
+  width: 66%;
 }

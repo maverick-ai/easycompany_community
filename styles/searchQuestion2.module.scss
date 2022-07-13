@@ -1,0 +1,262 @@
+.emptybox {
+  width: 1300px;
+  height: 264px;
+  background-image: url(../public/ff.png);
+  margin: 155px auto 70px;
+  background-size: 100% 100%;
+}
+.button1 {
+  border-radius: 8px;
+  background-color: #121212;
+}
+.headingtop {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 48px;
+  margin-left: 3px;
+  position: relative;
+}
+
+.questionsList {
+  // width: 100vw !important;
+  //  margin: auto;
+  margin-top: 11rem;
+  max-width: 1000px;
+}
+.body1 {
+  background-color: #121212;
+}
+
+.MainHeading {
+  font-size: 50px;
+  font-weight: 800;
+  margin-top: 0px;
+  margin-bottom: 50px;
+  /* box-shadow: inset 0 -20px 0 0 red; */
+}
+
+.underline {
+  box-shadow: inset 0 -20px 0 0 #ff5757;
+}
+.underlineGreen {
+  box-shadow: inset 0 -20px 0 0 #7ed957;
+}
+
+.title {
+  font-size: 16px;
+  background: red;
+}
+.qtitle {
+  font-size: 21px;
+  line-height: 20px;
+  margin-top: 8px;
+  margin-right: auto;
+  margin-left: 24px;
+}
+.timer {
+  margin-right: auto;
+  margin-left: 24px;
+  // margin-bottom: auto;
+  margin-top: 4px;
+}
+.timerImage {
+  margin-top: 3px;
+  height: 15px;
+  width: 15px;
+  display: inline;
+}
+.timerP {
+  font-size: 10px;
+  margin-left: 5px;
+  margin-bottom: auto;
+  display: inline;
+}
+
+.qbox {
+  margin-bottom: 10px;
+  padding: 10px;
+}
+.qcard {
+  border-radius: 16px;
+  border: 2px solid black;
+  padding: 10px;
+  margin: 10px;
+  margin-bottom: 30px;
+  background-color: black;
+}
+
+// .qcard:hover {
+//   transform: scale(1.02);
+//   cursor: pointer;
+//   transition: 0.2s;
+//   box-shadow: 2px 2px 5px grey, -2px -2px 5px grey;
+// }
+.buttonRow {
+  margin-bottom: 0;
+}
+.gridClass {
+  margin-left: auto;
+  margin-right: auto;
+}
+.para {
+  color: #aaaaaa;
+  margin-left: 24px;
+  margin-bottom: auto;
+
+  margin-right: auto;
+  font-size: 10px;
+  padding-bottom: 0;
+}
+.votebox {
+  width: 70px;
+  height: 27px;
+  padding-top: 7px;
+
+  text-align: center;
+  background-color: #121212;
+  border-radius: 2px;
+}
+.voteText {
+  font-size: 10px;
+  font-weight: 700;
+  margin: 5px 5px;
+  //   transform: translateY(5%);
+  padding: 6px 2px 10px 6px;
+}
+.page {
+  height: 42px;
+  width: fit-content;
+  border-radius: 24px;
+  background-color: black;
+  margin-top: 34px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px;
+}
+.listItem {
+  //   font-family: "Poppins";
+  //   font-style: normal;
+  font-weight: 500;
+  font-size: 11px;
+  //   line-height: 21px;
+
+  background-image: linear-gradient(284.11deg, #e42833 20.44%, #b50eae 129.2%);
+
+  background-clip: text;
+  color: transparent;
+}
+
+.questionsList {
+  padding: 10px;
+}
+.category {
+  padding: 2px 10px;
+  margin-top: 10px;
+  margin-right: 5px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 800;
+  color: white;
+  background-color: #7ed957;
+}
+.catlist {
+  display: flex;
+}
+.tags {
+  height: 32px;
+  width: auto;
+}
+.upVoteIcon {
+  color: #7ed957;
+  font-size: 30px;
+  padding-bottom: 0;
+}
+.downVoteIcon {
+  color: #ff5757;
+  font-size: 30px;
+  padding-bottom: 0;
+}
+
+.voteCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+}
+.wrapper {
+  padding: 1rem 0.3rem;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  border-radius: 8px;
+  border: 2px solid black;
+  align-items: center;
+
+  width: 300px;
+  height: 150px;
+  flex-direction: column;
+}
+
+.left {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: auto;
+
+  ul {
+    display: flex;
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5rem;
+    width: 100%;
+
+    li {
+      background: rgba(112, 112, 112, 1);
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      margin-right: 0.5rem;
+      font-size: 12px;
+
+      cursor: pointer;
+    }
+    @media (max-width: 724px) {
+      justify-content: flex-start;
+    }
+  }
+  @media (max-width: 724px) {
+    width: 100%;
+  }
+}
+
+.right {
+  ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    margin-top: 0.5rem;
+    flex-direction: row;
+    justify-content: flex-start;
+
+    li {
+      padding: 0.2rem 0.5rem;
+      border-radius: 5px;
+      margin-right: 0.5rem;
+      font-size: 12px;
+      @media (max-width: 770px) {
+        margin-top: 1rem;
+        padding: 0;
+      }
+      @media (max-width: 724px) {
+        padding: 0.2rem 0.5rem;
+        //  padding: 0;
+      }
+    }
+  }
+}
