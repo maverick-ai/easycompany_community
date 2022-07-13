@@ -7,16 +7,22 @@ import { Container, Col, Row } from "react-bootstrap";
 import React from "react";
 
 const QuestionBox = (props) => {
-  console.log(props.data);
+  console.log(props.data.pk);
+  let primary;
+
+  if (props.data) {
+    primary = props.data.pk;
+  }
+
   return (
     <React.Fragment>
       <div className={styles.wrapper}>
         <div className={styles.qtitle}>
-          <Link href={`/posts/?postid=${props.data.pk}&page=1`}>
+          {/* <Link href={`/posts/?postid=${primary}&page=1`}>
             {props.data.title.length > 60
               ? props.data.title.substring(0, 60) + " ..."
               : props.data.title}
-          </Link>
+          </Link> */}
         </div>
         <div className={styles.timer}>
           <div className={styles.timerImage}>
@@ -37,8 +43,12 @@ const QuestionBox = (props) => {
           </span>
         </div>
         <div style={{ width: "90%", height: "40px", marginTop: "auto" }}>
-          {props.categoryOfThePost.map(({ categoryForPost }) => {
-            return <span className={styles.tags}>{categoryForPost}</span>;
+          {props.categoryOfThePost.map(({ categoryForPost }, index) => {
+            return (
+              <span key={index} className={styles.tags}>
+                {categoryForPost}
+              </span>
+            );
           })}
         </div>
         <Row className={styles.buttonRow}>

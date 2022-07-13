@@ -11,6 +11,7 @@ import Masonry from "react-masonry-component";
 import Pagination from "../components/Pagination";
 
 const Questions = ({ questions, query }) => {
+  console.log(questions.results.data);
   const enterExitStyles = [
     "Simple",
     "Skew",
@@ -44,6 +45,7 @@ const Questions = ({ questions, query }) => {
         index
       ) => (
         <div
+          key={index}
           style={{
             padding: "0 5px",
             marginLeft: "auto",
@@ -94,6 +96,7 @@ export default Questions;
 export async function getServerSideProps({ query }) {
   if (!query.page) query.page = 1;
   let questions = [];
+  console.log(questions);
   try {
     questions = await sendReq(`${PostListURL}?page=${query.page}`);
   } catch (err) {
