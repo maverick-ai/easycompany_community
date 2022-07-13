@@ -39,7 +39,8 @@
     "remark-gfm": "^3.0.1",
     "sass": "^1.45.1",
     "sharp": "^0.30.3",
-    "typewriter-effect": "^2.18.2"
+    "typewriter-effect": "^2.18.2",
+    "react-masonry-component": "^6.3.0"
   },
   "devDependencies": {
     "eslint": "7.32.0",
