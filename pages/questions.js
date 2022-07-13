@@ -4,9 +4,11 @@ import { Host } from "../components/constants";
 import { sendReq } from "../components/requests";
 import { Container, Row, Col } from "react-bootstrap";
 import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
-import QuestionBox from "./questions/questionBox";
+
 import React, { useState, useEffect, useMemo } from "react";
 import Masonry from "react-masonry-component";
+import Image from "next/image";
+import Link from "next/link";
 
 import Pagination from "../components/Pagination";
 
@@ -52,14 +54,75 @@ const Questions = ({ questions, query }) => {
             marginRight: "auto",
           }}
         >
-          <QuestionBox
-            data={data}
-            categoryOfThePost={categoryOfThePost}
-            upVoteNumber={upVoteNumber}
-            downVoteNumber={downVoteNumber}
-            viewsbytheuser={viewedByTheUsers}
-            postByUser={postByUser}
-          />
+          <div className={styles.wrapper}>
+            <div className={styles.qtitle}>
+              <Link href={`/posts/?postid=${data.pk}&page=1`}>
+                {data.title.length > 60
+                  ? data.title.substring(0, 60) + " ..."
+                  : data.title}
+              </Link>
+            </div>
+            <div className={styles.timer}>
+              <div className={styles.timerImage}>
+                <Image
+                  quality={100}
+                  src="/av_timer.png"
+                  height={15}
+                  width={15}
+                ></Image>
+              </div>
+              <p className={styles.timerP}>1 Hour</p>
+            </div>
+            <div className={styles.para}>
+              <span>
+                {postByUser.length > 150
+                  ? postByUser.substring(0, 150) + " ..."
+                  : postByUser}
+              </span>
+            </div>
+            <div style={{ width: "90%", height: "40px", marginTop: "auto" }}>
+              {categoryOfThePost.map(({ categoryForPost }, index) => {
+                return (
+                  <span key={index} className={styles.tags}>
+                    {categoryForPost}
+                  </span>
+                );
+              })}
+            </div>
+            <Row className={styles.buttonRow}>
+              <Col>
+                <div
+                  style={{ backgroundColor: "#121212" }}
+                  className={styles.button1}
+                >
+                  <div className={`${styles.votebox} ${styles.listItem}`}>
+                    <span>{upVoteNumber - downVoteNumber} Votes </span>
+                  </div>
+                </div>
+              </Col>
+              <Col>
+                <div
+                  className={styles.button1}
+                  style={{ backgroundColor: "#121212" }}
+                >
+                  <div className={`${styles.votebox} ${styles.listItem}`}>
+                    <span>1 Answer</span>{" "}
+                    <img src="/icons/answer.svg" alt="answer icon" />
+                  </div>
+                </div>
+              </Col>
+              <Col>
+                <div
+                  className={styles.button1}
+                  style={{ backgroundColor: "#121212" }}
+                >
+                  <div className={`${styles.votebox} ${styles.listItem}`}>
+                    {viewsbytheuser} <img src="/icons/eye.svg" alt="eye icon" />
+                  </div>
+                </div>
+              </Col>
+            </Row>
+          </div>
         </div>
       )
     );
