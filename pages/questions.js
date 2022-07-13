@@ -117,7 +117,8 @@ const Questions = ({ questions, query }) => {
                   style={{ backgroundColor: "#121212" }}
                 >
                   <div className={`${styles.votebox} ${styles.listItem}`}>
-                    {viewsbytheuser} <img src="/icons/eye.svg" alt="eye icon" />
+                    {viewedByTheUsers}{" "}
+                    <img src="/icons/eye.svg" alt="eye icon" />
                   </div>
                 </div>
               </Col>
