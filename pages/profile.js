@@ -17,7 +17,7 @@ import {
 import { useState, useEffect } from "react";
 import moment from "moment";
 
-import { Line } from "react-chartjs-2";
+// import { Line } from "react-chartjs-2";
 
 const Profile = ({ userData, query, login }) => {
   // const [avatarURL, setAvatarURL] = useState("");
@@ -306,7 +306,7 @@ const Profile = ({ userData, query, login }) => {
           <Col>
             <div className={styles.medalbox1}>
               <div className={styles.chart}>
-                <Line data={newUser} />
+                {/* <Line data={newUser} /> */}
               </div>
               <Row style={{ width: "70%", margin: "0 auto" }}>
                 <div
