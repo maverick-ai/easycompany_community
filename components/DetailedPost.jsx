@@ -1,85 +1,241 @@
 import styles from "../styles/Post.module.css";
+import { Row, Col, Container } from "react-bootstrap";
+import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { useState } from "react";
-import {sendVote,addpostcomment,sendReq} from "./requests"
-import { UpVotePostURL,DownVotePostURL,PostCommentsURL,commentPageSize,Host } from "./constants";
-import PostComment from "./PostComments"
-import cookie from "cookie"
+import { sendVote, addpostcomment, sendReq } from "./requests";
+import { UpVotePostURL, DownVotePostURL } from "./constants";
+import PostComment from "./PostComments";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import {faChevronUp,faChevronDown,faCheck} from "@fortawesome/free-solid-svg-icons";
-
+import { useEffect, useState } from "react";
 
 const DetailedPost = (props) => {
+  const [postComment, setpostComment] = useState(props.data.comments.comments);
 
-    const [postComment, setpostComment] = useState(props.data.comments.comments);
+  const [winWidth, setWinWidth] = useState();
 
-    const getnewpostcomments = async (id, i) => {
-      const newComments = await sendReq(`${PostCommentsURL}${id}/?page=${postComment.length / commentPageSize + 1}`, document.cookie);
-      if (newComments.results) {
-        setpostComment((old) => [...old, ...newComments.results]);
-      }
-    };
-
-    return ( 
-        <div className="post-content">
-            <div className={`row ${styles.postRow}`}>
-                <div className={`col-3 col-sm-2 col-md-1 ${styles.colPaddingLeft}`}>
-                    <FontAwesomeIcon className={props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon} icon={faChevronUp}  onClick={() => sendVote(UpVotePostURL, props.data.post_id, props.setLogin)} />
-                    <p className={styles.voteText}>{props.data.upVoteNumber - props.data.downVoteNumber}</p>
-                    <FontAwesomeIcon className={props.data.downvoted? styles.downVotedIcon: styles.VoteIcon} icon={faChevronDown} onClick={() => sendVote(DownVotePostURL, props.data.post_id, props.setLogin)}/>
-                </div>
-                <div className={`col-9 col-sm-10 col-md-11 ${styles.colPaddingRight}`}>
-                    <h1 className={styles.posttitle}>{props.data.title}</h1>
-                    <Link href={`/profile?user=${props.data.creator_by.creator_id}`}><p>- <span className={styles.postuser}>{props.data.creator_by.first_name + " " + props.data.creator_by.last_name}</span></p></Link>
-                    <div>
-                    <ReactMarkdown className={styles.postbody}
-                    children={props.data.postByUser}
-                    remarkPlugins={[remarkGfm]}
-                    />
-                    <div className={`${styles.catList} category-list`}>
-                        {props.data.categoryOfThePost.map(category => (
-                            <p className={styles.category}>{category.categoryForPost}</p>
-                        ))}
-                    </div>
-                    </div>
-                    <hr></hr>
-                    <div className="post-comments-container">
-                        <h2 className={styles.commentTitle}>Comments</h2>
-                        <div className={styles.inputall}></div>
-                        <input className={`${styles.Input} ${styles.commentInput}`} id="postComment" type="text" placeholder="Comment!" />
-                        <button
-                        onClick={() =>
-                            addpostcomment(
-                            document.getElementById("postComment").value,
-                            props.data.post_id,
-                            props.setLogin
-                            )
-                        }
-                        className={styles.button} 
-                        >
-                        Add Comment
-                        </button>
-                        </div>
-                        {postComment &&
-                            postComment.map((com) => (
-                            <PostComment key={com.pk} comment={com} sendVote={sendVote} setLogin={props.setLogin}/>
-                            ))}
-                            
-                        {postComment && postComment.length < props.data.comments.count && (postComment.length%commentPageSize==0) && (
-                            <button
-                            onClick={() => getnewpostcomments(props.data.post_id)}
-                            className={`${styles.button} ${styles.commentButton}`} 
-                            >
-                            Load more comments
-                            </button>)
-                        }
-                    </div>
-                </div>
-            </div>
-    
+  const getnewpostcomments = async (id, i) => {
+    const newComments = await sendReq(
+      `${PostCommentsURL}${id}/?page=${
+        postComment.length / commentPageSize + 1
+      }`,
+      document.cookie
     );
-}
+    if (newComments.results) {
+      setpostComment((old) => [...old, ...newComments.results]);
+    }
+  };
+  console.log("creator id .......");
+  console.log(props.data.creator_by.creator_id);
+
+  return (
+    <div className="post-content">
+      <Container>
+        <Container>
+          <Row>
+            <Col lg={1} md={2} sm={2}>
+              <div style={{ height: "45px", width: "10px" }}></div>
+              <Image
+                className={
+                  props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                }
+                onClick={() =>
+                  sendVote(UpVotePostURL, props.data.post_id, props.setLogin)
+                }
+                alt="logo"
+                src="/upVote.png"
+                height={33}
+                width={33}
+                quality={100}
+              />
+              <p className={styles.voteText}>
+                {props.data.upVoteNumber - props.data.downVoteNumber}
+              </p>
+              <Image
+                className={
+                  props.data.downvoted ? styles.downVotedIcon : styles.VoteIcon
+                }
+                onClick={() =>
+                  sendVote(DownVotePostURL, props.data.post_id, props.setLogin)
+                }
+                alt="logo"
+                src="/downVote.png"
+                height={33}
+                width={33}
+                quality={100}
+              />
+            </Col>
+            <Col lg={11} md={10} sm={10}>
+              <Row className={styles.toprow}>
+                <div style={{ width: "10px", padding: "0px" }}></div>
+                <div style={{ display: "flex" }}>
+                  <div style={{ width: "28px" }}>
+                    <Image
+                      src="/profilepic.png"
+                      height={28}
+                      width={28}
+                      quality={100}
+                    />
+                  </div>
+                  {/* <Col lg={3} md={3} sm={4}> */}
+                  <div className={styles.postuser}>
+                    <div
+                      style={{
+                        width: "200px",
+                        display: "inline-block",
+                        paddingLeft: "8px",
+                      }}
+                    >
+                      <Link
+                        href={`/profile?user=${props.data.creator_by.creator_id}`}
+                      >
+                        {props.data.creator_by.first_name +
+                          " " +
+                          props.data.creator_by.last_name}
+                      </Link>
+                    </div>
+                    <div style={{ width: "90px" }}>
+                      <Image
+                        src="/av_timer.png"
+                        height={16}
+                        width={16}
+                        quality={100}
+                      />
+                      <span
+                        style={{
+                          marginLeft: "10px",
+                          fontSize: "16px",
+                          fontWeight: "400",
+                        }}
+                      >
+                        4 Hrs
+                      </span>
+                    </div>
+                    <div style={{ width: "91px" }}>
+                      <Image
+                        className={styles.eye}
+                        src="/Eye.png"
+                        height={13.75}
+                        width={18.75}
+                        quality={100}
+                      />
+                      <span
+                        style={{
+                          marginLeft: "5px",
+                          fontSize: "16px",
+                          fontWeight: "400",
+                        }}
+                      >
+                        Views
+                      </span>
+                    </div>
+                  </div>
+                  {/* </Col> */}
+                  {/* <Col lg={1} md={3} sm={4} className={styles.eye}> */}
+
+                  {/* </Col> */}
+                </div>
+              </Row>
+              <Row>
+                <h1 className={styles.posttitle}>{props.data.title}</h1>
+              </Row>
+              <Row>
+                <ReactMarkdown
+                  className={styles.postbody}
+                  children={props.data.postByUser}
+                  remarkPlugins={[remarkGfm]}
+                />
+              </Row>
+              <Row>
+                <div className={`${styles.catList} category-list`}>
+                  {props.data.categoryOfThePost.map((category, index) => (
+                    <p key={index} className={styles.category}>
+                      {category.categoryForPost}
+                    </p>
+                  ))}
+                </div>
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      </Container>
+      <div className={`row ${styles.postRow}`}>
+        <div className="post-comments-container">
+          <Container>
+            <Row>
+              <Col lg={{ span: 3, offset: 1 }}>
+                <h2
+                  className={styles.commentTitle}
+                  style={{ margin: "30px 0 15px 0" }}
+                >
+                  Comments
+                </h2>
+              </Col>
+            </Row>
+          </Container>
+          <Container>
+            {postComment &&
+              postComment.map((com, index) => (
+                <>
+                  <PostComment
+                    imgIdx={index}
+                    key={com.pk}
+                    comment={com}
+                    sendVote={sendVote}
+                    setLogin={props.setLogin}
+                  />
+                </>
+              ))}
+          </Container>
+
+          <Container>
+            <Row>
+              <Col lg={{ span: 6, offset: 1 }}>
+                <div
+                  className={`${styles.inputoutert} ${styles.commentInput}`}
+                  style={{ display: "flex", flexDirection: "row" }}
+                >
+                  <input
+                    className={`${styles.Input}`}
+                    id="postComment"
+                    type="text"
+                    placeholder="   Add a Comment!"
+                  />
+                  <div style={{ marginTop: "7px" }}>
+                    <Image
+                      onClick={() =>
+                        addpostcomment(
+                          document.getElementById("postComment").value,
+                          props.data.post_id,
+                          props.setLogin
+                        )
+                      }
+                      src="/commentArrow.png"
+                      height={25}
+                      width={25}
+                      quality={100}
+                    />
+                  </div>
+                </div>
+              </Col>
+              {postComment &&
+                postComment.length < props.data.comments.count &&
+                postComment.length % commentPageSize == 0 && (
+                  <Col>
+                    <button
+                      onClick={() => getnewpostcomments(props.data.post_id)}
+                      className={`${styles.commentButton}`}
+                    >
+                      View All
+                    </button>
+                  </Col>
+                )}
+            </Row>
+          </Container>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default DetailedPost;

@@ -1,0 +1,324 @@
+.globeCol {
+  padding: 0px;
+}
+
+.RowMainTextDiv {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.RowSubMainTextDiv {
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 40px;
+}
+
+.PaperPlane {
+  display: inline-block;
+  height: 50px;
+  width: 100px;
+}
+.ParentDiv {
+  width: 100vw !important;
+  padding-top: 100px;
+  background-color: black;
+}
+
+.MainHeading {
+  font-size: 64px;
+  font-weight: 800;
+  display: block;
+  max-width: fit-content;
+  margin-bottom: 0 !important;
+  padding: 0;
+  background: -webkit-linear-gradient(0deg, #e32a34, #b50eae);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.MainHeadingDiv {
+  max-width: fit-content;
+}
+
+.MainHeading {
+  margin-top: 0px;
+  margin-bottom: 50px;
+}
+.MainSubHeading {
+  color: #b0b0b0;
+  font-size: 32px;
+}
+
+.InputHeading {
+  font-size: 24px;
+  color: white;
+  margin-bottom: 4px;
+}
+.InputHeadingDiv {
+  max-width: 100%;
+}
+.InputStyle {
+  background-color: black;
+  border-radius: 4px;
+  color: white;
+  font-size: 24px;
+  border: 2px solid white;
+  padding-left: 10px;
+  width: 100%;
+}
+.RowInput {
+  margin-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+  width: 100%;
+  --bs-gutter-x: 0px !important;
+}
+.RadioButton {
+  background-color: #bfb;
+  border-color: #4c4;
+}
+.RadioButtonLabel {
+  background-color: transparent;
+  width: 24px;
+  height: 24px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.RadioButtonLabel .checkmark {
+  width: calc(100%-2px);
+  height: calc(100%-2px);
+  border-radius: 50%;
+  background-color: white;
+  display: none;
+}
+.RadioButtonLabel input {
+  display: none;
+}
+
+.RadioButtonLabel input:checked + .checkmark {
+  width: 14px;
+  height: 14px;
+  background-color: white;
+  display: inline-block;
+}
+
+.tableRowPadding {
+  height: 50px;
+}
+.labelClassName {
+  color: white;
+  margin-left: 16px;
+}
+
+.grad {
+  background-image: -webkit-linear-gradient(0deg, #e32a34, #b50eae);
+}
+.grad {
+  padding: 8px 32px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 32px;
+  border: 0px;
+
+  display: block;
+  margin: 10% auto 0;
+}
+
+.grad:hover {
+  background-position: center center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+
+.TravelScoreHeading {
+  color: white;
+  font-size: 64px;
+  font-weight: bold;
+}
+.TravelScoreStarterHeading {
+  color: white;
+  font-size: 28px;
+  font-weight: w100;
+  text-align: center;
+}
+.ScoreCard {
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 40px;
+}
+.SpanScore {
+  font-size: 16px;
+}
+
+.RowButtonCheckApp {
+  margin-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.gradRedirect {
+  background-image: -webkit-linear-gradient(0deg, #e32a34, #b50eae);
+}
+.gradRedirect {
+  padding: 8px 32px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 32px;
+  border: 2px solid white;
+  display: block;
+}
+
+.gradRedirect:hover {
+  background-position: center center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
+/* new-------------  */
+
+/* .timeBox::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(
+    90deg,
+    #e32a36 0%,
+    #b50eae 96.99%
+  ) !important;
+  filter: blur(40px) !important;
+  border-radius: 35px !important;
+  z-index: -1 !important;
+  position: absolute;
+} */
+.timeBox {
+  width: 600px;
+  height: 600px;
+  background-color: #262626;
+  border-radius: 35px;
+  margin: 0 auto;
+  padding: 18px;
+  text-align: center;
+  margin-bottom: 5%;
+  box-shadow: 0 0 30px 10px #b50eae;
+}
+
+@media only screen and (max-width: 455px) {
+  .timeBox {
+    height: 400px;
+  }
+  .text {
+    font-size: 14px !important;
+  }
+  .input {
+    margin-top: 6% !important;
+  }
+}
+
+.innerblack {
+  width: 100%;
+  height: 70%;
+  background-color: black;
+  border-radius: 35px;
+}
+.text {
+  color: white;
+  margin-top: 8%;
+  font-size: 17px;
+}
+.input {
+  background-color: #262626;
+  position: relative;
+
+  outline: 0;
+  border-width: 0 0 2px;
+  border-color: #818181;
+  text-decoration-color: #818181;
+  text-align: center;
+  margin-top: 10%;
+  color: #fff;
+  width: "40%";
+}
+@media only screen and (max-width: 400px) {
+  .input {
+    width: "70%" !important;
+  }
+}
+.ball1 {
+  position: relative;
+  z-index: 5;
+  width: 88px;
+  height: 70px;
+  bottom: 80%;
+  left: 38%;
+}
+.ball2 {
+  position: relative;
+  z-index: 5;
+  top: -55%;
+  bottom: 0;
+  width: 55%;
+  right: 47%;
+}
+.ball3 {
+  position: relative;
+  z-index: 5;
+  width: 88px;
+  height: 70px;
+  bottom: 76%;
+  left: -70%;
+}
+.ball4 {
+  position: relative;
+  z-index: 5;
+  top: -45%;
+  bottom: 0;
+  width: 55%;
+  right: -47%;
+}
+.ball5 {
+  position: relative;
+  z-index: 5;
+  top: -30%;
+  bottom: 0;
+  width: 55%;
+  right: 50%;
+}
+.ball6 {
+  position: relative;
+  z-index: 5;
+
+  bottom: 80%;
+  left: -67%;
+}
+/* .shades::before {
+  content: "";
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: inherit;
+
+  filter: blur(200px);
+  opacity: 0.7;
+}
+.shades {
+  position: relative;
+  width: 600px;
+  height: 600px;
+
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to top left, #0400ff, #ff3d00);
+  border-radius: 20px;
+  margin: 0 auto;
+} */
