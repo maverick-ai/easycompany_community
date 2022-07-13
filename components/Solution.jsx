@@ -12,12 +12,17 @@ import {
 import { sendVote, addsolncomment, sendReq } from "./requests";
 import SolutionComment from "./SolutionComment";
 import { useState } from "react";
-
+import cookie from "cookie";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-
-import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import {
+  faChevronUp,
+  faChevronDown,
+  faCheck,
+} from "@fortawesome/free-solid-svg-icons";
+import router, { useRouter } from "next/router";
 
 const Solution = (props) => {
   const [solnComment, setsolnComment] = useState(props.comments.comments);
