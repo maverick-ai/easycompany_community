@@ -1,80 +1,60 @@
-import classes from "./navbar.module.css";
+import classes from "./navbar.module.scss";
 import "font-awesome/css/font-awesome.min.css";
-import Image from "next/image";
-import Logo from "../public/easycommunity.png";
-
+import GradientBtn from "../components/GradienButton";
+import { useRouter } from "next/router";
 import { Navbar, Container, Nav } from "react-bootstrap";
 
+const NavLinks = [
+  {
+    path: "/questions",
+    name: "Questions",
+  },
+  {
+    path: "/create",
+    name: "Ask",
+  },
+  {
+    path: "/search_new2",
+    name: "Search",
+  },
+];
+
 function MainNavbar(props) {
+  const router = useRouter();
   return (
     <Navbar collapseOnSelect={true} expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="/">
-          <Image
-            className={classes.logoImage}
-            alt="logo"
-            src="/easycommunity.png"
-            // src={Logo}
-            height={50}
-            width={230}
-            quality={100}
-            // layout="intrinsic"
-          />
+        <Navbar.Brand href="/" className={classes.logo}>
+          <img src="/icons/EASYCOMMUNITY_ICON.png" alt="Company logo" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           className={`${classes.Toggler}`}
           style={{
-            transform: "translateY(-5%)",
+            transform: "translateY(20%)",
             borderColor: "transparent",
-            color: "#7ed957",
+            color: "white",
+            // marginTop: "2px",
           }}
         >
-          <i className={`fa fa-bars ${classes.Gradientbars}`}></i>
+          <i className="fa fa-bars"></i>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto">
-            <Nav.Link href="/questions?page=1" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
+          <Nav className="m-auto" style={{ justifyContent: "center" }}>
+            {NavLinks.map(({ name, path }) => (
+              <Nav.Link
+                href={path}
+                key={name}
+                className={`${router.pathname === path ? classes.active : ""} ${
+                  classes.navLink
+                }`}
               >
-                Questions?
-              </button>
-            </Nav.Link>
-            <Nav.Link href="/create" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                Ask
-              </button>
-            </Nav.Link>
-            <Nav.Link href="/search" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                Search
-              </button>
-            </Nav.Link>
-            <Nav.Link href="/about" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                About
-              </button>
-            </Nav.Link>
-            <Nav.Link href="/login" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                log in
-              </button>
-            </Nav.Link>
-            <Nav.Link href="/profile" className={`${classes.a}`}>
-              <button
-                className={`${classes.btn} btn btn-sm ${classes.navButtons}`}
-              >
-                <i className="fa fa-trophy"></i>
-              </button>
+                <p>{name}</p>
+              </Nav.Link>
+            ))}
+
+            <Nav.Link href="/login" className={classes.login}>
+              <GradientBtn>Log in</GradientBtn>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

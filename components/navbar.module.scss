@@ -1,0 +1,58 @@
+// .navButtons {
+//   font-family: Helvetica, Arial, sans-serif;
+//   font-style: normal;
+//   /* font-weight: bold; */
+//   font-size: calc(0.5rem + 0.6vw) !important;
+//   text-align: center;
+//   color: #FFF !important;
+// }
+
+// .logoImage {
+//   height: 50px;
+// }
+
+// .btn:focus, .btn:active {
+//   outline: none !important;
+//   box-shadow: 0px 0px 0 2.5px black !important;
+// }
+
+.logo {
+  // background-color: red;
+  margin-top: 20px;
+}
+
+
+.Toggler:focus, .Toggler:active {
+  box-shadow: 0px 0px 0 1.5px transparent !important;
+}
+
+.navLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+  p {
+    position: relative;
+    color: white;
+    padding: 0 !important;
+    margin-top: 20px !important;
+  }
+}
+
+.navLink.active {
+  p::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width:50%;
+    // left: 50%;
+    // transform: translateX(-50%);
+    height: 4px;
+    border-radius: 2px;
+    background: linear-gradient(to right, rgba(181, 14, 174, 1), rgba(227, 42, 52, 1));
+  }
+}
+
+.login {
+  margin-top: 12px;
+}
