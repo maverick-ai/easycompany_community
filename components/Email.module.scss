@@ -1,26 +1,26 @@
 .emailInput {
-    --text: #646B8C;
-    --text-placeholder: #BBC1E1;
+    --text: #fff;
+    --text-placeholder: #fff;
     --icon: #A6ACCD;
     --icon-focus: #646B8C;
     --icon-invalid: #F04949;
     --icon-valid: #16BF78;
-    --background: #fff;
+    --background: #000000;
     --border: #D1D6EE;
     --border-hover: #A6ACCD;
     position: relative;
-    max-width: 100%;
+    max-width: 80%;
     input {
         width: 100%;
         -webkit-appearance: none;
         outline: none;
         display: block;
-        font-size: 14px;
+        font-size: 16px;
         font-family: inherit;
         margin: 0;
-        padding: 8px 16px 8px 41px;
-        line-height: 34px;
-        border-radius: 30px;
+        padding: 8px 16px 8px 16px;
+        line-height: 50px;
+        border-radius: 12px;
         color: var(--text);
         border: 0px solid var(--bc, var(--border));
         background: var(--background);

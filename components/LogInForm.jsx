@@ -1,20 +1,22 @@
 import styles from "./LogInForm.module.css";
 import EmailField from "./Email";
 import PasswordField from "./Password";
-import Link from "next/link";
+
 
 function LogInForm(props) {
   return (
     <div className={styles.containerForm}>
-      <form className="form" style={{ textAlign: "center" }}>
+      <form className="form">
+        <p>Email Address</p>
         <EmailField EmailRef={props.EmailRef} />
-        <div style={{ paddingTop: "30px" }}>
+        <div style={{ paddingTop: "25px" }}>
+        <p>Password</p>
           <PasswordField
             LogInCorrect={props.LogInCorrect}
             PasswordRef={props.PasswordRef}
           />
         </div>
-        <div style={{ paddingTop: "10px" }}>
+        <div style={{ paddingTop: "25px" }}>
           <button
             onClick={(event) => {
               event.preventDefault();
@@ -22,11 +24,8 @@ function LogInForm(props) {
             }}
             className={styles.buttonForm}
           >
-            LOGIN
+            Log in
           </button>
-          </div>
-          <div style={{ paddingTop: "10px" }}>
-          <Link href={"/register"}><h4 className={styles.RegisterLink}><u>Not Registered? Sign up</u></h4></Link>
         </div>
       </form>
     </div>
