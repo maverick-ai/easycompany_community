@@ -132,9 +132,7 @@ const Questions = ({ questions, query }) => {
   return (
     <React.Fragment>
       <Row>
-        <Col>
-          <div className={styles.emptybox}></div>
-        </Col>
+        <div className={styles.emptybox}></div>
       </Row>
 
       <Container>
@@ -164,6 +162,7 @@ export async function getServerSideProps({ query }) {
   try {
     questions = await sendReq(`${PostListURL}?page=${query.page}`);
   } catch (err) {
+    console.log(err);
     return {
       redirect: {
         destination: "/404",
