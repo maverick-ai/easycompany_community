@@ -2,6 +2,7 @@ import styles from "../styles/Search.module.scss";
 import React, { useState, useEffect, useCallback } from "react";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { SearchURL } from "../components/constants";
+import style from "../styles/Questions.module.scss"
 
 import { sendReq } from "../components/requests";
 
@@ -156,7 +157,7 @@ const Content = () => {
                       },
                       index
                     ) => (
-                      <div
+                      <div key={index}
                         style={{
                           padding: "0 5px",
                           marginLeft: "auto",
@@ -164,80 +165,69 @@ const Content = () => {
                         }}
                       >
                         <React.Fragment>
-                          <div className={styles.wrapper}>
-                            <div className={styles.qtitle}>
-                              <Link href={`/posts/?postid=${data.pk}&page=1`}>
-                                {data.title.length > 60
-                                  ? data.title.substring(0, 60) + " ..."
-                                  : data.title}
-                              </Link>
-                            </div>
-                            <div className={styles.timer}>
-                              <div className={styles.timerImage}>
-                                <Image
-                                  quality={100}
-                                  src="/av_timer.png"
-                                  height={15}
-                                  width={15}
-                                ></Image>
-                              </div>
-                              <p className={styles.timerP}>1 Hour</p>
-                            </div>
-                            <div className={styles.para}>
-                              <p>
-                                {postByUser.length > 150
-                                  ? postByUser.substring(0, 150) + " ..."
-                                  : postByUser}
-                              </p>
-                            </div>
+      <div className={style.wrapper}>
+        <div className={style.qtitle}>
+          <Link href={`/posts/?postid=${data.pk}&page=1`}>
+            {data.title.length > 60
+              ? data.title.substring(0, 60) + " ..."
+              : data.title}
+          </Link>
+        </div>
+        <div className={style.timer}>
+          <div className={style.timerImage}>
+            <Image
+              quality={100}
+              src="/av_timer.png"
+              height={15}
+              width={15}
+            ></Image>
+          </div>
+          <p className={style.timerP}>1 Hour</p>
+        </div>
+        <div className={style.para}>
+          <p>
+            {postByUser.length > 150
+              ? postByUser.substring(0, 150) + " ..."
+              : postByUser}
+          </p>
+        </div>
 
-                            <Row className={styles.buttonRow}>
-                              <Col xs={4}>
-                                <div
-                                  style={{ backgroundColor: "#121212" }}
-                                  className={styles.button1}
-                                >
-                                  <div
-                                    className={`${styles.votebox} ${styles.listItem}`}
-                                  >
-                                    <span>
-                                      {upVoteNumber - downVoteNumber} Votes{" "}
-                                    </span>
-                                  </div>
-                                </div>
-                              </Col>
-                              <Col xs={4}>
-                                <div
-                                  className={styles.button1}
-                                  style={{ backgroundColor: "#121212" }}
-                                >
-                                  <div
-                                    className={`${styles.votebox} ${styles.listItem}`}
-                                  >
-                                    <span>1 Answer</span>{" "}
-                                    <img
-                                      src="/icons/answer.svg"
-                                      alt="answer icon"
-                                    />
-                                  </div>
-                                </div>
-                              </Col>
-                              <Col xs={4}>
-                                <div
-                                  className={styles.button1}
-                                  style={{ backgroundColor: "#121212" }}
-                                >
-                                  <div
-                                    className={`${styles.votebox} ${styles.listItem}`}
-                                  >
-                                    <span>{viewedByTheUsers}</span>
-                                    <img src="/icons/eye.svg" alt="eye icon" />
-                                  </div>
-                                </div>
-                              </Col>
-                            </Row>
-                          </div>
-                        </React.Fragment>
+        <Row className={style.buttonRow}>
+          <Col xs={4}>
+            <div
+              style={{ backgroundColor: "#121212" }}
+              className={style.button1}
+            >
+              <div className={`${style.votebox} ${style.listItem}`}>
+                <span>{upVoteNumber - downVoteNumber} Votes </span>
+              </div>
+            </div>
+          </Col>
+          <Col xs={4}>
+            <div
+              className={style.button1}
+              style={{ backgroundColor: "#121212" }}
+            >
+              <div className={`${style.votebox} ${style.listItem}`}>
+                <span>1 Answer</span>{" "}
+                <img src="/icons/answer.svg" alt="answer icon" />
+              </div>
+            </div>
+          </Col>
+          <Col xs={4}>
+            <div
+              className={style.button1}
+              style={{ backgroundColor: "#121212" }}
+            >
+              <div className={`${style.votebox} ${style.listItem}`}>
+                <span>{viewedByTheUsers}</span>
+                <img src="/icons/eye.svg" alt="eye icon" />
+              </div>
+            </div>
+          </Col>
+        </Row>
+      </div>
+    </React.Fragment>
                       </div>
                     )
                   )}
