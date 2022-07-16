@@ -16,6 +16,15 @@ import {
 
 import { useState, useEffect } from "react";
 import moment from "moment";
+import ProfileHead from "../components/profile/profileHead";
+import Medal1 from "../components/profile/medal_box1";
+import Medal2 from "../components/profile/medal_box2";
+import Description from "../components/profile/description";
+import QuestionProfile from "../components/profile/questions";
+import TagsProfile from "../components/profile/profiletags";
+import TopTags from "../components/profile/topTags";
+import Bookmark from "../components/profile/bookmark";
+import VoteCast from "../components/profile/votecast";
 
 // import { Line } from "react-chartjs-2";
 
@@ -67,118 +76,14 @@ const Profile = ({ userData, query, login }) => {
           </div>
 
           <Col lg={8}>
-            <Row>
-              <div className={styles.emptybox1} />
-              <Col>
-                <Row className={styles.nameRow}>
-                  <span className={styles.name}>
-                    {userData.first_name} {userData.last_name}
-                  </span>
-                </Row>
-                <Row className={styles.middleRow}>
-                  <Col>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
-                      <div className={styles.imgWrap}>
-                        <Image
-                          src="/smalliconprofile.svg"
-                          height={20}
-                          width={20.55}
-                          quality={100}
-                        />
-                      </div>
-
-                      <div style={{ marginBottom: "3px" }}>
-                        <span>member since {dateJoined}</span>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
-                      <div className={styles.imgWrap}>
-                        <Image
-                          src="/smalliconprofile.svg"
-                          height={20}
-                          width={20.55}
-                          quality={100}
-                        />
-                      </div>
-
-                      <div style={{ marginBottom: "3px" }}>
-                        <span>member since may 10th</span>
-                      </div>
-                    </div>
-                  </Col>
-                  <Col>
-                    <div style={{ display: "flex", flexDirection: "row" }}>
-                      <div className={styles.imgWrap}>
-                        <Image
-                          src="/smalliconprofile.svg"
-                          height={20}
-                          width={20.55}
-                          quality={100}
-                        />
-                      </div>
-
-                      <div style={{ marginBottom: "3px" }}>
-                        <span>member since may 10th</span>
-                      </div>
-                    </div>
-                  </Col>
-                </Row>
-                <Row className={styles.middleRow}>
-                  <div className={styles.button1}>
-                    <button className={styles.buttonEdit}>Edit Profile</button>
-                  </div>
-                </Row>
-              </Col>
-            </Row>
+            <ProfileHead userData={userData} dateJoined={dateJoined} />
           </Col>
         </Row>
 
         {/* medal row  */}
         <Row className={styles.medalRow}>
-          <Col styles={{ paddingLeft: "50px" }}>
-            <div className={styles.medalbox}>
-              <div
-                style={{
-                  paddingTop: "47px",
-                  marginRight: "auto",
-                  marginLeft: "30px",
-                  display: "flex",
-                }}
-              >
-                <img
-                  src="/goldmedal.svg"
-                  alt="medal"
-                  style={{ width: "51px", height: "35px" }}
-                />
-                <div style={{ padding: "7px 10px 0" }}>
-                  <h5 style={{ fontSize: "20px" }}>lorem ipsum</h5>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col>
-            <div className={styles.medalbox1}>
-              <div
-                style={{
-                  paddingTop: "47px",
-                  marginRight: "auto",
-                  marginLeft: "30px",
-                  display: "flex",
-                }}
-              >
-                <img
-                  src="/goldmedal.svg"
-                  alt="medal"
-                  style={{ width: "51px", height: "35px" }}
-                />
-                <div style={{ padding: "7px 10px 0" }}>
-                  <h5 style={{ fontSize: "20px" }}>lorem ipsum</h5>
-                </div>
-              </div>
-            </div>
-          </Col>
+          <Medal1 />
+          <Medal2 />
         </Row>
 
         {/*----------- medal row end ------------*/}
@@ -186,373 +91,27 @@ const Profile = ({ userData, query, login }) => {
         {/*--------- answer questions row ------- */}
 
         <Row className={styles.medalRow}>
-          <Col styles={{ paddingLeft: "50px" }}>
-            <div
-              className={styles.medalbox}
-              style={{ padding: "39px 19px 49px" }}
-            >
-              <div style={{ display: "flex", marginBottom: "10px" }}>
-                <div className={styles.smallBox} />
-                <div style={{ margin: "10px auto 0" }}>
-                  <p>description description descrip</p>
-                </div>
-                <div style={{ marginTop: "10px", marginLeft: "auto" }}>
-                  <p>date dd/mm/yyyy</p>
-                </div>
-              </div>
-
-              <div style={{ display: "flex", marginBottom: "10px" }}>
-                <div className={styles.smallBox} />
-                <div style={{ margin: "10px auto 0" }}>
-                  <p>description description descrip</p>
-                </div>
-                <div style={{ marginTop: "10px", marginLeft: "auto" }}>
-                  <p>date dd/mm/yyyy</p>
-                </div>
-              </div>
-            </div>
-          </Col>
-          <Col>
-            <div
-              className={styles.medalbox1}
-              style={{ padding: "39px 19px 49px" }}
-            >
-              <div style={{ display: "flex", marginBottom: "10px" }}>
-                <div className={styles.smallBox} />
-                <div style={{ margin: "10px auto 0" }}>
-                  <p>description description descrip</p>
-                </div>
-                <div style={{ marginTop: "10px", marginLeft: "auto" }}>
-                  <p>date dd/mm/yyyy</p>
-                </div>
-              </div>
-
-              <div style={{ display: "flex", marginBottom: "10px" }}>
-                <div className={styles.smallBox} />
-                <div style={{ margin: "10px auto 0" }}>
-                  <p>description description descrip</p>
-                </div>
-                <div style={{ marginTop: "10px", marginLeft: "auto" }}>
-                  <p>date dd/mm/yyyy</p>
-                </div>
-              </div>
-            </div>
-          </Col>
+          <Description />
+          <QuestionProfile />
         </Row>
 
         {/*---------- tags reputation row-------- */}
 
         <Row className={styles.medalRow}>
-          <Col styles={{ paddingLeft: "50px" }}>
-            <div className={styles.medalbox}>
-              <Row
-                style={{
-                  width: "70%",
-                  margin: "0 auto",
-                  paddingTop: "7%",
-                }}
-              >
-                <div style={{ display: "flex", marginTop: "10%" }}>
-                  <div
-                    style={{
-                      width: "90px",
-                      height: "24px",
-                      borderRadius: "12px",
-                      backgroundColor: "#121212",
-                      textAlign: "center",
-                      margin: "auto",
-                    }}
-                  >
-                    <span
-                      style={{
-                        fontSize: "13px",
-                        margin: "auto",
-                        fontFamily: "Poppins",
-                      }}
-                    >
-                      tagss
-                    </span>
-                  </div>
-                  <div style={{ width: "40%", height: "100%" }}></div>
-
-                  <div style={{ display: "flex", fontFamily: "Poppins" }}>
-                    <h3
-                      style={{
-                        fontsize: "16px",
-                        margin: "auto 20px auto 0",
-                      }}
-                    >
-                      score
-                    </h3>{" "}
-                    <div className={styles.gradientText}>
-                      <h3
-                        style={{
-                          fontSize: "24px",
-                          fontWeight: "600",
-                          margin: "auto",
-                          paddingTop: "5px",
-                        }}
-                      >
-                        88
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </Row>
-            </div>
-          </Col>
+          <TagsProfile />
 
           {/* reputation chart ------------- */}
-          <Col>
-            <div className={styles.medalbox1}>
-              <div className={styles.chart}>
-                {/* <Line data={newUser} /> */}
-              </div>
-              <Row style={{ width: "70%", margin: "0 auto" }}>
-                <div
-                  style={{
-                    marginTop: "25px",
-                    width: "50%",
-                    textAlign: "center",
-                  }}
-                >
-                  <span
-                    style={{
-                      padding: "10px",
-                      fontSize: "24px",
-                      fontFamily: "Poppins",
-                    }}
-                  >
-                    12
-                  </span>
-                  <div className={styles.chartBox}>
-                    <span>+12</span>
-                  </div>
-                </div>
-                <div
-                  style={{
-                    marginTop: "25px",
-                    width: "50%",
-                    textAlign: "center",
-                  }}
-                >
-                  <span
-                    style={{
-                      padding: "10px",
-                      fontSize: "24px",
-                      fontFamily: "Poppins",
-                    }}
-                  >
-                    Top Tags
-                  </span>
-                  <div
-                    style={{
-                      width: "90px",
-                      height: "24px",
-                      borderRadius: "12px",
-                      backgroundColor: "#121212",
-                      textAlign: "center",
-                      margin: "auto",
-                      marginTop: "10px",
-                      fontFamily: "Poppins",
-                    }}
-                  >
-                    <span>+12</span>
-                  </div>
-                </div>
-              </Row>
-            </div>
-          </Col>
+          <TopTags />
         </Row>
 
         {/* -----------  */}
 
         {/* bookmark -------------------- */}
         <Row className={styles.medalRow}>
-          <Col styles={{ paddingLeft: "50px" }}>
-            <div className={styles.medalbox} style={{ padding: "70px" }}>
-              <div style={{ display: "flex" }}>
-                <div>lorem ipsum lorem?</div>
-                <img
-                  src="/bookmark.svg"
-                  alt=""
-                  style={{ marginLeft: "auto", marginRight: "15%" }}
-                />
-              </div>
-            </div>
-          </Col>
+          <Bookmark />
 
           {/* votes cast start  */}
-          <Col>
-            <div className={styles.medalbox1}>
-              <div style={{ padding: "50px", display: "flex" }}>
-                <div style={{ width: "50%" }}>
-                  <h2
-                    style={{
-                      fontSize: "24px",
-                      fontFamily: "Poppins",
-                    }}
-                  >
-                    All Time
-                  </h2>
-                  <div style={{ display: "flex", margin: "10px 0" }}>
-                    <div className={styles.gradientText}>
-                      <h3
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          margin: "auto",
-                          paddingTop: "5px",
-                        }}
-                      >
-                        226
-                      </h3>
-                    </div>
-                    <h4
-                      style={{
-                        fontSize: "16px",
-                        fontWeight: "400",
-                        marginLeft: "50px",
-                        marginTop: "6px",
-                      }}
-                    >
-                      Up
-                    </h4>
-                  </div>
-                  <div style={{ display: "flex", margin: "10px 0" }}>
-                    <div className={styles.gradientText}>
-                      <h3
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          margin: "auto",
-                          paddingTop: "5px",
-                        }}
-                      >
-                        226
-                      </h3>
-                    </div>
-                    <h4
-                      style={{
-                        fontSize: "16px",
-                        fontWeight: "400",
-                        marginLeft: "50px",
-                        marginTop: "6px",
-                      }}
-                    >
-                      Down
-                    </h4>
-                  </div>
-                  <h2
-                    style={{
-                      fontSize: "24px",
-                      fontFamily: "Poppins",
-                      marginTop: "20px",
-                    }}
-                  >
-                    Month
-                  </h2>
-                  <div style={{ display: "flex", margin: "10px 0" }}>
-                    <div className={styles.gradientText}>
-                      <h3
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          margin: "auto",
-                          paddingTop: "5px",
-                        }}
-                      >
-                        226
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-                {/* end of first coloumn in votes ----------- */}
-
-                <div style={{ width: "50%", marginLeft: "80px" }}>
-                  <h2
-                    style={{
-                      fontSize: "24px",
-                      fontFamily: "Poppins",
-                    }}
-                  >
-                    By Type
-                  </h2>
-                  <div style={{ display: "flex", margin: "10px 0" }}>
-                    <div className={styles.gradientText}>
-                      <h3
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          margin: "auto",
-                          paddingTop: "5px",
-                        }}
-                      >
-                        226
-                      </h3>
-                    </div>
-                    <h4
-                      style={{
-                        fontSize: "16px",
-                        fontWeight: "400",
-                        marginLeft: "50px",
-                        marginTop: "6px",
-                      }}
-                    >
-                      Questions
-                    </h4>
-                  </div>
-                  <div style={{ display: "flex", margin: "10px 0" }}>
-                    <div className={styles.gradientText}>
-                      <h3
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          margin: "auto",
-                          paddingTop: "5px",
-                        }}
-                      >
-                        226
-                      </h3>
-                    </div>
-                    <h4
-                      style={{
-                        fontSize: "16px",
-                        fontWeight: "400",
-                        marginLeft: "50px",
-                        marginTop: "6px",
-                      }}
-                    >
-                      Answers
-                    </h4>
-                  </div>
-                  <h2
-                    style={{
-                      fontSize: "24px",
-                      fontFamily: "Poppins",
-                      marginTop: "20px",
-                    }}
-                  >
-                    Days
-                  </h2>
-                  <div style={{ display: "flex", margin: "10px 0" }}>
-                    <div className={styles.gradientText}>
-                      <h3
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "600",
-                          margin: "auto",
-                          paddingTop: "5px",
-                        }}
-                      >
-                        22
-                      </h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </Col>
+          <VoteCast />
         </Row>
         <Row className={styles.medalRow}>
           <Col styles={{ paddingLeft: "50px" }}>

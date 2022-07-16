@@ -7,7 +7,16 @@ import { Container, Col, Row } from "react-bootstrap";
 import React from "react";
 
 const QuestionBox = (props) => {
-  console.log(props.data);
+  const string = props.postByUser;
+  const regex = new RegExp(
+    "![[a-zA-Z]+][a-zA-Z0-9\\(\\)\\.\\:\\/\\_\\-\\@\\%]+"
+  );
+  const regex2 = new RegExp("\\*|#", "g");
+
+  const newStr1 = string.replace(regex, "");
+  var newStr = newStr1.replace(regex2, "");
+  console.log(newStr);
+
   return (
     <React.Fragment>
       <div className={styles.wrapper}>
@@ -31,9 +40,7 @@ const QuestionBox = (props) => {
         </div>
         <div className={styles.para}>
           <span>
-            {props.postByUser.length > 150
-              ? props.postByUser.substring(0, 150) + " ..."
-              : props.postByUser}
+            {newStr.length > 150 ? newStr.substring(0, 150) + " ..." : newStr}
           </span>
         </div>
         <div style={{ width: "90%", height: "40px", marginTop: "auto" }}>

@@ -4,13 +4,21 @@
   box-sizing: border-box;
 }
 
+.forgot {
+  background-color: transparent;
+  color: aliceblue;
+  position: relative;
+  top: 10px;
+  border: none;
+}
+
 .buttonForm {
   padding: 0;
   border: none;
   outline: none;
   box-sizing: border-box;
   margin-top: 20px;
-  background: linear-gradient(90deg, #E32A36 0%, #B50EAE 95.14%);
+  background: linear-gradient(90deg, #e32a36 0%, #b50eae 95.14%);
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.56);
   color: white;
   height: 50px;

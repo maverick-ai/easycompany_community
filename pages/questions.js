@@ -30,6 +30,8 @@ const Questions = ({ questions, query }) => {
   // }, [query.page]);
 
   // memo controlled grid
+
+  console.log(questions.results);
   const gridrefresh = useMemo(() => {
     return questions.results.map(
       (
