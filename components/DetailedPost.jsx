@@ -4,7 +4,12 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { sendVote, addpostcomment, sendReq } from "./requests";
-import { UpVotePostURL, DownVotePostURL, commentPageSize,PostCommentsURL } from "./constants";
+import {
+  UpVotePostURL,
+  DownVotePostURL,
+  commentPageSize,
+  PostCommentsURL,
+} from "./constants";
 import PostComment from "./PostComments";
 import Link from "next/link";
 import { useEffect, useState } from "react";

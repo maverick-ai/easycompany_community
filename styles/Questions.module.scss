@@ -2,8 +2,11 @@
   width: 1300px;
   height: 264px;
   background-image: url(../public/ff.png);
+  background-position: center;
+  object-fit: cover;
   margin: 155px auto 70px;
-  background-size: 100% 100%;
+  background-size: cover;
+  border: #121212;
 }
 .button1 {
   border-radius: 8px;
@@ -227,6 +230,58 @@
     font-size: 11px;
   }
 }
+@media only screen and (max-width: 405px) {
+  .wrapper {
+    width: 330px !important;
+  }
+  .votebox {
+    width: 80px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 430px) {
+  .wrapper {
+    width: 360px !important;
+  }
+  .votebox {
+    width: 80px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 380px) {
+  .wrapper {
+    width: 310px !important;
+  }
+  .votebox {
+    width: 80px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .wrapper {
+    width: 280px !important;
+  }
+  .votebox {
+    width: 70px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
 
 .left {
   display: flex;
@@ -306,6 +361,26 @@
 }
 @media screen and (max-width: 560px) {
   .masonryGrid {
-    margin-left: 5%;
+    margin-left: 10%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .masonryGrid {
+    margin-left: 8%;
+  }
+}
+@media screen and (max-width: 470px) {
+  .masonryGrid {
+    margin-left: 6%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .masonryGrid {
+    margin-left: 3%;
+  }
+}
+@media screen and (max-width: 400px) {
+  .masonryGrid {
+    margin-left: 1%;
   }
 }
