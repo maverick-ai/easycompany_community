@@ -9,6 +9,7 @@ import "react-mde/lib/styles/css/react-mde-toolbar.css";
 import "react-mde/lib/styles/css/react-mde-editor.css";
 import "react-mde/lib/styles/css/react-mde-preview.css";
 import ReactMarkdown from "react-markdown";
+import { CreateImageURL } from "../components/constants";
 
 import { Host, PostURL, AnswersURL, PageSize } from "../components/constants";
 import cookie from "cookie";
@@ -20,31 +21,35 @@ import LoginPopUp from "../components/LogInPopUp";
 import { addanswer } from "../components/requests";
 import { useState } from "react";
 import { Container, Col, Row } from "react-bootstrap";
+import { useCookies } from "react-cookie";
 
 const Post = ({ post, answers, solnComments, query }) => {
+  const [cookie, setCookie] = useCookies(["token"]);
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [ansValue, setAnsValue] = useState("");
   const [selectedTab, setSelectedTab] = useState("write");
 
   // TS code(converted to JS) for image save
 
-  const save = async function* (data) {
-    // Promise that waits for "time" milliseconds
-    const wait = function (time) {
-      return new Promise((a, r) => {
-        setTimeout(() => a(), time);
-      });
+  const save = async function* (data, file) {
+    
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Token ${cookie.token}`);
+
+    var formdata = new FormData();
+    formdata.append("image", file);
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
     };
 
-    // Upload "data" to your server
-    // Use XMLHttpRequest.send to send a FormData object containing
-    // "data"
-    // Check this question: https://stackoverflow.com/questions/18055422/how-to-receive-php-image-data-over-copy-n-paste-javascript-with-xmlhttprequest
-
-    await wait(2000);
-    // yields the URL that should be inserted in the markdown
-    yield "https://picsum.photos/300";
-    await wait(2000);
+    let response = await fetch(`${CreateImageURL}`, requestOptions);
+    let newData = await response.json();
+    
+    yield newData.url;
 
     // returns true meaning that the save was successful
     return true;
@@ -164,7 +169,7 @@ export async function getServerSideProps({ query, req }) {
     if (!query.page) query.page = 1;
 
     if (post.detail) {
-      console.log("No post");
+      
     } else {
       answers = await sendReq(
         `${AnswersURL}${query.postid}/?page=${query.page}`,
@@ -182,9 +187,8 @@ export async function getServerSideProps({ query, req }) {
         permanent: false,
       },
     };
-    console.log("HIIIIII");
-    console.log(post);
   }
+  
   return {
     props: {
       post,

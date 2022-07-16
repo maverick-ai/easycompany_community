@@ -4,7 +4,7 @@ import Image from "next/image";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { sendVote, addpostcomment, sendReq } from "./requests";
-import { UpVotePostURL, DownVotePostURL } from "./constants";
+import { UpVotePostURL, DownVotePostURL, commentPageSize,PostCommentsURL } from "./constants";
 import PostComment from "./PostComments";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -25,8 +25,6 @@ const DetailedPost = (props) => {
       setpostComment((old) => [...old, ...newComments.results]);
     }
   };
-  console.log("creator id .......");
-  console.log(props.data.creator_by.creator_id);
 
   return (
     <div className="post-content">
@@ -94,7 +92,7 @@ const DetailedPost = (props) => {
                           props.data.creator_by.last_name}
                       </Link>
                     </div>
-                    <div style={{ width: "90px" }}>
+                    <div style={{ width: "120px" }}>
                       <Image
                         src="/av_timer.png"
                         height={16}
@@ -108,10 +106,10 @@ const DetailedPost = (props) => {
                           fontWeight: "400",
                         }}
                       >
-                        4 Hrs
+                        {props.data.created_date}
                       </span>
                     </div>
-                    <div style={{ width: "91px" }}>
+                    <div style={{ width: "120px" }}>
                       <Image
                         className={styles.eye}
                         src="/Eye.png"
@@ -126,7 +124,7 @@ const DetailedPost = (props) => {
                           fontWeight: "400",
                         }}
                       >
-                        Views
+                        {props.data.viewedByTheUsers} Views
                       </span>
                     </div>
                   </div>

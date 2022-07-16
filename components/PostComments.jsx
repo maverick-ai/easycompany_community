@@ -49,7 +49,7 @@ const PostComment = (props) => {
                                         </div>
                                     </Col>
                                     <Col lg={3} md={3} sm={4}>
-                                        <span> -- Hours Ago</span>
+                                        <span> {props.comment.created_date}</span>
                                     </Col>
                                 </Row>
                                 <p style={{ marginTop: "10px" }}>{props.comment.commentByUser}</p>
@@ -78,7 +78,7 @@ const PostComment = (props) => {
                                         </div>
                                     </Col>
                                     <Col lg={3} md={3} sm={4}>
-                                        <span> -- Hours Ago</span>
+                                        <span> {props.comment.created_date}</span>
                                     </Col>
                                 </Row>
                                 <p style={{ marginTop: "10px" }}>{props.comment.commentByUser}</p>
@@ -105,7 +105,7 @@ const PostComment = (props) => {
                                     </div>
                                 </Col>
                                 <Col lg={3} md={3} sm={4}>
-                                    <span> -- Hours Ago</span>
+                                    <span> {props.comment.created_date}</span>
                                 </Col>
                             </Row>
                             <p style={{ marginTop: "10px" }}>{props.comment.commentByUser}</p>

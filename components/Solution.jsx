@@ -36,7 +36,6 @@ const Solution = (props) => {
       document.cookie
     );
     setsolnComment((old) => [...old, ...newsolncomments.results]);
-    console.log(solnComment);
   };
 
   const acceptsoln = async (id) => {
@@ -116,7 +115,7 @@ const Solution = (props) => {
                         props.solution.creator_by.last_name}
                     </Link>
                   </div>
-                  <div style={{ width: "90px" }}>
+                  <div style={{ width: "120px" }}>
                     <Image
                       src="/av_timer.png"
                       height={16}
@@ -130,7 +129,7 @@ const Solution = (props) => {
                         fontWeight: "400",
                       }}
                     >
-                      4 Hrs
+                     {props.solution.created_date}
                     </span>
                   </div>
                   <div style={{ width: "91px" }}>

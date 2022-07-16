@@ -1,5 +1,6 @@
 const DomainURL = 'https://backend.easycompany.space/';
 const CreatePostURL=`${DomainURL}api/create_post/`;
+const CreateImageURL=`${DomainURL}api/create_image/`;
 const LogInURL = `${DomainURL}api/login/`;
 const RegisterUserURL = `${DomainURL}api/registration/`;
 const Host="backend.easycompany.space";
@@ -35,4 +36,4 @@ const PageSize=20;
 const commentPageSize=3;
 const PageNumberLimit=5;
 
-export {CreatePostURL,Host,LogInURL,RegisterUserURL,SearchURL,PostURL,AnswersURL,PageSize,PostListURL,PageNumberLimit,UpVotePostURL,DownVotePostURL,UpVoteSolnURL,DownVoteSolnURL,UpVotePostCommentURL,DownVotePostCommentURL,UpVoteSolnCommentURL,DownVoteSolnCommentURL, AddSolnURL,AddPostcommentURL,AddSolncommentURL,PostCommentsURL,SolutionCommentsURL,commentPageSize,UserProfileURL,UserPostsURL,UserSolutionsURL,PublicUserProfileURL,PublicUserPostsURL,PublicUserSolutionsURL,PasswordResetPost,PasswordResetGet,AcceptSolnURL,TravelScoreURL};
+export {CreatePostURL,CreateImageURL,Host,LogInURL,RegisterUserURL,SearchURL,PostURL,AnswersURL,PageSize,PostListURL,PageNumberLimit,UpVotePostURL,DownVotePostURL,UpVoteSolnURL,DownVoteSolnURL,UpVotePostCommentURL,DownVotePostCommentURL,UpVoteSolnCommentURL,DownVoteSolnCommentURL, AddSolnURL,AddPostcommentURL,AddSolncommentURL,PostCommentsURL,SolutionCommentsURL,commentPageSize,UserProfileURL,UserPostsURL,UserSolutionsURL,PublicUserProfileURL,PublicUserPostsURL,PublicUserSolutionsURL,PasswordResetPost,PasswordResetGet,AcceptSolnURL,TravelScoreURL};

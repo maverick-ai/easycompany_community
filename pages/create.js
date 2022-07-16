@@ -11,12 +11,14 @@ import { sendReq } from "../components/requests";
 import LoginPopUp from "../components/LogInPopUp";
 import { Container, Row, Col } from "react-bootstrap";
 import router from "next/router";
+import { CreateImageURL } from "../components/constants";
+import { useCookies } from "react-cookie";
 
 let initialState = 0;
 
 export default function Create() {
+  const [cookie, setCookie] = useCookies(["token"]);
   const titleRef = useRef();
-
   const [input, setInput] = useState("");
   const [bodyvalue, setbValue] = useState("");
   const [tags, setTags] = useState([]);
@@ -41,6 +43,7 @@ export default function Create() {
     },
   ];
 
+
   useEffect(() => {
     setInterval(() => {
       setFadeState(true);
@@ -53,7 +56,7 @@ export default function Create() {
         setFadeState(false);
       }, 1500);
     }, 8000);
-    console.log(getDefaultToolbarCommands());
+    // console.log(getDefaultToolbarCommands());
   }, []);
 
   async function createPostRequest() {
@@ -61,12 +64,18 @@ export default function Create() {
     tags.map((tag) => {
       categories.push({ categoryForPost: tag });
     });
-    const post = JSON.stringify({
-      title: titleRef.current.value,
-      categoryOfThePost: categories,
-      postByUser: bodyvalue,
-    });
-    console.log(post);
+
+    var post = JSON.stringify(
+      {title : titleRef.current.value,
+      categoryOfThePost : categories,
+      postByUser : bodyvalue}
+    );
+
+    // var formdata = new FormData();
+    // formdata.append("title", titleRef.current.value);
+    // formdata.append("categoryOfThePost", categories);
+    // formdata.append("postByUser", bodyvalue);
+
     if (document.cookie) {
       const response = await sendReq(
         CreatePostURL,
@@ -83,25 +92,27 @@ export default function Create() {
     }
   }
 
-  const save = async function* (data) {
-    // Promise that waits for "time" milliseconds
-    const wait = function (time) {
-      return new Promise((a, r) => {
-        setTimeout(() => a(), time);
-      });
+
+  const save = async function* (data,file) {
+    // console.log(file);
+
+    var myHeaders = new Headers();
+    myHeaders.append("Authorization", `Token ${cookie.token}`);
+
+    var formdata = new FormData();
+    formdata.append("image", file);
+
+    var requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: formdata,
+      redirect: 'follow'
     };
 
-    // Upload "data" to your server
-    // Use XMLHttpRequest.send to send a FormData object containing
-    // "data"
-    // Check this question: https://stackoverflow.com/questions/18055422/how-to-receive-php-image-data-over-copy-n-paste-javascript-with-xmlhttprequest
-
-    await wait(2000);
-    // yields the URL that should be inserted in the markdown
-    yield "https://picsum.photos/300";
-    await wait(2000);
-
-    // returns true meaning that the save was successful
+    let response = await fetch(`${CreateImageURL}`, requestOptions);
+    let newData = await response.json();
+    
+    yield newData.url;
     return true;
   };
 
@@ -173,8 +184,8 @@ export default function Create() {
                       },
                     }}
                     paste={{
-                    saveImage: save,
-                  }}
+                      saveImage: save,
+                    }}
                     toolbarCommands={[
                       ["header", "bold", "italic", "strikethrough"],
                       ["link", "quote", "image"],
@@ -189,7 +200,7 @@ export default function Create() {
                 </div>
               </Col>
             </Row>
-            <div className={styles.Buttons} style={{marginBottom:"20px"}}>
+            <div className={styles.Buttons} style={{ marginBottom: "20px" }}>
               <div className={styles.Button} onClick={createPostRequest}>
                 <span>Submit</span>
               </div>
@@ -203,4 +214,6 @@ export default function Create() {
       {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
     </Container>
   );
+
 }
+
