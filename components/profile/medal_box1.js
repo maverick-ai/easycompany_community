@@ -1,4 +1,4 @@
-import styles from "../../styles/profile.module.css";
+import styles from "../../styles/Profile.module.css";
 import { Row, Col } from "react-bootstrap";
 
 function Medal1() {

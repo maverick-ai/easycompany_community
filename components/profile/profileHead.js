@@ -1,6 +1,6 @@
 import { Row, Col } from "react-bootstrap";
 import Image from "next/image";
-import styles from "../../styles/profile.module.css";
+import styles from "../../styles/Profile.module.css";
 
 function ProfileHead(props) {
   return (
