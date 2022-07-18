@@ -43,7 +43,7 @@ const PostComment = (props) => {
                                         height={28}
                                         width={28}
                                         quality={100} />
-                                    <Col lg={2} md={3} sm={4}>
+                                    <Col lg={3} md={4} sm={4}>
                                         <div className={Styles.userName}>
                                             <Link href={`/profile?user=${props.comment.creator_by.creator_id}`}>{props.comment.creator_by.first_name + " " + props.comment.creator_by.last_name}</Link>
                                         </div>
@@ -72,7 +72,7 @@ const PostComment = (props) => {
                                         height={28}
                                         width={28}
                                         quality={100} />
-                                    <Col lg={2} md={3} sm={4}>
+                                    <Col lg={3} md={3} sm={4}>
                                         <div className={Styles.userName}>
                                             <Link href={`/profile?user=${props.comment.creator_by.creator_id}`}>{props.comment.creator_by.first_name + " " + props.comment.creator_by.last_name}</Link>
                                         </div>
@@ -92,6 +92,7 @@ const PostComment = (props) => {
             {winWidth && (
                 <Container>
                     <Row>
+                    <Col lg={{ span: 8, offset: 1 }}>
                         <div className={`${Styles.commentboxdiv}`}>
                             <Row style={{marginTop:"5px"}}><div style={{ width: "10px", padding: "0px" }}></div>
                                 <Image
@@ -99,7 +100,7 @@ const PostComment = (props) => {
                                     height={40}
                                     width={40}
                                     quality={100} />
-                                <Col lg={2} md={3} sm={4}>
+                                <Col lg={3} md={3} sm={4}>
                                     <div className={Styles.userName}>
                                         <Link href={`/profile?user=${props.comment.creator_by.creator_id}`}>{props.comment.creator_by.first_name + " " + props.comment.creator_by.last_name}</Link>
                                     </div>
@@ -110,6 +111,7 @@ const PostComment = (props) => {
                             </Row>
                             <p style={{ marginTop: "10px" }}>{props.comment.commentByUser}</p>
                         </div>
+                        </Col>
                     </Row>
                 </Container>)}
 
