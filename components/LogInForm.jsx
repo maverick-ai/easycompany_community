@@ -16,6 +16,14 @@ function LogInForm(props) {
             LogInCorrect={props.LogInCorrect}
             PasswordRef={props.PasswordRef}
           />
+          <button
+            onClick={() => {
+              router.push("/forgotpassword");
+            }}
+            className={styles.forgot}
+          >
+            forgot password ?
+          </button>
         </div>
         <div style={{ paddingTop: "25px" }}>
           <button
@@ -26,14 +34,6 @@ function LogInForm(props) {
             className={styles.buttonForm}
           >
             Log in
-          </button>
-          <button
-            onClick={() => {
-              router.push("/forgotpassword");
-            }}
-            className={styles.forgot}
-          >
-            forgot password ?
           </button>
         </div>
       </form>

@@ -23,7 +23,7 @@ const test = () => {
         "POST",
         credentials
       );
-      console.log(response.detail);
+      // console.log(response.detail);
       if (response.detail == "Password reset e-mail has been sent.") {
         router.push("/login");
       } else {

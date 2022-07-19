@@ -183,7 +183,7 @@ export default Profile;
 
 export async function getServerSideProps({ query, req }) {
   let userData = {};
-  console.log("aaaaaaaaaaaaaaaaaaa");
+  // console.log("aaaaaaaaaaaaaaaaaaa");
 
   console.log(req.connection.remoteAddress, req.headers);
   try {

@@ -31,7 +31,7 @@ const Questions = ({ questions, query }) => {
 
   // memo controlled grid
 
-  console.log(questions.results);
+  // console.log(questions.results);
   const gridrefresh = useMemo(() => {
     return questions.results.map(
       (
@@ -48,7 +48,7 @@ const Questions = ({ questions, query }) => {
       ) => (
         <div
           style={{
-            padding: "0 5px",
+            padding: "0 16px",
             marginLeft: "auto",
             marginRight: "auto",
           }}

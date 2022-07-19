@@ -24,9 +24,9 @@ function MainNavbar(props) {
   return (
     <Navbar collapseOnSelect={true} expand="lg" fixed="top">
       <Container>
-        <Navbar.Brand href="/" className={classes.logo}>
-          <img src="/icons/EASYCOMMUNITY_ICON.png" alt="Company logo" />
-        </Navbar.Brand>
+          <Navbar.Brand href="/" className={classes.logo}>
+            <img style={{height:"40px", width:"196px"}} src="/icons/EASYCOMMUNITY_v2_1_1.png" alt="Company logo" />
+          </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           className={`${classes.Toggler}`}
@@ -40,14 +40,13 @@ function MainNavbar(props) {
           <i className="fa fa-bars"></i>
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto" style={{ justifyContent: "center" }}>
+          <Nav className="m-auto" style={{ justifyContent: "center", paddingLeft: "25vw", }}>
             {NavLinks.map(({ name, path }) => (
               <Nav.Link
                 href={path}
                 key={name}
-                className={`${router.pathname === path ? classes.active : ""} ${
-                  classes.navLink
-                }`}
+                className={`${router.pathname === path ? classes.active : ""} ${classes.navLink
+                  }`}
               >
                 <p>{name}</p>
               </Nav.Link>

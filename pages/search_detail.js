@@ -40,7 +40,7 @@ const Content = () => {
       SearchURL + `?search_query=${query}&page=${page}`
     );
 
-    console.log(newPosts);
+    // console.log(newPosts);
     setPosts((post) => [...post, ...newPosts.results]);
     if (newPosts.next !== null) {
       setPage((page = page + 1));
@@ -48,20 +48,20 @@ const Content = () => {
     } else {
       setHasMore(false);
     }
-    console.log("getMorePost");
-    console.log(page);
+    // console.log("getMorePost");
+    // console.log(page);
   };
 
   const newSearch = () => {
     setPage((page = 1));
-    console.log("newSearch");
-    console.log(page);
+    // console.log("newSearch");
+    // console.log(page);
     setHasMore(true);
     setPosts([]);
     setSearched(true);
     getMorePost();
   };
-  console.log(posts.length);
+  // console.log(posts.length);
 
   function onChangeHandler(props) {
     setQuery(props.target.value);
