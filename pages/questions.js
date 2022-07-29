@@ -12,6 +12,30 @@ import Pagination from "../components/Pagination";
 import Question_img from "../components/questions_img";
 
 const Questions = ({ questions, query }) => {
+
+ async function Test(){var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  var raw = JSON.stringify({
+    "email": "abg@gmail.com",
+    "password": "maserati123"
+  });
+  
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+  
+  let data = await fetch("http://127.0.0.1:8000/api/login/", requestOptions);
+  console.log(data);
+  console.log("--------")
+    }
+
+    useEffect(Test,[]);
+
+
   const enterExitStyles = [
     "Simple",
     "Skew",
