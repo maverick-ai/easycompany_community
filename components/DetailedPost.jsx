@@ -30,6 +30,8 @@ const DetailedPost = (props) => {
       setpostComment((old) => [...old, ...newComments.results]);
     }
   };
+ console.log("-------------")
+  console.log(props.data);
 
   return (
     <div className="post-content">

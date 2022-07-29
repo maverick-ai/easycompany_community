@@ -22,43 +22,45 @@ const NavLinks = [
 function MainNavbar(props) {
   const router = useRouter();
   return (
-    <Navbar collapseOnSelect={true} expand="lg" fixed="top">
-      <Container>
+    <Container>
+      <Navbar collapseOnSelect={true} expand="lg" fixed="top">
+        <Container>
           <Navbar.Brand href="/" className={classes.logo}>
-            <img style={{height:"40px", width:"196px"}} src="/icons/EASYCOMMUNITY_v2_1_1.png" alt="Company logo" />
+            <img style={{ height: "40px", width: "196px" }} src="/icons/EASYCOMMUNITY_v2_1_1.png" alt="Company logo" />
           </Navbar.Brand>
-        <Navbar.Toggle
-          aria-controls="responsive-navbar-nav"
-          className={`${classes.Toggler}`}
-          style={{
-            transform: "translateY(20%)",
-            borderColor: "transparent",
-            color: "white",
-            // marginTop: "2px",
-          }}
-        >
-          <i className="fa fa-bars"></i>
-        </Navbar.Toggle>
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="m-auto" style={{ justifyContent: "center", paddingLeft: "25vw", }}>
-            {NavLinks.map(({ name, path }) => (
-              <Nav.Link
-                href={path}
-                key={name}
-                className={`${router.pathname === path ? classes.active : ""} ${classes.navLink
-                  }`}
-              >
-                <p>{name}</p>
-              </Nav.Link>
-            ))}
+          <Navbar.Toggle
+            aria-controls="responsive-navbar-nav"
+            className={`${classes.Toggler}`}
+            style={{
+              transform: "translateY(20%)",
+              borderColor: "transparent",
+              color: "white",
+              // marginTop: "2px" 
+            }}
+          >
+            <i className="fa fa-bars"></i>
+          </Navbar.Toggle>
+          <Navbar.Collapse id="responsive-navbar-nav" style={{ justifyContent: "end" }}>
+            <Nav className="m" style={{ justifyContent: "center" }}>
+              {NavLinks.map(({ name, path }) => (
+                <Nav.Link
+                  href={path}
+                  key={name}
+                  className={`${router.pathname === path ? classes.active : ""} ${classes.navLink
+                    }`}
+                >
+                  <p>{name}</p>
+                </Nav.Link>
+              ))}
 
-            <Nav.Link href="/login" className={classes.login}>
-              <GradientBtn>Log in</GradientBtn>
-            </Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+              <Nav.Link href="/login" className={classes.login}>
+                <GradientBtn>Log in</GradientBtn>
+              </Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+    </Container>
   );
 }
 

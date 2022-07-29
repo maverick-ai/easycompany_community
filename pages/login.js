@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import LogInForm from "../components/LogInForm";
 import { Row, Col, Container } from "react-bootstrap";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import publicIp from 'public-ip';
 
 function Login() {
@@ -56,6 +57,22 @@ function Login() {
   );
 
   const [startDate, setStartDate] = useState(new Date());
+  const [winWidth, setWinWidth] = useState();
+
+  useEffect(() => {
+    if (window.innerWidth <= 1050) {
+      setWinWidth(window.innerWidth);
+    } else {
+      setWinWidth(window.innerWidth);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 1050) {
+        setWinWidth(window.innerWidth);
+      } else {
+        setWinWidth(window.innerWidth);
+      }
+    });
+  }, [winWidth]);
 
   const DatePickerInput = forwardRef(({ value, onClick }, ref) => (
     <button
@@ -191,11 +208,11 @@ function Login() {
     setMessage("Some fields are empty or the email is incorrect");
   }
 
-  return (
+  return (<Container fluid={true} className="p-0">
     <Row>
-      <Col>
-        <div className={styles.bkimg}>
-          <div className={styles.cirText}>
+      <Col className={styles.bkimg}>
+        <div>
+          {winWidth > 1100 && (<div className={styles.cirText}>
             <svg viewBox="0 0 100 100" width="100" height="100">
               <defs>
                 <path
@@ -211,8 +228,8 @@ function Login() {
                 <textPath xlinkHref="#circle">LOG IN SIGN UP FOR FREE</textPath>
               </text>
             </svg>
-          </div>
-          <Row style={{ paddingTop: "35vh" }}>
+          </div>)}
+          {winWidth >= 578 && (<Row style={{ paddingTop: "34vh" }}>
             <div className={styles.container}>
               {label}{" "}
               <div className={styles.toggle_switch}>
@@ -229,25 +246,79 @@ function Login() {
                 </label>
               </div>
             </div>
-          </Row>
-          <div style={{ position: "absolute", bottom: "0", left: "32%" }}>
+          </Row>)}
+          {winWidth < 478 && winWidth >= 445 && (<Row style={{ paddingTop: "25vh" }}>
+            <div className={styles.container}>
+              {label}{" "}
+              <div className={styles.toggle_switch}>
+                <input type="checkbox" className={styles.checkbox}
+                  name={label} id={label} />
+                <label className={styles.label} htmlFor={label}>
+                  <span className={styles.inner} />
+                  <span className={styles.switch} onClick={() => { setIsLogin(!isLogin) }}>
+                    <div style={{ marginTop: "100px", transform: "rotate(-90deg)" }}>
+                      {isLogin && (<span className={styles.RegisterLink}>Sign up</span>)}
+                      {!isLogin && (<span className={styles.LoginLink}>Login</span>)}
+                    </div>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </Row>)}
+          {winWidth < 578 && winWidth >= 478 && (<Row style={{ paddingTop: "27vh" }}>
+            <div className={styles.container}>
+              {label}{" "}
+              <div className={styles.toggle_switch}>
+                <input type="checkbox" className={styles.checkbox}
+                  name={label} id={label} />
+                <label className={styles.label} htmlFor={label}>
+                  <span className={styles.inner} />
+                  <span className={styles.switch} onClick={() => { setIsLogin(!isLogin) }}>
+                    <div style={{ marginTop: "100px", transform: "rotate(-90deg)" }}>
+                      {isLogin && (<span className={styles.RegisterLink}>Sign up</span>)}
+                      {!isLogin && (<span className={styles.LoginLink}>Login</span>)}
+                    </div>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </Row>)}
+          {winWidth < 445 && (<Row style={{ paddingTop: "18vh" }}>
+            <div className={styles.container}>
+              {label}{" "}
+              <div className={styles.toggle_switch}>
+                <input type="checkbox" className={styles.checkbox}
+                  name={label} id={label} />
+                <label className={styles.label} htmlFor={label}>
+                  <span className={styles.inner} />
+                  <span className={styles.switch} onClick={() => { setIsLogin(!isLogin) }}>
+                    <div style={{ marginTop: "100px", transform: "rotate(-90deg)" }}>
+                      {isLogin && (<span className={styles.RegisterLink}>Sign up</span>)}
+                      {!isLogin && (<span className={styles.LoginLink}>Login</span>)}
+                    </div>
+                  </span>
+                </label>
+              </div>
+            </div>
+          </Row>)}
+          {winWidth > 1050 && (<div><div style={{ position: "absolute", bottom: "0", left: "32%" }}>
             <img style={{ width: "65%" }} src="/loginNoodle.svg" />
           </div>
-          <div style={{ position: "absolute", top: "5%", left: "0" }}>
-            <img style={{ width: "65%" }} src="/LoginNoodle2.svg" />
-          </div>
-          <div style={{ position: "absolute", bottom: "0%", left: "0%" }}>
-            <img style={{ width: "65%" }} src="/loginBall.svg" />
-          </div>
-          <div style={{ position: "absolute", bottom: "35%", left: "33%" }}>
-            <img style={{ width: "65%" }} src="/ballouter.svg" />
-          </div>
-          <div style={{ position: "absolute", bottom: "36%", left: "31.4%" }}>
-            <img style={{ width: "65%" }} src="/ball2.svg" />
-          </div>
-          <div style={{ position: "absolute", top: "10%", left: "36%" }}>
-            <img style={{ width: "65%" }} src="/loginprop.svg" />
-          </div>
+            <div style={{ position: "absolute", top: "5%", left: "0" }}>
+              <img style={{ width: "65%" }} src="/LoginNoodle2.svg" />
+            </div>
+            <div style={{ position: "absolute", bottom: "0%", left: "0%" }}>
+              <img style={{ width: "65%" }} src="/loginBall.svg" />
+            </div>
+            <div style={{ position: "absolute", bottom: "35%", left: "33%" }}>
+              <img style={{ width: "65%" }} src="/ballouter.svg" />
+            </div>
+            <div style={{ position: "absolute", bottom: "36%", left: "31.4%" }}>
+              <img style={{ width: "65%" }} src="/ball2.svg" />
+            </div>
+            <div style={{ position: "absolute", top: "10%", left: "36%" }}>
+              <img style={{ width: "65%" }} src="/loginprop.svg" />
+            </div></div>)}
         </div>
       </Col>
       <Col>
@@ -259,8 +330,8 @@ function Login() {
               </h1>
             </Col>
           </Row>
-          <Row>
-            <Col lg={{ offset: 2 }}>
+          <Row >
+            <Col lg={{ offset: 2 }} md={12}>
               <LogInForm
                 LogInCorrect={loginCorrectState}
                 performLogin={performLogin}
@@ -351,18 +422,20 @@ function Login() {
             </Col>
           </Row>
           <Row>
-            <Col lg={{ offset: 2 }}>
-              <button
-                onClick={sendRegisterRequest}
-                className={Styles.buttonForm}
-              >
-                Sign Up
-              </button>
-            </Col>
+            <div style={{paddingBottom:"20px"}}>
+              <Col lg={{ offset: 2 }}>
+                <button
+                  onClick={sendRegisterRequest}
+                  className={Styles.buttonForm}
+                >
+                  Sign Up
+                </button>
+              </Col>
+            </div>
           </Row>
         </Container>)}
       </Col>
-    </Row>
+    </Row></Container>
   );
 }
 

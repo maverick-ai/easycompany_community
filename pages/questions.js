@@ -22,6 +22,7 @@ const Questions = ({ questions, query }) => {
     "From Top",
     "From Bottom",
   ];
+  console.log(questions.results);
   // const [offset, setOffset] = useState(0);
   // const newOffset = query.page * PageSize - PageSize;
   // const endoffset = offset + PageSize;
@@ -68,7 +69,8 @@ const Questions = ({ questions, query }) => {
 
   return (
     <React.Fragment>
-      <Question_img />
+    <Container style={{borderRadius:"24px"}}><Question_img /></Container>
+      
 
       <Container>
         <h1 className={styles.headingtop}>Top Questions</h1>
