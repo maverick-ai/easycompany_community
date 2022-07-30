@@ -12,22 +12,25 @@ import {
 import { sendVote, addsolncomment, sendReq } from "./requests";
 import SolutionComment from "./SolutionComment";
 import { useState } from "react";
-import cookie from "cookie";
+
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
-import {
-  faChevronUp,
-  faChevronDown,
-  faCheck,
-} from "@fortawesome/free-solid-svg-icons";
-import router, { useRouter } from "next/router";
+import moment from "moment";
+
+import  { useRouter } from "next/router";
 
 const Solution = (props) => {
   const [solnComment, setsolnComment] = useState(props.comments.comments);
+  const [fullsize,setFullsize] = useState(false);
   const router = useRouter();
 
+  function onclickhandler(){
+    if(!fullsize)
+    setFullsize(true);
+    if(fullsize) setFullsize(false);
+  }
+  const dateJoined = moment(props.solution.created_date).format("MMM Do YY");
   const getnewsolncomments = async (id) => {
     const newsolncomments = await sendReq(
       `${SolutionCommentsURL}${id}/?page=${
@@ -129,7 +132,7 @@ const Solution = (props) => {
                         fontWeight: "400",
                       }}
                     >
-                     {props.solution.created_date}
+                     {dateJoined}
                     </span>
                   </div>
                   <div style={{ width: "91px" }}>
@@ -158,6 +161,7 @@ const Solution = (props) => {
                 className={styles.solutionBody}
                 children={props.solution.solutionByUser}
                 remarkPlugins={[remarkGfm]}
+                components={{img:({node,...props})=><img className={fullsize?styles.mkdimg:styles.mkdimg2} onClick={onclickhandler}  {...props}/>}}
               />
             </Row>
           </Col>

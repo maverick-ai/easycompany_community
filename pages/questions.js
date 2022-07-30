@@ -13,11 +13,6 @@ import Question_img from "../components/questions_img";
 
 const Questions = ({ questions, query }) => {
 
-<<<<<<< HEAD
- 
-
-=======
->>>>>>> f2d9d7666296c9e5f602e43593c8ac34452c4e79
 
   const enterExitStyles = [
     "Simple",
@@ -55,11 +50,8 @@ const Questions = ({ questions, query }) => {
         index
       ) => (
         <div
-          style={{
-            padding: "0 16px",
-            marginLeft: "auto",
-            marginRight: "auto",
-          }}
+        className={styles.masondiv}
+          
         >
           <QuestionBox
             data={data}

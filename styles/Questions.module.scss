@@ -346,6 +346,11 @@
     }
   }
 }
+.masondiv{
+  padding: 0 16px;
+ margin-left: auto;
+margin-right: auto;
+}
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
   .masonryGrid {
     margin-left: 10%;
@@ -380,10 +385,16 @@
 @media screen and (max-width: 450px) {
   .masonryGrid {
     margin-left: 3%;
+    .masondiv{
+      padding: 0;
+    }
   }
 }
 @media screen and (max-width: 400px) {
   .masonryGrid {
-    margin-left: 1%;
+    margin-left: 0%;
+  }
+  .masondiv{
+    padding: 0;
   }
 }

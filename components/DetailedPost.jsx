@@ -13,11 +13,21 @@ import {
 import PostComment from "./PostComments";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import moment from "moment";
 
 const DetailedPost = (props) => {
   const [postComment, setpostComment] = useState(props.data.comments.comments);
+  const [fullsize,setFullsize] = useState(false);
 
   const [winWidth, setWinWidth] = useState();
+
+  function onclickhandler(){
+    if(!fullsize)
+    setFullsize(true);
+    if(fullsize) setFullsize(false);
+  }
+
+  const dateJoined = moment(props.data.created_date).format("MMM Do YY");
 
   const getnewpostcomments = async (id, i) => {
     const newComments = await sendReq(
@@ -32,6 +42,22 @@ const DetailedPost = (props) => {
   };
  console.log("-------------")
   console.log(props.data);
+
+//   const renderers = {
+//     //This custom renderer changes how images are rendered
+//     //we use it to constrain the max width of an image to its container
+//     image: ({
+//         alt,
+//         src,
+//         title,
+//     }) => (
+//         <img 
+//             alt={alt} 
+//             src={src} 
+//             title={title} 
+//             style={{ maxWidth: 100 }}  />
+//     ),
+// };
 
   return (
     <div className="post-content">
@@ -113,7 +139,7 @@ const DetailedPost = (props) => {
                           fontWeight: "400",
                         }}
                       >
-                        {props.data.created_date}
+                        {dateJoined}
                       </span>
                     </div>
                     <div style={{ width: "120px" }}>
@@ -145,10 +171,13 @@ const DetailedPost = (props) => {
                 <h1 className={styles.posttitle}>{props.data.title}</h1>
               </Row>
               <Row>
+              
                 <ReactMarkdown
+                
                   className={styles.postbody}
                   children={props.data.postByUser}
                   remarkPlugins={[remarkGfm]}
+                  components={{img:({node,...props})=><img className={fullsize?styles.mkdimg:styles.mkdimg2} onClick={onclickhandler} {...props}/>}}
                 />
               </Row>
               <Row>

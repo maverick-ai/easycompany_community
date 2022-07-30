@@ -5,11 +5,11 @@ import Image from "next/image";
 
 import { Container, Col, Row } from "react-bootstrap";
 import React from "react";
- import * as dateMath from 'date-arithmetic'
- import moment from "moment";
+import * as dateMath from 'date-arithmetic'
+import moment from "moment";
 
 const QuestionBox = (props) => {
-  
+
 
   const string = props.postByUser;
   const regex = new RegExp(
@@ -20,16 +20,16 @@ const QuestionBox = (props) => {
   const newStr1 = string.replace(regex, "");
   var newStr = newStr1.replace(regex2, "");
   console.log(newStr);
-  let minute = Math.floor(props.data.time/60);
-  let hours = Math.floor(minute/60);
-  
-  let days = Math.floor(hours/24);
-  let newhour = hours -(days*24);
-  let newday = Math.floor(days%30);
-  let month = Math.floor(days/30);
-  let year = Math.floor(month/12);
+  let minute = Math.floor(props.data.time / 60);
+  let hours = Math.floor(minute / 60);
 
-  
+  let days = Math.floor(hours / 24);
+  let newhour = hours - (days * 24);
+  let newday = Math.floor(days % 30);
+  let month = Math.floor(days / 30);
+  let year = Math.floor(month / 12);
+
+
 
   return (
     <React.Fragment>
@@ -50,7 +50,7 @@ const QuestionBox = (props) => {
               width={15}
             ></Image>
           </div>
-            <p className={styles.timerP}>{`${month?month+" months":""} ${newday?newday+" days":""} ${newhour} hours`}</p>
+          <p className={styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
         </div>
         <div className={styles.para}>
           <span>

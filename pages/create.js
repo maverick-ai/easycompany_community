@@ -111,6 +111,7 @@ export default function Create() {
 
     let response = await fetch(`${CreateImageURL}`, requestOptions);
     let newData = await response.json();
+    console.log(newData);
     
     yield newData.url;
     return true;

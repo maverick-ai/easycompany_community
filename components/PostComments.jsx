@@ -56,7 +56,8 @@ const PostComment = (props) => {
                             </div>
                         </Col>
                         <Col lg={3}>
-                            <CommentImage />
+                        <div ><CommentImage /></div>
+                            
                         </Col>
                     </Row>
                 </Container>)
