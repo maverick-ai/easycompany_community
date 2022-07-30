@@ -13,8 +13,11 @@ import Question_img from "../components/questions_img";
 
 const Questions = ({ questions, query }) => {
 
+<<<<<<< HEAD
  
 
+=======
+>>>>>>> f2d9d7666296c9e5f602e43593c8ac34452c4e79
 
   const enterExitStyles = [
     "Simple",
