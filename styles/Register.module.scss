@@ -61,6 +61,9 @@
   line-height: 45px;
   background-color: black;
   color: white;
+  @media (max-width: 578px) {
+    width: 100%;
+  }
 }
 
 .firstNameInput:focus {
@@ -75,6 +78,9 @@
   line-height: 45px;
   background-color: black;
   color: white;
+  @media (max-width: 578px) {
+    width: 100%;
+  }
 }
 
 .emailInput:focus {
@@ -89,6 +95,9 @@
   line-height: 45px;
   background-color: black;
   color: white;
+  @media (max-width: 578px) {
+    width: 100%;
+  }
 }
 
 .passwordInput:focus {
@@ -132,6 +141,9 @@
   line-height: 45px;
   background-color: black;
   color: white;
+  @media (max-width: 578px) {
+    width: 100%;
+  }
 }
 
 .DatePickerCustomStyle:focus {
@@ -157,6 +169,12 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  @media (max-width: 578px) {
+    background: white;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 }
 
 .buttonForm {
@@ -174,6 +192,10 @@
   cursor: pointer;
   font-weight: 400;
   transition: 0.5s;
+  @media (max-width: 578px) {
+    width: 100%;
+    margin-bottom: 70px;
+  }
 }
 
 .buttonForm:hover {

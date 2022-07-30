@@ -27,6 +27,9 @@
   cursor: pointer;
   font-weight: 400;
   transition: 0.5s;
+  @media (max-width: 578px) {
+    width: 100%;
+  }
 }
 
 .buttonForm:hover {
