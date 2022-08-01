@@ -12,7 +12,7 @@ import SearchQuestion2 from "../components/searchQuestion2";
 function search_1() {
 
     const [data, setData] = useState({ search: "" });
-    const [winWidth, setWinWidth] = useState();
+    const [winWidth, setWinWidth] = useState(true);
 
     const datanew = {
         pk: "fa63ddb2-a291-46fe-9d2a-dab875338086",
