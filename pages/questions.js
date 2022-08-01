@@ -24,6 +24,8 @@ const Questions = ({ questions, query }) => {
     "From Top",
     "From Bottom",
   ];
+
+  const masonaryoptions = {fitWidth:true}
   console.log(questions.results);
   // const [offset, setOffset] = useState(0);
   // const newOffset = query.page * PageSize - PageSize;
@@ -73,7 +75,8 @@ const Questions = ({ questions, query }) => {
 
       <Container>
         <h1 className={styles.headingtop}>Top Questions</h1>
-        <Masonry className={styles.masonryGrid}>{gridrefresh}</Masonry>
+        <Masonry className={styles.masonryGrid}
+        options={masonaryoptions}>{gridrefresh}</Masonry>
       </Container>
       <div className={styles.page}>
         {/* paginating */}

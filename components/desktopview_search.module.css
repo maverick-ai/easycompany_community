@@ -1,0 +1,41 @@
+.Main{
+    margin-top: 110px;
+}
+
+.lefthalf{
+    margin-left: 50px;
+}
+
+.find{
+    margin-top: 60px;
+    font-size: 14px;
+    font-family: 'Poppins';
+}
+
+.search{
+    margin-top: 0;
+    font-size: 50px;
+    font-weight: 700;
+    font-family: 'Poppins';
+}
+
+.sinput{
+    margin-top: 0;
+    margin-left: 50px;
+    margin-right: 60px;
+}
+
+.link{
+    z-index: 5;
+}
+
+.mobilecard{
+    transform: rotate(90deg);
+    width: 100px;
+    margin-top: -110px;
+    margin-left: 170px;
+}
+
+.righthalf{
+    margin-top: 50px;
+}

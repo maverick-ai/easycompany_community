@@ -408,7 +408,7 @@ function Login() {
                 </Col>
               </Row>
               <Row>
-                <div style={{ paddingBottom: "20px" }}>
+                <div style={{ paddingBottom: "5px" }}>
                   <Col lg={{ offset: 2 }}>
                     <button
                       onClick={sendRegisterRequest}
