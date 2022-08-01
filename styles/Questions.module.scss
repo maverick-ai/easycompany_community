@@ -346,8 +346,19 @@
     }
   }
 }
+.flexbox{
+  display:flex;
+  justify-content: center;
+
+
+}
+.gridnewbox{
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 .masondiv{
-  padding: 0 16px; 
+  padding: 0 0px; 
  margin: 0 auto;
 }
 .masonryGrid{

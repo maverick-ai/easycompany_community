@@ -8,6 +8,8 @@ import MobileCard from "/components/mobileSearchCard";
 import style from "../styles/Search_new.module.scss";
 import SearchQuestion from "../components/searchQuestion";
 import SearchQuestion2 from "../components/searchQuestion2";
+import DesktopView from "../components/desktopview_search";
+import PhoneView from "../components/phoneview_search"
 
 function search_1() {
 
@@ -38,7 +40,8 @@ function search_1() {
     return (
         <div>
             {(winWidth) && (
-                <Container>
+                
+                 <Container>
                     <Row>
                         <Col>
                             <Row style={{ marginTop: "100px", marginBottom: "10px" }}>
@@ -127,8 +130,8 @@ function search_1() {
                                 s
                             </span>
                         </div>
-                        <div className={styles.london} style={{ position: "relative", top: "-40%", left: "-35%" }}>
-                            <span style={{ fontSize: "40px" }}>London</span>
+                        <div className={styles.london} style={{ position: "relative", top: "-43%", left: "-26%" }}>
+                            <span style={{ fontSize: "35px" }}>London</span>
                         </div>
                         <div style={{ position: "relative", top: "45%", left: "-12%" }}>
                             <Image
@@ -138,7 +141,7 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{ position: "relative", top: "-72%", left: "-7%" }}>
+                        <div style={{ position: "relative", top: "-70%", left: "-5%" }}>
                             <Image
                                 src="/Crown.png"
                                 height={50}
@@ -146,9 +149,9 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{
-                            position: "relative", top: "-50%", left: "75%", transform: "rotate(45deg)",
-                            fontSize: "40px",
+                        <div  style={{
+                            position: "relative", top: "-50%", left: "70%", transform: "rotate(45deg)",
+                            fontSize: "35px",
                             fontFamily: "'Gloria Hallelujah', cursive",
                         }}>
                             <span>Rome</span>
@@ -161,7 +164,7 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{ position: "relative", top: "-115%", left: "100%" }}>
+                        <div style={{ position: "relative", top: "-115%", left: "95%" }}>
                             <Image
                                 src="/rome_build.png"
                                 height={60}
@@ -173,178 +176,12 @@ function search_1() {
                             <MobileCard />
                         </div>
                     </div>
-                </Container>
+                </Container> 
             )
             }
             {
                 (!winWidth) && (
-                    <div style={{ marginTop: "110px" }}>
-                        <Row>
-                            <Col lg="5">
-                                <div style={{ marginLeft: "50px" }}>
-                                    <div style={{ marginTop: "60px", fontSize: "14px" }}>
-                                        <p>Find Answers To Your Questions</p>
-                                    </div>
-
-                                    <h1
-                                        style={{
-                                            marginTop: "0",
-                                            fontSize: "50px",
-                                            fontWeight: "700",
-                                            fontFamily: "Poppins, sans-serif",
-                                        }}
-                                    >
-                                        Search
-                                    </h1>
-                                </div>
-                                <div style={{ marginTop: "0", marginLeft: "50px", marginRight: "60px" }}>
-                                    <div className={styles.newSearchBox}>
-                                        <div className={styles.ImgQues1}>
-                                            <Image
-                                                src={"/Vector.png"}
-                                                height={18.76}
-                                                width={18.76}
-                                                quality={100}
-                                            />
-                                        </div>
-
-                                        <input
-                                            className={styles.searchInput1}
-                                            style={{
-                                                backgroundColor: "black",
-                                                width: "80%",
-                                                height: "50px",
-                                            }}
-                                            id="query"
-                                            type="text"
-                                            autoComplete="query"
-                                            value={data.search}
-                                            onChange={(event) => setData({ search: event.target.value })}
-                                            required
-                                        />
-                                    </div>
-                                    <Link
-                                        style={{ zIndex: "5" }}
-                                        href={{
-                                            pathname: "/search_detail",
-                                            query: data,
-                                        }}
-                                    >
-                                        <button style={{ zIndex: "90" }} className={styles.submitButton}>Submit</button>
-                                    </Link>
-                                </div>
-                                <div style={{ transform: "rotate(90deg)", width: "100px", marginTop: "-110px", marginLeft:"170px" }}>
-                                    <MobileCard />
-                                </div>
-                            </Col>
-                            <Col>
-                                <Row>
-                                    <div>
-                                        <div className={style.questionBox}>
-                                            <div className={style.border1}>
-                                                <div className={style.border2}>
-                                                    <div className={style.inner}>
-                                                        <SearchQuestion
-                                                            data={datanew}
-                                                            upVoteNumber={22}
-                                                            downVoteNumber={10}
-                                                            viewsbytheuser={20}
-                                                            postByUser="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                                                        />{" "}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className={style.questionBox}>
-                                            <div className={style.border1}>
-                                                <div className={style.border2}>
-                                                    <div className={style.inner}>
-                                                        <SearchQuestion
-                                                            data={datanew}
-                                                            upVoteNumber={22}
-                                                            downVoteNumber={10}
-                                                            viewsbytheuser={20}
-                                                            postByUser="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                                                        />{" "}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </Row>
-                                <Row style={{ marginTop: "50px" }}>
-                                    <Col lg={{ span: 2 }}>
-                                        <div className={style.img1_bor1}>
-                                            <div className={style.img1_bor2}>
-                                                <div className={style.img1}>
-                                                    <Image
-                                                        src="/apollo-photography-axL38h7YDdk-unsplash.png"
-                                                        height={128}
-                                                        width={80}
-                                                        quality={100}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                    <Col lg={{ span: 4 }}>
-                                        <div className={style.questionBox}>
-                                            <SearchQuestion2
-                                                data={datanew}
-                                                upVoteNumber={22}
-                                                downVoteNumber={10}
-                                                viewsbytheuser={20}
-                                                postByUser="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                                            />
-                                        </div>
-                                        <div className={style.pinkpole}>
-                                            <img src="/pole.svg" />
-                                        </div>
-                                    </Col>
-                                    <Col lg={{ span: 4, offset: 2 }}>
-                                        <div className={style.questionBox}>
-                                            <SearchQuestion2
-                                                data={datanew}
-                                                upVoteNumber={22}
-                                                downVoteNumber={10}
-                                                viewsbytheuser={20}
-                                                postByUser="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                                            />
-                                        </div>
-                                    </Col>
-                                </Row>
-                                <Row style={{ marginTop: "50px" }}>
-                                    <Col lg={{ span: 3 }}>
-                                        <div className={style.questionBox} style={{ marginLeft: "0" }}>
-                                            <SearchQuestion
-                                                data={datanew}
-                                                upVoteNumber={22}
-                                                downVoteNumber={10}
-                                                viewsbytheuser={20}
-                                                postByUser="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"
-                                            />{" "}
-                                        </div>
-                                    </Col>
-                                    <Col lg={{ offset: 5 }}>
-                                        <div className={style.img2_bor1}>
-                                            <div className={style.img2_bor2}>
-                                                <div className={style.img2}>
-                                                    <Image
-                                                        src="/kilarov.png"
-                                                        height={140}
-                                                        width={102}
-                                                        quality={100}
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </Col>
-                                </Row>
-
-                                {/* <div className={style.smalldiv2}></div> */}
-                            </Col>
-                        </Row>
-                    </div>
+                    <DesktopView/>
                 )
             }
         </div>

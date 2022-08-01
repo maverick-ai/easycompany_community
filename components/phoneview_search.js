@@ -1,4 +1,4 @@
-import { Container } from "react-bootstrap";
+import { Container,Col } from "react-bootstrap";
 import s from "./PhoneView.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/dist/client/link";
@@ -8,6 +8,9 @@ function PhoneView(){
     const [data, setData] = useState({ search: "" });
 
     return<Container>
+    <Row>
+    <Col>
+    <div className={s.big1}>
         <div className={s.heading1div}>
             <span className={s.heading1}>Find answers to your questions</span>
             <h1 className={s.search}>Search</h1>
@@ -57,7 +60,7 @@ function PhoneView(){
 
                             </div>
 
-                            <div style={{position:"relative",top:"10%"}}>
+                            <div style={{position:"absolute",bottom:"-30%"}}>
                             <MobileCard />
                             </div>
                             
@@ -67,7 +70,9 @@ function PhoneView(){
                             
                             
                             
-                            
+                            </div>   
+                            </Col>
+                            </Row>          
     </Container>
 }
 

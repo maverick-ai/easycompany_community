@@ -109,3 +109,7 @@ font-size: 40px;
 .paris{
     margin-top: 5%;
 }
+.big1{
+    width: 100vw;
+    justify-content: center;
+}

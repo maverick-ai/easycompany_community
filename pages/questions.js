@@ -75,8 +75,8 @@ const Questions = ({ questions, query }) => {
 
       <Container>
         <h1 className={styles.headingtop}>Top Questions</h1>
-        <Masonry className={styles.masonryGrid}
-        options={masonaryoptions}>{gridrefresh}</Masonry>
+        <div className={styles.flexboxgrid}>
+        <div className={styles.gridnewbox}>{gridrefresh}</div></div>
       </Container>
       <div className={styles.page}>
         {/* paginating */}

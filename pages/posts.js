@@ -19,7 +19,7 @@ import Solution from "../components/Solution";
 import { sendReq } from "../components/requests";
 import LoginPopUp from "../components/LogInPopUp";
 import { addanswer } from "../components/requests";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Container, Col, Row } from "react-bootstrap";
 import { useCookies } from "react-cookie";
 
@@ -28,11 +28,14 @@ const Post = ({ post, answers, solnComments, query }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [ansValue, setAnsValue] = useState("");
   const [selectedTab, setSelectedTab] = useState("write");
+  useEffect(() => {
+    window.scroll.top
+  }, []);
 
   // TS code(converted to JS) for image save
 
   const save = async function* (data, file) {
-    
+
     var myHeaders = new Headers();
     myHeaders.append("Authorization", `Token ${cookie.token}`);
 
@@ -48,7 +51,7 @@ const Post = ({ post, answers, solnComments, query }) => {
 
     let response = await fetch(`${CreateImageURL}`, requestOptions);
     let newData = await response.json();
-    
+
     yield newData.url;
 
     // returns true meaning that the save was successful
@@ -118,7 +121,7 @@ const Post = ({ post, answers, solnComments, query }) => {
                       <ReactMarkdown
                         children={markdown}
                         remarkPlugins={remarkGfm}
-                        
+
                       />
                     )
                   }
@@ -170,7 +173,7 @@ export async function getServerSideProps({ query, req }) {
     if (!query.page) query.page = 1;
 
     if (post.detail) {
-      
+
     } else {
       answers = await sendReq(
         `${AnswersURL}${query.postid}/?page=${query.page}`,
@@ -189,7 +192,7 @@ export async function getServerSideProps({ query, req }) {
       },
     };
   }
-  
+
   return {
     props: {
       post,
