@@ -12,7 +12,7 @@ import SearchQuestion2 from "../components/searchQuestion2";
 function search_1() {
 
     const [data, setData] = useState({ search: "" });
-    const [winWidth, setWinWidth] = useState();
+    const [winWidth, setWinWidth] = useState(true);
     const [sPhone,setSphone] = useState();
 
     const datanew = {

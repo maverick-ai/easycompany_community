@@ -1,4 +1,4 @@
-import styles from "./LogInForm.module.css";
+import styles from "./LogInForm.module.scss";
 import EmailField from "./Email";
 import PasswordField from "./Password";
 import { useRouter } from "next/router";

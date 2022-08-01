@@ -10,6 +10,9 @@
     --border-hover: #A6ACCD;
     position: relative;
     max-width: 80%;
+    @media (max-width: 578px) {
+        max-width: 100%;
+      }
     input {
         width: 100%;
         -webkit-appearance: none;

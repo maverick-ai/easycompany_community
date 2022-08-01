@@ -1,5 +1,5 @@
 import styles from "../styles/Login.module.scss";
-import Styles from "../styles/Register.module.css";
+import Styles from "../styles/Register.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRef, useState, forwardRef, useEffect } from "react";
 import { LogInURL, Host, RegisterUserURL } from "../components/constants";
@@ -251,10 +251,10 @@ function Login() {
                         }}
                       >
                         {isLogin && (
-                          <span className={styles.RegisterLink}>Signup</span>
+                          <span className={styles.RegisterLink}>Sign<span className={styles.In2}>up</span></span>
                         )}
                         {!isLogin && (
-                          <span className={styles.LoginLink}>Login</span>
+                          <span className={styles.LoginLink}>Log<span className={styles.In2}>in</span></span>
                         )}
                       </div>
                     </span>
@@ -288,6 +288,18 @@ function Login() {
                 </div>
               </div>
             )}
+            {winWidth < 576 && (
+              <div>
+                <div style={{ position: "absolute", top: "10%", left: "0%" }}>
+                  <img style={{ width: "20%" }} src="/loginBall.svg" />
+                </div>
+                <div
+                  style={{ position: "absolute", top: "26%", left: "31.4%" }}
+                >
+                  <img style={{ width: "65%" }} src="/ball2.svg" />
+                </div>
+              </div>
+            )}
           </div>
         </Col>
         <Col>
@@ -314,7 +326,7 @@ function Login() {
           )}
           {!isLogin && (
             <Container>
-              <Row style={{ marginTop: "90px" }}>
+              <Row className={styles.Regtop}>
                 <Col lg={{ span: 6, offset: 2 }}>
                   <h1 style={{ fontSize: "45px" }}>
                     Sign <span className={Styles.In}>Up</span>
