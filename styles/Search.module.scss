@@ -331,7 +331,24 @@
 .london {
   transform: rotate(-50deg) !important;
   font-family: "Gloria Hallelujah", cursive !important;
+  position: relative;
+  top: -40%;
+  left: -35%;
 }
+@media screen and (max-width:450) {
+  .london{
+    position: relative;
+     top: -40%; left: -27%!important; 
+  }
+  
+}
+
+@media screen and (max-width:400) {
+  .london{
+    position: relative;
+     top: -40%; left: -22%!important; 
+  }}
+
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
   .masonryGrid {
     margin-left: 10%;

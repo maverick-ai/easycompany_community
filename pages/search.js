@@ -13,6 +13,7 @@ function search_1() {
 
     const [data, setData] = useState({ search: "" });
     const [winWidth, setWinWidth] = useState();
+    const [sPhone,setSphone] = useState();
 
     const datanew = {
         pk: "fa63ddb2-a291-46fe-9d2a-dab875338086",
@@ -33,6 +34,20 @@ function search_1() {
                 setWinWidth(false);
             }
         });
+        if (window.innerWidth <= 450) {
+            setSphone(true);
+        } else {
+            setSphone(false);
+        }
+        window.addEventListener("resize", () => {
+            if (window.innerWidth <= 450) {
+                setSphone(true);
+            } else {
+                setSphone(false);
+            }
+        });
+
+
     }, []);
 
     return (
@@ -104,7 +119,7 @@ function search_1() {
                         </Col>
                     </Row>
                     <div style={{ width: "300px", height: "300px", marginLeft: "auto", marginRight: "auto" }}>
-                        <div style={{ position: "relative", top: "10%", left: "30%" }}>
+                        <div style={{ position: "relative", top: "15%", left: "30%" }}>
                             <span
                                 style={{
                                     fontFamily: "Gloria Hallelujah,cursive",
@@ -114,10 +129,10 @@ function search_1() {
                                 Par
                             </span>
                         </div>
-                        <div style={{ position: "relative", top: "-10%", left: "52%" }}>
+                        <div style={{ position: "relative", top: "-8%", left: "52%" }}>
                             <Image src="/Group.svg" height={60} width={27} quality={100} />
                         </div>
-                        <div style={{ position: "relative", top: "-31%", left: "60%" }}>
+                        <div style={{ position: "relative", top: "-27%", left: "60%" }}>
                             <span
                                 style={{
                                     fontFamily: "Gloria Hallelujah,cursive",
@@ -127,9 +142,14 @@ function search_1() {
                                 s
                             </span>
                         </div>
-                        <div className={styles.london} style={{ position: "relative", top: "-40%", left: "-35%" }}>
-                            <span style={{ fontSize: "40px" }}>London</span>
-                        </div>
+                        {(sPhone) ? 
+                            (<div className={styles.london} style={{top:"-40%" , left:"-27%"}}>
+                            <span style={{ fontSize: "40px" }} >London</span>
+                        </div>) : (<div className={styles.london} style={{top:"-40%" , left:"-35%"}}>
+                            <span style={{ fontSize: "40px" }} >London</span>
+                        </div>)}
+                        
+                        
                         <div style={{ position: "relative", top: "45%", left: "-12%" }}>
                             <Image
                                 src="/left_fly_arrow.png"
@@ -138,21 +158,36 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{ position: "relative", top: "-72%", left: "-7%" }}>
+                        {sPhone?(<div style={{ position: "relative", top: "-72%", left: "-7%" }}>
                             <Image
                                 src="/Crown.png"
                                 height={50}
                                 width={37}
                                 quality={100}
                             />
-                        </div>
-                        <div style={{
+                        </div>):(<div style={{ position: "relative", top: "-74%", left: "-22%" }}>
+                            <Image
+                                src="/Crown.png"
+                                height={50}
+                                width={37}
+                                quality={100}
+                            />
+                        </div>)}
+                        {(sPhone) ? 
+                            (<div style={{
+                            position: "relative", top: "-50%", left: "70%", transform: "rotate(45deg)",
+                            fontSize: "40px",
+                            fontFamily: "'Gloria Hallelujah', cursive",
+                        }}>
+                            <span>Rome</span>
+                        </div>) : (<div style={{
                             position: "relative", top: "-50%", left: "75%", transform: "rotate(45deg)",
                             fontSize: "40px",
                             fontFamily: "'Gloria Hallelujah', cursive",
                         }}>
                             <span>Rome</span>
-                        </div>
+                        </div>)}
+                        
                         <div style={{ position: "relative", top: "-65%", left: "80%" }}>
                             <Image
                                 src="/right_fly_arrow.png"

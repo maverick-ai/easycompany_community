@@ -56,11 +56,14 @@ $img-url: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb
 
   .card {
     position: relative;
-    width: 450px;
+    width: 400px;
     height: 200px;
     background-color: #121212;
     overflow: hidden;
     margin-top: 30px;
+    @media screen  and (max-width:450px) {
+      height: 180px;
+    }
 
     @media screen and (min-width: 1204px) {
       position: relative;
@@ -162,6 +165,14 @@ $img-url: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb
       background-size: 100% 100%;
       filter: grayscale(100%);
     }
+    @media screen and (max-width:450px){
+      .pic{
+        height: 180px;
+      }
+      .dream{
+        height: 180px!important;
+      }
+    }
 
     .social {
       position: absolute;
@@ -258,7 +269,7 @@ $img-url: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb
     height: 200px!important;
     position: absolute!important;
     z-index: 10!important;
-    margin-left: 80%!important;
+    margin-left: 85%!important;
   }
 
   background-image: linear-gradient(180deg,
@@ -276,9 +287,11 @@ $img-url: "https://images.unsplash.com/photo-1525543907410-b2562b6796d6?ixlib=rb
 .dreamh2 {
   @media screen and (max-width: 1020px) {
     width: 140px!important;
-    margin-left: 40%!important;
+    margin-left: 35%!important;
     position: absolute!important;
     right: -20px!important;
+    top: 85px!important;
+  
   }
 
   width: 140px!important;
