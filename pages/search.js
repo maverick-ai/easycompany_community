@@ -172,7 +172,7 @@ function search_1() {
                                 quality={100}
                             />
                         </div>
-                        <div style={{ position: "relative", bottom: "430px", left: "auto", right: "auto" }}>
+                        <div style={{ position: "relative", top: "-430px", left: "auto", right: "auto" }}>
                             <MobileCard />
                         </div>
                     </div>
