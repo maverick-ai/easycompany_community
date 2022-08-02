@@ -106,7 +106,7 @@ function search_1() {
                             </Link>
                         </Col>
                     </Row>
-                    <div style={{ width: "300px", height: "300px", marginLeft: "auto", marginRight: "auto" }}>
+                    <div style={{ width: "300px", height: "300px", marginLeft: "auto", marginRight: "auto",overflow:"visible" }}>
                         <div style={{ position: "relative", top: "10%", left: "30%" }}>
                             <span
                                 style={{

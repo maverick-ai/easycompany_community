@@ -27,6 +27,15 @@ const SolutionComment = (props) => {
     });
   }, []);
 
+  let minute = Math.floor(props.comment.time / 60);
+  let hours = Math.floor(minute / 60);
+
+  let days = Math.floor(hours / 24);
+  let newhour = hours - (days * 24);
+  let newday = Math.floor(days % 30);
+  let month = Math.floor(days / 30);
+  let year = Math.floor(month / 12);
+
 
   return (
     <div className="row">
@@ -47,7 +56,7 @@ const SolutionComment = (props) => {
                     </div>
                   </Col>
                   <Col lg={3} md={3} sm={4}>
-                    <span>{props.comment.created_date}</span>
+                  <p className={Styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
                   </Col>
                 </Row>
                 <p style={{ marginTop: "10px" }}>{props.comment.commentByUser}</p>
@@ -77,7 +86,7 @@ const SolutionComment = (props) => {
                     </div>
                   </Col>
                   <Col lg={3} md={3} sm={4}>
-                    <span>{props.comment.created_date}</span>
+                  <p className={Styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
                   </Col>
                 </Row>
                 <p style={{ marginTop: "10px" }}>{props.comment.commentByUser}</p>
@@ -105,7 +114,7 @@ const SolutionComment = (props) => {
                   </div>
                 </Col>
                 <Col lg={3} md={3} sm={4}>
-                  <span>{props.comment.created_date}</span>
+                <p className={Styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
                 </Col>
               </Row>
               <p style={{ marginTop: "10px" }}>{props.comment.commentByUser}</p>

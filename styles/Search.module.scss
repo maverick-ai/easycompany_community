@@ -11,9 +11,7 @@
   background-size: 100% 100%;
 }
 
-.body {
-  height: 100vh;
-}
+
 
 .MainHeading {
   font-size: 50px;
@@ -334,7 +332,14 @@
   position: relative;
   top: -40%;
   left: -35%;
+} 
+
+.body{
+  width:100%;
+  overflow-x:hidden;
+  overflow-y:hidden;
 }
+
 @media screen and (max-width:450) {
   .london{
     position: relative;

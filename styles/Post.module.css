@@ -8,6 +8,13 @@
 
 .post {}
 
+.timerP {
+    font-size: 14px;
+    margin-left: 5px;
+    margin-bottom: auto;
+    display: inline;
+  }
+
 .mkdimg{
     max-width: 40%;
 }

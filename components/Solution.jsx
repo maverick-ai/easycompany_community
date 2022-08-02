@@ -31,6 +31,7 @@ const Solution = (props) => {
     if(fullsize) setFullsize(false);
   }
   const dateJoined = moment(props.solution.created_date).format("MMM Do YY");
+
   const getnewsolncomments = async (id) => {
     const newsolncomments = await sendReq(
       `${SolutionCommentsURL}${id}/?page=${
@@ -40,6 +41,15 @@ const Solution = (props) => {
     );
     setsolnComment((old) => [...old, ...newsolncomments.results]);
   };
+
+  let minute = Math.floor(props.solution.time / 60);
+  let hours = Math.floor(minute / 60);
+
+  let days = Math.floor(hours / 24);
+  let newhour = hours - (days * 24);
+  let newday = Math.floor(days % 30);
+  let month = Math.floor(days / 30);
+  let year = Math.floor(month / 12);
 
   const acceptsoln = async (id) => {
     const res = await sendReq(`${AcceptSolnURL}${id}/`, document.cookie, "PUT");
@@ -132,7 +142,7 @@ const Solution = (props) => {
                         fontWeight: "400",
                       }}
                     >
-                     {dateJoined}
+                     <p className={styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
                     </span>
                   </div>
                   <div style={{ width: "91px" }}>

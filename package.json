@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "dev1": "next dev -H 192.168.29.20",
+    "dev1": "next dev -H 192.168.29.217",
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p ${PORT:-8080}",
     "lint": "next lint"

@@ -29,6 +29,15 @@ const DetailedPost = (props) => {
 
   const dateJoined = moment(props.data.created_date).format("MMM Do YY");
 
+  let minute = Math.floor(props.data.time / 60);
+  let hours = Math.floor(minute / 60);
+
+  let days = Math.floor(hours / 24);
+  let newhour = hours - (days * 24);
+  let newday = Math.floor(days % 30);
+  let month = Math.floor(days / 30);
+  let year = Math.floor(month / 12);
+
   const getnewpostcomments = async (id, i) => {
     const newComments = await sendReq(
       `${PostCommentsURL}${id}/?page=${
@@ -139,7 +148,7 @@ const DetailedPost = (props) => {
                           fontWeight: "400",
                         }}
                       >
-                        {dateJoined}
+                        <p className={styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
                       </span>
                     </div>
                     <div style={{ width: "120px" }}>
