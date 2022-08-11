@@ -40,8 +40,8 @@ function search_1() {
     return (
         <div>
             {(winWidth) && (
-                
-                 <Container>
+                <PhoneView />
+                 /* <Container>
                     <Row>
                         <Col>
                             <Row style={{ marginTop: "100px", marginBottom: "10px" }}>
@@ -176,7 +176,7 @@ function search_1() {
                             <MobileCard />
                         </div>
                     </div>
-                </Container> 
+                </Container>  */
             )
             }
             {

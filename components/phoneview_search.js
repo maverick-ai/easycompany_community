@@ -43,8 +43,10 @@ function PhoneView() {
                     Submit
                 </button>
             </Link>
+            <div style={{position:"relative"}}>
+            <div style={{width:"100%",height:"430px",}} />
 
-            <div className={s.paris}>
+            {/* <div className={s.paris}>
                 <div className={s.pardiv}>
                     Par
                 </div>
@@ -56,13 +58,16 @@ function PhoneView() {
             </div>
             <div style={{textAlign:"center"}}>
             
-                    <img src={"/Union.png"} style={{ height: "380px", width: "180px", padding: " 0 auto " }} />
+                    
 
                 </div>
                 <div className={s.london} >
                 <span style={{ fontSize: "35px" }}>London</span>
+                </div> */}
+                <div style={{width:"100%",}}>
+                <MobileCard /></div>
+                
                 </div>
-
                 
 
         </div>
