@@ -44,9 +44,9 @@ function PhoneView() {
                 </button>
             </Link>
             <div style={{position:"relative"}}>
-            <div style={{width:"100%",height:"430px",}} />
+            <div style={{width:"100%",height:"480px"}} />
 
-            {/* <div className={s.paris}>
+              <div className={s.paris}>
                 <div className={s.pardiv}>
                     Par
                 </div>
@@ -55,19 +55,41 @@ function PhoneView() {
                     s
                 </div>           
 
-            </div>
-            <div style={{textAlign:"center"}}>
-            
-                    
-
+               </div>
+                
+                
+                <div style={{position:"absolute",bottom:"0",left:"0",right:"0",marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
+                <img src="/u1.png" style={{width:"180px",height:"380px",margin:"0 auto"}}/>
                 </div>
+                <div className={s.grad} style={{position:"absolute",bottom:"0px",left:"0",right:"0",marginLeft:"auto",marginRight:"auto",textAlign:"center",width:"180px",height:"50px"}}>
+                <span className={s.dreamt}>MY dream Trip</span>
+
+
+                {/* <img src="/grad.svg" style={{width:"180px",height:"50px",margin:"0 auto",position:"absolute",right:"100px"}} /> */}
                 <div className={s.london} >
                 <span style={{ fontSize: "35px" }}>London</span>
-                </div> */}
-                <div style={{width:"100%",}}>
-                <MobileCard /></div>
-                
                 </div>
+                <div className={s.rome}>
+                 <span style={{ fontSize: "35px" }}>Rome</span>
+                </div>
+                <div className={s.crown}>
+                    <img src="/crown.png" style={{width:"44px",height:"44px"}}/>
+                </div>
+                <div className={s.romec}>
+                    <img src="/rome_build.png" style={{width:"45px", height:"60px"}} />
+                </div>
+                <div className={s.arrowr}>
+                    <img src="/right_fly_arrow.png" style={{width:"80px",height:"43px"}}/>
+                </div>
+                <div className={s.arrowl}>
+                    <img src="/left_fly_arrow.png" style={{width:"80px",height:"43px"}}/>
+                </div>
+
+
+                </div>
+                
+               
+            </div>
                 
 
         </div>

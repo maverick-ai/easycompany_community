@@ -223,7 +223,7 @@ function Login() {
             )}
             <Row className={styles.Toggletop}>
               <div className={styles.container}>
-                {label}{" "}
+                {label}
                 <div className={styles.toggle_switch}>
                   <input
                     type="checkbox"
