@@ -73,7 +73,7 @@ function PhoneView() {
                  <span style={{ fontSize: "35px" }}>Rome</span>
                 </div>
                 <div className={s.crown}>
-                    <img src="/crown.png" style={{width:"44px",height:"44px"}}/>
+                    <img src="/Crown.png" style={{width:"44px",height:"44px"}}/>
                 </div>
                 <div className={s.romec}>
                     <img src="/rome_build.png" style={{width:"45px", height:"60px"}} />
