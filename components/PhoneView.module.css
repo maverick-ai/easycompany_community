@@ -112,7 +112,7 @@ font-size: 40px;
 }
 .paris{
     position: absolute;
-    bottom: 460px;
+    bottom: 370px;
     text-align: center;
     left:50%;
    
@@ -125,7 +125,7 @@ font-size: 40px;
     transform: rotate(-50deg) !important;
     font-family: "Gloria Hallelujah", cursive !important;
     position: absolute;
-    bottom: 320px;
+    bottom: 240px;
     left: -100px;
   }
   .grad{
@@ -142,7 +142,7 @@ font-size: 40px;
     font-family: "Gloria Hallelujah", cursive !important;
     position: absolute;
     right: -90px;
-    bottom:320px;
+    bottom:240px;
   }
   .dreamt{
     font-family: 'Poppins';
@@ -157,22 +157,22 @@ top:10px;
   .crown{
     position:absolute;
     
-    bottom: 370px;
+    bottom: 290px;
     left:-60px;
 
   }
   .romec{
     position: absolute;
-    bottom: 330px;
+    bottom: 250px;
     right:-80px;
   }
   .arrowr{
     position: absolute;
-    bottom: 190px;
+    bottom: 130px;
     left: 180px;
   }
   .arrowl{
     position: absolute;
-    bottom: 84px;
+    bottom: 44px;
     right:180px;
   }

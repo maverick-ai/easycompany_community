@@ -44,7 +44,7 @@ function PhoneView() {
                 </button>
             </Link>
             <div style={{position:"relative"}}>
-            <div style={{width:"100%",height:"480px"}} />
+            <div style={{width:"100%",height:"440px"}} />
 
               <div className={s.paris}>
                 <div className={s.pardiv}>
@@ -59,7 +59,7 @@ function PhoneView() {
                 
                 
                 <div style={{position:"absolute",bottom:"0",left:"0",right:"0",marginLeft:"auto",marginRight:"auto",textAlign:"center"}}>
-                <img src="/u1.png" style={{width:"180px",height:"380px",margin:"0 auto"}}/>
+                <img src="/u1.png" style={{width:"180px",height:"290px",margin:"0 auto"}}/>
                 </div>
                 <div className={s.grad} style={{position:"absolute",bottom:"0px",left:"0",right:"0",marginLeft:"auto",marginRight:"auto",textAlign:"center",width:"180px",height:"50px"}}>
                 <span className={s.dreamt}>MY dream Trip</span>
