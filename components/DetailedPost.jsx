@@ -73,7 +73,7 @@ const DetailedPost = (props) => {
       <Container>
         <Container>
           <Row>
-            <Col lg={1} md={2} sm={2}>
+            <Col lg={1} md={2} sm={2} xs={2}>
               <div style={{ height: "45px", width: "10px" }}></div>
               <Image
                 className={
@@ -105,7 +105,7 @@ const DetailedPost = (props) => {
                 quality={100}
               />
             </Col>
-            <Col lg={11} md={10} sm={10}>
+            <Col lg={11} md={10} sm={10} xs={10}>
               <Row className={styles.toprow}>
                 <div style={{ width: "10px", padding: "0px" }}></div>
                 <div style={{ display: "flex" }}>

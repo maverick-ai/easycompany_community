@@ -66,7 +66,7 @@ const Solution = (props) => {
     <div className={`Soln`}>
       <Container>
         <Row>
-          <Col lg={1} md={2} sm={2}>
+          <Col lg={1} md={2} sm={2} xs={2}>
             <Image
               className={
                 props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
@@ -99,7 +99,7 @@ const Solution = (props) => {
               quality={100}
             />
           </Col>
-          <Col lg={11} md={10} sm={10}>
+          <Col lg={11} md={10} sm={10} xs={8}>
             <Row className={styles.toprow}>
               <div style={{ width: "10px", padding: "0px" }}></div>
               <div style={{ display: "flex" }}>

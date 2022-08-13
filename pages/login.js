@@ -3,7 +3,7 @@ import Styles from "../styles/Register.module.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useRef, useState, forwardRef, useEffect } from "react";
 import { LogInURL, Host, RegisterUserURL } from "../components/constants";
-import cookie from "cookie";
+import Cookies from "react-cookie";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
 import LogInForm from "../components/LogInForm";
@@ -108,6 +108,7 @@ function Login() {
         maxAge: 2592000,
         sameSite: true,
       });
+      Cookies = cookie;
       router.push("/questions");
     } else {
       alert("Incorrect email or password");
@@ -187,6 +188,7 @@ function Login() {
           maxAge: 2592000,
           sameSite: true,
         });
+        Cookies = cookie;
         router.push("/questions");
       } else {
         setMessage("Something went wrong");
@@ -194,6 +196,7 @@ function Login() {
     }
     setMessage("Some fields are empty or the email is incorrect");
   }
+
 
   return (
     <Container fluid={true} className="p-0">
