@@ -46,11 +46,7 @@ const PostComment = (props) => {
                         <Col lg={{ span: 8, offset: 1 }} >
                             <div className={`${Styles.commentboxdiv}`}>
                                 <Row style={{marginTop:"5px"}}><div style={{ width: "10px", padding: "0px" }}></div>
-                                    <Image
-                                        src="/profileImage.png"
-                                        height={28}
-                                        width={28}
-                                        quality={100} />
+                                <img src={props.comment.creator_by.image} style={{height:"28px", width:"50px",borderRadius: "50%"}} />
                                     <Col lg={3} md={4} sm={4}>
                                         <div className={Styles.userName}>
                                             <Link href={`/profile?user=${props.comment.creator_by.creator_id}`}>{props.comment.creator_by.first_name + " " + props.comment.creator_by.last_name}</Link>
@@ -76,11 +72,7 @@ const PostComment = (props) => {
                         <Col lg={{ span: 8, offset: 1 }}>
                             <div className={`${Styles.commentboxdiv}`}>
                                 <Row style={{marginTop:"5px"}}><div style={{ width: "10px", padding: "0px" }}></div>
-                                    <Image
-                                        src="/profileImage.png"
-                                        height={28}
-                                        width={28}
-                                        quality={100} />
+                                <img src={props.comment.creator_by.image} style={{height:"28px", width:"50px",borderRadius: "50%"}} />
                                     <Col lg={3} md={3} sm={4}>
                                         <div className={Styles.userName}>
                                             <Link href={`/profile?user=${props.comment.creator_by.creator_id}`}>{props.comment.creator_by.first_name + " " + props.comment.creator_by.last_name}</Link>
@@ -104,11 +96,7 @@ const PostComment = (props) => {
                     <Col lg={{ span: 8, offset: 1 }}>
                         <div className={`${Styles.commentboxdiv}`}>
                             <Row style={{marginTop:"5px"}}><div style={{ width: "10px", padding: "0px" }}></div>
-                                <Image
-                                    src="/profileImage.png"
-                                    height={40}
-                                    width={40}
-                                    quality={100} />
+                            <img src={props.comment.creator_by.image} style={{height:"28px", width:"50px",borderRadius: "50%"}} />
                                 <Col lg={3} md={3} sm={4}>
                                     <div className={Styles.userName}>
                                         <Link href={`/profile?user=${props.comment.creator_by.creator_id}`}>{props.comment.creator_by.first_name + " " + props.comment.creator_by.last_name}</Link>

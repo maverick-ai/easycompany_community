@@ -66,13 +66,7 @@ const Profile = ({ userData, query, login }) => {
           {/* <Col lg={{ span: 1 }}></Col> */}
 
           <div className={styles.imgBorder}>
-            <Image
-              className={styles.profileImg}
-              src="/img1.jpg"
-              height={200}
-              width={200}
-              quality={100}
-            />
+            <img src={userData.image} className={styles.profileImg} />
           </div>
 
           <Col lg={8}>

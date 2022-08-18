@@ -64,7 +64,10 @@
   margin-top: 196px;
 }
 .profileImg {
-  margin-top: 20px;
+  margin-top: -5px;
+  margin-left: -4px;
+  height: 200px;
+  width: 200px;
 
   border-width: 1px;
   border-radius: 50%;

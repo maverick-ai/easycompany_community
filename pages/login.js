@@ -57,6 +57,7 @@ function Login() {
 
   const [startDate, setStartDate] = useState(new Date());
   const [winWidth, setWinWidth] = useState();
+  const [image, setImage] = useState(null);
 
   useEffect(() => {
     if (window.innerWidth <= 1050) {
@@ -130,32 +131,45 @@ function Login() {
       firstName.current.value !== "" &&
       lastName.current.value !== ""
     ) {
-      const userDetail = JSON.stringify({
-        email: email.current.value,
-        password1: password.current.value,
-        password2: password.current.value,
-        gender: "M",
-        date_of_birth: DateOfBirth,
-        first_name: firstName.current.value,
-        last_name: lastName.current.value,
-        work: "Fighting criminals at night and running Wayne Enterprise in the day",
-        university: "League of shadows",
-        userdetails: userDetails,
-      });
+      // const userDetail = JSON.stringify({
+      //   email: email.current.value,
+      //   password1: password.current.value,
+      //   password2: password.current.value,
+      //   gender: "M",
+      //   date_of_birth: DateOfBirth,
+      //   first_name: firstName.current.value,
+      //   last_name: lastName.current.value,
+      //   work: "Fighting criminals at night and running Wayne Enterprise in the day",
+      //   university: "League of shadows",
+      //   userdetails: userDetails,
+      // });
+      const formdata = new FormData();
+      formdata.append("email", email.current.value);
+      formdata.append("password1", password.current.value);
+      formdata.append("password2", password.current.value);
+      formdata.append("gender", "M");
+      formdata.append("date_of_birth", DateOfBirth);
+      formdata.append("first_name", firstName.current.value);
+      formdata.append("last_name", lastName.current.value);
+      formdata.append(
+        "work",
+        "Fighting criminals at night and running Wayne Enterprise in the day"
+      );
+      formdata.append("university", "League of shadows");
+      formdata.append("image", image);
 
       let response = "";
       try {
         response = await fetch(RegisterUserURL, {
           method: "POST",
           headers: {
-            "Content-Type": "application/json",
             Accept: "*/*",
             "Accept-Encoding": "gzip, deflate, br",
             Connection: "keep-alive",
-            "Content-Length": userDetail.length,
+            "Content-Length": formdata.length,
             Host: Host,
           },
-          body: userDetail,
+          body: formdata,
         });
 
         if (response.status >= 300) {
@@ -173,7 +187,8 @@ function Login() {
           else if (res.date_of_birth) alert(res.date_of_birth);
           else if (res.gender) alert(res.gender);
           else if (res.work) alert(res.work);
-          else if (res.university) alert(res.university);
+          else if (res.university) alert(res.university);          
+          else if (res.image) alert(res.image);
           else alert("Cannot register user right now, please try again later");
         } catch {
           console.log(error);
@@ -196,7 +211,6 @@ function Login() {
     }
     setMessage("Some fields are empty or the email is incorrect");
   }
-
 
   return (
     <Container fluid={true} className="p-0">
@@ -254,10 +268,14 @@ function Login() {
                         }}
                       >
                         {isLogin && (
-                          <span className={styles.RegisterLink}>Sign<span className={styles.In2}>up</span></span>
+                          <span className={styles.RegisterLink}>
+                            Sign<span className={styles.In2}>up</span>
+                          </span>
                         )}
                         {!isLogin && (
-                          <span className={styles.LoginLink}>Log<span className={styles.In2}>in</span></span>
+                          <span className={styles.LoginLink}>
+                            Log<span className={styles.In2}>in</span>
+                          </span>
                         )}
                       </div>
                     </span>
@@ -406,6 +424,19 @@ function Login() {
                       type="password"
                       ref={password}
                       className={`${Styles.passwordInput}`}
+                    />
+                  </div>
+                </Col>
+              </Row>
+              <Row className={Styles.LastNameRow}>
+                <Col lg={{ offset: 2 }}>
+                  <div>
+                    <h6>Profile Image</h6>
+                    <input
+                      type="file"
+                      onChange={(e) => {
+                        setImage(e.target.files[0]);
+                      }}
                     />
                   </div>
                 </Col>

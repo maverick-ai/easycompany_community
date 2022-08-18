@@ -1,42 +1,15 @@
 import styles from "../styles/Questions.module.scss";
 import { PostListURL, PageSize } from "../components/constants";
-import { Host } from "../components/constants";
 import { sendReq } from "../components/requests";
-import { Container, Row, Col } from "react-bootstrap";
-import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
+import { Container } from "react-bootstrap";
 import QuestionBox from "../components/questions/questionBox";
-import React, { useState, useEffect, useMemo } from "react";
-import Masonry from "react-masonry-component";
+import React, { useMemo } from "react";
 
 import Pagination from "../components/Pagination";
 import Question_img from "../components/questions_img";
 
 const Questions = ({ questions, query }) => {
 
-
-  const enterExitStyles = [
-    "Simple",
-    "Skew",
-    "Newspaper",
-    "Fold Up",
-    "From Center",
-    "From Left to Right",
-    "From Top",
-    "From Bottom",
-  ];
-
-  const masonaryoptions = {fitWidth:true}
-  console.log(questions.results);
-  // const [offset, setOffset] = useState(0);
-  // const newOffset = query.page * PageSize - PageSize;
-  // const endoffset = offset + PageSize;
-  // useEffect(() => {
-  //   setOffset(newOffset);
-  // }, [query.page]);
-
-  // memo controlled grid
-
-  // console.log(questions.results);
   const gridrefresh = useMemo(() => {
     return questions.results.map(
       (
