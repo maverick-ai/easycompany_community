@@ -7,10 +7,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import QuestionBox from "../components/questions/questionBox";
 import React, { useMemo } from "react";
 
-import * as dateMath from "date-arithmetic";
-
 import Pagination from "../components/Pagination";
-import Question_img from "../components/questions_img";
 
 const Questions = ({ questions, query }) => {
   console.log(query, "=================");
@@ -46,11 +43,12 @@ const Questions = ({ questions, query }) => {
   return (
     <React.Fragment>
       <Container>
-        <Row style={{ margin: "15% 0 10%" }}>
+        <Row style={{ margin: "10% 0 10%" }}>
           <Col xl={7} lg={7}>
             <div style={{ margin: "15% 0", position: "relative" }}>
               <img src="/toparrw.svg" className={styles.toparrw} />
               <img
+              className={styles.ImageRenderring}
                 src="/questionsimage.svg"
                 style={{ width: "99%", margin: "auto 0" }}
               />
@@ -72,7 +70,6 @@ const Questions = ({ questions, query }) => {
       </Container>
 
       <Container>
-        <h1 className={styles.headingtop}>Top Questions</h1>
         <div className={styles.flexboxgrid}>
           <div className={styles.gridnewbox}>{gridrefresh}</div>
         </div>

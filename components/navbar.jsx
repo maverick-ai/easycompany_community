@@ -56,7 +56,7 @@ function MainNavbar(props) {
           </Navbar.Toggle>
           <Navbar.Collapse
             id="responsive-navbar-nav"
-            style={{ justifyContent: "end" }}
+            style={{ justifyContent: "start" }}
           >
             <Nav className="m" style={{ justifyContent: "center" }}>
               {NavLinks.map(({ name, path }) => (
