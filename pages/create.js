@@ -43,7 +43,6 @@ export default function Create() {
     },
   ];
 
-
   useEffect(() => {
     setInterval(() => {
       setFadeState(true);
@@ -65,11 +64,11 @@ export default function Create() {
       categories.push({ categoryForPost: tag });
     });
 
-    var post = JSON.stringify(
-      {title : titleRef.current.value,
-      categoryOfThePost : categories,
-      postByUser : bodyvalue}
-    );
+    var post = JSON.stringify({
+      title: titleRef.current.value,
+      categoryOfThePost: categories,
+      postByUser: bodyvalue,
+    });
 
     // var formdata = new FormData();
     // formdata.append("title", titleRef.current.value);
@@ -92,8 +91,7 @@ export default function Create() {
     }
   }
 
-
-  const save = async function* (data,file) {
+  const save = async function* (data, file) {
     // console.log(file);
 
     var myHeaders = new Headers();
@@ -103,16 +101,16 @@ export default function Create() {
     formdata.append("image", file);
 
     var requestOptions = {
-      method: 'POST',
+      method: "POST",
       headers: myHeaders,
       body: formdata,
-      redirect: 'follow'
+      redirect: "follow",
     };
 
     let response = await fetch(`${CreateImageURL}`, requestOptions);
     let newData = await response.json();
     console.log(newData);
-    
+
     yield newData.url;
     return true;
   };
@@ -138,7 +136,7 @@ export default function Create() {
         <div className={styles.Partition} />
         <Col>
           <div className={styles.RightSection}>
-            <div style={{ marginTop: "150px" }} />
+            <div className={styles.topmargin} />
             <Row>
               <Col>
                 <div className={styles.Entry}>
@@ -147,8 +145,9 @@ export default function Create() {
                     source="title"
                     placeholder={travelQuestionState.title}
                     ref={titleRef}
-                    className={`${styles.titleInput} ${fadeState ? styles.fadeIn : styles.fadeOut
-                      }`}
+                    className={`${styles.titleInput} ${
+                      fadeState ? styles.fadeIn : styles.fadeOut
+                    }`}
                   />
                 </div>
               </Col>
@@ -180,8 +179,9 @@ export default function Create() {
                     childProps={{
                       textArea: {
                         placeholder: `${travelQuestionState.body}`,
-                        className: `${styles.bodyInput} ${fadeState ? styles.fadeIn : styles.fadeOut
-                          }`,
+                        className: `${styles.bodyInput} ${
+                          fadeState ? styles.fadeIn : styles.fadeOut
+                        }`,
                       },
                     }}
                     paste={{
@@ -194,7 +194,10 @@ export default function Create() {
                     ]}
                     generateMarkdownPreview={(markdown) =>
                       Promise.resolve(
-                        <ReactMarkdown children={markdown} remarkPlugins={remarkGfm} />
+                        <ReactMarkdown
+                          children={markdown}
+                          remarkPlugins={remarkGfm}
+                        />
                       )
                     }
                   />
@@ -215,6 +218,4 @@ export default function Create() {
       {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
     </Container>
   );
-
 }
-

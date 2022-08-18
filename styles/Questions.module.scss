@@ -346,24 +346,133 @@
     }
   }
 }
-.flexbox{
-  display:flex;
+.flexbox {
+  display: flex;
   justify-content: center;
-
-
 }
-.gridnewbox{
+.gridnewbox {
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.masondiv{
-  padding: 0 0px; 
- margin: 0 auto;
-}
-.masonryGrid{
+.masondiv {
+  padding: 0 0px;
   margin: 0 auto;
 }
+.masonryGrid {
+  margin: 0 auto;
+}
+
+.phonepic {
+  width: 90%;
+}
+.phonepicdad {
+  margin: 10% 0;
+}
+.upar {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+}
+.camera {
+  position: absolute;
+  bottom: -20px;
+  right: -15px;
+}
+@media screen and (max-width: "1400px") {
+  .upar {
+    position: absolute;
+    top: -20px;
+    right: -40px;
+  }
+  .camera {
+    position: absolute;
+    bottom: -40px;
+    right: -15px;
+  }
+}
+@media screen and (max-width: "1200px") {
+  .upar {
+    position: absolute;
+    top: -30px;
+    right: -60px;
+  }
+  .camera {
+    position: absolute;
+    bottom: -50px;
+    right: -25px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .upar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 15%;
+  }
+  .camera {
+    position: absolute;
+    bottom: -30px;
+    right: 10px;
+    width: 15%;
+  }
+  .phonepic {
+    width: 60%;
+    margin: auto;
+  }
+  .phonepicdad {
+    margin: auto;
+    text-align: center;
+  }
+  .toparrw {
+    top: -120px;
+    right: -30px;
+    width: 20px;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 786px) and (min-width: 576px) {
+  .toparrw {
+    top: -80px;
+    right: -20px;
+    width: 15px;
+    position: absolute;
+  }
+}
+@media screen and (min-width: 425px) and (max-width: 576px) {
+  .toparrw {
+    top: -40px;
+    right: -20px;
+    width: 15px;
+    position: absolute;
+  }
+}
+
+@media screen and (min-width: 375px) and (max-width: 425px) {
+  .toparrw {
+    top: -40px;
+    right: -20px;
+    width: 15px;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 375px) {
+  .toparrw {
+    top: -30px;
+    right: -20px;
+    width: 15px;
+    position: absolute;
+  }
+}
+@media screen and (max-width: 320px) {
+  .toparrw {
+    top: -10px;
+    right: -20px;
+    width: 15px;
+    position: absolute;
+  }
+}
+
 // @media screen and (min-width: 1200px) and (max-width: 1400px) {
 //   .masonryGrid {
 //     margin-left: 10%;

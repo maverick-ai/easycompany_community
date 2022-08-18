@@ -18,17 +18,16 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import moment from "moment";
 
-import  { useRouter } from "next/router";
+import { useRouter } from "next/router";
 
 const Solution = (props) => {
   const [solnComment, setsolnComment] = useState(props.comments.comments);
-  const [fullsize,setFullsize] = useState(false);
+  const [fullsize, setFullsize] = useState(false);
   const router = useRouter();
 
-  function onclickhandler(){
-    if(!fullsize)
-    setFullsize(true);
-    if(fullsize) setFullsize(false);
+  function onclickhandler() {
+    if (!fullsize) setFullsize(true);
+    if (fullsize) setFullsize(false);
   }
   const dateJoined = moment(props.solution.created_date).format("MMM Do YY");
 
@@ -42,11 +41,20 @@ const Solution = (props) => {
     setsolnComment((old) => [...old, ...newsolncomments.results]);
   };
 
-  let minute = Math.floor(props.solution.time / 60);
+  var Date_A = new Date(props.solution.time);
+
+  var DateA = Date_A.getTime();
+  const DateB = new Date();
+
+  var finalFlash = DateB - DateA;
+  console.log(finalFlash, "--------------->>>>>>>>>>>");
+
+  // console.log(newStr);
+  let minute = Math.floor(finalFlash / 60000);
   let hours = Math.floor(minute / 60);
 
   let days = Math.floor(hours / 24);
-  let newhour = hours - (days * 24);
+  let newhour = hours - days * 24;
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
@@ -142,7 +150,13 @@ const Solution = (props) => {
                         fontWeight: "400",
                       }}
                     >
-                     <p className={styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
+                      <p className={styles.timerP}>
+                        {`${year ? year + " years" : ""}` ||
+                          `${month ? month + " months" : ""}` ||
+                          `${newday ? newday + " days" : ""}` ||
+                          `${newhour ? newhour + " hours" : ""}` ||
+                          `${newminute ? newminute + " minutes" : ""}`}
+                      </p>
                     </span>
                   </div>
                   <div style={{ width: "91px" }}>
@@ -171,7 +185,15 @@ const Solution = (props) => {
                 className={styles.solutionBody}
                 children={props.solution.solutionByUser}
                 remarkPlugins={[remarkGfm]}
-                components={{img:({node,...props})=><img className={fullsize?styles.mkdimg:styles.mkdimg2} onClick={onclickhandler}  {...props}/>}}
+                components={{
+                  img: ({ node, ...props }) => (
+                    <img
+                      className={fullsize ? styles.mkdimg : styles.mkdimg2}
+                      onClick={onclickhandler}
+                      {...props}
+                    />
+                  ),
+                }}
               />
             </Row>
           </Col>
