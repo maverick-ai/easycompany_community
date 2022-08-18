@@ -17,23 +17,31 @@ import moment from "moment";
 
 const DetailedPost = (props) => {
   const [postComment, setpostComment] = useState(props.data.comments.comments);
-  const [fullsize,setFullsize] = useState(false);
+  const [fullsize, setFullsize] = useState(false);
 
   const [winWidth, setWinWidth] = useState();
 
-  function onclickhandler(){
-    if(!fullsize)
-    setFullsize(true);
-    if(fullsize) setFullsize(false);
+  function onclickhandler() {
+    if (!fullsize) setFullsize(true);
+    if (fullsize) setFullsize(false);
   }
 
   const dateJoined = moment(props.data.created_date).format("MMM Do YY");
 
-  let minute = Math.floor(props.data.time / 60);
+  var Date_A = new Date(props.data.time);
+
+  var DateA = Date_A.getTime();
+  const DateB = new Date();
+
+  var finalFlash = DateB - DateA;
+  console.log(finalFlash, "--------------->>>>>>>>>>>");
+
+  // console.log(newStr);
+  let minute = Math.floor(finalFlash / 60000);
   let hours = Math.floor(minute / 60);
 
   let days = Math.floor(hours / 24);
-  let newhour = hours - (days * 24);
+  let newhour = hours - days * 24;
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
@@ -49,24 +57,24 @@ const DetailedPost = (props) => {
       setpostComment((old) => [...old, ...newComments.results]);
     }
   };
- console.log("-------------")
+  console.log("-------------");
   console.log(props.data);
 
-//   const renderers = {
-//     //This custom renderer changes how images are rendered
-//     //we use it to constrain the max width of an image to its container
-//     image: ({
-//         alt,
-//         src,
-//         title,
-//     }) => (
-//         <img 
-//             alt={alt} 
-//             src={src} 
-//             title={title} 
-//             style={{ maxWidth: 100 }}  />
-//     ),
-// };
+  //   const renderers = {
+  //     //This custom renderer changes how images are rendered
+  //     //we use it to constrain the max width of an image to its container
+  //     image: ({
+  //         alt,
+  //         src,
+  //         title,
+  //     }) => (
+  //         <img
+  //             alt={alt}
+  //             src={src}
+  //             title={title}
+  //             style={{ maxWidth: 100 }}  />
+  //     ),
+  // };
 
   return (
     <div className="post-content">
@@ -143,7 +151,13 @@ const DetailedPost = (props) => {
                           fontWeight: "400",
                         }}
                       >
-                        <p className={styles.timerP}>{`${month ? month + " months" : ""}` || `${newday ? newday + " days" : ""}` || ` ${newhour} hours`}</p>
+                        <p className={styles.timerP}>
+                          {`${year ? year + " years" : ""}` ||
+                            `${month ? month + " months" : ""}` ||
+                            `${newday ? newday + " days" : ""}` ||
+                            `${newhour ? newhour + " hours" : ""}` ||
+                            `${newminute ? newminute + " minutes" : ""}`}
+                        </p>
                       </span>
                     </div>
                     <div style={{ width: "120px" }}>
@@ -175,13 +189,19 @@ const DetailedPost = (props) => {
                 <h1 className={styles.posttitle}>{props.data.title}</h1>
               </Row>
               <Row>
-              
                 <ReactMarkdown
-                
                   className={styles.postbody}
                   children={props.data.postByUser}
                   remarkPlugins={[remarkGfm]}
-                  components={{img:({node,...props})=><img className={fullsize?styles.mkdimg:styles.mkdimg2} onClick={onclickhandler} {...props}/>}}
+                  components={{
+                    img: ({ node, ...props }) => (
+                      <img
+                        className={fullsize ? styles.mkdimg : styles.mkdimg2}
+                        onClick={onclickhandler}
+                        {...props}
+                      />
+                    ),
+                  }}
                 />
               </Row>
               <Row>

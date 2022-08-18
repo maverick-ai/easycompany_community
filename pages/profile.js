@@ -43,10 +43,10 @@ const Profile = ({ userData, query, login }) => {
   //     }.svg`
   //   );
   // }, []);
-  console.log(userData);
-  console.log(query);
+  // console.log(userData);
+  // console.log(query);
   const dateJoined = moment(userData.date_joined).format("MMM Do YY");
-  console.log(dateJoined);
+  // console.log(dateJoined);
 
   const [newUser, setNewUser] = useState({
     labels: ["A", "B", "C", "D"],
@@ -179,7 +179,7 @@ export async function getServerSideProps({ query, req }) {
   let userData = {};
   // console.log("aaaaaaaaaaaaaaaaaaa");
 
-  console.log(req.connection.remoteAddress, req.headers);
+  // console.log(req.connection.remoteAddress, req.headers);
   try {
     if (query.user) {
       userData = await sendReq(`${PublicUserProfileURL}${query.user}/`);
@@ -188,7 +188,7 @@ export async function getServerSideProps({ query, req }) {
     } else {
       throw "redirect to login";
     }
-    console.log(userData);
+    // console.log(userData);
   } catch (err) {
     console.log(err);
     if (err == "redirect to login") {

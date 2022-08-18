@@ -7,6 +7,28 @@ import { Container, Col, Row } from "react-bootstrap";
 import React from "react";
 
 const SearchBox = (props) => {
+  console.log(props.data.numberOfSolution);
+
+  var Date_A = new Date(props.data.time);
+
+  var DateA = Date_A.getTime();
+  const DateB = new Date();
+
+  var finalFlash = DateB - DateA;
+  console.log(finalFlash, "--------------->>>>>>>>>>>");
+
+  // console.log(newStr);
+  let minute = Math.floor(finalFlash / 60000);
+
+  let hours = Math.floor(minute / 60);
+
+  let newminute = minute - hours * 60;
+
+  let days = Math.floor(hours / 24);
+  let newhour = hours - days * 24;
+  let newday = Math.floor(days % 30);
+  let month = Math.floor(days / 30);
+  let year = Math.floor(month / 12);
   return (
     <React.Fragment>
       <div className={styles.wrapper}>
@@ -26,7 +48,14 @@ const SearchBox = (props) => {
               width={15}
             ></Image>
           </div>
-          <p className={styles.timerP}>1 Hour</p>
+          <p className={styles.timerP}>
+            {" "}
+            {`${year ? year + " years" : ""}` ||
+              `${month ? month + " months" : ""}` ||
+              `${newday ? newday + " days" : ""}` ||
+              `${newhour ? newhour + " hours" : ""}` ||
+              `${newminute ? newminute + " minutes" : ""}`}
+          </p>
         </div>
         <div className={styles.para}>
           <p>
@@ -53,7 +82,7 @@ const SearchBox = (props) => {
               style={{ backgroundColor: "#121212" }}
             >
               <div className={`${styles.votebox} ${styles.listItem}`}>
-                <span>1 Answer</span>{" "}
+                <span>{props.data.numberOfSolution} answer</span>{" "}
                 <img src="/icons/answer.svg" alt="answer icon" />
               </div>
             </div>
