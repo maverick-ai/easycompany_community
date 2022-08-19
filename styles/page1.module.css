@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+
+.text1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 55px;
+  text-transform: uppercase;
+  margin-top: 150px;
+  margin-left: 40px;
+
+  color: #ffffff;
+}
+
+.answers {
+  background-image: linear-gradient(90deg, #e32a34, #b50eae);
+  background-clip: text;
+  color: transparent;
+}
+
+.underline {
+  position: absolute;
+  height: 11px;
+  width: 220px;
+  top: 50px;
+  left: 0;
+
+  border-radius: 0px;
+}
+
+.vector {
+  position: absolute;
+  height: 49.01476671899777px;
+  width: 49.71139528094532px;
+  left: -29px;
+  top: -35px;
+  border-radius: 0px;
+}
+
+.Group11 {
+  position: absolute;
+  top: -39px;
+  left: 250px;
+
+  width: 73.4px;
+  height: 62.79px;
+}
+
+.join {
+  box-sizing: border-box;
+
+  width: calc(100vw * (283 / 1728));
+  height: 53px;
+
+  background: linear-gradient(
+    270deg,
+    rgba(181, 14, 174, 0.96) 2.39%,
+    #e32a34 97.18%
+  );
+  border-radius: 18px;
+  border: 0;
+}
+@media screen and (max-width: 1250px) {
+  .join {
+    width: 202px !important;
+  }
+  .text1 {
+    font-size: 39px;
+  }
+}
+
+.joinText {
+  width: auto;
+  height: auto;
+  font-family: "Inter";
+  font-style: bold !important;
+  font-weight: 800 !important;
+  font-size: 18px;
+  line-height: 142.5%;
+  /* or 26px */
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.mainImg {
+  width: 100%;
+  margin-top: 100px;
+
+  /* margin-left: 30%; */
+  /* margin-right: auto; */
+}
+@media screen and (min-width: 991px) {
+  .join {
+    margin: 0 auto;
+  }
+}
+
+.text52 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 525;
+  font-size: 10px;
+  line-height: 12px;
+  text-align: center;
+
+  color: #000000;
+}

@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { Container, Col, Row } from "react-bootstrap";
 import React from "react";
-import * as dateMath from "date-arithmetic";
+
 import moment from "moment";
 
 const QuestionBox = (props) => {
