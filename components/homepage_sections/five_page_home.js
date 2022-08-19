@@ -1,6 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import s from "../../styles/page1a.module.css";
-import sy from "../../styles/page1y.module.scss";
+import sy from "./five_page.module.css";
 import React from "react";
 
 function Five_page() {

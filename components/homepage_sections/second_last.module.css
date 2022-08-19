@@ -1,0 +1,53 @@
+.heading2lastspan {
+  background: linear-gradient(90deg, #e32a34 0%, #b50eae 21.41%);
+  background-clip: text;
+  color: transparent;
+
+  font-weight: 700;
+}
+
+.heading2last {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(100vw * (35 / 1728));
+  line-height: 53px;
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+.points {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: calc(100vw * (500 / 1728));
+  font-size: calc(100vw * (30 / 1728));
+  line-height: 35px;
+  /* or 133% */
+
+  color: #ffffff;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.Li {
+  /*background-color: linear-gradient(180deg, #e32a34 0%, #b50eae 21.41%);*/
+  list-style-type: none;
+  display: flex;
+  font-size: calc(100vw * (30 / 1768));
+
+  /* background-image: url('/Users/aryankeshri/Documents/easyCompany/newComm/community/public/bullets.png'); */
+}
+.round {
+  height: 20px;
+  width: 20px;
+  background-image: linear-gradient(180deg, #e32a34 0%, #b50eae 100%);
+  border-radius: 50%;
+  margin: auto 10px;
+}
+.camImg {
+  width: calc(100vw * (100 / 1728));
+  position: relative;
+  left: 20px;
+  top: -22px;
+}

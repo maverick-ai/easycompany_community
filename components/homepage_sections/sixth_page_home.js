@@ -1,7 +1,5 @@
-import { Row, Col, Container } from "react-bootstrap";
-import s from "../../styles/page1a.module.css";
-import st from "../../styles/page1a.module.css";
-import sy from "../../styles/page1y.module.scss";
+import { Row, Col } from "react-bootstrap";
+import s from "./sixth_page.module.css";
 import React from "react";
 import DestCard from "../destcard";
 
@@ -28,16 +26,16 @@ function Sixth_page() {
               img1="photos/dest1.png"
               para="We connect people who have questions about travel with people who have travelled enough to answer them all."
             />
-            <Col xxl={2} xl={2} lg={2} md={5} sm={5} className={st.column}>
+            <Col xxl={2} xl={2} lg={2} md={5} sm={5} className={s.column}>
               <div style={{ width: "min-content", margin: "auto" }}>
-                <div className={st.destcard}>
+                <div className={s.destcard}>
                   <div
-                    className={st.destcard1}
+                    className={s.destcard1}
                     style={{ PaddingTop: "20%", margin: "0 auto" }}
                   >
-                    <img src="photos/dest2.png" className={st.destcardimg2} />
+                    <img src="photos/dest2.png" className={s.destcardimg2} />
                     <div>
-                      <p className={st.destcardp}>
+                      <p className={s.destcardp}>
                         We connect people who have questions about travel with
                         people who have travelled enough to answer them all.
                       </p>

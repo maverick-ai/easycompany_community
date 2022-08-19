@@ -1,0 +1,68 @@
+.mapp {
+  position: absolute;
+  left: 0;
+  width: calc(100vw * (112 / 1728));
+}
+.love1 {
+  background-image: linear-gradient(
+    90deg,
+    #b50eae 21.48%,
+    rgba(227, 42, 52, 0.94) 86.58%
+  );
+  background-clip: text;
+  color: transparent;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(0.01719 * (100vw) + 20px);
+}
+.arorrr {
+  height: calc(100vw * (243 / 1560));
+  left: calc(100% * (340 / 1560));
+  top: calc(100vw * (-130 / 1560));
+}
+@media screen and (max-width: 1402px) {
+  .arorrr {
+    left: calc(100% * (300 / 1560)) !important;
+  }
+}
+@media screen and (max-width: 992px) {
+  .arorrr {
+    left: calc(100% * (200 / 1560)) !important;
+  }
+}
+@media screen and (max-width: 756px) {
+  .arorrr {
+    left: calc(100% * (170 / 1560)) !important;
+  }
+}
+@media screen and (max-width: "768px") {
+  .arorrr {
+    left: calc(100% * (300 / 1560));
+  }
+}
+.whop {
+  width: 25%;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 500;
+  font-size: calc(100vw * (20 / 1728));
+  line-height: 30px;
+  color: #ffffff;
+  /* or 150% */
+
+  text-align: center;
+}
+.vr {
+  height: calc(100vw * (80 / 630));
+  border-left: #ffffff;
+  border-style: dashed;
+  border-width: 1px;
+  margin: auto 2%;
+}
+.maop {
+  height: calc(100vw * (137 / 1560));
+  position: absolute;
+  right: 0;
+}

@@ -1,5 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import s from "../../styles/page1a.module.css";
+import s from "./second_page.module.css";
 import React from "react";
 
 function Second_page() {
@@ -25,16 +25,16 @@ function Second_page() {
         <Col xl={7}>
           <div style={{ width: "100%", display: "flex" }}>
             <div style={{ width: "25%" }}>
-              <img src="photos/img1.png" className={s.travimg} />
+              <img src="desktopHome/img1.png" className={s.travimg} />
             </div>
             <div style={{ width: "25%" }}>
-              <img src="photos/img2.png" className={s.travimg} />
+              <img src="desktopHome/img2.png" className={s.travimg} />
             </div>
             <div style={{ width: "25%" }}>
-              <img src="photos/img3.png" className={s.travimg} />
+              <img src="desktopHome/img3.png" className={s.travimg} />
             </div>
             <div style={{ width: "25%" }}>
-              <img src="photos/img4.png" className={s.travimg} />
+              <img src="desktopHome/img4.png" className={s.travimg} />
             </div>
           </div>
         </Col>

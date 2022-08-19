@@ -1,0 +1,227 @@
+.p3h {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(100vw * (44 / 1728));
+  color: #ffffff;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+@media screen and (max-width: 992px) {
+  .compass {
+    height: calc((100vw * 0.097)) !important;
+    left: calc(100vw * (10 / 1756)) !important;
+  }
+
+  .arrl {
+    height: calc((100vw * 0.097) + 25px);
+    right: calc(100vw * (40 / 1756));
+  }
+}
+.compass {
+  width: calc((100vw * (173 / 1728)));
+  /* margin-left: calc(100vw * (240 / 1756)); */
+  position: absolute;
+  left: calc(100vw * (160 / 1756));
+  top: calc(100vw * (-70 / 1756));
+}
+.arrl {
+  height: calc((100vw * 0.097) + 25px);
+  /* margin-left: calc(100vw * (240 / 1756)); */
+  position: absolute;
+  /* right: calc(100vw * (70 / 1756)); */
+  top: calc(100vw * (-50 / 1756));
+}
+.love {
+  background-image: linear-gradient(
+    90deg,
+    #b50eae 21.48%,
+    rgba(227, 42, 52, 0.94) 86.58%
+  );
+  background-clip: text;
+  color: transparent;
+}
+.plane {
+  height: calc(100vw * (243 / 1728));
+  position: absolute;
+  left: 9rem;
+  bottom: 0;
+}
+.bag1 {
+  height: calc(100vw * (146 / 1580) + 3px);
+  position: absolute;
+  bottom: 0;
+  right: calc(100vw * (150 / 1580));
+}
+@media screen and (max-width: 1402px) {
+  .plane {
+    left: calc(100vw * (30 / 1580));
+    height: calc(100vw * (170 / 1580));
+  }
+  .bag1 {
+    right: calc(100vw * (50 / 1580));
+  }
+  .compass {
+    left: calc(100vw * (30 / 1756));
+  }
+  .arrl {
+    right: calc(100vw * (0 / 1756));
+  }
+}
+@media screen and (max-width: 992px) {
+  .plane {
+    left: 0;
+  }
+  .bag1 {
+    right: calc(100vw * (0 / 1580));
+  }
+  .compass {
+    left: calc(100vw * (30 / 1756)) !important;
+    height: calc((100vw * 0.087)) !important;
+  }
+  .arrl {
+    right: calc(100vw * (0 / 1756));
+    height: calc((100vw * 0.087));
+  }
+  .column {
+    margin-top: 15%;
+  }
+}
+@media screen and (max-width: 756px) {
+  .plane {
+    left: 0;
+  }
+  .bag1 {
+    right: calc(100vw * (0 / 1580));
+  }
+  .compass {
+    left: calc(100vw * (30 / 1756)) !important;
+    height: calc((100vw * 0.087)) !important;
+  }
+  .arrl {
+    right: calc(100vw * (0 / 1756));
+    height: calc((100vw * 0.087));
+  }
+}
+@media screen and (max-width: "768px") {
+  .plane {
+    left: 0;
+  }
+  .bag1 {
+    right: calc(100vw * (0 / 1580));
+  }
+  .compass {
+    left: calc(100vw * (30 / 1756)) !important;
+    height: calc((100vw * 0.087)) !important;
+  }
+  .arrl {
+    right: calc(100vw * (0 / 1756));
+    height: calc((100vw * 0.087));
+  }
+}
+.card {
+  width: 10.12rem;
+  height: auto;
+}
+.carddiv {
+  display: inline-flex;
+  flex-direction: column;
+  /* width: min-content; */
+  margin: 0 2%;
+  width: min-content;
+}
+.tri {
+  height: calc(100vw * (8 / 1080));
+  margin-right: 7px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.ques {
+  height: 38px;
+  width: 8em;
+  background-color: #4d4d4d;
+  border-radius: 8px;
+  padding: 3px;
+}
+.questext {
+  color: white;
+
+  font-size: calc(100vw * (13 / 1500));
+
+  margin-bottom: auto;
+  line-height: 15px;
+}
+@media screen and (max-width: 915px) {
+  .ques {
+    width: 84px;
+  }
+  .questext {
+    font-size: 5px;
+  }
+}
+@media screen and (max-width: 991px) {
+  .ques {
+    width: 80%;
+    height: 35px;
+    padding-bottom: 3px;
+  }
+  .questext {
+    font-size: calc(100vw * (7 / 1500) + 5px);
+  }
+}
+.suit {
+  margin-top: 4%;
+  margin-bottom: 3%;
+  margin-left: 5%;
+  height: calc(100vw * (160 / 1560));
+}
+
+@media screen and (max-width: 576px) {
+  .suit {
+    position: absolute;
+    visibility: hidden;
+  }
+}
+.outer {
+  margin: auto;
+  max-width: 90%;
+}
+
+@media screen and (max-width: 576px) {
+  .outer {
+    margin: auto;
+    max-width: 90%;
+    padding-top: 7%;
+  }
+}
+
+.fontstyleouter {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+
+  font-size: calc(100vw * (44 / 1728));
+
+  color: #ffffff;
+}
+
+@media screen and (max-width: 576px) {
+  .fontstyleouter {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+  }
+}
+
+.fontstyleinner {
+  background: linear-gradient(270.22deg, #b50eae 42.24%, #e32a34 99.91%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.globe {
+  width: 100%;
+  height: 100%;
+}

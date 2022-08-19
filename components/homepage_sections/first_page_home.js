@@ -1,37 +1,51 @@
 import { Row, Col } from "react-bootstrap";
-import styles from "../../styles/page1.module.css";
+import styles from "./first_page.module.css";
 import React from "react";
 
 function First_page() {
   return (
     <React.Fragment>
-      <Row style={{ minHeight: "100vh" }}>
+      <Row style={{ minHeight: "90vh" }}>
         <Col lg={6}>
+          <div>
+            <img src="desktopHome/cscscsc.png" className={styles.cscscsc}></img>
+          </div>
           <div>
             <h1 className={styles.text1}>
               FIND THE BEST{" "}
               <div style={{ position: "relative", display: "inline" }}>
                 <span className={styles.answers}>ANSWERS</span>
                 <img
-                  src="photos/underline.png"
+                  src="desktopHome/underline.png"
                   className={styles.underline}
                 ></img>
               </div>{" "}
-              TO ALL YOUR TRAVEL QUESTIONS!
+              <br />
+              TO ALL YOUR TRAVEL
+              <br /> QUESTIONS!
             </h1>
 
-            <div style={{ margin: "78px 0 0 59px" }}>
-              <div style={{ position: "relative" }}>
-                <img src="photos/Vector.png" className={styles.vector}></img>
-                <img src="photos/Group11.png" className={styles.Group11}></img>
+            <div style={{ margin: "50px 0 0 20px" }}>
+              <div>
                 <button className={styles.join}>
+                  <img src="desktopHome/Vector.png" className={styles.vector}></img>
                   <span className={styles.joinText}>JOIN THE COMMUNITY</span>
+                  <img
+                    src="desktopHome/Group11.png"
+                    className={styles.Group11}
+                  ></img>
                 </button>
               </div>
             </div>
           </div>
         </Col>
         <Col lg={6}>
+          <div>
+            <img
+              src="desktopHome/arrowtopright.png"
+              className={styles.atr}
+            ></img>
+          </div>
           <div style={{ textAlign: "center" }}>
             <img src="photos/Group30.png" className={styles.mainImg}></img>
           </div>
