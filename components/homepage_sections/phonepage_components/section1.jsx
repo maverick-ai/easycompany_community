@@ -1,15 +1,13 @@
 import React from "react";
-import styles from "../../../styles/phonestyle.module.scss";
-import { Col } from "react-bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css";
+import styles from "../../../styles/Homepage/mobileCSS/section1.module.scss";
 
-function Phone1() {
+function Section1() {
   return (
-    <React.Fragment>
-      <Col lg={6}>
+    <div>
         <div>
           <h1 className={styles.text1}>
-            FIND THE BEST{" "}
+            FIND THE BEST
+            <br/>
             <div style={{ position: "relative", display: "inline" }}>
               <span className={styles.answers}>ANSWERS</span>
               <img
@@ -35,14 +33,14 @@ function Phone1() {
             </div>
           </div>
         </div>
-      </Col>
-      <Col lg={6}>
+
+      <div lg={6}>
         <div style={{ textAlign: "center" }}>
           <img src="photos/Group30.png" className={styles.mainImg}></img>
         </div>
-      </Col>
-    </React.Fragment>
+      </div>
+      </div>
   );
 }
 
-export default Phone1;
+export default Section1;

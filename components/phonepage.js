@@ -2,64 +2,30 @@ import React from "react";
 import styles from "../styles/phonestyle.module.scss";
 import { Container, Col, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
-
-// import { Carousel } from "react-responsive-carousel";
-
 import DestCard from "./destcard";
-// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "react-multi-carousel/lib/styles.css";
-import Carousel from "react-multi-carousel";
 import Carousel_row from "./homepage_sections/phonepage_components/carousel _row";
 
-import Phone1 from "./homepage_sections/phonepage_components/firstpage_phone";
+import Section1 from "./homepage_sections/phonepage_components/section1";
+import Section2 from "./homepage_sections/phonepage_components/section2";
 import Phone3 from "./homepage_sections/phonepage_components/thirdpage_phone";
 import Phone4 from "./homepage_sections/phonepage_components/fourthpage_phone";
 import Phone6 from "./homepage_sections/phonepage_components/sixthpage_phone";
 import Phone7 from "./homepage_sections/phonepage_components/seventhpage_phone";
-import Carousel_2 from "./homepage_sections/phonepage_components/carousel_2";
 import We_are from "./homepage_sections/phonepage_components/we_are";
-// import Slider from "react-slick";
-// import Carousel from "react-bootstrap/Carousel";
-
 function Page2() {
   return (
     <Container>
-      <Row style={{ minHeight: "100vh" }}>
-        <Phone1 />
-      </Row>
-      {/* -------------------------------------------second page ----------------------------------------------------- */}
-      <Row style={{ marginBottom: "5%" }}>
-        <Col xl={5} style={{ padding: "0 20px" }}>
-          <div>
-            <span className={styles.p3h}>
-              Simplify your <span className={styles.love}>travel</span> like{" "}
-              <br /> never before.
-            </span>
-            <div className={styles.p2div}>
-              <p className={styles.p2}>
-                Planning a trip to somewhere new? Solo or in a group? Looking
-                for recommendations? Need advice? Whether you're trying to
-                figure out which city in Italy has the best gelato or how to pay
-                for your hostel stay in New Zealand.
-              </p>
-            </div>
-          </div>
-        </Col>
-
-        <Carousel_2 />
-      </Row>
-      {/* -----------------------------------third page-------------------------------------------------------- */}
-      <Row>
+      <Section1 />
+      <Section2 />
+      {/* <Row>
         <Phone3 />
       </Row>
-      {/* Globe */}
       <Row>
         <Phone4 />
       </Row>
-      {/* who are we */}
       <Carousel_row />
       <We_are />
-      {/* Travel World */}
       <Row>
         <Phone6 />
       </Row>
@@ -92,7 +58,7 @@ function Page2() {
           </div>
         </Col>
       </Row>
-      <Phone7 />
+      <Phone7 /> */}
     </Container>
 
     // <div className={s.page}>

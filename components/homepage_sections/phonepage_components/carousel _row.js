@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "../../../styles/phonestyle.module.scss";
 import { Container, Col, Row } from "react-bootstrap";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Carousel from "react-bootstrap/Carousel";
 
 function Carousel_row() {
