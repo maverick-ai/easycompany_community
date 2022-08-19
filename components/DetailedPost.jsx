@@ -121,7 +121,10 @@ const DetailedPost = (props) => {
                   <img src={props.data.creator_by.image} style={{height:"28px", width:"28px",borderRadius: "50%"}} />
                   </div>
                   {/* <Col lg={3} md={3} sm={4}> */}
+                  
                   <div className={styles.postuser}>
+                    <Row>
+                  <Col lg={5} md={5} xs={12}>
                     <div
                       style={{
                         width: "200px",
@@ -137,6 +140,8 @@ const DetailedPost = (props) => {
                           props.data.creator_by.last_name}
                       </Link>
                     </div>
+                    </Col>
+<Col lg ={3}  md={3} xs={6}>
                     <div style={{ width: "120px" }}>
                       <Image
                         src="/av_timer.png"
@@ -160,6 +165,8 @@ const DetailedPost = (props) => {
                         </p>
                       </span>
                     </div>
+                    </Col>
+                    <Col lg ={3} md={3} xs={6}>
                     <div style={{ width: "120px" }}>
                       <Image
                         className={styles.eye}
@@ -178,6 +185,8 @@ const DetailedPost = (props) => {
                         {props.data.viewedByTheUsers} Views
                       </span>
                     </div>
+                    </Col>
+                    </Row>
                   </div>
                   {/* </Col> */}
                   {/* <Col lg={1} md={3} sm={4} className={styles.eye}> */}
