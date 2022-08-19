@@ -15,6 +15,7 @@ import Phone7 from "./homepage_sections/phonepage_components/seventhpage_phone";
 import We_are from "./homepage_sections/phonepage_components/we_are";
 function Page2() {
   return (
+    <div>
     <Container>
       <Section1 />
       <Section2 />
@@ -60,6 +61,7 @@ function Page2() {
       </Row>
       <Phone7 /> */}
     </Container>
+    </div>
 
     // <div className={s.page}>
 

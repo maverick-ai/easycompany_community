@@ -6,7 +6,7 @@ function Section1() {
     <div>
         <div>
           <h1 className={styles.text1}>
-            FIND THE BEST
+            FIND THE BEST<span><img className={styles.paperPlane} src="paperplaneHomepage.png"/></span>
             <br/>
             <div style={{ position: "relative", display: "inline" }}>
               <span className={styles.answers}>ANSWERS</span>
@@ -15,30 +15,20 @@ function Section1() {
                 className={styles.underline}
               ></img>
             </div>{" "}
+            
             TO ALL YOUR TRAVEL QUESTIONS!
           </h1>
-
-          <div
-            style={{
-              margin: "78px 0 0 50px ",
-            }}
-            className={styles.topbutton}
-          >
-            <div style={{ position: "relative" }}>
-              <img src="photos/Vector.png" className={styles.vector}></img>
-              <img src="photos/Group11.png" className={styles.Group11}></img>
+          
               <button className={styles.join}>
-                <span className={styles.joinText}>JOIN THE COMMUNITY</span>
+                <img src="photos/Vector.png" className={styles.vector}></img>
+                <img src="photos/Group11.png" className={styles.Group11}></img>
+                <p className={styles.joinText}>JOIN THE COMMUNITY</p>
               </button>
-            </div>
-          </div>
+       
         </div>
-
-      <div lg={6}>
         <div style={{ textAlign: "center" }}>
           <img src="photos/Group30.png" className={styles.mainImg}></img>
         </div>
-      </div>
       </div>
   );
 }
