@@ -8,6 +8,7 @@ import Carousel_row from "./homepage_sections/phonepage_components/carousel _row
 
 import Section1 from "./homepage_sections/phonepage_components/section1";
 import Section2 from "./homepage_sections/phonepage_components/section2";
+import Section3 from "./homepage_sections/phonepage_components/section3";
 import Phone3 from "./homepage_sections/phonepage_components/thirdpage_phone";
 import Phone4 from "./homepage_sections/phonepage_components/fourthpage_phone";
 import Phone6 from "./homepage_sections/phonepage_components/sixthpage_phone";
@@ -19,10 +20,8 @@ function Page2() {
     <Container>
       <Section1 />
       <Section2 />
-      {/* <Row>
-        <Phone3 />
-      </Row>
-      <Row>
+        <Section3 />
+    <Row>
         <Phone4 />
       </Row>
       <Carousel_row />
@@ -59,7 +58,7 @@ function Page2() {
           </div>
         </Col>
       </Row>
-      <Phone7 /> */}
+      <Phone7 />
     </Container>
     </div>
 
