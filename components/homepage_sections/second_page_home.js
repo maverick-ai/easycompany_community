@@ -6,7 +6,7 @@ function Second_page() {
   return (
     <React.Fragment>
       <Row>
-        <Col xl={5}>
+        <Col xl={5} lg={5} md={5}>
           <div>
             <span className={s.p3h}>
               Simplify your <span className={s.love}>travel</span> like <br />{" "}
@@ -22,7 +22,7 @@ function Second_page() {
             </div>
           </div>
         </Col>
-        <Col xl={7}>
+        <Col xl={7} lg={7} md={7}>
           <div style={{ width: "100%", display: "flex" }}>
             <div style={{ width: "25%" }}>
               <img src="desktopHome/img1.png" className={s.travimg} />

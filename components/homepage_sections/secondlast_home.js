@@ -16,7 +16,7 @@ function SecondLast() {
                 With <span className={sy.heading2lastspan}>Easycommunity</span>,
                 you get to:
                 <span>
-                  <img src="photos/camImg.png" className={sy.camImg} />
+                  <img src="desktopHome/camImg.png" className={sy.camImg} />
                 </span>
               </span>
             </div>

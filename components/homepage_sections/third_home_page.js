@@ -6,7 +6,7 @@ function Third_page() {
   return (
     <React.Fragment>
       <Row>
-        <div style={{ padding: " 5% 0" }}>
+        <div style={{ padding: " 5% 0" , maxWidth:"1400px"}}>
           <div style={{ position: "relative", textAlign: "center" }}>
             <div
               style={{ width: "53vw", textAlign: "center", margin: "0 auto" }}
@@ -35,7 +35,7 @@ function Third_page() {
           >
             <img src="desktopHome/plane.png" className={s.plane} />
             <div className={s.carddiv}>
-              <img src="photos/t1.svg" className={s.card} />
+              <img src="desktopHome/trio_1.png" className={s.card} />
               <div
                 style={{
                   display: "flex",
@@ -46,14 +46,14 @@ function Third_page() {
                   marginTop: "10px",
                 }}
               >
-                <img src="photos/tri.svg" className={s.tri} />
+                <img src="desktopHome/tri.png" className={s.tri} />
                 <div className={s.ques}>
                   <p className={s.questext}>Solo or in a group? Need advice?</p>
                 </div>
               </div>
             </div>
             <div className={s.carddiv}>
-              <img src="photos/t2.svg" className={s.card} />
+              <img src="desktopHome/trio_2.png" className={s.card} />
               <div
                 style={{
                   display: "flex",
@@ -64,7 +64,7 @@ function Third_page() {
                   marginTop: "10px",
                 }}
               >
-                <img src="photos/tri.svg" className={s.tri} />
+                <img src="desktopHome/tri.png" className={s.tri} />
                 <div className={s.ques}>
                   <p className={s.questext}>
                     Planning a trip to somewhere new?{" "}
@@ -73,7 +73,7 @@ function Third_page() {
               </div>
             </div>
             <div className={s.carddiv}>
-              <img src="photos/t3.svg" className={s.card} />
+              <img src="desktopHome/trio_3.png" className={s.card} />
               <div
                 style={{
                   display: "flex",
@@ -84,7 +84,7 @@ function Third_page() {
                   marginTop: "10px",
                 }}
               >
-                <img src="photos/tri.svg" className={s.tri} />
+                <img src="desktopHome/tri.png" className={s.tri} />
                 <div className={s.ques}>
                   <p className={s.questext}> Looking for recommendations?</p>
                 </div>
@@ -99,7 +99,7 @@ function Third_page() {
         <Col lg={6} md={6} sm={12} xs={12}>
           <Row>
             <Col>
-              <img src="photos/suitec.svg" className={s.suit}></img>
+              <img src="desktopHome/suitcase.png" className={s.suit}></img>
             </Col>
           </Row>
           <Row>
@@ -115,7 +115,7 @@ function Third_page() {
           </Row>
         </Col>
         <Col lg={6} md={6} sm={12} xs={12}>
-          <img src="photos/bigglobe.svg" className={s.globe}></img>
+          <img src="desktopHome/purpleglobe.png" className={s.globe}></img>
         </Col>
       </Row>
     </React.Fragment>

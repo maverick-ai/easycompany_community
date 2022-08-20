@@ -47,7 +47,7 @@ function First_page() {
             ></img>
           </div>
           <div style={{ textAlign: "center" }}>
-            <img src="photos/Group30.png" className={styles.mainImg}></img>
+            <img src="desktopHome/Group30.png" className={styles.mainImg}></img>
           </div>
         </Col>
       </Row>
