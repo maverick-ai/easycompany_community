@@ -32,6 +32,7 @@ function Section3Photos() {
             </div>
           </div>
           <div className={styles.carddiv}>
+             <img src="phone_assets/Section3Bag.png" className={styles.bag}/>
             <img src="phone_assets/Section3Photo3.png"/>
             <div
               className={styles.Section3PhotosTextComponent}
@@ -44,7 +45,6 @@ function Section3Photos() {
               </div>
             </div>
           </div>
-          {/* <img src="photos/bag1.png" className={styles.bag1}></img> */}
     </div>
   );
 }
