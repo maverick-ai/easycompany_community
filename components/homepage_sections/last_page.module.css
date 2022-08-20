@@ -1,0 +1,57 @@
+.headingLast {
+  display: inline-block;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(100vw * (44 / 1728));
+  line-height: 53px;
+  text-align: center;
+
+  color: #ffffff;
+}
+.pin {
+  position: absolute;
+  bottom: 0px;
+  left: calc(100vw * (-60 / 1728));
+  width: calc(100vw * (56 / 1728));
+}
+.highlightTravelComm {
+  background: linear-gradient(90deg, #e32a34 0%, #b50eae 21.41%);
+  background-clip: text;
+  color: transparent;
+
+  font-weight: 800;
+}
+.globe2 {
+  position: relative;
+  bottom: 15px;
+  left: 40px;
+  width: calc(100vw * (90 / 1728));
+}
+.JoinUs {
+  width: calc(100vw * (200 / 1728));
+  height: calc(100vw * (53 / 1728));
+
+  background: linear-gradient(
+    270deg,
+    rgba(181, 14, 174, 0.96) 2.39%,
+    #e32a34 97.18%
+  );
+  color: white;
+  font-size: calc(100vw * (25 / 1728));
+  font-weight: bold;
+  border-radius: 28px;
+  border: 0;
+}
+.lastGlobe {
+  width: calc(100vw * (1025 / 1728));
+}
+.bottomText {
+  color: white;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(100vw * (20 / 1728));
+  margin: 0 4%;
+}

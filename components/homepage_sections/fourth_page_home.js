@@ -1,5 +1,5 @@
-import { Row, Col } from "react-bootstrap";
-import s from "../../styles/page1a.module.css";
+import { Row } from "react-bootstrap";
+import s from "./fourth_page.module.css";
 import React from "react";
 
 function Fourth_page() {

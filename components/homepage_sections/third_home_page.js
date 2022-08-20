@@ -1,6 +1,5 @@
 import { Row, Col } from "react-bootstrap";
-import s from "../../styles/page1a.module.css";
-import sy from "../../styles/page1y.module.scss";
+import s from "./third_page.module.css";
 import React from "react";
 
 function Third_page() {
@@ -14,12 +13,12 @@ function Third_page() {
             >
               <span className={s.p3h}>
                 <span>
-                  <img src="photos/compass.png" className={s.compass} />
+                  <img src="desktopHome/compass.png" className={s.compass} />
                 </span>
                 Welcome to the <span className={s.love}>Most lovable</span>{" "}
                 travel
                 <span>
-                  <img src="photos/arrl.png" className={s.arrl} />
+                  <img src="desktopHome/arrl.png" className={s.arrl} />
                 </span>{" "}
                 <br />
                 community!
@@ -34,7 +33,7 @@ function Third_page() {
               position: "relative",
             }}
           >
-            <img src="photos/plane.png" className={s.plane} />
+            <img src="desktopHome/plane.png" className={s.plane} />
             <div className={s.carddiv}>
               <img src="photos/t1.svg" className={s.card} />
               <div
@@ -91,7 +90,7 @@ function Third_page() {
                 </div>
               </div>
             </div>
-            <img src="photos/bag1.png" className={s.bag1}></img>
+            <img src="desktopHome/bag1.png" className={s.bag1}></img>
           </div>
         </div>
       </Row>
@@ -100,23 +99,23 @@ function Third_page() {
         <Col lg={6} md={6} sm={12} xs={12}>
           <Row>
             <Col>
-              <img src="photos/suitec.svg" className={sy.suit}></img>
+              <img src="photos/suitec.svg" className={s.suit}></img>
             </Col>
           </Row>
           <Row>
-            <div className={sy.outer}>
-              <p className={sy.fontstyleouter}>
-                <span className={sy.fontstyleinner}>Easycommunity</span> has
+            <div className={s.outer}>
+              <p className={s.fontstyleouter}>
+                <span className={s.fontstyleinner}>Easycommunity</span> has
                 answers to all of your questions! <br />
                 And if it doesn't yet ? Well,
                 <br />
-                <span className={sy.fontstyleinner}> Just Ask!</span>
+                <span className={s.fontstyleinner}> Just Ask!</span>
               </p>
             </div>
           </Row>
         </Col>
         <Col lg={6} md={6} sm={12} xs={12}>
-          <img src="photos/bigglobe.svg" className={sy.globe}></img>
+          <img src="photos/bigglobe.svg" className={s.globe}></img>
         </Col>
       </Row>
     </React.Fragment>
