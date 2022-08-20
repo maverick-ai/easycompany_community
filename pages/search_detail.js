@@ -142,39 +142,42 @@ const Content = () => {
                 endMessage={<h4 className={styles.nopost}>......</h4>}
                 scrollableTarget="scrollableDiv"
               >
-                <Masonry className={styles.masonryGrid}>
-                  {posts.map(
-                    (
-                      {
-                        upVoteNumber,
-                        downVoteNumber,
-                        postByUser,
-                        creator_by,
-                        viewedByTheUsers,
-                        categoryOfThePost,
-                        ...data
-                      },
-                      index
-                    ) => (
-                      <div
-                        style={{
-                          padding: "0 5px",
-                          marginLeft: "auto",
-                          marginRight: "auto",
-                        }}
-                      >
-                        <SearchBox
-                          data={data}
-                          categoryOfThePost={categoryOfThePost}
-                          upVoteNumber={upVoteNumber}
-                          downVoteNumber={downVoteNumber}
-                          postByUser={postByUser}
-                          viewedByTheUsers={viewedByTheUsers}
-                        />
-                      </div>
-                    )
-                  )}
-                </Masonry>
+                <div className={styles.flexboxgrid}>
+                  <div className={styles.gridnewbox}>
+                    {" "}
+                    {posts.map(
+                      (
+                        {
+                          upVoteNumber,
+                          downVoteNumber,
+                          postByUser,
+                          creator_by,
+                          viewedByTheUsers,
+                          categoryOfThePost,
+                          ...data
+                        },
+                        index
+                      ) => (
+                        <div
+                          style={{
+                            padding: "0 5px",
+                            marginLeft: "auto",
+                            marginRight: "auto",
+                          }}
+                        >
+                          <SearchBox
+                            data={data}
+                            categoryOfThePost={categoryOfThePost}
+                            upVoteNumber={upVoteNumber}
+                            downVoteNumber={downVoteNumber}
+                            postByUser={postByUser}
+                            viewedByTheUsers={viewedByTheUsers}
+                          />
+                        </div>
+                      )
+                    )}
+                  </div>
+                </div>
               </InfiniteScroll>
             )}
           </Row>

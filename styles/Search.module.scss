@@ -10,8 +10,11 @@
   margin: 155px auto 110px;
   background-size: 100% 100%;
 }
-
-
+.gridnewbox {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .MainHeading {
   font-size: 50px;
@@ -332,27 +335,29 @@
   position: relative;
   top: -40%;
   left: -35%;
-} 
-
-.body{
-  width:100%;
-  overflow-x:hidden;
-  overflow-y:hidden;
 }
 
-@media screen and (max-width:450) {
-  .london{
+.body {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 450) {
+  .london {
     position: relative;
-     top: -40%; left: -27%!important; 
+    top: -40%;
+    left: -27% !important;
   }
-  
 }
 
-@media screen and (max-width:400) {
-  .london{
+@media screen and (max-width: 400) {
+  .london {
     position: relative;
-     top: -40%; left: -22%!important; 
-  }}
+    top: -40%;
+    left: -22% !important;
+  }
+}
 
 @media screen and (min-width: 1200px) and (max-width: 1400px) {
   .masonryGrid {
