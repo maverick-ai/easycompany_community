@@ -9,7 +9,7 @@ function LastPage() {
             <span className={sy.headingLast}>
               <span style={{ position: "relative" }}>
                 <span>
-                  <img src="photos/pin.png" className={sy.pin} />
+                  <img src="desktopHome/pin.png" className={sy.pin} />
                 </span>{" "}
                 Ready
               </span>{" "}
@@ -20,7 +20,7 @@ function LastPage() {
               <span>
                 today!
                 <span>
-                  <img src="photos/globe2.png" className={sy.globe2} />
+                  <img src="desktopHome/globe2.png" className={sy.globe2} />
                 </span>
               </span>
             </span>
@@ -33,7 +33,7 @@ function LastPage() {
         </Row>
         <Row>
           <div style={{ textAlign: "center", marginTop: "4%" }}>
-            <img src="photos/lastGlobe.png" className={sy.lastGlobe}></img>
+            <img src="desktopHome/lastGlobe.png" className={sy.lastGlobe}></img>
           </div>
         </Row>
         <Row style={{ textAlign: "center", margin: "3% 0" }}>
@@ -48,7 +48,7 @@ function LastPage() {
         </Row>
         <Row>
           <div style={{ textAlign: "center" }}>
-            <img src="photos/logoeasy.svg" />
+            <img src="desktopHome/logo.png" style={{width:"376px"}}/>
           </div>
         </Row>
   </React.Fragment>;

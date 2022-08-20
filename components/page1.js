@@ -28,7 +28,7 @@ function Page1() {
       <Row style={{ margin: "18% 0 10% 0" }}>
         <div style={{ position: "relative" }}>
           <img
-            src="photos/bgpic.svg"
+            src="desktopHome/bigpic.png"
             style={{
               width: "100%",
               position: "absolute",

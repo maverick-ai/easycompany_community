@@ -1,4 +1,4 @@
-import st from "../styles/page1a.module.css";
+import st from "./destcard.module.css";
 import { Col } from "react-bootstrap";
 function DestCard(props) {
   return (
