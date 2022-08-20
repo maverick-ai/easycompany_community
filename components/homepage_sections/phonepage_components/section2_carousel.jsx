@@ -6,12 +6,11 @@ import Marquee from "react-fast-marquee";
 function Section2Carousel() {
     return (
         <div>
-            <Marquee loop={0} gradient={false} pauseOnHover={true}>
+            <Marquee loop={0} gradient={false} >
                 <img src="phone_assets/Section21.png" className={styles.Section2AnitmationImages} />
                 <img src="phone_assets/Section22.png" className={styles.Section2AnitmationImages} />
                 <img src="phone_assets/Section23.png" className={styles.Section2AnitmationImages} />
                 <img src="phone_assets/Section24.png" className={styles.Section2AnitmationImages} />
-            
             </Marquee>
         </div>
     );
