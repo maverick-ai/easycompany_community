@@ -16,6 +16,7 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 
 const DetailedPost = (props) => {
+  console.log(props.data.creator_by.image);
   const [postComment, setpostComment] = useState(props.data.comments.comments);
   const [fullsize, setFullsize] = useState(false);
 
@@ -118,74 +119,90 @@ const DetailedPost = (props) => {
                 <div style={{ width: "10px", padding: "0px" }}></div>
                 <div style={{ display: "flex" }}>
                   <div style={{ width: "28px" }}>
-                  <img src={props.data.creator_by.image} style={{height:"28px", width:"28px",borderRadius: "50%"}} />
+                    {props.data.creator_by.image ? (
+                      <img
+                        src={props.data.creator_by.image}
+                        style={{
+                          height: "28px",
+                          width: "28px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    ) : (
+                      <img
+                        src="/anonypic.png"
+                        style={{
+                          height: "28px",
+                          width: "28px",
+                          borderRadius: "50%",
+                        }}
+                      />
+                    )}
                   </div>
                   {/* <Col lg={3} md={3} sm={4}> */}
-                  
+
                   <div className={styles.postuser}>
                     <Row>
-                  <Col lg={5} md={5} xs={12}>
-                    <div
-                      style={{
-                        width: "200px",
-                        display: "inline-block",
-                        paddingLeft: "8px",
-                      }}
-                    >
-                      <Link
-                        href={`/profile?user=${props.data.creator_by.creator_id}`}
-                      >
-                        {props.data.creator_by.first_name +
-                          " " +
-                          props.data.creator_by.last_name}
-                      </Link>
-                    </div>
-                    </Col>
-<Col lg ={3}  md={3} xs={6}>
-                    <div style={{ width: "120px" }}>
-                      <Image
-                        src="/av_timer.png"
-                        height={16}
-                        width={16}
-                        quality={100}
-                      />
-                      <span
-                        style={{
-                          marginLeft: "10px",
-                          fontSize: "16px",
-                          fontWeight: "400",
-                        }}
-                      >
-                        <p className={styles.timerP}>
-                          {`${year ? year + " years" : ""}` ||
-                            `${month ? month + " months" : ""}` ||
-                            `${newday ? newday + " days" : ""}` ||
-                            `${newhour ? newhour + " hours" : ""}` ||
-                            `${newminute ? newminute + " minutes" : ""}`}
-                        </p>
-                      </span>
-                    </div>
-                    </Col>
-                    <Col lg ={3} md={3} xs={6}>
-                    <div style={{ width: "120px" }}>
-                      <Image
-                        className={styles.eye}
-                        src="/Eye.png"
-                        height={13.75}
-                        width={18.75}
-                        quality={100}
-                      />
-                      <span
-                        style={{
-                          marginLeft: "5px",
-                          fontSize: "16px",
-                          fontWeight: "400",
-                        }}
-                      >
-                        {props.data.viewedByTheUsers} Views
-                      </span>
-                    </div>
-                    </Col>
+                      <Col lg={5} md={5} xs={12}>
+                        <div
+                          style={{
+                            width: "200px",
+                            display: "inline-block",
+                            paddingLeft: "8px",
+                          }}
+                        >
+                          <Link
+                            href={`/profile?user=${props.data.creator_by.creator_id}`}
+                          >
+                            {props.data.creator_by.first_name +
+                              " " +
+                              props.data.creator_by.last_name}
+                          </Link>
+                        </div>
+                      </Col>
+                      <Col lg={3} md={3} xs={6}>
+                        <div style={{ width: "120px" }}>
+                          <img
+                            src="/av_timer.png"
+                            style={{ width: "16px", margin: "auto 0 0 10px" }}
+                          />
+                          <span
+                            style={{
+                              marginLeft: "3px",
+                              fontSize: "16px",
+                              fontWeight: "400",
+                            }}
+                          >
+                            <p className={styles.timerP}>
+                              {`${year ? year + " years" : ""}` ||
+                                `${month ? month + " Months" : ""}` ||
+                                `${newday ? newday + " days" : ""}` ||
+                                `${newhour ? newhour + " hours" : ""}` ||
+                                `${newminute ? newminute + " minutes" : ""}`}
+                            </p>
+                          </span>
+                        </div>
+                      </Col>
+                      <Col lg={3} md={3} xs={6}>
+                        <div style={{ width: "120px" }}>
+                          <img
+                            className={styles.eye}
+                            src="/Eye.png"
+                            style={{ width: "18.75px" }}
+                          />
+                          <span
+                            style={{
+                              marginLeft: "5px",
+                              fontSize: "16px",
+                              fontWeight: "400",
+                            }}
+                          >
+                            <p className={styles.timerP}>
+                              {props.data.viewedByTheUsers} Views
+                            </p>
+                          </span>
+                        </div>
+                      </Col>
                     </Row>
                   </div>
                   {/* </Col> */}
@@ -268,20 +285,25 @@ const DetailedPost = (props) => {
                     type="text"
                     placeholder="   Add a Comment!"
                   />
-                  <div style={{ marginTop: "7px" }}>
-                    <Image
-                      onClick={() =>
-                        addpostcomment(
-                          document.getElementById("postComment").value,
-                          props.data.post_id,
-                          props.setLogin
-                        )
-                      }
-                      src="/commentArrow.png"
-                      height={25}
-                      width={25}
-                      quality={100}
-                    />
+                  <div style={{ marginLeft: "auto" }}>
+                    <div style={{ position: "relative", width: "auto" }}>
+                      <img
+                        onClick={() =>
+                          addpostcomment(
+                            document.getElementById("postComment").value,
+                            props.data.post_id,
+                            props.setLogin
+                          )
+                        }
+                        src="/commentArrow.png"
+                        style={{
+                          width: "25px",
+                          position: "absolute",
+                          top: "9px",
+                          right: "10px",
+                        }}
+                      />
+                    </div>
                   </div>
                 </div>
               </Col>
