@@ -4,17 +4,18 @@ import styles from "../../../styles/Homepage/mobileCSS/section3.module.scss";
 function Section3() {
   return (
     <div className={styles.Section3Div}>
-      <div style={{ width: "250px", textAlign: "center", margin: "0 auto" }}>
-        <div style={{ position: "relative" }}>
-          <img src="photos/compass.png" className={styles.compass} />
-          <span className={styles.p3h}>
-            Welcome to the <br />
-            <span className={styles.love}>Most lovable</span> travel
-            <br />
-            community!
-          </span>
-          <img src="photos/arrl.png" className={styles.arrl} />
-        </div>
+      <div className={styles.Section3HeadingDiv}>
+        <h2 className={styles.p3h}>
+          <img
+            src="phone_assets/Section3Compass.png"
+            className={styles.compass}
+          />
+          Welcome to the <br />
+          <span className={styles.love}>Most lovable</span> travel
+          <br />
+          community!
+          <img src="phone_assets/Section3Plane.png" className={styles.arrl} />
+        </h2>
       </div>
 
       {/* photos */}
