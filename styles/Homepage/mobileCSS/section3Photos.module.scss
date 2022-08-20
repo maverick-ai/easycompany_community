@@ -1,0 +1,59 @@
+.Section3PhotosDiv {
+  margin: 20px auto 0 auto;
+  width: 300px;
+  text-align: "center";
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.plane{
+  position: absolute;
+  left:-10vw;
+  top: 26vw;
+  width: 10vw;
+}
+
+
+.carddiv {
+  display: inline-flex;
+  position: relative;
+  flex-direction: column;
+  margin: 0 15px;
+  // width: min-content;
+  width: 22vw;
+}
+
+.Section3PhotosTextComponent{
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-self: center;
+  justify-content: center;
+  margin-top: 10px;
+  position: "relative"
+}
+.ques {
+  height: 33px;
+  width: 99%;
+  background-color: #4d4d4d;
+  border-radius: 4px;
+  padding-top: 7px;
+  position: relative;
+}
+
+.tri {
+  height: 7px;
+
+  top: 15px;
+  left: -10px;
+  position: absolute;
+}
+
+.questext {
+  color: white;
+  font-size: 9px;
+  margin-bottom: auto;
+  line-height: 10px;
+}
