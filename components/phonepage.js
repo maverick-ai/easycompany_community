@@ -10,7 +10,6 @@ import Section1 from "./homepage_sections/phonepage_components/section1";
 import Section2 from "./homepage_sections/phonepage_components/section2";
 import Section3 from "./homepage_sections/phonepage_components/section3";
 import Section4 from "./homepage_sections/phonepage_components/section4";
-import Phone4 from "./homepage_sections/phonepage_components/fourthpage_phone";
 import Phone6 from "./homepage_sections/phonepage_components/sixthpage_phone";
 import Phone7 from "./homepage_sections/phonepage_components/seventhpage_phone";
 import We_are from "./homepage_sections/phonepage_components/we_are";

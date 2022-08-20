@@ -1,31 +1,7 @@
 import React from "react";
 import styles from "../../../styles/Homepage/mobileCSS/section4.module.scss";
-import { Col, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-// function Section4() {
-//   return (
-//     <Row>
-//       <Col>
-//         <Row>
-//           <div className={styles.outer}>
-//             <p className={styles.fontstyleouter}>
-//               <span className={styles.fontstyleinner}>Easycommunity</span> has
-//               answers to all of your questions! <br />
-//               And if it doesn't yet ? Well,
-//               <br />
-//               <span className={styles.fontstyleinner}> Just Ask!</span>
-//             </p>
-//             <img src="photos/suitec.svg" className={styles.suit}></img>
-//           </div>
-//         </Row>
-//       </Col>
-//       <Col >
-//         <img src="photos/bigglobe.svg" className={styles.globe}></img>
-//       </Col>
-//     </Row>
-//   );
-// }
 
 function Section4() {
     return (
