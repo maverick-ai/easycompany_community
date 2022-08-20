@@ -48,8 +48,8 @@ const Questions = ({ questions, query }) => {
             <div style={{ margin: "15% 0", position: "relative" }}>
               <img src="/toparrw.svg" className={styles.toparrw} />
               <img
-              className={styles.ImageRenderring}
-                src="/questionsimage.svg"
+                className={styles.ImageRenderring}
+                src="/quetsionpng.png"
                 style={{ width: "99%", margin: "auto 0" }}
               />
             </div>
