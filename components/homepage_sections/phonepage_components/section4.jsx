@@ -40,7 +40,7 @@ function Section4() {
             </h2>
             </div>
             <div className={styles.Section4FlexDiv}>
-            <img src="photos/bigglobe.svg" className={styles.globe}/>
+            <img src="phone_assets/bigglobe.png" className={styles.globe}/>
             </div>
         </div>
     );
