@@ -1,27 +1,26 @@
-.heading1{
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 0px;
-
+.heading1 {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 0px;
 }
-.heading1div{
-    margin-top: 150px;
-    text-align: center;
+.heading1div {
+  margin-top: 150px;
+  text-align: center;
 }
-.search{
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 64px;
-line-height: 96px;
+.search {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 96px;
 }
-.underline{
-    position: relative;
-    top: -17px;
+.underline {
+  position: relative;
+  top: -17px;
 }
-.inputdiv{
+.inputdiv {
   display: flex;
   width: 80vw;
   max-width: 400px;
@@ -32,147 +31,136 @@ line-height: 96px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 8%;
-
 }
-.input{
-    padding-left: 25%;
+.input {
   width: 87%;
+  /* padding-left: 25%; */
+  text-align: center;
   margin-top: auto;
   margin-bottom: auto;
-  
-  
+
   background: #000000;
   height: 35px;
   border: none !important;
   outline: none;
   color: white;
 }
-.qimg{
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: 15px;
+.qimg {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 15px;
 }
 .btn {
-	background-image: linear-gradient(to right, #E32A34  0%, #B50EAE 100%);
-	border-radius: 40px;
-    box-sizing: border-box;
-	color: #ffffff;
-	display: block;
-	font: 0.8rem 'Oswald', Helvetica; /*18*/
-	height: 40px;
-    width: 135px;
-    min-width: 90px;
-	letter-spacing: 1px;
-	margin: 0 auto;
-	padding: 2px;
-	position: relative;
-	z-index: 2;
-	cursor: pointer;
-	border: none;
+  background-image: linear-gradient(to right, #e32a34 0%, #b50eae 100%);
+  border-radius: 40px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: block;
+  font: 0.8rem "Oswald", Helvetica; /*18*/
+  height: 40px;
+  width: 135px;
+  min-width: 90px;
+  letter-spacing: 1px;
+  margin: 0 auto;
+  padding: 2px;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  border: none;
 }
-.par{
-    
+.par {
+}
+.pardiv {
+  display: inline-block;
+  position: absolute;
+  right: -4px;
 
+  /* left: 40%; */
+  margin-left: auto !important;
+  margin-right: auto;
+  font-family: "Gloria Hallelujah";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
 }
-.pardiv{
-    display: inline-block;
-    position: absolute;
-    right: -4px;
-    
-    /* left: 40%; */
-    margin-left: auto !important;
-    margin-right: auto;
-    font-family: 'Gloria Hallelujah';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
+.tower {
+  width: 27px;
+  height: 60px;
+  position: absolute;
+  left: 8px;
+  top: -5px;
 }
-.tower{
-    width: 27px;
-    height: 60px;
-    position: absolute;
-    left: 8px;
-    top: -5px;
-    
-    
+.s {
+  display: inline-block;
+  position: absolute;
+  left: 35px;
 
+  font-family: "Gloria Hallelujah";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 40px;
 }
-.s{
-    display: inline-block;
-    position: absolute;
-    left: 35px;
-    
-    
-    
-    
-    font-family: 'Gloria Hallelujah';
-font-style: normal;
-font-weight: 400;
-font-size: 40px;
+.paris {
+  position: absolute;
+  bottom: 370px;
+  text-align: center;
+  left: 50%;
 }
-.paris{
-    position: absolute;
-    bottom: 370px;
-    text-align: center;
-    left:50%;
-   
-}
-.big1{
-    width: 100%;
-    justify-content: center;
+.big1 {
+  width: 100%;
+  justify-content: center;
 }
 .london {
-    transform: rotate(-50deg) !important;
-    font-family: "Gloria Hallelujah", cursive !important;
-    position: absolute;
-    bottom: 240px;
-    left: -100px;
-  }
-  .grad{
-    background: linear-gradient(90deg, #E32A34 0%, #B50EAE 100%);
-    background-image: linear-gradient(180deg,
-        #b50eae 0%,
-        #e32a34 100%,
-        #e32a34 100%,
-      )!important;
-      z-index: 10 !important;
-  }
-  .rome{
-    transform: rotate(45deg) !important;
-    font-family: "Gloria Hallelujah", cursive !important;
-    position: absolute;
-    right: -90px;
-    bottom:240px;
-  }
-  .dreamt{
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 30px;
-position: relative;
-top:10px;
+  transform: rotate(-50deg) !important;
+  font-family: "Gloria Hallelujah", cursive !important;
+  position: absolute;
+  bottom: 240px;
+  left: -100px;
+}
+.grad {
+  background: linear-gradient(90deg, #e32a34 0%, #b50eae 100%);
+  background-image: linear-gradient(
+    180deg,
+    #b50eae 0%,
+    #e32a34 100%,
+    #e32a34 100%
+  ) !important;
+  z-index: 10 !important;
+}
+.rome {
+  transform: rotate(45deg) !important;
+  font-family: "Gloria Hallelujah", cursive !important;
+  position: absolute;
+  right: -90px;
+  bottom: 240px;
+}
+.dreamt {
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  position: relative;
+  top: 10px;
+}
+.crown {
+  position: absolute;
 
-  }
-  .crown{
-    position:absolute;
-    
-    bottom: 290px;
-    left:-60px;
-
-  }
-  .romec{
-    position: absolute;
-    bottom: 250px;
-    right:-80px;
-  }
-  .arrowr{
-    position: absolute;
-    bottom: 130px;
-    left: 180px;
-  }
-  .arrowl{
-    position: absolute;
-    bottom: 44px;
-    right:180px;
-  }
+  bottom: 290px;
+  left: -60px;
+}
+.romec {
+  position: absolute;
+  bottom: 250px;
+  right: -80px;
+}
+.arrowr {
+  position: absolute;
+  bottom: 130px;
+  left: 180px;
+}
+.arrowl {
+  position: absolute;
+  bottom: 44px;
+  right: 180px;
+}
