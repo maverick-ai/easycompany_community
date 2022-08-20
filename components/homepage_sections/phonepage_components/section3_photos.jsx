@@ -13,7 +13,7 @@ function Section3Photos() {
                 <div className={styles.ques}>
                 <img src="phone_assets/tri.svg" className={styles.tri} />
                   <p className={styles.questext}>
-                    Solo or in a group? Need advice?
+                    Solo or Budget?Need advice
                   </p>
               </div>
             </div>
@@ -26,7 +26,7 @@ function Section3Photos() {
                 <div className={styles.ques}>
                 <img src="phone_assets/tri.svg" className={styles.tri} />
                   <p className={styles.questext}>
-                  Planning a trip to somewhere new?
+                  Planning a trip to somewhere?
                   </p>
               </div>
             </div>
@@ -40,7 +40,7 @@ function Section3Photos() {
                 <div className={styles.ques}>
                 <img src="phone_assets/tri.svg" className={styles.tri} />
                   <p className={styles.questext}>
-                  Looking for recommendations?
+                  Looking for help, info, review ?
                   </p>
               </div>
             </div>
