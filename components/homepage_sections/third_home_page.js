@@ -9,7 +9,7 @@ function Third_page() {
         <div style={{ padding: " 5% 0" , maxWidth:"1400px"}}>
           <div style={{ position: "relative", textAlign: "center" }}>
             <div
-              style={{ width: "53vw", textAlign: "center", margin: "0 auto" }}
+              style={{ width: "auto", textAlign: "center", margin: "0 auto" }}
             >
               <span className={s.p3h}>
                 <span>

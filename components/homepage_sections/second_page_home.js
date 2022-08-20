@@ -25,16 +25,16 @@ function Second_page() {
         <Col xl={7} lg={7} md={7}>
           <div style={{ width: "100%", display: "flex" }}>
             <div style={{ width: "25%" }}>
-              <img src="desktopHome/img1.png" className={s.travimg} />
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/Img1.png" className={s.travimg} />
             </div>
             <div style={{ width: "25%" }}>
-              <img src="desktopHome/img2.png" className={s.travimg} />
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/Img2.png" className={s.travimg} />
             </div>
             <div style={{ width: "25%" }}>
-              <img src="desktopHome/img3.png" className={s.travimg} />
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/Img3.png" className={s.travimg} />
             </div>
             <div style={{ width: "25%" }}>
-              <img src="desktopHome/img4.png" className={s.travimg} />
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/Img4.png" className={s.travimg} />
             </div>
           </div>
         </Col>

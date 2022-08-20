@@ -106,3 +106,24 @@
     margin: 0 auto;
   }
 }
+@media screen and (min-width: 1526px) {
+  .atr {
+    position: relative;
+    left: 90%;
+    margin-top: 90px;
+    width: 50px;
+  }
+  .cscscsc {
+    position: relative;
+    left: 80%;
+    margin-top: 110px;
+    width: 144px;
+  }
+  .join{
+    width: 232px;
+    height: 48px;
+  }
+  .joinText{
+    font-size: 17px;
+  }
+}

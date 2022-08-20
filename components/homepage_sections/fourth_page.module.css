@@ -66,3 +66,22 @@
   position: absolute;
   right: 0;
 }
+@media screen and (min-width: 1526px) {
+  .mapp {
+    width: 99.5px;
+  }
+  .love1 {
+    font-size: 44px;
+  }
+  .arorrr {
+    height: 239px;
+    left: 300px;
+    top: -130px;
+  }
+  .whop {
+    line-height: 32px;
+  }
+  .maop {
+    height: 135px;
+  }
+}

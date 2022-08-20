@@ -44,3 +44,11 @@
     height: 180px;
   }
 }
+@media screen and (min-width: 1526px) {
+  .p3h {
+    font-size: 32px;
+  }
+  .p2{
+    font-size: 25px;
+  }
+}
