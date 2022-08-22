@@ -18,9 +18,10 @@
   font-size: calc(0.01719 * (100vw) + 20px);
 }
 .arorrr {
-  height: calc(100vw * (243 / 1560));
-  left: calc(100% * (340 / 1560));
-  top: calc(100vw * (-130 / 1560));
+  width: calc(100vw * (246 / 1726));
+  height: calc(100vw*(216/1726));
+  left: calc(100% * (400 / 1560));
+  top: calc(100vw * (-100 / 1560));
 }
 @media screen and (max-width: 1402px) {
   .arorrr {
@@ -74,9 +75,10 @@
     font-size: 44px;
   }
   .arorrr {
-    height: 239px;
-    left: 300px;
-    top: -130px;
+    height: 192px;
+    width: 219px;
+    left: 340px;
+    top: -100px;
   }
   .whop {
     line-height: 32px;

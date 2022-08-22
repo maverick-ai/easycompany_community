@@ -4,7 +4,7 @@ import sy from "./second_last.module.css";
 
 function SecondLast() {
   return( <React.Fragment>
-    <Row style={{ margin: " 5% 0 0 0" }}>
+    <Row style={{ margin: " 15% 0 0 0" }}>
           <div>
             <div
               style={{

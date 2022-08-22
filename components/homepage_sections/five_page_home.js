@@ -59,7 +59,7 @@ function Five_page() {
       <div style={{ position: "absolute" }}>
         <img src="desktopHome/sunb.png" className={sy.sunb}></img>
       </div>
-      <Row style={{ height: "70vh" }}>
+      <Row>
         <Col lg={7} xs={7}>
           <div className={sy.white}>
             <p className={sy.whitep}>
