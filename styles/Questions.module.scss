@@ -15,12 +15,12 @@
   border-radius: 8px;
   background-color: #121212;
 }
-.ImageRenderring{
-  image-rendering: -moz-crisp-edges;         /* Firefox */
-    image-rendering:   -o-crisp-edges;         /* Opera */
-    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;  
+.ImageRenderring {
+  image-rendering: -moz-crisp-edges; /* Firefox */
+  image-rendering: -o-crisp-edges; /* Opera */
+  image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
 }
 .headingtop {
   font-weight: 700;
@@ -380,11 +380,13 @@
   position: absolute;
   top: -10px;
   right: -20px;
+  width: 109px;
 }
 .camera {
   position: absolute;
   bottom: -20px;
   right: -15px;
+  width: 113px;
 }
 @media screen and (max-width: "1400px") {
   .upar {

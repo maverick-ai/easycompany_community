@@ -7,10 +7,9 @@ import { sendReq } from "../components/requests";
 
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/dist/client/image";
-import Masonry from "react-masonry-component";
+
 import SearchBox from "../components/searchbox";
 import { useRouter } from "next/router";
-import Link from "next/dist/client/link";
 
 // var page = 1;
 
@@ -22,18 +21,6 @@ const Content = () => {
   const [query, setQuery] = useState(router.query.search);
 
   const [page, setPage] = useState(1);
-
-  const enterExitStyles = [
-    "Simple",
-    "Skew",
-    "Newspaper",
-    "Fold Up",
-    "From Center",
-    "From Left to Right",
-    "From Top",
-    "From Bottom",
-  ];
-  const gridEnterExitStyle = enterExitStyles[7];
 
   const getMorePost = async () => {
     const newPosts = await sendReq(
@@ -85,7 +72,30 @@ const Content = () => {
         <Container>
           <Row>
             <div className={styles.questionsList}>
-              <Col lg={{ span: 6, offset: 3 }}>
+              <div className={styles.searchbox}>
+                <div style={{ position: "relative" }}>
+                  <input
+                    className={styles.searchInput}
+                    id="query"
+                    type="text"
+                    autoComplete="query"
+                    value={query}
+                    onChange={onChangeHandler}
+                    required
+                  />
+                  <img
+                    src="/Vector.png"
+                    style={{
+                      height: "18.76px",
+                      position: "absolute",
+                      right: "18px",
+                      top: "30px",
+                    }}
+                    onClick={newSearch}
+                  />
+                </div>
+              </div>
+              {/* <Col lg={{ span: 6, offset: 3 }}>
                 <div className={styles.searchbox}>
                   <Row>
                     <Col lg={9} md={9} sm={9} xs={9}>
@@ -112,7 +122,7 @@ const Content = () => {
                     </Col>
                   </Row>
                 </div>
-              </Col>
+              </Col> */}
             </div>
           </Row>
         </Container>

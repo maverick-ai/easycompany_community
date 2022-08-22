@@ -57,12 +57,12 @@ const Questions = ({ questions, query }) => {
           <Col>
             <div>
               <div style={{ position: "relative" }}>
-                <img src="/upar.svg" className={styles.upar} />
+                <img src="/notcam.png" className={styles.upar} />
                 <div className={styles.phonepicdad}>
-                  <img src="/phonepic.svg" className={styles.phonepic} />
+                  <img src="/phonephoto.png" className={styles.phonepic} />
                 </div>
 
-                <img src="/camera.svg" className={styles.camera} />
+                <img src="/cam.png" className={styles.camera} />
               </div>
             </div>
           </Col>
