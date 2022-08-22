@@ -111,6 +111,11 @@
   border: none;
   outline: none;
 }
+@media screen and (min-width: 991px) {
+  .searchbox {
+    width: 700px;
+  }
+}
 
 .searchInput1 {
   width: 80%;
