@@ -199,25 +199,24 @@ const Content = () => {
 
 export default Content;
 
-// export async function getServerSideProps({ query }) {
-//   if (!query.page) query.page = 1;
-//   try {
-//     const searchResult = await sendReq(
-//       SearchURL + `?search_query=${query}&page=${1}`
-//     );
-//   } catch (err) {
-//     return {
-//       redirect: {
-//         destination: "/404",
-//         permanent: false,
-//       },
-//     };
-//   }
-
-//   return {
-//     props: {
-//       question: searchResult.results,
-//       query,
-//     },
-//   };
-// }
+export async function getServerSideProps({ query }) {
+  if (!query.page) query.page = 1;
+  try {
+    const searchResult = await sendReq(
+      SearchURL + `?search_query=${query}&page=${1}`
+    );
+    return{
+      props: {
+        question: searchResult.results,
+        query,
+      },
+    }
+  } catch (err) {
+    return {
+      redirect: {
+        destination: "/404",
+        permanent: false,
+      },
+    };
+  }
+}
