@@ -163,24 +163,6 @@ const Solution = (props) => {
                       </p>
                     </span>
                   </div>
-                  <div style={{ width: "91px" }}>
-                    <Image
-                      className={styles.eye}
-                      src="/Eye.png"
-                      height={13.75}
-                      width={18.75}
-                      quality={100}
-                    />
-                    <span
-                      style={{
-                        marginLeft: "5px",
-                        fontSize: "16px",
-                        fontWeight: "400",
-                      }}
-                    >
-                      Views
-                    </span>
-                  </div>
                 </div>
               </div>
             </Row>

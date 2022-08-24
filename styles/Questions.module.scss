@@ -222,10 +222,14 @@
   width: 400px;
   height: 316px;
   flex-direction: column;
+  
   // @media (max-width: 724px) {
   //   align-items: flex-start;
   //   flex-direction: column;
   // }
+}
+.wrapper:hover{
+  cursor: pointer;
 }
 @media only screen and (max-width: 410px) {
   .wrapper {

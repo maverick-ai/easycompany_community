@@ -31,6 +31,8 @@ const Post = ({ post, answers, solnComments, query }) => {
   useEffect(() => {
     window.scroll.top
   }, []);
+  console.log("No Mikey No!");
+  console.log(post);
 
   // TS code(converted to JS) for image save
 
@@ -72,12 +74,12 @@ const Post = ({ post, answers, solnComments, query }) => {
           <div className="answers-container">
             <Container>
               <Col lg={{ span: 8, offset: 1 }}>
-                <h2 className={styles.answerTitle}>Answers</h2>
+                <h2 className={styles.answerTitle}>{answers.count} Answers</h2>
               </Col>
             </Container>
             <Container>
-              <Col lg={{ span: 8, offset: 1 }}>
-                {!answers.count && <h2>No answers found</h2>}
+              <Col style={{textAlign:"center"}} lg={{ offset: 1 }}>
+                {!answers.count && <img style={{width:"40%", marginBottom:"50px"}} src="/noanswer.png"/>}
               </Col>
               {answers.count > 0 && (
                 <div className="post-answers">
@@ -94,6 +96,11 @@ const Post = ({ post, answers, solnComments, query }) => {
                   ))}
                 </div>
               )}
+            </Container>
+            <Container>
+            <Col lg={{ span: 10, offset: 1 }} style={{marginTop:"20px", marginBottom:"30px"}}>
+              <h2>Do you know the answer to this questions? {post.creator_by.first_name} needs your help!</h2>
+            </Col>
             </Container>
             <Container>
               <Col lg={{ span: 10, offset: 1 }}>

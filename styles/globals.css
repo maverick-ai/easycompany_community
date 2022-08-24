@@ -136,7 +136,7 @@ a:hover {
 }
 
 .pagination a:hover:not(.active) {
-  background-color: #ddd;
+  /* background-color: #ddd; */
   border-radius: 100%;
 }
 .pagination-container {
