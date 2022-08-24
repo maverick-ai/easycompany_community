@@ -42,6 +42,8 @@ const PostComment = (props) => {
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
+  
+  let newminute = minute - hours * 60;
 
   return (
     <div className="row post-comment">

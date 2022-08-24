@@ -74,13 +74,13 @@ function Five_page() {
         <Col>
           <div>
             <div style={{ position: "relative" }}>
-              <img src="desktopHome/polar1.png" className={sy.polar1}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/polar1.png" className={sy.polar1}></img>
 
-              <img src="desktopHome/polar2.png" className={sy.polar2}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/polar2.png" className={sy.polar2}></img>
 
-              <img src="desktopHome/polar3.png" className={sy.polar3}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/polar3.png" className={sy.polar3}></img>
 
-              <img src="desktopHome/polar4.png" className={sy.polar4}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/polar4.png" className={sy.polar4}></img>
 
               <img src="desktopHome/globe.png" className={sy.globe1}></img>
 

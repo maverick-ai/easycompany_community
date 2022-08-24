@@ -58,6 +58,8 @@ const Solution = (props) => {
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
+  
+  let newminute = minute - hours * 60;
 
   const acceptsoln = async (id) => {
     const res = await sendReq(`${AcceptSolnURL}${id}/`, document.cookie, "PUT");

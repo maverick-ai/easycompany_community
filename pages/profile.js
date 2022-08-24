@@ -66,11 +66,11 @@ const Profile = ({ userData, query, login }) => {
           {/* <Col lg={{ span: 1 }}></Col> */}
 
           <div className={styles.imgBorder}>
-            <img src={userData.image} className={styles.profileImg} />
+            <img src={userData.image || "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="} className={styles.profileImg} />
           </div>
 
           <Col lg={8}>
-            <ProfileHead userData={userData} dateJoined={dateJoined} />
+            <ProfileHead userData={userData} dateJoined={dateJoined} lastSeen={lastSeen}/>
           </Col>
         </Row>
 
@@ -207,6 +207,8 @@ export async function getServerSideProps({ query, req }) {
       };
     }
   }
+  console.log("trytrytry");
+  console.log(userData);
   return {
     props: {
       userData,
