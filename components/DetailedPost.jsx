@@ -164,7 +164,7 @@ const DetailedPost = (props) => {
                         <div style={{ width: "120px" }}>
                           <img
                             src="/av_timer.png"
-                            style={{ width: "16px", margin: "auto 0 0 10px" }}
+                            style={{ width: "16px", margin: "auto 0 0 7.7px" }}
                           />
                           <span
                             style={{

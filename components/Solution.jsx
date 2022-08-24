@@ -112,7 +112,14 @@ const Solution = (props) => {
               <div style={{ width: "10px", padding: "0px" }}></div>
               <div style={{ display: "flex" }}>
                 <div style={{ width: "28px" }}>
-                <img src={props.solution.creator_by.image} style={{height:"28px", width:"28px",borderRadius: "50%"}} />
+                  <img
+                    src={props.solution.creator_by.image}
+                    style={{
+                      height: "28px",
+                      width: "28px",
+                      borderRadius: "50%",
+                    }}
+                  />
                 </div>
                 {/* <Col lg={2} md={3} sm={4}> */}
                 <div className={styles.postuser}>
@@ -233,7 +240,7 @@ const Solution = (props) => {
                   type="text"
                   placeholder="   Add a Comment!"
                 />
-                <div style={{ marginTop: "7px" }}>
+                {/* <div style={{ marginTop: "7px" }}>
                   <Image
                     onClick={() =>
                       addsolncomment(
@@ -249,6 +256,28 @@ const Solution = (props) => {
                     width={25}
                     quality={100}
                   />
+                </div> */}
+                <div style={{ marginLeft: "auto" }}>
+                  <div style={{ position: "relative", width: "auto" }}>
+                    <img
+                      onClick={() =>
+                        addpostcomment(
+                          document.getElementById(
+                            `solnComment${props.solution.id}`
+                          ).value,
+                          props.solution.id,
+                          props.setLogin
+                        )
+                      }
+                      src="/commentArrow.png"
+                      style={{
+                        width: "25px",
+                        position: "absolute",
+                        top: "9px",
+                        right: "10px",
+                      }}
+                    />
+                  </div>
                 </div>
               </div>
             </Col>
