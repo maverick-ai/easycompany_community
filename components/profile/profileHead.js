@@ -41,7 +41,7 @@ function ProfileHead(props) {
               </div>
 
               <div style={{ marginBottom: "3px" }}>
-                <span>member since may 10th</span>
+                <span>{props.lastSeen}</span>
               </div>
             </div>
           </Col>
