@@ -7,8 +7,8 @@ function Second_page() {
     <React.Fragment>
       <Row>
         <Col xl={5} lg={5} md={5}>
-          <div style = {{}}>
-          <div>
+          <div style = {{display: 'flex', alignItems: 'center',height: '100%', marginTop: '1rem'}}>
+          <div style = {{width: '86%'}}>
             <span className={s.p3h}>
               Simplify your <span className={s.love}>travel</span> like <br />{" "}
               never before.

@@ -10,7 +10,7 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: calc(100vw * (35 / 1728));
+  font-size: 2.05rem;
   line-height: 53px;
 
   color: #ffffff;
@@ -34,7 +34,7 @@
   /*background-color: linear-gradient(180deg, #e32a34 0%, #b50eae 21.41%);*/
   list-style-type: none;
   display: flex;
-  font-size: calc(100vw * (30 / 1768));
+  font-size: 1.3rem;
 
   /* background-image: url('/Users/aryankeshri/Documents/easyCompany/newComm/community/public/bullets.png'); */
 }

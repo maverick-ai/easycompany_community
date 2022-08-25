@@ -2,25 +2,27 @@
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 55px;
+  font-size: 3rem;
+  line-height: 65px;
   text-transform: uppercase;
-
   color: #ffffff;
 }
 
-.cscscsc {
+.bigArrow {
   position: relative;
-  left: 80%;
+  left: 95%;
   margin-top: 110px;
   width: calc(100vw * (162 / 1728));
+  max-width: 115px;
 }
 
 .atr {
   position: relative;
   left: 90%;
+  top: -40px;
   margin-top: 90px;
   width: calc(100vw * (56 / 1728));
+  max-width: 50px;
 }
 
 .answers {
@@ -85,7 +87,7 @@
   height: auto;
   font-family: "Inter";
   font-weight: 800 !important;
-  font-size: calc(100vw * (18 / 1728));
+  font-size: 0.8rem;
   line-height: 142.5%;
   /* or 26px */
 
