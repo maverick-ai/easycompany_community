@@ -14,6 +14,7 @@ function Page1() {
   return (
     <React.Fragment>
       <Container>
+        <div style = {{maxWidth: '1366px'}}>
         <First_page />
         {/* -------------------------------------------second page ----------------------------------------------------- */}
         <Second_page />
@@ -24,6 +25,7 @@ function Page1() {
         {/* we are community */}
 
         <Sixth_page />
+        </div>
       </Container>
       <Row style={{ margin: "18% 0 10% 0" }}>
         <div style={{ position: "relative" }}>
@@ -40,9 +42,11 @@ function Page1() {
         </div>
       </Row>
       <Container>
+        <div style = {{maxWidth: '1366px'}}>
         <Five_page />
         <SecondLast />
         <LastPage />
+        </div>
       </Container>
     </React.Fragment>
   );
