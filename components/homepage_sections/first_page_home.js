@@ -5,7 +5,7 @@ import React from "react";
 function First_page() {
   return (
     <React.Fragment>
-      <Row style={{marginBottom:"20px"}}>
+      <Row style={{marginBottom:"50px"}}>
         <Col lg={6}>
           <div>
             <img src="desktopHome/cscscsc.png" className={styles.cscscsc}></img>

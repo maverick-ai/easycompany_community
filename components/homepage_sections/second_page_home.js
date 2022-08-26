@@ -7,6 +7,7 @@ function Second_page() {
     <React.Fragment>
       <Row>
         <Col xl={5} lg={5} md={5}>
+          <div style = {{}}>
           <div>
             <span className={s.p3h}>
               Simplify your <span className={s.love}>travel</span> like <br />{" "}
@@ -20,6 +21,7 @@ function Second_page() {
                 for your hostel stay in New Zealand.
               </p>
             </div>
+          </div>
           </div>
         </Col>
         <Col xl={7} lg={7} md={7}>
