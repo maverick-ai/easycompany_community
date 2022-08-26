@@ -9,19 +9,15 @@ import { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 
 const PostComment = (props) => {
-  const [winWidth, setWinWidth] = useState();
+  const [winWidth, setWinWidth] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth <= 1200) {
       setWinWidth(true);
-    } else {
-      setWinWidth(false);
     }
     window.addEventListener("resize", () => {
       if (window.innerWidth <= 1200) {
         setWinWidth(true);
-      } else {
-        setWinWidth(false);
       }
     });
   }, []);
@@ -42,7 +38,7 @@ const PostComment = (props) => {
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
-  
+
   let newminute = minute - hours * 60;
 
   return (
@@ -60,7 +56,7 @@ const PostComment = (props) => {
                     width={28}
                     quality={100}
                   />
-                  <Col lg={3} md={4} sm={4}>
+                  <Col>
                     <div className={Styles.userName}>
                       <Link
                         href={`/profile?user=${props.comment.creator_by.creator_id}`}
@@ -71,7 +67,20 @@ const PostComment = (props) => {
                       </Link>
                     </div>
                   </Col>
-                  <Col lg={3} md={3} sm={4}>
+                </Row>
+                <p style={{ marginTop: "10px" }}>
+                  {props.comment.commentByUser}
+                </p>
+                <Row>
+                  <Col
+                    lg={{ span: 3, offset: 10 }}
+                    md={{ span: 3, offset: 10 }}
+                    sm={{ span: 3, offset: 9 }}
+                  >
+                    <img
+                      src="/av_timer.png"
+                      style={{ width: "14px"}}
+                    />
                     <p className={Styles.timerP}>
                       {`${year ? year + " years" : ""}` ||
                         `${month ? month + " months" : ""}` ||
@@ -81,9 +90,6 @@ const PostComment = (props) => {
                     </p>
                   </Col>
                 </Row>
-                <p style={{ marginTop: "10px" }}>
-                  {props.comment.commentByUser}
-                </p>
               </div>
             </Col>
             <Col lg={3}>
@@ -107,7 +113,7 @@ const PostComment = (props) => {
                     width={28}
                     quality={100}
                   />
-                  <Col lg={3} md={3} sm={4}>
+                  <Col>
                     <div className={Styles.userName}>
                       <Link
                         href={`/profile?user=${props.comment.creator_by.creator_id}`}
@@ -118,17 +124,29 @@ const PostComment = (props) => {
                       </Link>
                     </div>
                   </Col>
-                  <Col lg={3} md={3} sm={4}>
-                    <p className={Styles.timerP}>
-                      {`${month ? month + " months" : ""}` ||
-                        `${newday ? newday + " days" : ""}` ||
-                        ` ${newhour} hours`}
-                    </p>
-                  </Col>
                 </Row>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
+                <Row>
+                  <Col
+                    lg={{ span: 3, offset: 10 }}
+                    md={{ span: 3, offset: 10 }}
+                    sm={{ span: 3, offset: 9 }}
+                  >
+                    <img
+                      src="/av_timer.png"
+                      style={{ width: "14px"}}
+                    />
+                    <p className={Styles.timerP}>
+                      {`${year ? year + " years" : ""}` ||
+                        `${month ? month + " months" : ""}` ||
+                        `${newday ? newday + " days" : ""}` ||
+                        `${newhour ? newhour + " hours" : ""}` ||
+                        `${newminute ? newminute + " minutes" : ""}`}
+                    </p>
+                  </Col>
+                </Row>
               </div>
             </Col>
             <Col lg={3}></Col>
@@ -148,7 +166,7 @@ const PostComment = (props) => {
                     width={40}
                     quality={100}
                   />
-                  <Col lg={3} md={3} sm={4}>
+                  <Col>
                     <div className={Styles.userName}>
                       <Link
                         href={`/profile?user=${props.comment.creator_by.creator_id}`}
@@ -159,17 +177,30 @@ const PostComment = (props) => {
                       </Link>
                     </div>
                   </Col>
-                  <Col lg={3} md={3} sm={4}>
-                    <p className={Styles.timerP}>
-                      {`${month ? month + " months" : ""}` ||
-                        `${newday ? newday + " days" : ""}` ||
-                        ` ${newhour} hours`}
-                    </p>
-                  </Col>
                 </Row>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
+                <Row>
+                  <Col
+                    lg={{ span: 3, offset: 10 }}
+                    md={{ span: 3, offset: 10 }}
+                    sm={{ span: 3, offset: 9 }}
+                    xs={{ span: 5, offset: 8 }}
+                  >
+                    <img
+                      src="/av_timer.png"
+                      style={{ width: "14px" }}
+                    />
+                    <p className={Styles.timerP}>
+                      {`${year ? year + " years" : ""}` ||
+                        `${month ? month + " months" : ""}` ||
+                        `${newday ? newday + " days" : ""}` ||
+                        `${newhour ? newhour + " hours" : ""}` ||
+                        `${newminute ? newminute + " minutes" : ""}`}
+                    </p>
+                  </Col>
+                </Row>
               </div>
             </Col>
           </Row>
@@ -178,6 +209,5 @@ const PostComment = (props) => {
     </div>
   );
 };
-
 
 export default PostComment;

@@ -19,8 +19,22 @@ const DetailedPost = (props) => {
   console.log(props.data.creator_by.image);
   const [postComment, setpostComment] = useState(props.data.comments.comments);
   const [fullsize, setFullsize] = useState(false);
+  const [winWidth, setWinWidth] = useState(false);
 
-  const [winWidth, setWinWidth] = useState();
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setWinWidth(true);
+    } else {
+      setWinWidth(false);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        setWinWidth(true);
+      } else {
+        setWinWidth(false);
+      }
+    });
+  }, []);
 
   function onclickhandler() {
     if (!fullsize) setFullsize(true);
@@ -35,7 +49,6 @@ const DetailedPost = (props) => {
   const DateB = new Date();
 
   var finalFlash = DateB - DateA;
-  console.log(finalFlash, "--------------->>>>>>>>>>>");
 
   // console.log(newStr);
   let minute = Math.floor(finalFlash / 60000);
@@ -46,7 +59,7 @@ const DetailedPost = (props) => {
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
-  
+
   let newminute = minute - hours * 60;
 
   const getnewpostcomments = async (id, i) => {
@@ -60,113 +73,248 @@ const DetailedPost = (props) => {
       setpostComment((old) => [...old, ...newComments.results]);
     }
   };
-  console.log("-------------");
-  console.log(props.data);
-
-  //   const renderers = {
-  //     //This custom renderer changes how images are rendered
-  //     //we use it to constrain the max width of an image to its container
-  //     image: ({
-  //         alt,
-  //         src,
-  //         title,
-  //     }) => (
-  //         <img
-  //             alt={alt}
-  //             src={src}
-  //             title={title}
-  //             style={{ maxWidth: 100 }}  />
-  //     ),
-  // };
 
   return (
     <div className="post-content">
       <Container>
-        <Container>
-          <Row>
-            <Col lg={1} md={2} sm={2} xs={2}>
-              <div style={{ height: "45px", width: "10px" }}></div>
-              <Image
-                className={
-                  props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon
-                }
-                onClick={() =>
-                  sendVote(UpVotePostURL, props.data.post_id, props.setLogin)
-                }
-                alt="logo"
-                src="/upVote.png"
-                height={33}
-                width={33}
-                quality={100}
-              />
-              <p className={styles.voteText}>
-                {props.data.upVoteNumber - props.data.downVoteNumber}
-              </p>
-              <Image
-                className={
-                  props.data.downvoted ? styles.downVotedIcon : styles.VoteIcon
-                }
-                onClick={() =>
-                  sendVote(DownVotePostURL, props.data.post_id, props.setLogin)
-                }
-                alt="logo"
-                src="/downVote.png"
-                height={33}
-                width={33}
-                quality={100}
-              />
-            </Col>
-            <Col lg={11} md={10} sm={10} xs={10}>
-              <Row className={styles.toprow}>
-                <div style={{ width: "10px", padding: "0px" }}></div>
-                <div style={{ display: "flex" }}>
-                  <div style={{ width: "28px" }}>
-                    {props.data.creator_by.image ? (
-                      <img
-                        src={props.data.creator_by.image}
-                        style={{
-                          height: "28px",
-                          width: "28px",
-                          borderRadius: "50%",
-                        }}
-                      />
-                    ) : (
-                      <img
-                        src="/anonypic.png"
-                        style={{
-                          height: "28px",
-                          width: "28px",
-                          borderRadius: "50%",
-                        }}
-                      />
-                    )}
-                  </div>
-                  {/* <Col lg={3} md={3} sm={4}> */}
+        {!winWidth && (
+          <Container>
+            <Row>
+              <Col lg={1} md={2} sm={2} xs={2}>
+                <div style={{ height: "45px", width: "10px" }}></div>
+                <Image
+                  className={
+                    props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(UpVotePostURL, props.data.post_id, props.setLogin)
+                  }
+                  alt="logo"
+                  src="/upVote.png"
+                  height={33}
+                  width={33}
+                  quality={100}
+                />
+                <p className={styles.voteText}>
+                  {props.data.upVoteNumber - props.data.downVoteNumber}
+                </p>
+                <Image
+                  className={
+                    props.data.downvoted
+                      ? styles.downVotedIcon
+                      : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(
+                      DownVotePostURL,
+                      props.data.post_id,
+                      props.setLogin
+                    )
+                  }
+                  alt="logo"
+                  src="/downVote.png"
+                  height={33}
+                  width={33}
+                  quality={100}
+                />
+              </Col>
+              <Col lg={11} md={10} sm={10} xs={10}>
+                <Row className={styles.toprow}>
+                  <div style={{ width: "10px", padding: "0px" }}></div>
+                  <div style={{ display: "flex" }}>
+                    <div style={{ width: "28px" }}>
+                      {props.data.creator_by.image ? (
+                        <img
+                          src={props.data.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src="/anonypic.png"
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      )}
+                    </div>
+                    {/* <Col lg={3} md={3} sm={4}> */}
 
+                    <div className={styles.postuser}>
+                      <Row>
+                        <Col lg={5} md={5} xs={12}>
+                          <div
+                            style={{
+                              width: "200px",
+                              display: "inline-block",
+                              paddingLeft: "8px",
+                            }}
+                          >
+                            <Link
+                              href={`/profile?user=${props.data.creator_by.creator_id}`}
+                            >
+                              {props.data.creator_by.first_name +
+                                " " +
+                                props.data.creator_by.last_name}
+                            </Link>
+                          </div>
+                        </Col>
+                        <Col lg={3} md={3} xs={6}>
+                          <div style={{ width: "120px" }}>
+                            <img
+                              src="/av_timer.png"
+                              style={{
+                                width: "16px",
+                                margin: "auto 0 0 7.7px",
+                              }}
+                            />
+                            <span
+                              style={{
+                                marginLeft: "3px",
+                                fontSize: "16px",
+                                fontWeight: "400",
+                              }}
+                            >
+                              <p className={styles.timerP}>
+                                {`${year ? year + " years" : ""}` ||
+                                  `${month ? month + " Months" : ""}` ||
+                                  `${newday ? newday + " days" : ""}` ||
+                                  `${newhour ? newhour + " hours" : ""}` ||
+                                  `${newminute ? newminute + " minutes" : ""}`}
+                              </p>
+                            </span>
+                          </div>
+                        </Col>
+                        <Col lg={3} md={3} xs={6}>
+                          <div style={{ width: "120px" }}>
+                            <img
+                              className={styles.eye}
+                              src="/Eye.png"
+                              style={{ width: "18.75px" }}
+                            />
+                            <span
+                              style={{
+                                marginLeft: "5px",
+                                fontSize: "16px",
+                                fontWeight: "400",
+                              }}
+                            >
+                              <p className={styles.timerP}>
+                                {props.data.viewedByTheUsers} Views
+                              </p>
+                            </span>
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                    {/* </Col> */}
+                    {/* <Col lg={1} md={3} sm={4} className={styles.eye}> */}
+
+                    {/* </Col> */}
+                  </div>
+                </Row>
+                <Row>
+                  <h1 className={styles.posttitle}>{props.data.title}</h1>
+                </Row>
+                <Row>
+                  <ReactMarkdown
+                    className={styles.postbody}
+                    children={props.data.postByUser}
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      img: ({ node, ...props }) =>
+                        fullsize ? (
+                          <div className={styles.modal}>
+                            <span className={styles.close} onClick={onclickhandler}>&times;</span>
+                            <img class={styles.modal_content} id="img01" {...props} />
+                          </div>
+                        ) : (
+                          <img
+                            className={styles.mkdimg2}
+                            onClick={onclickhandler}
+                            {...props}
+                          />
+                        ),
+                    }}
+                  />
+                </Row>
+                <Row>
+                  <div className={`${styles.catList} category-list`}>
+                    {props.data.categoryOfThePost.map((category, index) => (
+                      <p key={index} className={styles.category}>
+                        {category.categoryForPost}
+                      </p>
+                    ))}
+                  </div>
+                </Row>
+              </Col>
+            </Row>
+          </Container>
+        )}
+        {winWidth && (
+          <Container>
+            <div style={{ display: "flex" }}>
+              <div
+                style={{
+                  maxWidth: "12vw",
+                  minWidth: "12vw",
+                  marginTop: "43px",
+                }}
+              >
+                <Image
+                  className={
+                    props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(UpVotePostURL, props.data.post_id, props.setLogin)
+                  }
+                  alt="logo"
+                  src="/mobupvote.png"
+                  height={24}
+                  width={24}
+                  quality={100}
+                />
+                <p className={styles.voteText}>
+                  {props.data.upVoteNumber - props.data.downVoteNumber}
+                </p>
+                <Image
+                  className={
+                    props.data.downvoted
+                      ? styles.downVotedIcon
+                      : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(
+                      DownVotePostURL,
+                      props.data.post_id,
+                      props.setLogin
+                    )
+                  }
+                  alt="logo"
+                  src="/mobdownvote.png"
+                  height={24}
+                  width={24}
+                  quality={100}
+                />
+              </div>
+              <div>
+                <Row className={styles.toprow}>
+                  <div style={{ width: "10px", padding: "0px" }}></div>
                   <div className={styles.postuser}>
                     <Row>
-                      <Col lg={5} md={5} xs={12}>
-                        <div
-                          style={{
-                            width: "200px",
-                            display: "inline-block",
-                            paddingLeft: "8px",
-                          }}
-                        >
-                          <Link
-                            href={`/profile?user=${props.data.creator_by.creator_id}`}
-                          >
-                            {props.data.creator_by.first_name +
-                              " " +
-                              props.data.creator_by.last_name}
-                          </Link>
-                        </div>
-                      </Col>
-                      <Col lg={3} md={3} xs={6}>
-                        <div style={{ width: "120px" }}>
+                      <Col xs={8} sm={9}>
+                        <div style={{ width: "110px" }}>
                           <img
                             src="/av_timer.png"
-                            style={{ width: "16px", margin: "auto 0 0 7.7px" }}
+                            style={{
+                              width: "16px",
+                              margin: "auto 0 0 0px",
+                            }}
                           />
                           <span
                             style={{
@@ -185,8 +333,8 @@ const DetailedPost = (props) => {
                           </span>
                         </div>
                       </Col>
-                      <Col lg={3} md={3} xs={6}>
-                        <div style={{ width: "120px" }}>
+                      <Col xs={2} sm={2}>
+                        <div style={{ width: "110px" }}>
                           <img
                             className={styles.eye}
                             src="/Eye.png"
@@ -207,43 +355,263 @@ const DetailedPost = (props) => {
                       </Col>
                     </Row>
                   </div>
-                  {/* </Col> */}
-                  {/* <Col lg={1} md={3} sm={4} className={styles.eye}> */}
+                </Row>
+                <Row>
+                  <h1 className={styles.posttitle}>{props.data.title}</h1>
+                </Row>
+                <Row>
+                  <ReactMarkdown
+                    className={styles.postbody}
+                    children={props.data.postByUser}
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      img: ({ node, ...props }) => 
+                        fullsize ? (
+                          <div className={styles.modal}>
+                            <span className={styles.close} onClick={onclickhandler}>&times;</span>
+                            <img class={styles.modal_content} id="img01" {...props} />
+                          </div>
+                        ) : (
+                          <img
+                            className={styles.mkdimg2}
+                            onClick={onclickhandler}
+                            {...props}
+                          />
+                        ),
+                    }}
+                  />
+                </Row>
+                <Row>
+                  <div className={`${styles.catList} category-list`}>
+                    {props.data.categoryOfThePost.map((category, index) => (
+                      <p key={index} className={styles.category}>
+                        {category.categoryForPost}
+                      </p>
+                    ))}
+                  </div>
+                </Row>
+                <Row>
+                  <Col sm={6} xs={5}></Col>
+                  <Col sm={1} xs={1}>
+                    <div style={{ width: "30px", display: "flex" }}>
+                      <p
+                        style={{
+                          paddingRight: "4px",
+                        }}
+                      >
+                        -
+                      </p>
+                      {props.data.creator_by.image ? (
+                        <img
+                          src={props.data.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src="/anonypic.png"
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      )}
+                    </div>
+                  </Col>
 
-                  {/* </Col> */}
-                </div>
-              </Row>
-              <Row>
-                <h1 className={styles.posttitle}>{props.data.title}</h1>
-              </Row>
-              <Row>
-                <ReactMarkdown
-                  className={styles.postbody}
-                  children={props.data.postByUser}
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    img: ({ node, ...props }) => (
-                      <img
-                        className={fullsize ? styles.mkdimg : styles.mkdimg2}
-                        onClick={onclickhandler}
-                        {...props}
-                      />
-                    ),
-                  }}
+                  <Col sm={5} xs={5}>
+                    <div
+                      style={{
+                        width: "200px",
+                        display: "inline-block",
+                        paddingLeft: "16px",
+                      }}
+                    >
+                      <Link
+                        href={`/profile?user=${props.data.creator_by.creator_id}`}
+                      >
+                        {props.data.creator_by.first_name +
+                          " " +
+                          props.data.creator_by.last_name}
+                      </Link>
+                    </div>
+                  </Col>
+                </Row>
+              </div>
+              {/* <Col lg={1} md={2} sm={2} xs={2}>
+                <div style={{ height: "50px", width: "5px" }}></div>
+                <Image
+                  className={
+                    props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(UpVotePostURL, props.data.post_id, props.setLogin)
+                  }
+                  alt="logo"
+                  src="/mobupvote.png"
+                  height={24}
+                  width={24}
+                  quality={100}
                 />
-              </Row>
-              <Row>
-                <div className={`${styles.catList} category-list`}>
-                  {props.data.categoryOfThePost.map((category, index) => (
-                    <p key={index} className={styles.category}>
-                      {category.categoryForPost}
-                    </p>
-                  ))}
-                </div>
-              </Row>
-            </Col>
-          </Row>
-        </Container>
+                <p className={styles.voteText}>
+                  {props.data.upVoteNumber - props.data.downVoteNumber}
+                </p>
+                <Image
+                  className={
+                    props.data.downvoted
+                      ? styles.downVotedIcon
+                      : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(
+                      DownVotePostURL,
+                      props.data.post_id,
+                      props.setLogin
+                    )
+                  }
+                  alt="logo"
+                  src="/mobdownvote.png"
+                  height={24}
+                  width={24}
+                  quality={100}
+                />
+              </Col>
+              <Col lg={11} md={10} sm={10} xs={10}>
+                <Row className={styles.toprow}>
+                  <div style={{ width: "10px", padding: "0px" }}></div>
+                  <div style={{ display: "flex" }}>
+
+                    <div className={styles.postuser}>
+                      <Row className="justify-content-end">
+                        <Col lg={3} md={3} xs={6}>
+                          <div style={{ width: "110px" }}>
+                            <img
+                              src="/av_timer.png"
+                              style={{
+                                width: "16px",
+                                margin: "auto 0 0 0px",
+                              }}
+                            />
+                            <span
+                              style={{
+                                marginLeft: "3px",
+                                fontSize: "16px",
+                                fontWeight: "400",
+                              }}
+                            >
+                              <p className={styles.timerP}>
+                                {`${year ? year + " years" : ""}` ||
+                                  `${month ? month + " Months" : ""}` ||
+                                  `${newday ? newday + " days" : ""}` ||
+                                  `${newhour ? newhour + " hours" : ""}` ||
+                                  `${newminute ? newminute + " minutes" : ""}`}
+                              </p>
+                            </span>
+                          </div>
+                        </Col>
+                        <Col lg={3} md={3} xs={6}>
+                          <div style={{ width: "110px" }}>
+                            <img
+                              className={styles.eye}
+                              src="/Eye.png"
+                              style={{ width: "18.75px" }}
+                            />
+                            <span
+                              style={{
+                                marginLeft: "5px",
+                                fontSize: "16px",
+                                fontWeight: "400",
+                              }}
+                            >
+                              <p className={styles.timerP}>
+                                {props.data.viewedByTheUsers} Views
+                              </p>
+                            </span>
+                          </div>
+                        </Col>
+                      </Row>
+                    </div>
+                  </div>
+                </Row>
+                <Row>
+                  <h1 className={styles.posttitle}>{props.data.title}</h1>
+                </Row>
+                <Row>
+                  <ReactMarkdown
+                    className={styles.postbody}
+                    children={props.data.postByUser}
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      img: ({ node, ...props }) => (
+                        <img
+                          className={fullsize ? styles.mkdimg : styles.mkdimg2}
+                          onClick={onclickhandler}
+                          {...props}
+                        />
+                      ),
+                    }}
+                  />
+                </Row>
+                <Row>
+                  <div className={`${styles.catList} category-list`}>
+                    {props.data.categoryOfThePost.map((category, index) => (
+                      <p key={index} className={styles.category}>
+                        {category.categoryForPost}
+                      </p>
+                    ))}
+                  </div>
+                </Row>
+                <Row className="justify-content-end">
+                  <Col xs={{span:1}}>
+                    <div style={{ width: "28px" }}>
+                      {props.data.creator_by.image ? (
+                        <img
+                          src={props.data.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src="/anonypic.png"
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      )}
+                    </div>
+                  </Col>
+
+                  <Col xs={{span:6}}>
+                    <div
+                      style={{
+                        width: "200px",
+                        display: "inline-block",
+                        paddingLeft: "8px",
+                      }}
+                    >
+                      <Link
+                        href={`/profile?user=${props.data.creator_by.creator_id}`}
+                      >
+                        {props.data.creator_by.first_name +
+                          " " +
+                          props.data.creator_by.last_name}
+                      </Link>
+                    </div>
+                  </Col>
+                </Row>
+              </Col> */}
+            </div>
+          </Container>
+        )}
       </Container>
       <div className={`row ${styles.postRow}`}>
         <div className="post-comments-container">
