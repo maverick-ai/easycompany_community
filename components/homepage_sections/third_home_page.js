@@ -5,7 +5,7 @@ import React from "react";
 function Third_page() {
   return (
     <React.Fragment>
-      <Row>
+      <Row style = {{marginTop: '3.4rem'}}>
         <div style={{ padding: " 5% 0" , maxWidth:"1400px"}}>
           <div style={{ position: "relative", textAlign: "center" }}>
             <div
@@ -95,7 +95,7 @@ function Third_page() {
         </div>
       </Row>
       {/* Globe */}
-      <Row>
+      <Row style = {{marginTop:'1rem'}}>
         <Col lg={6} md={6} sm={12} xs={12}>
           <Row>
             <Col>
@@ -104,7 +104,7 @@ function Third_page() {
           </Row>
           <Row>
             <div className={s.outer}>
-              <p className={s.fontstyleouter}>
+              <p className={s.fontstyleouter} style = {{fontWeight: '300'}}>
                 <span className={s.fontstyleinner}>Easycommunity</span> has
                 answers to all of your questions! <br />
                 And if it doesn't yet ? Well,
