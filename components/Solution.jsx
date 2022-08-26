@@ -147,7 +147,7 @@ const Solution = (props) => {
                         width: "200px",
                         display: "inline-block",
                         paddingLeft: "8px",
-                        fontSize:"17px"
+                        fontSize: "17px",
                       }}
                     >
                       <Link
@@ -190,18 +190,28 @@ const Solution = (props) => {
                   children={props.solution.solutionByUser}
                   remarkPlugins={[remarkGfm]}
                   components={{
-                    img: ({ node, ...props }) => fullsize ? (
-                      <div className={styles.modal}>
-                        <span className={styles.close} onClick={onclickhandler}>&times;</span>
-                        <img class={styles.modal_content} id="img01" {...props} />
-                      </div>
-                    ) : (
-                      <img
-                        className={styles.mkdimg2}
-                        onClick={onclickhandler}
-                        {...props}
-                      />
-                    ),
+                    img: ({ node, ...props }) =>
+                      fullsize ? (
+                        <div className={styles.modal}>
+                          <span
+                            className={styles.close}
+                            onClick={onclickhandler}
+                          >
+                            &times;
+                          </span>
+                          <img
+                            class={styles.modal_content}
+                            id="img01"
+                            {...props}
+                          />
+                        </div>
+                      ) : (
+                        <img
+                          className={styles.mkdimg2}
+                          onClick={onclickhandler}
+                          {...props}
+                        />
+                      ),
                   }}
                 />
               </Row>
@@ -245,51 +255,87 @@ const Solution = (props) => {
                 quality={100}
               />
             </Col>
-            <Col lg={11} md={10} sm={10} xs={9}>
+            <Col
+              lg={11}
+              md={10}
+              sm={10}
+              xs={10}
+              style={{ marginLeft: "-10px" }}
+            >
               <Row>
-                <ReactMarkdown
-                  className={styles.solutionBody}
-                  children={props.solution.solutionByUser}
-                  remarkPlugins={[remarkGfm]}
-                  components={{
-                    img: ({ node, ...props }) => fullsize ? (
-                      <div className={styles.modal}>
-                        <span className={styles.close} onClick={onclickhandler}>&times;</span>
-                        <img class={styles.modal_content} id="img01" {...props} />
-                      </div>
-                    ) : (
-                      <img
-                        className={styles.mkdimg2}
-                        onClick={onclickhandler}
-                        {...props}
-                      />
-                    ),
-                  }}
-                />
+                <div style={{ wordWrap: "break-word" , marginBottom:"10px"}}>
+                  <ReactMarkdown
+                    className={styles.solutionBody}
+                    children={props.solution.solutionByUser}
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      img: ({ node, ...props }) =>
+                        fullsize ? (
+                          <div className={styles.modal}>
+                            <span
+                              className={styles.close}
+                              onClick={onclickhandler}
+                            >
+                              &times;
+                            </span>
+                            <img
+                              class={styles.modal_content}
+                              id="img01"
+                              {...props}
+                            />
+                          </div>
+                        ) : (
+                          <img
+                            className={styles.mkdimg2}
+                            onClick={onclickhandler}
+                            {...props}
+                          />
+                        ),
+                    }}
+                  />
+                </div>
               </Row>
               <Row className={styles.toprow}>
-                <Col xs={{span:1, offset:5}}>
-                <div style={{ width: "10px", padding: "0px" }}></div>
-                <div style={{ display: "flex" }}>
-                  <div style={{ width: "28px" }}>
-                    <img
-                      src={props.solution.creator_by.image}
-                      style={{
-                        height: "28px",
-                        width: "28px",
-                        borderRadius: "50%",
-                      }}
-                    />
-                  </div>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "end",
+                  }}
+                >
+                  <p
+                    style={{
+                      marginLeft: "-12px",
+                      paddingTop: "6px",
+                      paddingRight: "12px",
+                    }}
+                  >
+                    -
+                  </p>
+                  {props.solution.creator_by.image ? (
+                        <img
+                          src={props.solution.creator_by.image}
+                          style={{
+                            height: "35px",
+                            width: "35px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src="/anonypic.png"
+                          style={{
+                            height: "35px",
+                            width: "35px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      )}
                   {/* <Col lg={2} md={3} sm={4}> */}
-                  <div className={styles.postuser}>
                     <div
                       style={{
-                        width: "200px",
-                        display: "inline-block",
-                        paddingLeft: "8px",
-                        paddingTop:"4px",
-                        fontSize:"17px"
+                        paddingLeft: "10px",
+                        paddingTop:"6px",
                       }}
                     >
                       <Link
@@ -301,19 +347,24 @@ const Solution = (props) => {
                       </Link>
                     </div>
                   </div>
-                </div>
-                </Col>
               </Row>
               <Row>
-                <Col xs={{span:1, offset:8}}>
-                <div style={{ width: "120px", display:"flex" }}>
-                  <div style={{ marginTop:"4px", height:"16px", width:"16px" , display:"flex"}}>
-                  <Image
-                    src="/av_timer.png"
-                    height={16}
-                    width={16}
-                    quality={100}
-                  /></div>
+                <div style={{ display: "flex", justifyContent: "end" }}>
+                  <div
+                    style={{
+                      marginTop: "4px",
+                      height: "16px",
+                      width: "16px",
+                      display: "flex",
+                    }}
+                  >
+                    <Image
+                      src="/av_timer.png"
+                      height={16}
+                      width={16}
+                      quality={100}
+                    />
+                  </div>
                   <span
                     style={{
                       marginLeft: "5px",
@@ -330,19 +381,22 @@ const Solution = (props) => {
                     </p>
                   </span>
                 </div>
-                </Col>
               </Row>
             </Col>
           </Row>
-          </Container>
+        </Container>
       )}
       <div className="soln-comments-container">
         <Container>
           <Row>
-            <Col lg={{ span: 3, offset: 1 }}>
+            <Col
+              lg={{ span: 3, offset: 1 }}
+              sm={{ span: 6, offset: 2 }}
+              xs={{ span: 6, offset: 2 }}
+            >
               <h2
                 className={styles.commentTitle}
-                style={{ margin: "30px 0 15px 0" }}
+                style={{ margin: "30px 0 15px -10px" }}
               >
                 Comments
               </h2>
@@ -360,11 +414,30 @@ const Solution = (props) => {
                 setLogin={props.setLogin}
               />
             ))}
+
+          {solnComment && solnComment.length < props.solution.comments.count && (
+            <Col
+              lg={{ span: 3, offset: 1 }}
+              sm={{ span: 6, offset: 2 }}
+              xs={{ span: 6, offset: 2 }}
+            >
+              <button
+                onClick={() => getnewsolncomments(props.solution.id)}
+                className={`${styles.commentButton}`}
+              >
+                View All
+              </button>
+            </Col>
+          )}
         </Container>
 
         <Container>
           <Row>
-            <Col lg={{ span: 6, offset: 1 }}>
+            <Col
+              lg={{ span: 6, offset: 1 }}
+              sm={{ span: 10, offset: 1 }}
+              xs={{ span: 10, offset: 1 }}
+            >
               <div
                 className={`${styles.inputoutert} ${styles.commentInput}`}
                 style={{ display: "flex", flexDirection: "row" }}
@@ -408,24 +481,14 @@ const Solution = (props) => {
                       style={{
                         width: "25px",
                         position: "absolute",
-                        top: "9px",
-                        right: "10px",
+                        top: "11px",
+                        right: "12px",
                       }}
                     />
                   </div>
                 </div>
               </div>
             </Col>
-            {solnComment && solnComment.length < props.solution.comments.count && (
-              <Col>
-                <button
-                  onClick={() => getnewsolncomments(props.solution.id)}
-                  className={`${styles.commentButton}`}
-                >
-                  View All
-                </button>
-              </Col>
-            )}
           </Row>
         </Container>
       </div>

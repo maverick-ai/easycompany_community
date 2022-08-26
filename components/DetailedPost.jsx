@@ -230,8 +230,17 @@ const DetailedPost = (props) => {
                       img: ({ node, ...props }) =>
                         fullsize ? (
                           <div className={styles.modal}>
-                            <span className={styles.close} onClick={onclickhandler}>&times;</span>
-                            <img class={styles.modal_content} id="img01" {...props} />
+                            <span
+                              className={styles.close}
+                              onClick={onclickhandler}
+                            >
+                              &times;
+                            </span>
+                            <img
+                              class={styles.modal_content}
+                              id="img01"
+                              {...props}
+                            />
                           </div>
                         ) : (
                           <img
@@ -307,18 +316,36 @@ const DetailedPost = (props) => {
                   <div style={{ width: "10px", padding: "0px" }}></div>
                   <div className={styles.postuser}>
                     <Row>
-                      <Col xs={8} sm={9}>
+                      <Col xs={9} sm={9}>
+                        <div style={{ width: "110px" }}>
+                          <img
+                            className={styles.eye}
+                            src="/Eye.png"
+                            style={{ width: "18.75px" }}
+                          />
+                          <span
+                            style={{
+                              fontSize: "16px",
+                              fontWeight: "400",
+                            }}
+                          >
+                            <p className={styles.timerP}>
+                              {props.data.viewedByTheUsers} Views
+                            </p>
+                          </span>
+                        </div>
+                      </Col>
+                      <Col xs={2} sm={2}>
                         <div style={{ width: "110px" }}>
                           <img
                             src="/av_timer.png"
                             style={{
                               width: "16px",
-                              margin: "auto 0 0 0px",
+                              margin: "auto 0 0 -10px"
                             }}
                           />
                           <span
                             style={{
-                              marginLeft: "3px",
                               fontSize: "16px",
                               fontWeight: "400",
                             }}
@@ -329,26 +356,6 @@ const DetailedPost = (props) => {
                                 `${newday ? newday + " days" : ""}` ||
                                 `${newhour ? newhour + " hours" : ""}` ||
                                 `${newminute ? newminute + " minutes" : ""}`}
-                            </p>
-                          </span>
-                        </div>
-                      </Col>
-                      <Col xs={2} sm={2}>
-                        <div style={{ width: "110px" }}>
-                          <img
-                            className={styles.eye}
-                            src="/Eye.png"
-                            style={{ width: "18.75px" }}
-                          />
-                          <span
-                            style={{
-                              marginLeft: "5px",
-                              fontSize: "16px",
-                              fontWeight: "400",
-                            }}
-                          >
-                            <p className={styles.timerP}>
-                              {props.data.viewedByTheUsers} Views
                             </p>
                           </span>
                         </div>
@@ -365,11 +372,20 @@ const DetailedPost = (props) => {
                     children={props.data.postByUser}
                     remarkPlugins={[remarkGfm]}
                     components={{
-                      img: ({ node, ...props }) => 
+                      img: ({ node, ...props }) =>
                         fullsize ? (
                           <div className={styles.modal}>
-                            <span className={styles.close} onClick={onclickhandler}>&times;</span>
-                            <img class={styles.modal_content} id="img01" {...props} />
+                            <span
+                              className={styles.close}
+                              onClick={onclickhandler}
+                            >
+                              &times;
+                            </span>
+                            <img
+                              class={styles.modal_content}
+                              id="img01"
+                              {...props}
+                            />
                           </div>
                         ) : (
                           <img
@@ -391,12 +407,12 @@ const DetailedPost = (props) => {
                   </div>
                 </Row>
                 <Row>
-                  <Col sm={6} xs={5}></Col>
-                  <Col sm={1} xs={1}>
-                    <div style={{ width: "30px", display: "flex" }}>
+                    <div style={{ width: "100%", display: "flex",justifyContent:"end" }}>
                       <p
                         style={{
-                          paddingRight: "4px",
+                          marginLeft:"-12px",
+                          paddingTop:"6px",
+                          paddingRight:"12px"
                         }}
                       >
                         -
@@ -405,8 +421,8 @@ const DetailedPost = (props) => {
                         <img
                           src={props.data.creator_by.image}
                           style={{
-                            height: "28px",
-                            width: "28px",
+                            height: "35px",
+                            width: "35px",
                             borderRadius: "50%",
                           }}
                         />
@@ -414,21 +430,16 @@ const DetailedPost = (props) => {
                         <img
                           src="/anonypic.png"
                           style={{
-                            height: "28px",
-                            width: "28px",
+                            height: "35px",
+                            width: "35px",
                             borderRadius: "50%",
                           }}
                         />
                       )}
-                    </div>
-                  </Col>
-
-                  <Col sm={5} xs={5}>
-                    <div
+                      <div
                       style={{
-                        width: "200px",
-                        display: "inline-block",
-                        paddingLeft: "16px",
+                        paddingLeft: "10px",
+                        paddingTop:"6px",
                       }}
                     >
                       <Link
@@ -438,8 +449,8 @@ const DetailedPost = (props) => {
                           " " +
                           props.data.creator_by.last_name}
                       </Link>
+                    </div>  
                     </div>
-                  </Col>
                 </Row>
               </div>
               {/* <Col lg={1} md={2} sm={2} xs={2}>
@@ -617,10 +628,10 @@ const DetailedPost = (props) => {
         <div className="post-comments-container">
           <Container>
             <Row>
-              <Col lg={{ span: 3, offset: 1 }}>
+              <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
                 <h2
                   className={styles.commentTitle}
-                  style={{ margin: "30px 0 15px 0" }}
+                  style={{ margin: "10px 0 15px -10px" }}
                 >
                   Comments
                 </h2>
@@ -640,11 +651,23 @@ const DetailedPost = (props) => {
                   />
                 </>
               ))}
+              {postComment &&
+                postComment.length < props.data.comments.count &&
+                postComment.length % commentPageSize == 0 && (
+                  <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
+                    <button
+                      onClick={() => getnewpostcomments(props.data.post_id)}
+                      className={`${styles.commentButton}`}
+                    >
+                      View All
+                    </button>
+                  </Col>
+                )}
           </Container>
 
           <Container>
             <Row>
-              <Col lg={{ span: 6, offset: 1 }}>
+              <Col lg={{ span: 6, offset: 1 }} sm={{span: 10, offset: 1}} xs={{span: 10, offset: 1}}>
                 <div
                   className={`${styles.inputoutert} ${styles.commentInput}`}
                   style={{ display: "flex", flexDirection: "row" }}
@@ -669,26 +692,14 @@ const DetailedPost = (props) => {
                         style={{
                           width: "25px",
                           position: "absolute",
-                          top: "9px",
-                          right: "10px",
+                          top: "11px",
+                          right: "12px",
                         }}
                       />
                     </div>
                   </div>
                 </div>
               </Col>
-              {postComment &&
-                postComment.length < props.data.comments.count &&
-                postComment.length % commentPageSize == 0 && (
-                  <Col>
-                    <button
-                      onClick={() => getnewpostcomments(props.data.post_id)}
-                      className={`${styles.commentButton}`}
-                    >
-                      View All
-                    </button>
-                  </Col>
-                )}
             </Row>
           </Container>
         </div>
