@@ -11,7 +11,7 @@ import {
 } from "./constants";
 import { sendVote, addsolncomment, sendReq } from "./requests";
 import SolutionComment from "./SolutionComment";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -24,6 +24,22 @@ const Solution = (props) => {
   const [solnComment, setsolnComment] = useState(props.comments.comments);
   const [fullsize, setFullsize] = useState(false);
   const router = useRouter();
+  const [winWidth, setWinWidth] = useState(false);
+
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setWinWidth(true);
+    } else {
+      setWinWidth(false);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        setWinWidth(true);
+      } else {
+        setWinWidth(false);
+      }
+    });
+  }, []);
 
   function onclickhandler() {
     if (!fullsize) setFullsize(true);
@@ -58,7 +74,7 @@ const Solution = (props) => {
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
-  
+
   let newminute = minute - hours * 60;
 
   const acceptsoln = async (id) => {
@@ -74,117 +90,252 @@ const Solution = (props) => {
 
   return (
     <div className={`Soln`}>
-      <Container>
-        <Row>
-          <Col lg={1} md={2} sm={2} xs={2}>
-            <Image
-              className={
-                props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
-              }
-              onClick={() =>
-                sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)
-              }
-              alt="logo"
-              src="/upVote.png"
-              height={33}
-              width={33}
-              quality={100}
-            />
-            <p className={styles.voteText}>
-              {props.solution.upVoteNumber - props.solution.downVoteNumber}
-            </p>
-            <Image
-              className={
-                props.solution.downvoted
-                  ? styles.downVotedIcon
-                  : styles.VoteIcon
-              }
-              onClick={() =>
-                sendVote(DownVoteSolnURL, props.solution.id, props.setLogin)
-              }
-              alt="logo"
-              src="/downVote.png"
-              height={33}
-              width={33}
-              quality={100}
-            />
-          </Col>
-          <Col lg={11} md={10} sm={10} xs={8}>
-            <Row className={styles.toprow}>
-              <div style={{ width: "10px", padding: "0px" }}></div>
-              <div style={{ display: "flex" }}>
-                <div style={{ width: "28px" }}>
-                  <img
-                    src={props.solution.creator_by.image}
-                    style={{
-                      height: "28px",
-                      width: "28px",
-                      borderRadius: "50%",
-                    }}
-                  />
-                </div>
-                {/* <Col lg={2} md={3} sm={4}> */}
-                <div className={styles.postuser}>
-                  <div
-                    style={{
-                      width: "200px",
-                      display: "inline-block",
-                      paddingLeft: "8px",
-                    }}
-                  >
-                    <Link
-                      href={`/profile?user=${props.solution.creator_by.creator_id}`}
-                    >
-                      {props.solution.creator_by.first_name +
-                        " " +
-                        props.solution.creator_by.last_name}
-                    </Link>
-                  </div>
-                  <div style={{ width: "120px" }}>
-                    <Image
-                      src="/av_timer.png"
-                      height={16}
-                      width={16}
-                      quality={100}
-                    />
-                    <span
+      {!winWidth && (
+        <Container>
+          <Row>
+            <Col lg={1} md={2} sm={2} xs={2}>
+              <Image
+                className={
+                  props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                }
+                onClick={() =>
+                  sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)
+                }
+                alt="logo"
+                src="/upVote.png"
+                height={33}
+                width={33}
+                quality={100}
+              />
+              <p className={styles.voteText}>
+                {props.solution.upVoteNumber - props.solution.downVoteNumber}
+              </p>
+              <Image
+                className={
+                  props.solution.downvoted
+                    ? styles.downVotedIcon
+                    : styles.VoteIcon
+                }
+                onClick={() =>
+                  sendVote(DownVoteSolnURL, props.solution.id, props.setLogin)
+                }
+                alt="logo"
+                src="/downVote.png"
+                height={33}
+                width={33}
+                quality={100}
+              />
+            </Col>
+            <Col lg={11} md={10} sm={10} xs={8}>
+              <Row className={styles.toprow}>
+                <div style={{ width: "10px", padding: "0px" }}></div>
+                <div style={{ display: "flex" }}>
+                  <div style={{ width: "28px" }}>
+                    <img
+                      src={props.solution.creator_by.image}
                       style={{
-                        marginLeft: "10px",
-                        fontSize: "16px",
-                        fontWeight: "400",
+                        height: "28px",
+                        width: "28px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </div>
+                  {/* <Col lg={2} md={3} sm={4}> */}
+                  <div className={styles.postuser}>
+                    <div
+                      style={{
+                        width: "200px",
+                        display: "inline-block",
+                        paddingLeft: "8px",
+                        fontSize:"17px"
                       }}
                     >
-                      <p className={styles.timerP}>
-                        {`${year ? year + " years" : ""}` ||
-                          `${month ? month + " months" : ""}` ||
-                          `${newday ? newday + " days" : ""}` ||
-                          `${newhour ? newhour + " hours" : ""}` ||
-                          `${newminute ? newminute + " minutes" : ""}`}
-                      </p>
-                    </span>
+                      <Link
+                        href={`/profile?user=${props.solution.creator_by.creator_id}`}
+                      >
+                        {props.solution.creator_by.first_name +
+                          " " +
+                          props.solution.creator_by.last_name}
+                      </Link>
+                    </div>
+                    <div style={{ width: "120px" }}>
+                      <Image
+                        src="/av_timer.png"
+                        height={16}
+                        width={16}
+                        quality={100}
+                      />
+                      <span
+                        style={{
+                          marginLeft: "10px",
+                          fontSize: "16px",
+                          fontWeight: "400",
+                        }}
+                      >
+                        <p className={styles.timerP}>
+                          {`${year ? year + " years" : ""}` ||
+                            `${month ? month + " months" : ""}` ||
+                            `${newday ? newday + " days" : ""}` ||
+                            `${newhour ? newhour + " hours" : ""}` ||
+                            `${newminute ? newminute + " minutes" : ""}`}
+                        </p>
+                      </span>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Row>
-            <Row>
-              <ReactMarkdown
-                className={styles.solutionBody}
-                children={props.solution.solutionByUser}
-                remarkPlugins={[remarkGfm]}
-                components={{
-                  img: ({ node, ...props }) => (
-                    <img
-                      className={fullsize ? styles.mkdimg : styles.mkdimg2}
-                      onClick={onclickhandler}
-                      {...props}
-                    />
-                  ),
-                }}
+              </Row>
+              <Row>
+                <ReactMarkdown
+                  className={styles.solutionBody}
+                  children={props.solution.solutionByUser}
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    img: ({ node, ...props }) => fullsize ? (
+                      <div className={styles.modal}>
+                        <span className={styles.close} onClick={onclickhandler}>&times;</span>
+                        <img class={styles.modal_content} id="img01" {...props} />
+                      </div>
+                    ) : (
+                      <img
+                        className={styles.mkdimg2}
+                        onClick={onclickhandler}
+                        {...props}
+                      />
+                    ),
+                  }}
+                />
+              </Row>
+            </Col>
+          </Row>
+        </Container>
+      )}
+      {winWidth && (
+        <Container>
+          <Row>
+            <Col lg={1} md={2} sm={2} xs={2}>
+              <Image
+                className={
+                  props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                }
+                onClick={() =>
+                  sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)
+                }
+                alt="logo"
+                src="/mobupvote.png"
+                height={24}
+                width={24}
+                quality={100}
               />
-            </Row>
-          </Col>
-        </Row>
-      </Container>
+              <p className={styles.voteText}>
+                {props.solution.upVoteNumber - props.solution.downVoteNumber}
+              </p>
+              <Image
+                className={
+                  props.solution.downvoted
+                    ? styles.downVotedIcon
+                    : styles.VoteIcon
+                }
+                onClick={() =>
+                  sendVote(DownVoteSolnURL, props.solution.id, props.setLogin)
+                }
+                alt="logo"
+                src="/mobdownvote.png"
+                height={24}
+                width={24}
+                quality={100}
+              />
+            </Col>
+            <Col lg={11} md={10} sm={10} xs={9}>
+              <Row>
+                <ReactMarkdown
+                  className={styles.solutionBody}
+                  children={props.solution.solutionByUser}
+                  remarkPlugins={[remarkGfm]}
+                  components={{
+                    img: ({ node, ...props }) => fullsize ? (
+                      <div className={styles.modal}>
+                        <span className={styles.close} onClick={onclickhandler}>&times;</span>
+                        <img class={styles.modal_content} id="img01" {...props} />
+                      </div>
+                    ) : (
+                      <img
+                        className={styles.mkdimg2}
+                        onClick={onclickhandler}
+                        {...props}
+                      />
+                    ),
+                  }}
+                />
+              </Row>
+              <Row className={styles.toprow}>
+                <Col xs={{span:1, offset:5}}>
+                <div style={{ width: "10px", padding: "0px" }}></div>
+                <div style={{ display: "flex" }}>
+                  <div style={{ width: "28px" }}>
+                    <img
+                      src={props.solution.creator_by.image}
+                      style={{
+                        height: "28px",
+                        width: "28px",
+                        borderRadius: "50%",
+                      }}
+                    />
+                  </div>
+                  {/* <Col lg={2} md={3} sm={4}> */}
+                  <div className={styles.postuser}>
+                    <div
+                      style={{
+                        width: "200px",
+                        display: "inline-block",
+                        paddingLeft: "8px",
+                        paddingTop:"4px",
+                        fontSize:"17px"
+                      }}
+                    >
+                      <Link
+                        href={`/profile?user=${props.solution.creator_by.creator_id}`}
+                      >
+                        {props.solution.creator_by.first_name +
+                          " " +
+                          props.solution.creator_by.last_name}
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+                </Col>
+              </Row>
+              <Row>
+                <Col xs={{span:1, offset:8}}>
+                <div style={{ width: "120px", display:"flex" }}>
+                  <div style={{ marginTop:"4px", height:"16px", width:"16px" , display:"flex"}}>
+                  <Image
+                    src="/av_timer.png"
+                    height={16}
+                    width={16}
+                    quality={100}
+                  /></div>
+                  <span
+                    style={{
+                      marginLeft: "5px",
+                      fontSize: "16px",
+                      fontWeight: "400",
+                    }}
+                  >
+                    <p className={styles.timerP}>
+                      {`${year ? year + " years" : ""}` ||
+                        `${month ? month + " months" : ""}` ||
+                        `${newday ? newday + " days" : ""}` ||
+                        `${newhour ? newhour + " hours" : ""}` ||
+                        `${newminute ? newminute + " minutes" : ""}`}
+                    </p>
+                  </span>
+                </div>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+          </Container>
+      )}
       <div className="soln-comments-container">
         <Container>
           <Row>

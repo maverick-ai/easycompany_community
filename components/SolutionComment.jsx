@@ -9,19 +9,15 @@ import Styles from "../styles/Post.module.css";
 import CommentImage from "./DetailedPostComponents/CommentImage";
 
 const SolutionComment = (props) => {
-  const [winWidth, setWinWidth] = useState();
+  const [winWidth, setWinWidth] = useState(false);
 
   useEffect(() => {
     if (window.innerWidth <= 1200) {
       setWinWidth(true);
-    } else {
-      setWinWidth(false);
     }
     window.addEventListener("resize", () => {
       if (window.innerWidth <= 1200) {
         setWinWidth(true);
-      } else {
-        setWinWidth(false);
       }
     });
   }, []);
@@ -73,7 +69,16 @@ const SolutionComment = (props) => {
                       </Link>
                     </div>
                   </Col>
-                  <Col lg={3} md={3} sm={4}>
+                </Row>
+                <p style={{ marginTop: "10px" }}>
+                  {props.comment.commentByUser}
+                </p>
+                <Row>
+                  <Col lg={{span: 3, offset: 10}} md={{span: 3, offset: 10}} sm={{span: 3, offset: 9}}>
+                  <img
+                      src="/av_timer.png"
+                      style={{ width: "14px"}}
+                    />
                     <p className={Styles.timerP}>
                       {`${year ? year + " years" : ""}` ||
                         `${month ? month + " months" : ""}` ||
@@ -83,9 +88,6 @@ const SolutionComment = (props) => {
                     </p>
                   </Col>
                 </Row>
-                <p style={{ marginTop: "10px" }}>
-                  {props.comment.commentByUser}
-                </p>
               </div>
             </Col>
             <Col lg={3}>
@@ -118,17 +120,25 @@ const SolutionComment = (props) => {
                       </Link>
                     </div>
                   </Col>
-                  <Col lg={3} md={3} sm={4}>
-                    <p className={Styles.timerP}>
-                      {`${month ? month + " months" : ""}` ||
-                        `${newday ? newday + " days" : ""}` ||
-                        ` ${newhour} hours`}
-                    </p>
-                  </Col>
                 </Row>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
+                <Row>
+                  <Col lg={{span: 3, offset: 10}} md={{span: 3, offset: 10}} sm={{span: 3, offset: 9}}>
+                  <img
+                      src="/av_timer.png"
+                      style={{ width: "14px"}}
+                    />
+                    <p className={Styles.timerP}>
+                      {`${year ? year + " years" : ""}` ||
+                        `${month ? month + " months" : ""}` ||
+                        `${newday ? newday + " days" : ""}` ||
+                        `${newhour ? newhour + " hours" : ""}` ||
+                        `${newminute ? newminute + " minutes" : ""}`}
+                    </p>
+                  </Col>
+                </Row>
               </div>
             </Col>
             <Col lg={3}></Col>
@@ -159,17 +169,25 @@ const SolutionComment = (props) => {
                       </Link>
                     </div>
                   </Col>
-                  <Col lg={3} md={3} sm={4}>
-                    <p className={Styles.timerP}>
-                      {`${month ? month + " months" : ""}` ||
-                        `${newday ? newday + " days" : ""}` ||
-                        ` ${newhour} hours`}
-                    </p>
-                  </Col>
                 </Row>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
+                <Row>
+                  <Col lg={{span: 3, offset: 10}} md={{span: 3, offset: 10}} sm={{span: 3, offset: 9}} xs={{span: 5, offset: 8}}>
+                  <img
+                      src="/av_timer.png"
+                      style={{ width: "14px"}}
+                    />
+                    <p className={Styles.timerP}>
+                      {`${year ? year + " years" : ""}` ||
+                        `${month ? month + " months" : ""}` ||
+                        `${newday ? newday + " days" : ""}` ||
+                        `${newhour ? newhour + " hours" : ""}` ||
+                        `${newminute ? newminute + " minutes" : ""}`}
+                    </p>
+                  </Col>
+                </Row>
               </div>
             </Col>
           </Row>
