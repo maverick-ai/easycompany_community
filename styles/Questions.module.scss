@@ -15,6 +15,18 @@
   border-radius: 8px;
   background-color: #121212;
 }
+
+.QuestionsImgDiv {
+  margin: 15% 0%;
+  position: relative;
+}
+
+@media (max-width: 768px){
+  .QuestionsImgDiv {
+    margin: 15% 0% 0%;
+  }
+}
+
 .ImageRenderring {
   image-rendering: -moz-crisp-edges; /* Firefox */
   image-rendering: -o-crisp-edges; /* Opera */
@@ -22,6 +34,13 @@
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
 }
+
+@media (max-width: 991px) {
+  .ImageRenderring {
+
+  }
+}
+
 .headingtop {
   font-weight: 700;
   font-size: 40px;

@@ -45,12 +45,12 @@ const Questions = ({ questions, query }) => {
       <Container>
         <Row style={{ margin: "10% 0 10%" }}>
           <Col xl={7} lg={7}>
-            <div style={{ margin: "15% 0", position: "relative" }}>
-              <img src="/toparrw.svg" className={styles.toparrw} />
+            <div className={styles.QuestionsImgDiv}>
+              {/* <img src="/toparrw.svg" className={styles.toparrw} /> */}
               <img
                 className={styles.ImageRenderring}
                 src="/quetsionpng.png"
-                style={{ width: "99%", margin: "auto 0" }}
+                style={{ width: "99%", margin: "0 0" }}
               />
             </div>
           </Col>
