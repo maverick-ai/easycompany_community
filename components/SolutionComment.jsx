@@ -48,7 +48,7 @@ const SolutionComment = (props) => {
       {props.imgIdx % 2 === 0 && !winWidth && (
         <Container>
           <Row>
-            <Col lg={{ span: 8, offset: 1 }}>
+            <Col lg={{ span: 8, offset: 0 }}>
               <div className={`${Styles.commentboxdiv}`}>
                 <Row style={{ marginTop: "5px" }}>
                   <div style={{ width: "10px", padding: "0px" }}></div>

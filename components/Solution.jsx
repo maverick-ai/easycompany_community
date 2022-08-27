@@ -106,6 +106,8 @@ const Solution = (props) => {
                 height={33}
                 width={33}
                 quality={100}
+                position='relative'
+                style={{margiTop: '100px'}}
               />
               <p className={styles.voteText}>
                 {props.solution.upVoteNumber - props.solution.downVoteNumber}
@@ -158,7 +160,7 @@ const Solution = (props) => {
                           props.solution.creator_by.last_name}
                       </Link>
                     </div>
-                    <div style={{ width: "120px" }}>
+                    <div className={styles.timerDiv} style={{ width: "120px" }}>
                       <Image
                         src="/av_timer.png"
                         height={16}
@@ -331,7 +333,6 @@ const Solution = (props) => {
                           }}
                         />
                       )}
-                  {/* <Col lg={2} md={3} sm={4}> */}
                     <div
                       style={{
                         paddingLeft: "10px",

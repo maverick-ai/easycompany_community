@@ -123,6 +123,11 @@
   color: black;
 }
 
+.avTimerImg{
+  position: absolute;
+  top: 0;
+}
+
 .solution {
   border-radius: 50px;
   border: 2px solid black;
@@ -463,4 +468,9 @@
 
 .uncheck {
   color: rgba(180, 180, 180, 1);
+}
+
+.timerDiv {
+  position: relative;
+  top: 0;
 }
