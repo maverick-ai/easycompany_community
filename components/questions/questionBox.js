@@ -83,7 +83,7 @@ const QuestionBox = (props) => {
               >
                 <div className={`${styles.votebox} ${styles.listItem}`}>
                   <span>
-                    {props.upVoteNumber - props.downVoteNumber} Votes{" "}
+                    <span className={styles.number}>{props.upVoteNumber - props.downVoteNumber}</span> Votes{" "}
                   </span>
                 </div>
               </div>
@@ -94,7 +94,7 @@ const QuestionBox = (props) => {
                 style={{ backgroundColor: "#121212" }}
               >
                 <div className={`${styles.votebox} ${styles.listItem}`}>
-                  <span>{props.data.numberOfSolutions} answer</span>{" "}
+                  <span className={styles.number}>{props.data.numberOfSolutions} answer</span>{" "}
                   <img src="/icons/answer.svg" alt="answer icon" />
                 </div>
               </div>
@@ -105,7 +105,7 @@ const QuestionBox = (props) => {
                 style={{ backgroundColor: "#121212" }}
               >
                 <div className={`${styles.votebox} ${styles.listItem}`}>
-                  {props.viewsbytheuser}{" "}
+                  <span className={styles.number}>{props.viewsbytheuser}{" "}</span>
                   <img src="/icons/eye.svg" alt="eye icon" />
                 </div>
               </div>

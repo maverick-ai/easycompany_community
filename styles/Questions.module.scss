@@ -199,6 +199,10 @@
   padding-bottom: 0;
 }
 
+.number {
+  color: white;
+}
+
 .voteCol {
   display: flex;
   flex-direction: column;
@@ -332,6 +336,8 @@
   }
 }
 
+
+
 .right {
   ul {
     display: flex;
@@ -375,8 +381,15 @@
 }
 
 .phonepic {
-  width: 90%;
+  width: 100%;
 }
+
+@media (max-width: "991px") {
+  .phonepic {
+    visibility: hidden;
+  }
+}
+
 .phonepicdad {
   margin: 10% 0;
 }
