@@ -242,6 +242,12 @@ display: none;
     border-color: transparent;
 }
 
+.underline{
+  background: linear-gradient(278.43deg, #E42833 -23.73%,#B50EAE 170.2%) no-repeat;
+  background-size: 100% 2px;
+  background-position: left bottom;
+}
+
 .nomore {
   margin: 0;
   color: #ff5757;

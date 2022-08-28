@@ -649,10 +649,8 @@ const DetailedPost = (props) => {
                     
                     <span
                       onClick={() => getnewpostcomments(props.data.post_id)}
-                      className={`${styles.commentButton}`}
-                    >
-                      <span style={{textDecoration:"underline"}}>View All</span>
-                      
+                      className={`${styles.commentButton}`}>
+                      <span className={styles.underline}>View All</span>
                     </span>
                     
                   </Col>
