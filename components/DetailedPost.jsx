@@ -280,8 +280,8 @@ const DetailedPost = (props) => {
                   }
                   alt="logo"
                   src="/mobupvote.png"
-                  height={24}
-                  width={24}
+                  height={18}
+                  width={18}
                   quality={100}
                 />
                 <p className={styles.voteText}>
@@ -302,8 +302,8 @@ const DetailedPost = (props) => {
                   }
                   alt="logo"
                   src="/mobdownvote.png"
-                  height={24}
-                  width={24}
+                  height={18}
+                  width={18}
                   quality={100}
                 />
               </div>
@@ -663,7 +663,7 @@ const DetailedPost = (props) => {
             <Row>
               <Col lg={{ span: 6, offset: 1 }} md={{ offset: 2}} sm={{span: 10, offset: 1}} xs={{span: 10, offset: 1}}>
                 <div
-                  className={`${styles.inputoutert} ${styles.commentInput}`}
+                  className={`${styles.inputOuter} ${styles.commentInput}`}
                   style={{ display: "flex", flexDirection: "row" }}
                 >
                   <input

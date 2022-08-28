@@ -236,8 +236,8 @@ const Solution = (props) => {
                 }
                 alt="logo"
                 src="/mobupvote.png"
-                height={24}
-                width={24}
+                height={18}
+                width={18}
                 quality={100}
               />
               <p className={styles.voteText}>
@@ -254,8 +254,8 @@ const Solution = (props) => {
                 }
                 alt="logo"
                 src="/mobdownvote.png"
-                height={24}
-                width={24}
+                height={18}
+                width={18}
                 quality={100}
               />
             </Col>
