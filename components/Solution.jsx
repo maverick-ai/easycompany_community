@@ -228,7 +228,51 @@ const Solution = (props) => {
       {winWidth && (
         <Container>
           <Row>
-            <Col lg={1} md={2} sm={2} xs={2}>
+          <div
+                style={{
+                  maxWidth: "10vw",
+                  minWidth: "10vw",
+                  marginTop: "43px",
+                  marginLeft: "-10px",
+                }}
+              >
+                <img
+                  className={
+                    props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(UpVotePostURL, props.solution.id, props.setLogin)
+                  }
+                  alt="logo"
+                  src="/mobupvote.png"
+                  height={18}
+                  width={18}
+                  quality={100}
+                />
+                <p className={styles.voteText}>
+                  {props.solution.upVoteNumber - props.solution.downVoteNumber}
+                </p>
+                <img
+                  className={
+                    props.solution.downvoted
+                      ? styles.downVotedIcon
+                      : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(
+                      DownVotePostURL,
+                      props.solution.id,
+                      props.setLogin
+                    )
+                  }
+                  alt="logo"
+                  src="/mobdownvote.png"
+                  height={18}
+                  width={18}
+                  quality={100}
+                />
+              </div>
+            {/* <Col lg={1} md={2} sm={1} xs={1}>
             <div
                 style={{
                   marginRight: "10px",
@@ -267,7 +311,7 @@ const Solution = (props) => {
                 quality={100}
               />
               </div>
-            </Col>
+            </Col> */}
             <Col
               lg={11}
               md={10}
@@ -404,8 +448,8 @@ const Solution = (props) => {
           <Row>
             <Col
               lg={{ span: 3, offset: 1 }}
-              sm={{ span: 6, offset: 2 }}
-              xs={{ span: 6, offset: 2 }}
+              sm={{ span: 6, offset: 1 }}
+              xs={{ span: 6, offset: 1 }}
             >
               <h2
                 className={styles.commentTitle}
@@ -449,8 +493,8 @@ const Solution = (props) => {
             <Col
               lg={{ span: 6, offset: 1 }}
               md={{offset: 2}}
-              sm={{ span: 10, offset: 1 }}
-              xs={{ span: 10, offset: 1 }}
+              sm={{ span: 10, offset: 0 }}
+              xs={{ span: 10, offset: 0 }}
             >
               <div
                 className={`${styles.inputoutert} ${styles.commentInput}`}
