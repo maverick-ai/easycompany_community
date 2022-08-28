@@ -164,11 +164,22 @@ const Post = ({ post, answers, solnComments, query }) => {
               )}
             </div>
           </div>
-
             <div className={styles.FooterBar}>
+            <Row>
                 <div className={styles.globeImgDiv} style={{position: 'relative'}}>
                   <img className={styles.globeImg} src="./globe.png"></img>
                 </div>
+            </Row>
+            <Row style={{ textAlign: "center", margin: "3% 0" }}>
+              <div style={{ position: "relative" }}>
+                <span className={styles.bottomText}>FOLLOW</span>
+                <span className={styles.bottomText}>HELP</span>
+                <span className={styles.bottomText}>CONTACT</span>
+                <span className={styles.bottomText}>ABOUT US</span>
+              </div>
+            </Row>
+                
+                
             </div>
           
          

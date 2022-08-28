@@ -534,3 +534,11 @@ display: none;
   top: -50px;
   
 }
+.bottomText {
+  color: white;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(100vw * (8 / 360));
+  margin: 0 4%;
+}
