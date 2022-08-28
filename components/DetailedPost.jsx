@@ -266,9 +266,10 @@ const DetailedPost = (props) => {
             <div style={{ display: "flex" }}>
               <div
                 style={{
-                  maxWidth: "12vw",
-                  minWidth: "12vw",
+                  maxWidth: "10vw",
+                  minWidth: "10vw",
                   marginTop: "43px",
+                  marginLeft: "-10px",
                 }}
               >
                 <Image
@@ -309,7 +310,7 @@ const DetailedPost = (props) => {
               </div>
               <div>
                 <Row className={styles.toprow}>
-                  <div style={{ width: "10px", padding: "0px" }}></div>
+                  <div style={{ width: "10px", padding: "0px",marginLeft: "-10px" }}></div>
                   <div className={styles.postuser}>
                     <Row>
                       <Col xs={9} sm={9}>

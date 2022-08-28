@@ -227,6 +227,12 @@ const Solution = (props) => {
         <Container>
           <Row>
             <Col lg={1} md={2} sm={2} xs={2}>
+            <div
+                style={{
+                  marginRight: "10px",
+                  marginLeft: "-10px",
+                }}
+              >
               <Image
                 className={
                   props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
@@ -258,6 +264,7 @@ const Solution = (props) => {
                 width={18}
                 quality={100}
               />
+              </div>
             </Col>
             <Col
               lg={11}
