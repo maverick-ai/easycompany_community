@@ -187,11 +187,13 @@ const Solution = (props) => {
                 </div>
               </Row>
               <Row>
+          
                 <div style={{wordWrap:"break-word", width:"85%"}}>
                 <ReactMarkdown
                   className={styles.solutionBody}
                   children={props.solution.solutionByUser}
                   remarkPlugins={[remarkGfm]}
+
                   components={{
                     img: ({ node, ...props }) =>
                       fullsize ? (
@@ -273,7 +275,7 @@ const Solution = (props) => {
               xs={10}
               style={{ marginLeft: "-10px" }}
             >
-              <Row>
+              
                 <div style={{ wordWrap: "break-word" , marginBottom:"10px"}}>
                   <ReactMarkdown
                     className={styles.solutionBody}
@@ -306,7 +308,7 @@ const Solution = (props) => {
                     }}
                   />
                 </div>
-              </Row>
+              
               <Row className={styles.toprow}>
                 <div
                   style={{

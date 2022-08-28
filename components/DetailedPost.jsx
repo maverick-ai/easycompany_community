@@ -620,7 +620,7 @@ const DetailedPost = (props) => {
         <div className="post-comments-container">
           <Container>
             <Row>
-              <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
+              <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 1}} xs={{span: 6, offset: 1}}>
                 <h2
                   className={styles.commentTitle}
                   style={{ margin: "10px 0 15px 0px" }}
@@ -646,7 +646,7 @@ const DetailedPost = (props) => {
               {postComment &&
                 postComment.length < props.data.comments.count &&
                 postComment.length % commentPageSize == 0 && (
-                  <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
+                  <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 1}} xs={{span: 6, offset: 1}}>
                     
                     <span
                       onClick={() => getnewpostcomments(props.data.post_id)}
@@ -660,7 +660,7 @@ const DetailedPost = (props) => {
 
           <Container>
             <Row>
-              <Col lg={{ span: 6, offset: 1 }} md={{ offset: 2}} sm={{span: 10, offset: 1}} xs={{span: 10, offset: 1}}>
+              <Col lg={{ span: 6, offset: 1 }} md={{ offset: 2}} sm={{span: 10, offset: 0}} xs={{span: 10, offset: 0}}>
                 <div
                   className={`${styles.inputOuter} ${styles.commentInput}`}
                   style={{ display: "flex", flexDirection: "row" }}

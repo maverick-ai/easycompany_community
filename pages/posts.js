@@ -73,7 +73,7 @@ const Post = ({ post, answers, solnComments, query }) => {
           />
           <div className="answers-container">
             <Container>
-              <Col lg={{ span: 8, offset: 1 }} md={{offset: 2}} sm={{span: 8, offset: 1}} xs={{span: 8, offset: 1}}>
+              <Col lg={{ span: 8, offset: 1 }} md={{offset: 2}} sm={{span: 8, offset: 0}} xs={{span: 8, offset: 0}}>
                 <h2 className={styles.answerTitle}>{answers.count} Answers</h2>
               </Col>
             </Container>
