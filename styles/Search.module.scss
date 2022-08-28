@@ -4,10 +4,10 @@
       margin-top: 100px;
       max-width: 1000px; */
 
-  width: 1300px;
-  height: 327px;
-  background-image: url(../public/Frame1.png);
-  margin: 155px auto 110px;
+  width: calc(100vw * (1728/1728));
+  height: 563px;
+  background-image: url(../public/SEARCH1.png);
+  margin: 100px auto 110px;
   background-size: 100% 100%;
 }
 .gridnewbox {
@@ -72,15 +72,15 @@
 }
 
 .searchbox {
-  width: 90%;
-  height: 75px;
-  margin: 123px auto;
+  width: calc(100vw * (649/1728));
+  height: 35px;
+  margin: 370px auto 123px;
 
   justify-content: center;
 
   background-color: #121212;
   border-width: 0cm;
-  border-radius: 8px;
+  border-radius: 17.5px;
 }
 .ImgQues {
   margin-top: 30px;
@@ -101,19 +101,20 @@
   border-radius: 12px;
 }
 .searchInput {
-  width: 80%;
-  height: 50px;
-  margin-top: 15px;
+  width: 100%;
+  height: 35px;
+  margin-top: 0px;
   background-color: #121212;
   border-width: 0;
   color: aliceblue;
   padding-left: 2.5em;
   border: none;
   outline: none;
+  border-radius: 17.5px;
 }
 @media screen and (min-width: 991px) {
   .searchbox {
-    width: 700px;
+    width: calc(100vw * (649/1728));
   }
 }
 

@@ -74,6 +74,16 @@ const Content = () => {
             <div className={styles.questionsList}>
               <div className={styles.searchbox}>
                 <div style={{ position: "relative" }}>
+                <img
+                    src="/Vector.png"
+                    style={{
+                      height: "18.76px",
+                      position: "absolute",
+                      left: "11px",
+                      top: "8px",
+                    }}
+                    onClick={newSearch}
+                  />
                   <input
                     className={styles.searchInput}
                     id="query"
@@ -82,16 +92,6 @@ const Content = () => {
                     value={query}
                     onChange={onChangeHandler}
                     required
-                  />
-                  <img
-                    src="/Vector.png"
-                    style={{
-                      height: "18.76px",
-                      position: "absolute",
-                      right: "18px",
-                      top: "30px",
-                    }}
-                    onClick={newSearch}
                   />
                 </div>
               </div>
