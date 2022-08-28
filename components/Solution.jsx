@@ -94,6 +94,7 @@ const Solution = (props) => {
         <Container>
           <Row>
             <Col lg={1} md={2} sm={2} xs={2}>
+            <div style={{marginTop:"40px"}}>
               <Image
                 className={
                   props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
@@ -106,8 +107,6 @@ const Solution = (props) => {
                 height={33}
                 width={33}
                 quality={100}
-                position='relative'
-                style={{margiTop: '100px'}}
               />
               <p className={styles.voteText}>
                 {props.solution.upVoteNumber - props.solution.downVoteNumber}
@@ -127,6 +126,7 @@ const Solution = (props) => {
                 width={33}
                 quality={100}
               />
+              </div>
             </Col>
             <Col lg={11} md={10} sm={10} xs={8}>
               <Row className={styles.toprow}>
@@ -187,6 +187,7 @@ const Solution = (props) => {
                 </div>
               </Row>
               <Row>
+                <div style={{wordWrap:"break-word", width:"85%"}}>
                 <ReactMarkdown
                   className={styles.solutionBody}
                   children={props.solution.solutionByUser}
@@ -206,6 +207,7 @@ const Solution = (props) => {
                             id="img01"
                             {...props}
                           />
+                          <div className={styles.caption} onClick={onclickhandler}>Close</div>
                         </div>
                       ) : (
                         <img
@@ -215,7 +217,7 @@ const Solution = (props) => {
                         />
                       ),
                   }}
-                />
+                /></div>
               </Row>
             </Col>
           </Row>
@@ -285,6 +287,7 @@ const Solution = (props) => {
                               id="img01"
                               {...props}
                             />
+                            <div className={styles.caption} onClick={onclickhandler}>Close</div>
                           </div>
                         ) : (
                           <img
@@ -397,7 +400,7 @@ const Solution = (props) => {
             >
               <h2
                 className={styles.commentTitle}
-                style={{ margin: "30px 0 15px -10px" }}
+                style={{ margin: "30px 0 15px 0px" }}
               >
                 Comments
               </h2>
@@ -436,6 +439,7 @@ const Solution = (props) => {
           <Row>
             <Col
               lg={{ span: 6, offset: 1 }}
+              md={{offset: 2}}
               sm={{ span: 10, offset: 1 }}
               xs={{ span: 10, offset: 1 }}
             >

@@ -222,6 +222,7 @@ const DetailedPost = (props) => {
                   <h1 className={styles.posttitle}>{props.data.title}</h1>
                 </Row>
                 <Row>
+                  <div style={{width:"85%"}}>
                   <ReactMarkdown
                     className={styles.postbody}
                     children={props.data.postByUser}
@@ -230,17 +231,12 @@ const DetailedPost = (props) => {
                       img: ({ node, ...props }) =>
                         fullsize ? (
                           <div className={styles.modal}>
-                            <span
-                              className={styles.close}
-                              onClick={onclickhandler}
-                            >
-                              &times;
-                            </span>
                             <img
                               class={styles.modal_content}
                               id="img01"
                               {...props}
                             />
+                            <div className={styles.caption} onClick={onclickhandler}>Close</div>
                           </div>
                         ) : (
                           <img
@@ -250,7 +246,7 @@ const DetailedPost = (props) => {
                           />
                         ),
                     }}
-                  />
+                  /></div>
                 </Row>
                 <Row>
                   <div className={`${styles.catList} category-list`}>
@@ -375,17 +371,12 @@ const DetailedPost = (props) => {
                       img: ({ node, ...props }) =>
                         fullsize ? (
                           <div className={styles.modal}>
-                            <span
-                              className={styles.close}
-                              onClick={onclickhandler}
-                            >
-                              &times;
-                            </span>
                             <img
                               class={styles.modal_content}
                               id="img01"
                               {...props}
                             />
+                            <div className={styles.caption} onClick={onclickhandler}>Close</div>
                           </div>
                         ) : (
                           <img
@@ -631,7 +622,7 @@ const DetailedPost = (props) => {
               <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
                 <h2
                   className={styles.commentTitle}
-                  style={{ margin: "10px 0 15px -10px" }}
+                  style={{ margin: "10px 0 15px 0px" }}
                 >
                   Comments
                 </h2>
@@ -655,19 +646,22 @@ const DetailedPost = (props) => {
                 postComment.length < props.data.comments.count &&
                 postComment.length % commentPageSize == 0 && (
                   <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
-                    <button
+                    
+                    <span
                       onClick={() => getnewpostcomments(props.data.post_id)}
                       className={`${styles.commentButton}`}
                     >
-                      View All
-                    </button>
+                      <span style={{textDecoration:"underline"}}>View All</span>
+                      
+                    </span>
+                    
                   </Col>
                 )}
           </Container>
 
           <Container>
             <Row>
-              <Col lg={{ span: 6, offset: 1 }} sm={{span: 10, offset: 1}} xs={{span: 10, offset: 1}}>
+              <Col lg={{ span: 6, offset: 1 }} md={{ offset: 2}} sm={{span: 10, offset: 1}} xs={{span: 10, offset: 1}}>
                 <div
                   className={`${styles.inputoutert} ${styles.commentInput}`}
                   style={{ display: "flex", flexDirection: "row" }}

@@ -73,7 +73,7 @@ const Post = ({ post, answers, solnComments, query }) => {
           />
           <div className="answers-container">
             <Container>
-              <Col lg={{ span: 8, offset: 1 }} sm={{span: 8, offset: 1}} xs={{span: 8, offset: 1}}>
+              <Col lg={{ span: 8, offset: 1 }} md={{offset: 2}} sm={{span: 8, offset: 1}} xs={{span: 8, offset: 1}}>
                 <h2 className={styles.answerTitle}>{answers.count} Answers</h2>
               </Col>
             </Container>
@@ -99,11 +99,12 @@ const Post = ({ post, answers, solnComments, query }) => {
             </Container>
             <Container>
             <Col lg={{ span: 10, offset: 1 }} style={{marginTop:"20px", marginBottom:"30px"}}>
-              <h2>Do you know the answer to this questions? {post.creator_by.first_name} needs your help!</h2>
+              <h2 className={styles.doyouknow}>Do you know the answer to this questions? {post.creator_by.first_name} needs your help!</h2>
             </Col>
             </Container>
             <Container>
               <Col lg={{ span: 10, offset: 1 }}>
+                <div style={{marginLeft:"15px"}}>
                 <ReactMde
                   value={ansValue}
                   onChange={setAnsValue}
@@ -132,7 +133,7 @@ const Post = ({ post, answers, solnComments, query }) => {
                       />
                     )
                   }
-                />
+                /></div>
               </Col>
             </Container>
             <Container>
@@ -141,6 +142,7 @@ const Post = ({ post, answers, solnComments, query }) => {
                   lg={{ span: 1, offset: 1 }}
                   style={{ marginBottom: "50px", marginTop: "25px" }}
                 >
+                  <div style={{marginLeft:"14px"}}>
                   <button
                     onClick={() =>
                       addanswer(ansValue, post.post_id, setIsLoggedIn)
@@ -148,7 +150,7 @@ const Post = ({ post, answers, solnComments, query }) => {
                     className={Styles.btn}
                   >
                     Add Answer
-                  </button>
+                  </button></div>
                 </Col>
               </Row>
             </Container>
