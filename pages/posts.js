@@ -164,6 +164,14 @@ const Post = ({ post, answers, solnComments, query }) => {
               )}
             </div>
           </div>
+
+            <div className={styles.FooterBar}>
+                <div className={styles.globeImgDiv} style={{position: 'relative'}}>
+                  <img className={styles.globeImg} src="./globe.png"></img>
+                </div>
+            </div>
+          
+         
         </div>
       )}
       {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}

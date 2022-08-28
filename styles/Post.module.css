@@ -88,7 +88,7 @@ display: none;
   margin-top: 34px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
 }
 
 .profilePic {
@@ -240,6 +240,12 @@ display: none;
     background-clip: text;
     color: transparent;
     border-color: transparent;
+}
+
+.underline{
+  background: linear-gradient(278.43deg, #E42833 -23.73%,#B50EAE 170.2%) no-repeat;
+  background-size: 100% 2px;
+  background-position: left bottom;
 }
 
 .nomore {
@@ -518,4 +524,13 @@ display: none;
 .timerDiv {
   position: relative;
   top: 0;
+}
+
+.globeImg{
+  width: calc(100vw * (1025/1728));
+  margin-left: calc(100vw * (351/1728));
+
+  position: absolute;
+  top: -50px;
+  
 }
