@@ -8,6 +8,7 @@ import QuestionBox from "../components/questions/questionBox";
 import React, { useMemo } from "react";
 
 import Pagination from "../components/Pagination";
+import FooterToolbar from "../components/FooterToolbar";
 
 const Questions = ({ questions, query }) => {
   console.log(query, "=================");
@@ -83,6 +84,9 @@ const Questions = ({ questions, query }) => {
             baseURL={`/questions?`}
           />
         )}
+      </div>
+      <div>
+        <FooterToolbar />
       </div>
     </React.Fragment>
   );

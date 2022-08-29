@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../../../styles/phonestyle.module.scss";
 import { Col, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import FooterToolbar from "../../FooterToolbar";
 
 function Phone7() {
   return (
@@ -70,7 +71,8 @@ function Phone7() {
           <button className={styles.JoinUs}>JOIN US</button>
         </div>
       </Row>
-      <Row>
+      <FooterToolbar />
+      {/* <Row>
         <div style={{ textAlign: "center", marginTop: "4%" }}>
           <img src="photos/lastGlobe.png" className={styles.lastGlobe}></img>
         </div>
@@ -89,7 +91,7 @@ function Phone7() {
         <div style={{ textAlign: "center" }}>
           <img className={styles.logo} src="photos/logoeasy.svg" />
         </div>
-      </Row>
+      </Row> */}
     </React.Fragment>
   );
 }

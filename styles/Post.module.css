@@ -529,9 +529,6 @@ display: none;
 .globeImg{
   width: calc(100vw * (1025/1728));
   margin-left: calc(100vw * (351/1728));
-
-  position: absolute;
-  top: -50px;
   
 }
 .bottomText {
@@ -539,6 +536,18 @@ display: none;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: calc(100vw * (8 / 360));
+  font-size: calc(100vw * (18 / 1728));
   margin: 0 4%;
+}
+
+@media (max-width: 768px){
+  .bottomText {
+    font-size: calc(100vw * (11/768));
+  }
+}
+
+@media screen and (min-width: 1526px) {
+  .lastGlobe{
+    width: 905px;
+  }
 }
