@@ -133,14 +133,25 @@ const Solution = (props) => {
                 <div style={{ width: "10px", padding: "0px" }}></div>
                 <div style={{ display: "flex" }}>
                   <div style={{ width: "28px" }}>
-                    <img
-                      src={props.solution.creator_by.image}
-                      style={{
-                        height: "28px",
-                        width: "28px",
-                        borderRadius: "50%",
-                      }}
-                    />
+                  {props.solution.creator_by.image ? (
+                        <img
+                          src={props.solution.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ) : (
+                        <img
+                          src="/profileImage.png"
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      )}
                   </div>
                   {/* <Col lg={2} md={3} sm={4}> */}
                   <div className={styles.postuser}>
@@ -447,6 +458,7 @@ const Solution = (props) => {
           <Row>
             <Col
               lg={{ span: 3, offset: 1 }}
+              md={{span: 6, offset: 2}}
               sm={{ span: 6, offset: 1 }}
               xs={{ span: 6, offset: 1 }}
             >
