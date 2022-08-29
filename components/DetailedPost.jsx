@@ -134,7 +134,7 @@ const DetailedPost = (props) => {
                         />
                       ) : (
                         <img
-                          src="/anonypic.png"
+                          src="/profileImage.png"
                           style={{
                             height: "28px",
                             width: "28px",
@@ -420,7 +420,7 @@ const DetailedPost = (props) => {
                         />
                       ) : (
                         <img
-                          src="/anonypic.png"
+                          src="/profileImage.png"
                           style={{
                             height: "35px",
                             width: "35px",
@@ -620,7 +620,7 @@ const DetailedPost = (props) => {
         <div className="post-comments-container">
           <Container>
             <Row>
-              <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 1}} xs={{span: 6, offset: 1}}>
+              <Col lg={{ span: 3, offset: 1 }} md={{span: 6, offset: 2}} sm={{span: 6, offset: 1}} xs={{span: 6, offset: 1}}>
                 <h2
                   className={styles.commentTitle}
                   style={{ margin: "10px 0 15px 0px" }}

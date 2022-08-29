@@ -158,7 +158,7 @@ const SolutionComment = (props) => {
       {winWidth && (
         <Container>
           <Row>
-            <Col lg={{ span: 8, offset: 1 }} sm={{ span: 10, offset: 1 }} xs={{ span: 10, offset: 1 }}>
+            <Col lg={{ span: 8, offset: 1 }} sm={{ span: 10, offset: 0 }} xs={{ span: 10, offset: 0 }}>
               <div className={`${Styles.commentboxdiv}`}>
                 <Row style={{ marginTop: "5px" }}>
                   <Col sm={2} xs={3}>
