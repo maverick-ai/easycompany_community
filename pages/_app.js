@@ -6,6 +6,7 @@ import Head from 'next/head';
 import { CookiesProvider } from "react-cookie";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
+
 config.autoAddCss = false;
 
 

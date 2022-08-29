@@ -8,6 +8,7 @@ import QuestionBox from "../components/questions/questionBox";
 import React, { useMemo } from "react";
 
 import Pagination from "../components/Pagination";
+import FooterToolbar from "../components/FooterToolbar";
 
 const Questions = ({ questions, query }) => {
   console.log(query, "=================");
@@ -45,24 +46,24 @@ const Questions = ({ questions, query }) => {
       <Container>
         <Row style={{ margin: "10% 0 10%" }}>
           <Col xl={7} lg={7}>
-            <div style={{ margin: "15% 0", position: "relative" }}>
-              <img src="/toparrw.svg" className={styles.toparrw} />
+            <div className={styles.QuestionsImgDiv}>
+              {/* <img src="/toparrw.svg" className={styles.toparrw} /> */}
               <img
                 className={styles.ImageRenderring}
                 src="/quetsionpng.png"
-                style={{ width: "99%", margin: "auto 0" }}
+                style={{ width: "99%", margin: "0 0" }}
               />
             </div>
           </Col>
           <Col>
             <div>
               <div style={{ position: "relative" }}>
-                <img src="/notcam.png" className={styles.upar} />
+                {/* <img src="/notcam.png" className={styles.upar} /> */}
                 <div className={styles.phonepicdad}>
-                  <img src="/phonephoto.png" className={styles.phonepic} />
+                  <img src="/Questions2.png" className={styles.phonepic} />
                 </div>
 
-                <img src="/cam.png" className={styles.camera} />
+                {/* <img src="/cam.png" className={styles.camera} /> */}
               </div>
             </div>
           </Col>
@@ -83,6 +84,9 @@ const Questions = ({ questions, query }) => {
             baseURL={`/questions?`}
           />
         )}
+      </div>
+      <div>
+        <FooterToolbar />
       </div>
     </React.Fragment>
   );

@@ -6,6 +6,7 @@ import DestCard from "./destcard";
 import "react-multi-carousel/lib/styles.css";
 import Carousel_row from "./homepage_sections/phonepage_components/carousel _row";
 
+
 import Section1 from "./homepage_sections/phonepage_components/section1";
 import Section2 from "./homepage_sections/phonepage_components/section2";
 import Section3 from "./homepage_sections/phonepage_components/section3";

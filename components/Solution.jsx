@@ -94,6 +94,7 @@ const Solution = (props) => {
         <Container>
           <Row>
             <Col lg={1} md={2} sm={2} xs={2}>
+            <div style={{marginTop:"40px"}}>
               <Image
                 className={
                   props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
@@ -125,6 +126,7 @@ const Solution = (props) => {
                 width={33}
                 quality={100}
               />
+              </div>
             </Col>
             <Col lg={11} md={10} sm={10} xs={8}>
               <Row className={styles.toprow}>
@@ -158,7 +160,7 @@ const Solution = (props) => {
                           props.solution.creator_by.last_name}
                       </Link>
                     </div>
-                    <div style={{ width: "120px" }}>
+                    <div className={styles.timerDiv} style={{ width: "120px" }}>
                       <Image
                         src="/av_timer.png"
                         height={16}
@@ -185,10 +187,13 @@ const Solution = (props) => {
                 </div>
               </Row>
               <Row>
+          
+                <div style={{wordWrap:"break-word", width:"85%"}}>
                 <ReactMarkdown
                   className={styles.solutionBody}
                   children={props.solution.solutionByUser}
                   remarkPlugins={[remarkGfm]}
+
                   components={{
                     img: ({ node, ...props }) =>
                       fullsize ? (
@@ -204,6 +209,7 @@ const Solution = (props) => {
                             id="img01"
                             {...props}
                           />
+                          <div className={styles.caption} onClick={onclickhandler}>Close</div>
                         </div>
                       ) : (
                         <img
@@ -213,7 +219,7 @@ const Solution = (props) => {
                         />
                       ),
                   }}
-                />
+                /></div>
               </Row>
             </Col>
           </Row>
@@ -222,7 +228,56 @@ const Solution = (props) => {
       {winWidth && (
         <Container>
           <Row>
-            <Col lg={1} md={2} sm={2} xs={2}>
+          <div
+                style={{
+                  maxWidth: "10vw",
+                  minWidth: "10vw",
+                  marginLeft: "-10px",
+                }}
+              >
+                <img
+                  className={
+                    props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)
+                  }
+                  alt="logo"
+                  src="/mobupvote.png"
+                  height={18}
+                  width={18}
+                  quality={100}
+                />
+                <p className={styles.voteText}>
+                  {props.solution.upVoteNumber - props.solution.downVoteNumber}
+                </p>
+                <img
+                  className={
+                    props.solution.downvoted
+                      ? styles.downVotedIcon
+                      : styles.VoteIcon
+                  }
+                  onClick={() =>
+                    sendVote(
+                      DownVoteSolnURL,
+                      props.solution.id,
+                      props.setLogin
+                    )
+                  }
+                  alt="logo"
+                  src="/mobdownvote.png"
+                  height={18}
+                  width={18}
+                  quality={100}
+                />
+              </div>
+            {/* <Col lg={1} md={2} sm={1} xs={1}>
+            <div
+                style={{
+                  marginRight: "10px",
+                  marginLeft: "-10px",
+                }}
+              >
               <Image
                 className={
                   props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
@@ -232,8 +287,8 @@ const Solution = (props) => {
                 }
                 alt="logo"
                 src="/mobupvote.png"
-                height={24}
-                width={24}
+                height={18}
+                width={18}
                 quality={100}
               />
               <p className={styles.voteText}>
@@ -250,11 +305,12 @@ const Solution = (props) => {
                 }
                 alt="logo"
                 src="/mobdownvote.png"
-                height={24}
-                width={24}
+                height={18}
+                width={18}
                 quality={100}
               />
-            </Col>
+              </div>
+            </Col> */}
             <Col
               lg={11}
               md={10}
@@ -262,7 +318,7 @@ const Solution = (props) => {
               xs={10}
               style={{ marginLeft: "-10px" }}
             >
-              <Row>
+              
                 <div style={{ wordWrap: "break-word" , marginBottom:"10px"}}>
                   <ReactMarkdown
                     className={styles.solutionBody}
@@ -283,6 +339,7 @@ const Solution = (props) => {
                               id="img01"
                               {...props}
                             />
+                            <div className={styles.caption} onClick={onclickhandler}>Close</div>
                           </div>
                         ) : (
                           <img
@@ -294,7 +351,7 @@ const Solution = (props) => {
                     }}
                   />
                 </div>
-              </Row>
+              
               <Row className={styles.toprow}>
                 <div
                   style={{
@@ -331,7 +388,6 @@ const Solution = (props) => {
                           }}
                         />
                       )}
-                  {/* <Col lg={2} md={3} sm={4}> */}
                     <div
                       style={{
                         paddingLeft: "10px",
@@ -391,12 +447,12 @@ const Solution = (props) => {
           <Row>
             <Col
               lg={{ span: 3, offset: 1 }}
-              sm={{ span: 6, offset: 2 }}
-              xs={{ span: 6, offset: 2 }}
+              sm={{ span: 6, offset: 1 }}
+              xs={{ span: 6, offset: 1 }}
             >
               <h2
                 className={styles.commentTitle}
-                style={{ margin: "30px 0 15px -10px" }}
+                style={{ margin: "30px 0 15px 0px" }}
               >
                 Comments
               </h2>
@@ -435,8 +491,9 @@ const Solution = (props) => {
           <Row>
             <Col
               lg={{ span: 6, offset: 1 }}
-              sm={{ span: 10, offset: 1 }}
-              xs={{ span: 10, offset: 1 }}
+              md={{offset: 2}}
+              sm={{ span: 10, offset: 0 }}
+              xs={{ span: 10, offset: 0 }}
             >
               <div
                 className={`${styles.inputoutert} ${styles.commentInput}`}

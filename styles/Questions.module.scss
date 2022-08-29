@@ -15,6 +15,18 @@
   border-radius: 8px;
   background-color: #121212;
 }
+
+.QuestionsImgDiv {
+  margin: 15% 0%;
+  position: relative;
+}
+
+@media (max-width: 768px){
+  .QuestionsImgDiv {
+    margin: 15% 0% 0%;
+  }
+}
+
 .ImageRenderring {
   image-rendering: -moz-crisp-edges; /* Firefox */
   image-rendering: -o-crisp-edges; /* Opera */
@@ -22,6 +34,13 @@
   image-rendering: crisp-edges;
   -ms-interpolation-mode: nearest-neighbor;
 }
+
+@media (max-width: 991px) {
+  .ImageRenderring {
+
+  }
+}
+
 .headingtop {
   font-weight: 700;
   font-size: 40px;
@@ -199,6 +218,10 @@
   padding-bottom: 0;
 }
 
+.number {
+  color: white;
+}
+
 .voteCol {
   display: flex;
   flex-direction: column;
@@ -332,6 +355,8 @@
   }
 }
 
+
+
 .right {
   ul {
     display: flex;
@@ -375,8 +400,15 @@
 }
 
 .phonepic {
-  width: 90%;
+  width: 100%;
 }
+
+@media (max-width: "991px") {
+  .phonepic {
+    display: none;
+  }
+}
+
 .phonepicdad {
   margin: 10% 0;
 }
@@ -442,6 +474,7 @@
     right: -30px;
     width: 20px;
     position: absolute;
+    display: none;
   }
 }
 @media screen and (max-width: 786px) and (min-width: 576px) {
@@ -450,6 +483,7 @@
     right: -20px;
     width: 15px;
     position: absolute;
+    display: none;
   }
 }
 @media screen and (min-width: 425px) and (max-width: 576px) {
@@ -458,6 +492,7 @@
     right: -20px;
     width: 15px;
     position: absolute;
+    display: none;
   }
 }
 
@@ -467,6 +502,7 @@
     right: -20px;
     width: 15px;
     position: absolute;
+    display: none;
   }
 }
 @media screen and (max-width: 375px) {
@@ -475,6 +511,7 @@
     right: -20px;
     width: 15px;
     position: absolute;
+    display: none;
   }
 }
 @media screen and (max-width: 320px) {
@@ -483,6 +520,7 @@
     right: -20px;
     width: 15px;
     position: absolute;
+    display: none;
   }
 }
 

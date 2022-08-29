@@ -1,5 +1,6 @@
 import React from "react";
 import { Row} from "react-bootstrap";
+import FooterToolbar from "../FooterToolbar";
 import sy from "./last_page.module.css";
 
 function LastPage() {
@@ -31,26 +32,10 @@ function LastPage() {
             <button className={sy.JoinUs}>JOIN US</button>
           </div>
         </Row>
-        <Row>
-          <div style={{ textAlign: "center", marginTop: "4%" }}>
-            <img src="desktopHome/lastGlobe.png" className={sy.lastGlobe}></img>
-          </div>
-        </Row>
-        <Row style={{ textAlign: "center", margin: "3% 0" }}>
-          <div>
-            <div style={{ position: "relative" }}>
-              <span className={sy.bottomText}>FOLLOW</span>
-              <span className={sy.bottomText}>HELP</span>
-              <span className={sy.bottomText}>CONTACT</span>
-              <span className={sy.bottomText}>ABOUT US</span>
-            </div>
-          </div>
-        </Row>
-        <Row>
-          <div style={{ textAlign: "center" }}>
-            <img src="desktopHome/logo.png" style={{width:"376px"}}/>
-          </div>
-        </Row>
+        <div style={{ marginTop: '40px' }}>
+          <FooterToolbar />
+        </div>
+
   </React.Fragment>;
 }
 

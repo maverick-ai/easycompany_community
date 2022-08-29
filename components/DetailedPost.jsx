@@ -222,6 +222,7 @@ const DetailedPost = (props) => {
                   <h1 className={styles.posttitle}>{props.data.title}</h1>
                 </Row>
                 <Row>
+                  <div style={{width:"85%"}}>
                   <ReactMarkdown
                     className={styles.postbody}
                     children={props.data.postByUser}
@@ -230,17 +231,12 @@ const DetailedPost = (props) => {
                       img: ({ node, ...props }) =>
                         fullsize ? (
                           <div className={styles.modal}>
-                            <span
-                              className={styles.close}
-                              onClick={onclickhandler}
-                            >
-                              &times;
-                            </span>
                             <img
                               class={styles.modal_content}
                               id="img01"
                               {...props}
                             />
+                            <div className={styles.caption} onClick={onclickhandler}>Close</div>
                           </div>
                         ) : (
                           <img
@@ -250,7 +246,7 @@ const DetailedPost = (props) => {
                           />
                         ),
                     }}
-                  />
+                  /></div>
                 </Row>
                 <Row>
                   <div className={`${styles.catList} category-list`}>
@@ -270,9 +266,10 @@ const DetailedPost = (props) => {
             <div style={{ display: "flex" }}>
               <div
                 style={{
-                  maxWidth: "12vw",
-                  minWidth: "12vw",
+                  maxWidth: "10vw",
+                  minWidth: "10vw",
                   marginTop: "43px",
+                  marginLeft: "-10px",
                 }}
               >
                 <Image
@@ -284,8 +281,8 @@ const DetailedPost = (props) => {
                   }
                   alt="logo"
                   src="/mobupvote.png"
-                  height={24}
-                  width={24}
+                  height={18}
+                  width={18}
                   quality={100}
                 />
                 <p className={styles.voteText}>
@@ -306,14 +303,14 @@ const DetailedPost = (props) => {
                   }
                   alt="logo"
                   src="/mobdownvote.png"
-                  height={24}
-                  width={24}
+                  height={18}
+                  width={18}
                   quality={100}
                 />
               </div>
               <div>
                 <Row className={styles.toprow}>
-                  <div style={{ width: "10px", padding: "0px" }}></div>
+                  <div style={{ width: "10px", padding: "0px",marginLeft: "-10px" }}></div>
                   <div className={styles.postuser}>
                     <Row>
                       <Col xs={9} sm={9}>
@@ -375,17 +372,12 @@ const DetailedPost = (props) => {
                       img: ({ node, ...props }) =>
                         fullsize ? (
                           <div className={styles.modal}>
-                            <span
-                              className={styles.close}
-                              onClick={onclickhandler}
-                            >
-                              &times;
-                            </span>
                             <img
                               class={styles.modal_content}
                               id="img01"
                               {...props}
                             />
+                            <div className={styles.caption} onClick={onclickhandler}>Close</div>
                           </div>
                         ) : (
                           <img
@@ -628,10 +620,10 @@ const DetailedPost = (props) => {
         <div className="post-comments-container">
           <Container>
             <Row>
-              <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
+              <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 1}} xs={{span: 6, offset: 1}}>
                 <h2
                   className={styles.commentTitle}
-                  style={{ margin: "10px 0 15px -10px" }}
+                  style={{ margin: "10px 0 15px 0px" }}
                 >
                   Comments
                 </h2>
@@ -654,22 +646,23 @@ const DetailedPost = (props) => {
               {postComment &&
                 postComment.length < props.data.comments.count &&
                 postComment.length % commentPageSize == 0 && (
-                  <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 2}} xs={{span: 6, offset: 2}}>
-                    <button
+                  <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 1}} xs={{span: 6, offset: 1}}>
+                    
+                    <span
                       onClick={() => getnewpostcomments(props.data.post_id)}
-                      className={`${styles.commentButton}`}
-                    >
-                      View All
-                    </button>
+                      className={`${styles.commentButton}`}>
+                      <span className={styles.underline}>View All</span>
+                    </span>
+                    
                   </Col>
                 )}
           </Container>
 
           <Container>
             <Row>
-              <Col lg={{ span: 6, offset: 1 }} sm={{span: 10, offset: 1}} xs={{span: 10, offset: 1}}>
+              <Col lg={{ span: 6, offset: 1 }} md={{ offset: 2}} sm={{span: 10, offset: 0}} xs={{span: 10, offset: 0}}>
                 <div
-                  className={`${styles.inputoutert} ${styles.commentInput}`}
+                  className={`${styles.inputOuter} ${styles.commentInput}`}
                   style={{ display: "flex", flexDirection: "row" }}
                 >
                   <input
