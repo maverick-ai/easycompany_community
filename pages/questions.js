@@ -44,7 +44,7 @@ const Questions = ({ questions, query }) => {
   return (
     <React.Fragment>
       <Container>
-        <Row style={{ margin: "6% 0 0%" }}>
+        <Row style={{ margin: "6% 0 -3%" }}>
           <Col xl={7} lg={7}>
             <div className={styles.QuestionsImgDiv}>
               {/* <img src="/toparrw.svg" className={styles.toparrw} /> */}
