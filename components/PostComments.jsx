@@ -173,7 +173,7 @@ const PostComment = (props) => {
                     </div>
                   </Col>
                 </Row>
-                <p style={{ marginTop: "10px", color:"#D1D1D1" }}>
+                <p style={{ color:"#D1D1D1" }}>
                   {props.comment.commentByUser}
                 </p>
                 <Row>
