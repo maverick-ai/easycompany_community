@@ -10,6 +10,13 @@
   margin: 100px auto 110px;
   background-size: 100% 100%;
 }
+
+@media (max-width: 768px) {
+  .questionsList{
+    background-image: url(../public/mainMainSearch.png);
+  }
+}
+
 .gridnewbox {
   display: inline-flex;
   flex-wrap: wrap;
