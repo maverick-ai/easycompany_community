@@ -16,7 +16,7 @@
   
   @media (max-width: 768px){
     .bottomText {
-      font-size: calc(100vw * (11/768));
+      font-size: calc(100vw * (16/768));
     }
   }
   

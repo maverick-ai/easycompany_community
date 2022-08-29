@@ -99,7 +99,7 @@ const Post = ({ post, answers, solnComments, query }) => {
               )}
             </Container>
             <Container>
-            <Col lg={{ span: 10, offset: 1 }} style={{marginTop:"20px", marginBottom:"30px"}}>
+            <Col lg={{ span: 10, offset: 1 }} sm={{span:10, offset: 1}} xs={{span: 10, offset: 1}} style={{marginTop:"20px", marginBottom:"30px"}}>
               <h2 className={styles.doyouknow}>Do you know the answer to this questions? {post.creator_by.first_name} needs your help!</h2>
             </Col>
             </Container>

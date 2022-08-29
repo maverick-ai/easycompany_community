@@ -232,7 +232,6 @@ const Solution = (props) => {
                 style={{
                   maxWidth: "10vw",
                   minWidth: "10vw",
-                  marginTop: "43px",
                   marginLeft: "-10px",
                 }}
               >
@@ -241,7 +240,7 @@ const Solution = (props) => {
                     props.solution.upvoted ? styles.upVotedIcon : styles.VoteIcon
                   }
                   onClick={() =>
-                    sendVote(UpVotePostURL, props.solution.id, props.setLogin)
+                    sendVote(UpVoteSolnURL, props.solution.id, props.setLogin)
                   }
                   alt="logo"
                   src="/mobupvote.png"
@@ -260,7 +259,7 @@ const Solution = (props) => {
                   }
                   onClick={() =>
                     sendVote(
-                      DownVotePostURL,
+                      DownVoteSolnURL,
                       props.solution.id,
                       props.setLogin
                     )
