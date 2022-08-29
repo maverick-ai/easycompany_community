@@ -78,6 +78,10 @@ display: none;
   .modal_content {
     width: 100%;
   }
+  .mkdimg2 {
+    max-width: 50%;
+    border-radius: 8px;
+  }
 }
 
 .page {
@@ -282,6 +286,19 @@ display: none;
 }
 
 @media (max-width: 768px) {
+  .commentButton {
+    position: relative;
+    top: -20px;
+    left: 5px;
+    font-size: 16px;
+      background: linear-gradient(278.43deg, #E42833 -23.73%, #B50EAE 170.2%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
+      border-color: transparent;
+  }
+  
   .inputOuter {
     border: 2px solid black;
     width: 100%;
@@ -296,7 +313,7 @@ display: none;
     margin-bottom: 40px;
     margin-right: 10px;
     margin-left: 17px;
-    margin-top: 25px;
+    margin-top: 25px!important;
     background: #000000;
     border-radius: 36px;
     height: 45px;
