@@ -10,6 +10,7 @@ import Image from "next/dist/client/image";
 
 import SearchBox from "../components/searchbox";
 import { useRouter } from "next/router";
+import FooterToolbar from "../components/FooterToolbar";
 
 // var page = 1;
 
@@ -192,6 +193,7 @@ const Content = () => {
             )}
           </Row>
         </Container>
+        <FooterToolbar />
       </div>
     </React.Fragment>
   );

@@ -166,8 +166,6 @@ const Post = ({ post, answers, solnComments, query }) => {
             </div>
           </div>
           <FooterToolbar />
-          
-         
         </div>
       )}
       {!isLoggedIn && <LoginPopUp setLogin={setIsLoggedIn} />}
