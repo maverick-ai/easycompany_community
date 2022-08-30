@@ -73,6 +73,7 @@ const Content = () => {
         <Container>
           <Row>
             <div className={styles.questionsList}>
+              <img src="/SearchVector.png" className={styles.SearchVector} />
               <div className={styles.searchbox}>
                 <div style={{ position: "relative" }}>
                 <img
