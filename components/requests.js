@@ -29,7 +29,8 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
           "Accept": "*/*",
           "Accept-Encoding": "gzip,deflate,br",
           "Connection": "keep-alive",
-          "Host": Host
+          "Host": Host,
+          Authorization: `Token anonymous`
         });
         response = await fetch(url, {
           method: method,
@@ -60,7 +61,8 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
           "Accept": "*/*",
           "Accept-Encoding": "gzip,deflate,br",
           "Connection": "keep-alive",
-          "Host": Host
+          "Host": Host,
+          Authorization: `Token anonymous`
         });
         response = await fetch(url, {
           method: method,
@@ -68,13 +70,11 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
         })
       }
     }
-    console.log(response);
     if (response.status >= 300) {
       throw (response.status);
     }
   }
   catch (err) {
-    console.log(err);
     if (err === 403) {
       if (setfunc) {
         setfunc(false);
@@ -102,7 +102,6 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
     return await response.json()
   }
   catch {
-    console.log(response);
     return response;
   }
 }
@@ -127,7 +126,6 @@ const addanswer = async (answer, id, setFunc) => {
       solutionByUser: answer,
       post: id,
     });
-    console.log(post);
     const resAddAnswer = await sendReq(AddSolnURL, document.cookie, "POST", post, setFunc);
     if (!resAddAnswer.status) {
       window.location.reload();
@@ -160,7 +158,6 @@ const addpostcomment = async (comment, id, setFunc) => {
       post: id,
     });
     const res = await sendReq(AddPostcommentURL, document.cookie, "POST", postComment, setFunc);
-    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     if (!res.status) {
       window.location.reload();
     }
@@ -208,7 +205,6 @@ const addsolncomment = async (comment, id, setFunc) => {
     //   },
     //   body: solncomment,
     // });
-    console.log(res);
     if (!res.status) {
       window.location.reload();
     }

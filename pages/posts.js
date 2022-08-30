@@ -203,13 +203,13 @@ export async function getServerSideProps({ query, req }) {
       },
     };
   }
-
+  console.log(req.body)
   return {
-    props: {
-      post,
-      answers,
-      solnComments,
-      query,
-    },
+      props: {
+        post,
+        answers,
+        solnComments,
+        query,
+      },
   };
 }
