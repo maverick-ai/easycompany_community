@@ -1,6 +1,6 @@
 import st from "./destcard.module.css";
 import { Col } from "react-bootstrap";
-function DestCard(props) {
+function   DestCard(props) {
   return (
     <Col
       xxl={2}

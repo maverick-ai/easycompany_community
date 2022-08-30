@@ -10,7 +10,7 @@ function LastPage() {
             <span className={sy.headingLast}>
               <span style={{ position: "relative" }}>
                 <span>
-                  <img src="desktopHome/pin.png" className={sy.pin} />
+                  <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/pin.png" className={sy.pin} />
                 </span>{" "}
                 Ready
               </span>{" "}
@@ -21,7 +21,7 @@ function LastPage() {
               <span>
                 today!
                 <span>
-                  <img src="desktopHome/globe2.png" className={sy.globe2} />
+                  <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/globe2.png" className={sy.globe2} />
                 </span>
               </span>
             </span>

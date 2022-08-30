@@ -29,8 +29,7 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
           "Accept": "*/*",
           "Accept-Encoding": "gzip,deflate,br",
           "Connection": "keep-alive",
-          "Host": Host,
-          Authorization: `Token anonymous`
+          "Host": Host
         });
         response = await fetch(url, {
           method: method,
@@ -61,8 +60,7 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
           "Accept": "*/*",
           "Accept-Encoding": "gzip,deflate,br",
           "Connection": "keep-alive",
-          "Host": Host,
-          Authorization: `Token anonymous`
+          "Host": Host
         });
         response = await fetch(url, {
           method: method,
