@@ -327,7 +327,6 @@ const Solution = (props) => {
               md={10}
               sm={10}
               xs={10}
-              style={{ marginLeft: "-10px" }}
             >
               
                 <div style={{ wordWrap: "break-word" , marginBottom:"10px"}}>
@@ -504,8 +503,8 @@ const Solution = (props) => {
             <Col
               lg={{ span: 6, offset: 1 }}
               md={{offset: 2}}
-              sm={{ span: 10, offset: 0 }}
-              xs={{ span: 10, offset: 0 }}
+              sm={{ span: 10, offset: 1 }}
+              xs={{ span: 10, offset: 1 }}
             >
               <div
                 className={`${styles.inputoutert} ${styles.commentInput}`}

@@ -74,13 +74,13 @@ const Post = ({ post, answers, solnComments, query }) => {
           />
           <div className="answers-container">
             <Container>
-              <Col lg={{ span: 8, offset: 1 }} md={{offset: 2}} sm={{span: 8, offset: 0}} xs={{span: 8, offset: 0}}>
+              <Col lg={{ span: 8, offset: 1 }} md={{offset: 2}} sm={{span: 8, offset: 1}} xs={{span: 8, offset: 1}}>
                 <h2 className={styles.answerTitle}>{answers.count} Answers</h2>
               </Col>
             </Container>
             <Container>
               <Col style={{textAlign:"center"}} lg={{ offset: 1 }}>
-                {!answers.count && <img style={{width:"40%", marginBottom:"50px"}} src="/noanswer.png"/>}
+                {!answers.count && <img className={styles.solimage} style={{marginBottom:"50px"}} src="/noanswer.png"/>}
               </Col>
               {answers.count > 0 && (
                 <div className="post-answers">
@@ -99,13 +99,13 @@ const Post = ({ post, answers, solnComments, query }) => {
               )}
             </Container>
             <Container>
-            <Col lg={{ span: 10, offset: 1 }} sm={{span:10, offset: 1}} xs={{span: 10, offset: 1}} style={{marginTop:"20px", marginBottom:"30px"}}>
+            <Col lg={{ span: 10, offset: 1 }} sm={{span:12, offset: 0}} xs={{span: 12, offset: 0}} style={{marginTop:"20px", marginBottom:"30px"}}>
               <h2 className={styles.doyouknow}>Do you know the answer to this questions? {post.creator_by.first_name} needs your help!</h2>
             </Col>
             </Container>
             <Container>
               <Col lg={{ span: 10, offset: 1 }}>
-                <div style={{marginLeft:"15px"}}>
+                <div className={styles.markdwn}>
                 <ReactMde
                   value={ansValue}
                   onChange={setAnsValue}
