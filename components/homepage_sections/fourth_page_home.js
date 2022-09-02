@@ -13,12 +13,12 @@ function Fourth_page() {
             marginTop: "8%",
           }}
         >
-          <img src="desktopHome/map1.png" className={s.mapp} />
+          <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/map1.png" className={s.mapp} />
 
           <span className={s.love1}>
             <span>
               <img
-                src="desktopHome/arrow1.png"
+                src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/arrow1.png"
                 className={s.arorrr}
                 style={{ position: "absolute" }}
               />
@@ -57,7 +57,7 @@ function Fourth_page() {
               </p>
             </div>
           </div>
-          <img src="desktopHome/map2.png" className={s.maop} />
+          <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/map2.png" className={s.maop} />
         </div>
       </Row>
     </React.Fragment>

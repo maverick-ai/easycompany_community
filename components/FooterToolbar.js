@@ -4,7 +4,7 @@ import { Container, Col, Row } from "react-bootstrap";
 function FooterToolbar(){
     return (
         <div className={styles.FooterBar}>
-        <Row style={{width: 'calc(100vw*(328/1728)'}}>
+        <Row>
             <div className={styles.globeImgDiv} >
               <img className={styles.globeImg} src="./globe.png"></img>
             </div>

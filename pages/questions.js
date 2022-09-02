@@ -11,7 +11,6 @@ import Pagination from "../components/Pagination";
 import FooterToolbar from "../components/FooterToolbar";
 
 const Questions = ({ questions, query }) => {
-  console.log(query, "=================");
 
   const gridrefresh = useMemo(() => {
     return questions.results.map(
@@ -44,7 +43,7 @@ const Questions = ({ questions, query }) => {
   return (
     <React.Fragment>
       <Container>
-        <Row style={{ margin: "10% 0 10%" }}>
+        <Row style={{ margin: "6% 0 -3%" }}>
           <Col xl={7} lg={7}>
             <div className={styles.QuestionsImgDiv}>
               {/* <img src="/toparrw.svg" className={styles.toparrw} /> */}

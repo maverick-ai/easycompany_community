@@ -25,13 +25,11 @@ function MyApp({ Component, pageProps }) {
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <meta charSet="UTF-8"></meta>
       </Head>
-      <body>
       <noscript dangerouslySetInnerHTML={{ __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXX"
       height="0" width="0" style="display:none;visibility:hidden"></iframe>`}}>
       </noscript>
       <MainNavbar />
       <Component {...pageProps} />
-      </body>
     </div>
     </CookiesProvider>
   );

@@ -9,8 +9,8 @@ function Five_page() {
         <Col lg={5} md={5}>
           <Row>
             <div className={sy.tw}>
-              <img src="desktopHome/travel.png" className={sy.travel}></img>
-              <img src="desktopHome/world.png" className={sy.world}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/travel.png" className={sy.travel}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/world.png" className={sy.world}></img>
             </div>
           </Row>
           <Row>
@@ -24,7 +24,7 @@ function Five_page() {
           <Row>
             <div>
               <span className={sy.dot}></span>
-              <img src="dekhtopHome/Line3.png" className={sy.line3}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/Line3.png" className={sy.line3}></img>
             </div>
           </Row>
           <Row>
@@ -42,22 +42,22 @@ function Five_page() {
         <Col lg={7} md={7}>
           <div style={{ position: "relative", paddingTop: "60px" }}>
             <div style={{ position: "absolute" }}>
-              <img src="desktopHome/sun1.png" className={sy.sun1}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun1.png" className={sy.sun1}></img>
             </div>
             <div style={{ position: "absolute" }}>
-              <img src="desktopHome/sun2.png" className={sy.sun2}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun2.png" className={sy.sun2}></img>
             </div>
             <div style={{ position: "absolute" }}>
-              <img src="desktopHome/sun4.png" className={sy.sun4}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun4.png" className={sy.sun4}></img>
             </div>
             <div style={{ position: "absolute" }}>
-              <img src="desktopHome/sun3.png" className={sy.sun3}></img>
+              <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun3.png" className={sy.sun3}></img>
             </div>
           </div>
         </Col>
       </Row>
       <div style={{ position: "absolute" }}>
-        <img src="desktopHome/sunb.png" className={sy.sunb}></img>
+        <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sunb.png" className={sy.sunb}></img>
       </div>
       <Row>
         <Col lg={7} xs={7}>
@@ -85,7 +85,7 @@ function Five_page() {
               <img src="desktopHome/globe.png" className={sy.globe1}></img>
 
               <img
-                src="desktopHome/hotAirBalloon.png"
+                src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/hotAirBalloon.png"
                 className={sy.hotAirBalloon}
               ></img>
             </div>

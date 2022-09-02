@@ -294,7 +294,7 @@ const DetailedPost = (props) => {
                   quality={100}
                 />
               </div>
-              <div>
+              <div style={{width:"70vw"}}>
                 <Row className={styles.toprow}>
                   <div className={Styles.topRowDiv}></div>
                   <div className={styles.postuser}>
@@ -636,7 +636,7 @@ const DetailedPost = (props) => {
 
           <Container>
             <Row>
-              <Col lg={{ span: 6, offset: 1 }} md={{ offset: 2}} sm={{span: 10, offset: 0}} xs={{span: 10, offset: 0}}>
+              <Col lg={{ span: 6, offset: 1 }} md={{ offset: 2}} sm={{span: 10, offset: 1}} xs={{span: 10, offset: 1}}>
                 <div
                   className={`${styles.inputOuter} ${styles.commentInput}`}
                   style={{ display: "flex", flexDirection: "row" }}

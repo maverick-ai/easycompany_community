@@ -23,7 +23,7 @@ function Sixth_page() {
 
           <Row style={{ marginTop: "10%" }}>
             <DestCard
-              img1="desktopHome/dest1.png"
+              img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest1.png"
               para="We connect people who have questions about travel with people who have travelled enough to answer them all."
             />
             <Col xxl={2} xl={2} lg={2} md={5} sm={5} className={s.column}>
@@ -33,7 +33,7 @@ function Sixth_page() {
                     className={s.destcard1}
                     style={{ PaddingTop: "20%", margin: "0 auto" }}
                   >
-                    <img src="desktopHome/dest2.png" className={s.destcardimg2} />
+                    <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest2.png" className={s.destcardimg2} />
                     <div>
                       <p className={s.destcardp}>
                         We connect people who have questions about travel with
@@ -45,11 +45,11 @@ function Sixth_page() {
               </div>
             </Col>
             <DestCard
-              img1="desktopHome/dest3.png"
+              img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest3.png"
               para="We connect people who have questions about travel with people who have travelled enough to answer them all."
             />
             <DestCard
-              img1="desktopHome/dest4.png"
+              img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest4.png"
               para="We connect people who have questions about travel with people who have travelled enough to answer them all."
             />
           </Row>

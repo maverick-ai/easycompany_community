@@ -10,6 +10,26 @@
   margin: 100px auto 110px;
   background-size: 100% 100%;
 }
+
+.SearchVector {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .questionsList{
+    background-image: url(../public/searchBackground.png);
+    width: 100vw;
+    height: 285px;
+  }
+  .SearchVector {
+    display: inline;
+    width: 70%;
+    margin: 20px 10% 4% 16%;
+  } 
+}
+
+
+
 .gridnewbox {
   display: inline-flex;
   flex-wrap: wrap;
@@ -82,6 +102,15 @@
   border-width: 0cm;
   border-radius: 17.5px;
 }
+
+@media (max-width: 768px){
+  .searchbox {
+    margin-top: 0px;
+    width: 65%;
+    z-index: 1;
+  }
+}
+
 .ImgQues {
   margin-top: 30px;
   padding-right: 1.2em;
@@ -99,6 +128,7 @@
   height: 50px;
   background-color: black;
   border-radius: 12px;
+
 }
 .searchInput {
   width: 100%;
