@@ -1,31 +1,31 @@
-import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../../styles/Questions.module.scss";
 import Image from "next/image";
 
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import React from "react";
+import { useMemo } from "react";
 
-import moment from "moment";
 
 const QuestionBox = (props) => {
-  const string = props.postByUser;
-  const regex = new RegExp(
-    "![[a-zA-Z]+][a-zA-Z0-9\\(\\)\\.\\:\\/\\_\\-\\@\\%]+"
-  );
-  const regex2 = new RegExp("\\*|#", "g");
 
-  const newStr1 = string.replace(regex, "");
-  var newStr = newStr1.replace(regex2, "");
-  var Date_A = new Date(props.data.time);
 
-  var DateA = Date_A.getTime();
-  const DateB = new Date();
 
-  var finalFlash = DateB - DateA;
-
-  // console.log(newStr);
-  let minute = Math.floor(finalFlash / 60000);
+  const newStr = useMemo(() => {
+    const regex = new RegExp(
+      "![[a-zA-Z]+][a-zA-Z0-9\\(\\)\\.\\:\\/\\_\\-\\@\\%]+"
+    );
+    const regex2 = new RegExp("\\*|#", "g");
+    const newStr1 = props.postByUser.replace(regex, "");
+    var finalString = newStr1.replace(regex2, "");
+    return finalString;
+  }, [props.postByUser]);
+  const createdTime = useMemo(() => {
+    var Date_A = new Date(props.data.time);
+    var DateA = Date_A.getTime();
+    const DateB = new Date();
+    var finalFlash = DateB - DateA;
+    let minute = Math.floor(finalFlash / 60000);
 
   let hours = Math.floor(minute / 60);
 
@@ -36,6 +36,25 @@ const QuestionBox = (props) => {
   let newday = Math.floor(days % 30);
   let month = Math.floor(days / 30);
   let year = Math.floor(month / 12);
+
+  if(year){
+    return year + " years";
+  }
+  else if(month){
+    return month + " months";
+  }
+  else if(newday){
+    return newday + " days";
+  }
+  else if(newhour){
+    return newhour + " hours";
+  }
+  else{
+    return newminute + " minutes";
+  }
+  }, [props.data.time]);
+
+
 
   return (
     <React.Fragment>
@@ -55,12 +74,7 @@ const QuestionBox = (props) => {
                 width={15}
               ></Image>
             </div>
-            <p className={styles.timerP}>
-              {`${year ? year + " years" : ""}` ||
-                `${month ? month + " months" : ""}` ||
-                `${newday ? newday + " days" : ""}` ||
-                `${newhour ? newhour + " hours" : ""}` ||
-                `${newminute ? newminute + " minutes" : ""}`}
+            <p className={styles.timerP}>{createdTime}
             </p>
           </div>
           <div className={styles.para}>
