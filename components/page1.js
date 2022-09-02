@@ -16,14 +16,9 @@ function Page1() {
       <Container>
         <div style = {{maxWidth: '1400px'}}>
         <First_page />
-        {/* -------------------------------------------second page ----------------------------------------------------- */}
         <Second_page />
-        {/* -----------------------------------third page-------------------------------------------------------- */}
         <Third_page />
-        {/* who are we */}
         <Fourth_page />
-        {/* we are community */}
-
         <Sixth_page />
         </div>
       </Container>

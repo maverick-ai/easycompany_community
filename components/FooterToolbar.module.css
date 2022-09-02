@@ -1,6 +1,7 @@
 .globeImg{
     width: calc(100vw * (1025/1728));
     margin-top: 40px;
+    max-width: 750px;
     /* margin-right: calc(100vw * (331/1728)); */
   }
   .globeImgDiv{
@@ -12,7 +13,7 @@ text-align: center;
     font-family: "Inter";
     font-style: normal;
     font-weight: 700;
-    font-size: calc(100vw * (18 / 1728));
+    font-size: calc(100vw * (14 / 1728));
     margin: 0 4%;
   }
   
