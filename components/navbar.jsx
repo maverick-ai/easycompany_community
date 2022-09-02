@@ -56,7 +56,6 @@ function MainNavbar(props) {
           </Navbar.Toggle>
           <Navbar.Collapse
             id="responsive-navbar-nav"
-            style={{ justifyContent: "end" }}
             className={classes.background}
           >
             <Nav className="m" style={{ justifyContent: "center" }}>

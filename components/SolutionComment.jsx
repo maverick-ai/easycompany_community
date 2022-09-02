@@ -184,7 +184,7 @@ const SolutionComment = (props) => {
                   {props.comment.commentByUser}
                 </p>
                 <Row>
-                  <Col lg={{span: 3, offset: 10}} md={{span: 3, offset: 10}} sm={{span: 3, offset: 9}} xs={{span: 5, offset: 7}}>
+                <div style={{textAlign:"right", marginBottom:"5px"}}>
                   <img
                       src="/av_timer.png"
                       style={{ width: "14px"}}
@@ -196,7 +196,7 @@ const SolutionComment = (props) => {
                         `${newhour ? newhour + " hours" : ""}` ||
                         `${newminute ? newminute + " minutes" : ""}`}
                     </p>
-                  </Col>
+                  </div>
                 </Row>
               </div>
             </Col>

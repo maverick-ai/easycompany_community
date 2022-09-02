@@ -11,6 +11,8 @@ function FooterToolbar(){
         </Row>
         <Row style={{ textAlign: "center", margin: "3% 0" }}>
           <div style={{ position: "relative" }}>
+            <img src='footer.png' className={styles.footerimage}/>
+            <img src='footerfollow.png' className={styles.footerimage2}/>
             <span className={styles.bottomText}>FOLLOW</span>
             <span className={styles.bottomText}>HELP</span>
             <span className={styles.bottomText}>CONTACT</span>
