@@ -1,6 +1,5 @@
 import Link from "next/link";
 import styles from "../../styles/Questions.module.scss";
-import Image from "next/image";
 
 import { Col, Row } from "react-bootstrap";
 import React from "react";
@@ -66,14 +65,9 @@ const QuestionBox = (props) => {
               : props.data.title}
           </div>
           <div className={styles.timer}>
-            <div className={styles.timerImage}>
-              <Image
-                quality={100}
+          <img className={styles.timerImage}
                 src="/av_timer.png"
-                height={15}
-                width={15}
-              ></Image>
-            </div>
+              />
             <p className={styles.timerP}>{createdTime}
             </p>
           </div>
