@@ -363,3 +363,33 @@
     background: transparent;
   }
 }
+.whop{
+
+}
+.carouselHeading{
+  margin-top: 150px;
+  text-align: center;
+}
+.carouselDiv{
+  position: relative;
+  background: #000000;
+  border-radius: 64px;
+  width: calc(100vw * (796 / 1728));
+  height: calc(100vw * (600 / 1225));
+  text-align: center;
+}
+.carouselImg{
+  margin-top: 30px;
+  width: calc(100vw * (700 / 1728));
+  height: calc(100vw * (400 / 1225));
+  border-radius: 54px;
+}
+.carouselText{
+  margin: auto;
+  margin-top: 16px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(100vw * (36 / 1728));
+  line-height: 44px;
+}

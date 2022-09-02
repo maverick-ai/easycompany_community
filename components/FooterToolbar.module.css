@@ -1,7 +1,8 @@
 .globeImg{
     width: calc(100vw * (1025/1728));
-    margin-left: calc(100vw * (301/1728))!important;
-    margin-top: 40px
+    max-width: 750px;
+    margin-left: calc(100vw * (440/1728))!important;
+    margin-top: 40px 
     /* margin-right: calc(100vw * (331/1728)); */
     
   }

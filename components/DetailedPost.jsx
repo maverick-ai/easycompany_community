@@ -1,4 +1,5 @@
 import styles from "../styles/Post.module.css";
+import Styles from "../styles/PostStyle.module.css";
 import { Row, Col, Container } from "react-bootstrap";
 import Image from "next/image";
 import ReactMarkdown from "react-markdown";
@@ -81,7 +82,7 @@ const DetailedPost = (props) => {
           <Container>
             <Row>
               <Col lg={1} md={2} sm={2} xs={2}>
-                <div style={{ height: "45px", width: "10px" }}></div>
+                <div className={Styles.voteDiv}></div>
                 <Image
                   className={
                     props.data.upvoted ? styles.upVotedIcon : styles.VoteIcon
@@ -120,9 +121,10 @@ const DetailedPost = (props) => {
               </Col>
               <Col lg={11} md={10} sm={10} xs={10}>
                 <Row className={styles.toprow}>
-                  <div style={{ width: "10px", padding: "0px" }}></div>
+                
+                  <div className={Styles.topRowDiv}></div>
                   <div style={{ display: "flex" }}>
-                    <div style={{ width: "28px" }}>
+                    <div className={Styles.createrImageDiv}>
                       {props.data.creator_by.image ? (
                         <img
                           src={props.data.creator_by.image}
@@ -143,18 +145,14 @@ const DetailedPost = (props) => {
                         />
                       )}
                     </div>
+                    
                     {/* <Col lg={3} md={3} sm={4}> */}
 
-                    <div className={styles.postuser}>
-                      <Row>
-                        <Col lg={5} md={5} xs={12}>
-                          <div
-                            style={{
-                              width: "200px",
-                              display: "inline-block",
-                              paddingLeft: "8px",
-                            }}
-                          >
+                    {/* <div className={styles.postuser}> */}
+                    
+                      
+                        <Col lg={2} md={5} xs={12}>
+                          <div className={Styles.linkDiv}>
                             <Link
                               href={`/profile?user=${props.data.creator_by.creator_id}`}
                             >
@@ -164,8 +162,8 @@ const DetailedPost = (props) => {
                             </Link>
                           </div>
                         </Col>
-                        <Col lg={3} md={3} xs={6}>
-                          <div style={{ width: "120px" }}>
+                        <Col lg={1} md={3} xs={6}>
+                          <div className={Styles.timerDiv}>
                             <img
                               src="/av_timer.png"
                               style={{
@@ -173,13 +171,7 @@ const DetailedPost = (props) => {
                                 margin: "auto 0 0 7.7px",
                               }}
                             />
-                            <span
-                              style={{
-                                marginLeft: "3px",
-                                fontSize: "16px",
-                                fontWeight: "400",
-                              }}
-                            >
+                            <span className={Styles.timer}>
                               <p className={styles.timerP}>
                                 {`${year ? year + " years" : ""}` ||
                                   `${month ? month + " Months" : ""}` ||
@@ -190,28 +182,22 @@ const DetailedPost = (props) => {
                             </span>
                           </div>
                         </Col>
-                        <Col lg={3} md={3} xs={6}>
-                          <div style={{ width: "120px" }}>
+                        <Col lg={1} md={3} xs={6}>
+                          <div className={Styles.eyeDiv}>
                             <img
                               className={styles.eye}
                               src="/Eye.png"
                               style={{ width: "18.75px" }}
                             />
-                            <span
-                              style={{
-                                marginLeft: "5px",
-                                fontSize: "16px",
-                                fontWeight: "400",
-                              }}
-                            >
+                            <span className={Styles.eyeText}>
                               <p className={styles.timerP}>
                                 {props.data.viewedByTheUsers} Views
                               </p>
                             </span>
                           </div>
                         </Col>
-                      </Row>
-                    </div>
+                      
+                    {/* </div> */}
                     {/* </Col> */}
                     {/* <Col lg={1} md={3} sm={4} className={styles.eye}> */}
 
@@ -310,22 +296,17 @@ const DetailedPost = (props) => {
               </div>
               <div>
                 <Row className={styles.toprow}>
-                  <div style={{ width: "10px", padding: "0px",marginLeft: "-10px" }}></div>
+                  <div className={Styles.topRowDiv}></div>
                   <div className={styles.postuser}>
                     <Row>
-                      <Col xs={9} sm={9}>
-                        <div style={{ width: "110px" }}>
+                      <Col xs={8} sm={8}>
+                        <div className={Styles.eyeDiv}>
                           <img
                             className={styles.eye}
                             src="/Eye.png"
                             style={{ width: "18.75px" }}
                           />
-                          <span
-                            style={{
-                              fontSize: "16px",
-                              fontWeight: "400",
-                            }}
-                          >
+                          <span className={Styles.eyeText}>
                             <p className={styles.timerP}>
                               {props.data.viewedByTheUsers} Views
                             </p>
@@ -333,7 +314,7 @@ const DetailedPost = (props) => {
                         </div>
                       </Col>
                       <Col xs={2} sm={2}>
-                        <div style={{ width: "110px" }}>
+                        <div className={Styles.timerDiv}>
                           <img
                             src="/av_timer.png"
                             style={{
@@ -341,12 +322,7 @@ const DetailedPost = (props) => {
                               margin: "auto 0 0 -10px"
                             }}
                           />
-                          <span
-                            style={{
-                              fontSize: "16px",
-                              fontWeight: "400",
-                            }}
-                          >
+                          <span className={Styles.timer}>
                             <p className={styles.timerP}>
                               {`${year ? year + " years" : ""}` ||
                                 `${month ? month + " Months" : ""}` ||
