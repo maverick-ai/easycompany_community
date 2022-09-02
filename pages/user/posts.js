@@ -84,20 +84,15 @@ export async function getServerSideProps({ query, req }) {
       userPosts = await sendReq(
         `${PublicUserPostsURL}${query.user}/?page=${query.page}`
       );
-      console.log("HELLLO", userPosts);
     } else if (req.headers.cookie) {
       userPosts = await sendReq(
         `${UserPostsURL}?page=${query.page}`,
         req.headers.cookie
       );
-      console.log("HELLLOOO2", userPosts);
     } else {
-      console.log("HELLLOOO3");
       login = false;
     }
-    console.log(userPosts);
   } catch (err) {
-    console.log(err);
     if (err == "redirect to login") {
       login = false;
     } else {

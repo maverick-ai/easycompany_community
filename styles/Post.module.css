@@ -62,6 +62,11 @@ display: none;
   color: #ccc;
   padding: 10px 0;
 }
+.doyouknow{
+  font-family: "Inter";
+  font-weight: 600;
+}
+
 @media only screen and (min-width: 700px) {
   .doyouknow{
     margin-left: 15px;

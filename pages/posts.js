@@ -32,8 +32,6 @@ const Post = ({ post, answers, solnComments, query }) => {
   useEffect(() => {
     window.scroll.top
   }, []);
-  console.log("No Mikey No!");
-  console.log(post);
 
   // TS code(converted to JS) for image save
 
@@ -150,7 +148,7 @@ const Post = ({ post, answers, solnComments, query }) => {
                     }
                     className={Styles.btn}
                   >
-                    Add Answer
+                    Post Answer
                   </button></div>
                 </Col>
               </Row>
@@ -195,7 +193,6 @@ export async function getServerSideProps({ query, req }) {
       }
     }
   } catch (err) {
-    console.log(err);
     return {
       redirect: {
         destination: "/404",
@@ -203,7 +200,6 @@ export async function getServerSideProps({ query, req }) {
       },
     };
   }
-  console.log(req.body)
   return {
       props: {
         post,
