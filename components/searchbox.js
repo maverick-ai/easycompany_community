@@ -1,21 +1,17 @@
-import { faFileExcel } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import styles from "../styles/Questions.module.scss";
 import Image from "next/image";
 
-import { Container, Col, Row } from "react-bootstrap";
+import { Col, Row } from "react-bootstrap";
 import React from "react";
 
 const SearchBox = (props) => {
-  console.log(props.data.numberOfSolution);
-
   var Date_A = new Date(props.data.time);
 
   var DateA = Date_A.getTime();
   const DateB = new Date();
 
   var finalFlash = DateB - DateA;
-  console.log(finalFlash, "--------------->>>>>>>>>>>");
 
   // console.log(newStr);
   let minute = Math.floor(finalFlash / 60000);

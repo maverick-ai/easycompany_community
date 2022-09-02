@@ -11,7 +11,6 @@ import Pagination from "../components/Pagination";
 import FooterToolbar from "../components/FooterToolbar";
 
 const Questions = ({ questions, query }) => {
-  console.log(query, "=================");
 
   const gridrefresh = useMemo(() => {
     return questions.results.map(

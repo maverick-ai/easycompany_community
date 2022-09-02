@@ -10,7 +10,6 @@ import moment from "moment";
 
 const QuestionBox = (props) => {
   const string = props.postByUser;
-  console.log(props, "8------D  =>  [{|}]", string);
   const regex = new RegExp(
     "![[a-zA-Z]+][a-zA-Z0-9\\(\\)\\.\\:\\/\\_\\-\\@\\%]+"
   );
@@ -24,7 +23,6 @@ const QuestionBox = (props) => {
   const DateB = new Date();
 
   var finalFlash = DateB - DateA;
-  console.log(finalFlash, "--------------->>>>>>>>>>>");
 
   // console.log(newStr);
   let minute = Math.floor(finalFlash / 60000);
