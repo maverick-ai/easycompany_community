@@ -13,6 +13,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import router from "next/router";
 import { CreateImageURL } from "../components/constants";
 import { useCookies } from "react-cookie";
+import Carousel from "react-bootstrap/Carousel";
+
 
 let initialState = 0;
 
@@ -124,11 +126,42 @@ export default function Create() {
         <Col>
           <div className={styles.Section}>
             <div>
-              <h3>ASK THE COMMUNITY</h3>
-              <div>
-                <h1>The</h1>
+              <h3 className={styles.carouselHeading}>ASK THE COMMUNITY</h3>
+              <div className={styles.carouselDiv}>
+                {/* <h1>The</h1>
                 <h1>Community</h1>
-                <h1>Will Answer</h1>
+                <h1>Will Answer</h1> */}
+                <Carousel
+              controls={false}
+              indicators={true}
+              touch={true}
+              interval={2000}
+            >
+              <Carousel.Item>
+                <div className={styles.whop}>
+                  <img src="ask1.png" className={styles.carouselImg}/>
+                  <p className={styles.carouselText}>
+                  Get help from travellers like you
+                  </p>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className={styles.whop}>
+                <img src="ask2.png" className={styles.carouselImg}/>
+                  <p className={styles.carouselText}>
+                  Get help from travellers like you
+                  </p>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div className={styles.whop}>
+                <img src="ask3.png" className={styles.carouselImg}/>
+                  <p className={styles.carouselText}>
+                  Get help from travellers like you
+                  </p>
+                </div>
+              </Carousel.Item>
+            </Carousel>
               </div>
             </div>
           </div>
