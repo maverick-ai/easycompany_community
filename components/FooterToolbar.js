@@ -4,14 +4,14 @@ import { Container, Col, Row } from "react-bootstrap";
 function FooterToolbar(){
     return (
         <div className={styles.FooterBar}>
-        <Row style={{width: 'calc(100vw*(328/1728)'}}>
+        <Row>
             <div className={styles.globeImgDiv} >
               <img className={styles.globeImg} src="./globe.png"></img>
             </div>
         </Row>
         <Row style={{ textAlign: "center", margin: "3% 0" }}>
           <div style={{ position: "relative" }}>
-            <span className={styles.bottomText}>FOLLOW</span>
+            <span className={styles.bottomText}><span><img src='footerfollow.png' className={styles.footerimage2}/></span>FOLLOW</span>
             <span className={styles.bottomText}>HELP</span>
             <span className={styles.bottomText}>CONTACT</span>
             <span className={styles.bottomText}>ABOUT US</span>

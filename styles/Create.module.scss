@@ -141,12 +141,19 @@
       padding: 1rem 0;
       @media (max-width: 1200px) {
         font-size: 1rem;
+        letter-spacing: 0.4em;
       }
       @media (max-width: 724px) {
-        font-size: 0.7rem;
+        font-size: 1rem;
       }
       @media (max-width: 400px) {
-        font-size: 0.7rem;
+        font-size: 16px;
+        letter-spacing: 0.24em;
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px;
         /* margin-top: 0.5rem; */
       }
     }
@@ -362,4 +369,40 @@
   &:hover span {
     background: transparent;
   }
+}
+.carouselHeading{
+  margin-top: 150px;
+  text-align: center;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    font-size: 40pxpx;
+  }
+}
+.carouselDiv{
+  position: relative;
+  background: #000000;
+  border-radius: 64px;
+  width: calc(100vw * (796 / 1728));
+  height: calc(100vw * (600 / 1225));
+  text-align: center;
+}
+.carouselImg{
+  margin-top: 30px;
+  width: calc(100vw * (700 / 1728));
+  height: calc(100vw * (400 / 1225));
+  border-radius: 54px;
+}
+.carouselText{
+  margin: auto;
+  margin-top: 16px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: calc(100vw * (36 / 1728));
+  line-height: 44px;
+}
+.askImg{
+  width: 302px;
+  height: 237px;
+  margin-bottom: -50px;
 }

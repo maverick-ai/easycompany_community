@@ -28,7 +28,6 @@ const Content = () => {
       SearchURL + `?search_query=${query}&page=${page}`
     );
 
-    // console.log(newPosts);
     setPosts((post) => [...post, ...newPosts.results]);
     if (newPosts.next !== null) {
       setPage((page = page + 1));
@@ -36,20 +35,17 @@ const Content = () => {
     } else {
       setHasMore(false);
     }
-    // console.log("getMorePost");
-    // console.log(page);
+
   };
 
   const newSearch = () => {
     setPage((page = 1));
-    // console.log("newSearch");
-    // console.log(page);
+
     setHasMore(true);
     setPosts([]);
     setSearched(true);
     getMorePost();
   };
-  // console.log(posts.length);
 
   function onChangeHandler(props) {
     setQuery(props.target.value);
@@ -97,38 +93,9 @@ const Content = () => {
                   />
                 </div>
               </div>
-              {/* <Col lg={{ span: 6, offset: 3 }}>
-                <div className={styles.searchbox}>
-                  <Row>
-                    <Col lg={9} md={9} sm={9} xs={9}>
-                      <input
-                        className={styles.searchInput}
-                        id="query"
-                        type="text"
-                        autoComplete="query"
-                        value={query}
-                        onChange={onChangeHandler}
-                        required
-                      />
-                    </Col>
-                    <Col lg={3} md={3} sm={3} xs={3}>
-                      <div className={styles.ImgQues}>
-                        <Image
-                          src={"/Vector.png"}
-                          height={18.76}
-                          width={18.76}
-                          quality={100}
-                          onClick={newSearch}
-                        />
-                      </div>
-                    </Col>
-                  </Row>
-                </div>
-              </Col> */}
             </div>
           </Row>
         </Container>
-        {/* // end_searchbox */}
         <Container>
           <Row>
             <Col>
@@ -147,7 +114,7 @@ const Content = () => {
                       className={`spinner-grow text-success ${styles.load}`}
                       role="status"
                     >
-                      <span class="sr-only">Loading...</span>
+                      <span className="sr-only">Loading...</span>
                     </div>
                   </div>
                 }

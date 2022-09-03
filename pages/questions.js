@@ -11,7 +11,6 @@ import Pagination from "../components/Pagination";
 import FooterToolbar from "../components/FooterToolbar";
 
 const Questions = ({ questions, query }) => {
-  console.log(query, "=================");
 
   const gridrefresh = useMemo(() => {
     return questions.results.map(
@@ -44,30 +43,12 @@ const Questions = ({ questions, query }) => {
   return (
     <React.Fragment>
       <Container>
-        <Row style={{ margin: "6% 0 -3%" }}>
-          <Col xl={7} lg={7}>
-            <div className={styles.QuestionsImgDiv}>
-              {/* <img src="/toparrw.svg" className={styles.toparrw} /> */}
-              <img
-                className={styles.ImageRenderring}
-                src="/quetsionpng.png"
-                style={{ width: "99%", margin: "0 0" }}
+        <div className={styles.ImageQuestionsDiv}>
+          <img
+                className={styles.ImageQuestions}
+                src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/questions.png"
               />
-            </div>
-          </Col>
-          <Col>
-            <div>
-              <div style={{ position: "relative" }}>
-                {/* <img src="/notcam.png" className={styles.upar} /> */}
-                <div className={styles.phonepicdad}>
-                  <img src="/Questions2.png" className={styles.phonepic} />
-                </div>
-
-                {/* <img src="/cam.png" className={styles.camera} /> */}
-              </div>
-            </div>
-          </Col>
-        </Row>
+        </div>
       </Container>
 
       <Container>

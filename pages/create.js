@@ -13,6 +13,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import router from "next/router";
 import { CreateImageURL } from "../components/constants";
 import { useCookies } from "react-cookie";
+import Carousel from "react-bootstrap/Carousel";
+
 
 let initialState = 0;
 
@@ -118,22 +120,72 @@ export default function Create() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [selectedTab, setSelectedTab] = useState("write");
 
+  const [winWidth, setWinWidth] = useState(true);
+ 
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setWinWidth(false);
+    } else {
+      setWinWidth(true);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        setWinWidth(false);
+      } else {
+        setWinWidth(true);
+      }
+    });
+  }, []);
+
   return (
     <Container className={styles.Main}>
       <Row>
-        <Col>
+        <Col lg={7} md={7} sm={7}>
           <div className={styles.Section}>
             <div>
-              <h3>ASK THE COMMUNITY</h3>
-              <div>
-                <h1>The</h1>
-                <h1>Community</h1>
-                <h1>Will Answer</h1>
-              </div>
+              <h3 className={styles.carouselHeading}>ASK THE COMMUNITY</h3>
+              {winWidth && (
+              <div className={styles.carouselDiv}>
+                <Carousel
+              controls={false}
+              indicators={false}
+              touch={true}
+              interval={3000}
+              >
+              <Carousel.Item>
+                <div>
+                  <img src="ask1.png" className={styles.carouselImg}/>
+                  <p className={styles.carouselText}>
+                  Get help from travellers like you
+                  </p>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div>
+                <img src="ask2.png" className={styles.carouselImg}/>
+                  <p className={styles.carouselText}>
+                  Get help from travellers like you
+                  </p>
+                </div>
+              </Carousel.Item>
+              <Carousel.Item>
+                <div>
+                <img src="ask3.png" className={styles.carouselImg}/>
+                  <p className={styles.carouselText}>
+                  Get help from travellers like you
+                  </p>
+                </div>
+              </Carousel.Item>
+            </Carousel>
+              </div>)}
+              {!winWidth && (
+                <div>
+                  <img src="askPhone.png" className={styles.askImg}/>
+                </div>
+              )}
             </div>
           </div>
         </Col>
-        <div className={styles.Partition} />
         <Col>
           <div className={styles.RightSection}>
             <div className={styles.topmargin} />
