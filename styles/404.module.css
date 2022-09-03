@@ -1,0 +1,201 @@
+.mainContainer {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(255, 188, 101);
+    background: url("/404/background.svg");
+    position: relative;
+    display: flex;
+  }
+  
+  .sunContainer {
+    height: 270px;
+    width: 270px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 12;
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(218, 0, 78, 0.8) 0%,
+      rgba(251, 151, 100, 0.6) 100%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .sunContainer img {
+    width: 95%;
+  }
+  
+  .subContainer {
+    position: absolute;
+    top: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+  }
+  
+  .PNF {
+    position: absolute;
+    bottom: 2%;
+    left: 21%;
+    width: 59%;
+    height: 45px;
+    
+  }
+  .PNF img{
+    width: 100%;
+  }
+  
+  .bird1 img {
+    height: 25px;
+    width: 22%;
+    position: absolute;
+    bottom: 20%;
+    left: -3%;
+  }
+  
+  .bird2 img {
+    height: 17px;
+    width: 22%;
+    position: absolute;
+    bottom: 24%;
+    right: 5%;
+  }
+  .bird3 img {
+    height: 40px;
+    width: 22%;
+    position: absolute;
+    bottom: -16%;
+    right: 40%;
+  }
+  
+  .cloud1 img {
+    position: absolute;
+    top: 8%;
+    right: 75%;
+    height: 110px;
+  }
+  .cloud2 img {
+    position: absolute;
+    top: 2%;
+    right: 55%;
+    height: 70px;
+  }
+  .cloud3 img {
+    position: absolute;
+    top: 28%;
+    right: 62%;
+    height: 48px;
+  }
+  .cloud4 img {
+    position: absolute;
+    top: 44%;
+    right: 54%;
+    height: 40px;
+  }
+  .cloud5 img {
+    position: absolute;
+    top: 28%;
+    left: 64%;
+    height: 45px;
+  }
+  .cloud6 img {
+    position: absolute;
+    top: 44%;
+    right: 54%;
+    height: 40px;
+  }
+  .grass3 img {
+    position: absolute;
+    top: 0;
+    right: 85%;
+    height: 300px;
+    z-index: 10;
+  }
+  .grass4 img {
+    position: absolute;
+    top: 0;
+    left: 77%;
+    height: 300px;
+    z-index: 10;
+  }
+  
+  .grassL img {
+    height: 130px;
+    position: absolute;
+    right: 63%;
+    bottom: 0;
+    z-index: 2;
+  }
+  .grassR img {
+    height: 130px;
+    position: absolute;
+    left: 63%;
+    bottom: 0;
+    z-index: 2;
+  }
+  
+  .lakeContainer img {
+    position: absolute;
+    bottom: 0;
+    height: 180px;
+    right: 0%;
+  }
+  .mountainL img {
+    height: 290px;
+    position: absolute;
+    top: -141%;
+    right: 61%;
+  }
+  .mountainR img {
+    height: 290px;
+    position: absolute;
+    top: -141%;
+    left: 60%;
+    z-index: 0;
+  }
+  .bottomSupport {
+    height: 185px;
+    background-color: #fff;
+    width: 100vw;
+    position: absolute;
+    bottom: 0;
+    /* background-image: linear-gradient(#e87754 0%, #4e0654 100%);
+    background: url('/404/lake6.svg');
+    background-size: cover; */
+  /*  
+    background-position: top; */
+    z-index: 1;
+  }
+  .btnContainer{
+    position: absolute;
+   
+    bottom: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    
+    z-index: 12;
+  }
+  .btnContainer button{
+    padding: 0.4rem 1rem;
+    background-color: black;
+    color: white;
+    font-size: 0.8rem;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: 6px 6px 60px rgba(0, 0, 0, 0.51);
+    
+  }
+  .lakeContainer{
+    height: 100%;
+    width: 100%;
+    background: url('/404/lake6.svg');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    z-index: 2;
+  }

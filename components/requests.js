@@ -1,6 +1,7 @@
 import { AddSolnURL, AddPostcommentURL, AddSolncommentURL, Host } from "./constants";
 import cookie from "cookie"
 import router from "next/router";
+import RenderResult from "next/dist/server/render-result";
 
 const sendReq = async (url, tokenCookie = null, method = "GET", data = null, setfunc = null) => {
   let response = {};
@@ -35,7 +36,7 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
           method: method,
           headers: headers,
           body: data
-        })
+        });
       }
     }
     else {
@@ -52,7 +53,10 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
         response = await fetch(url, {
           method: method,
           headers: headers
-        });
+        })
+        .then(response => console.log(response))
+        .then(results => console.log(results))
+        .catch('error', error);
       }
       else {
         const headers = new Headers({
