@@ -20,7 +20,7 @@ const PostComment = (props) => {
     window.addEventListener("resize", () => {
       if (window.innerWidth <= 768) {
         setWinWidth(true);
-      }else {
+      } else {
         setWinWidth(false);
       }
     });
@@ -60,7 +60,7 @@ const PostComment = (props) => {
                     width={28}
                     quality={100}
                   />
-                  <Col lg={{span: 8}} md={8}>
+                  <Col lg={{ span: 8 }} md={8}>
                     <div className={Styles.userName}>
                       <Link
                         href={`/profile?user=${props.comment.creator_by.creator_id}`}
@@ -73,12 +73,12 @@ const PostComment = (props) => {
                     <div className={Styles.timerDiv}>
                       <img src="/av_timer.png" style={{ width: "14px" }} />
                       <p className={Styles.timerP}>
-                      {`${year ? year + " years" : ""}` ||
-                        `${month ? month + " months" : ""}` ||
-                        `${newday ? newday + " days" : ""}` ||
-                        `${newhour ? newhour + " hours" : ""}` ||
-                        `${newminute ? newminute + " minutes" : ""}`}
-                    </p>
+                        {`${year ? year + " years" : ""}` ||
+                          `${month ? month + " months" : ""}` ||
+                          `${newday ? newday + " days" : ""}` ||
+                          `${newhour ? newhour + " hours" : ""}` ||
+                          `${newminute ? newminute + " minutes" : ""}`}
+                      </p>
                     </div>
                   </Col>
                 </Row>
@@ -90,9 +90,7 @@ const PostComment = (props) => {
                     lg={{ span: 3, offset: 10 }}
                     md={{ span: 3, offset: 10 }}
                     sm={{ span: 3, offset: 9 }}
-                  >
-
-                  </Col>
+                  ></Col>
                 </Row>
               </div>
             </Col>
@@ -117,7 +115,7 @@ const PostComment = (props) => {
                     width={28}
                     quality={100}
                   />
-                  <Col lg={{span: 8}} md={8}>
+                  <Col lg={{ span: 8 }} md={8}>
                     <div className={Styles.userName}>
                       <Link
                         href={`/profile?user=${props.comment.creator_by.creator_id}`}
@@ -130,12 +128,12 @@ const PostComment = (props) => {
                     <div className={Styles.timerDiv}>
                       <img src="/av_timer.png" style={{ width: "14px" }} />
                       <p className={Styles.timerP}>
-                      {`${year ? year + " years" : ""}` ||
-                        `${month ? month + " months" : ""}` ||
-                        `${newday ? newday + " days" : ""}` ||
-                        `${newhour ? newhour + " hours" : ""}` ||
-                        `${newminute ? newminute + " minutes" : ""}`}
-                    </p>
+                        {`${year ? year + " years" : ""}` ||
+                          `${month ? month + " months" : ""}` ||
+                          `${newday ? newday + " days" : ""}` ||
+                          `${newhour ? newhour + " hours" : ""}` ||
+                          `${newminute ? newminute + " minutes" : ""}`}
+                      </p>
                     </div>
                   </Col>
                 </Row>
@@ -147,9 +145,7 @@ const PostComment = (props) => {
                     lg={{ span: 3, offset: 10 }}
                     md={{ span: 3, offset: 10 }}
                     sm={{ span: 3, offset: 9 }}
-                  >
-
-                  </Col>
+                  ></Col>
                 </Row>
               </div>
             </Col>
@@ -160,7 +156,11 @@ const PostComment = (props) => {
       {winWidth && (
         <Container>
           <Row>
-            <Col lg={{ span: 8, offset: 1 }} sm={{ span: 10, offset: 0}} xs={{ span: 10, offset: 0 }}>
+            <Col
+              lg={{ span: 8, offset: 1 }}
+              sm={{ span: 10, offset: 0 }}
+              xs={{ span: 10, offset: 0 }}
+            >
               <div className={`${Styles.commentboxdiv}`}>
                 <Row style={{ marginTop: "5px" }}>
                   <Col sm={2} xs={3}>
@@ -183,16 +183,11 @@ const PostComment = (props) => {
                     </div>
                   </Col>
                 </Row>
-                <p style={{ color:"#D1D1D1" }}>
+                <p style={{ color: "#D1D1D1" }}>
                   {props.comment.commentByUser}
                 </p>
                 <Row>
-                  <Col
-                    lg={{ span: 3, offset: 10 }}
-                    md={{ span: 3, offset: 10 }}
-                    sm={{ span: 3, offset: 9 }}
-                    xs={{ span: 5, offset: 7 }}
-                  >
+                  <div style={{textAlign:"right", marginBottom:"5px"}}>
                     <img src="/av_timer.png" style={{ width: "14px" }} />
                     <p className={Styles.timerP}>
                       {`${year ? year + " years" : ""}` ||
@@ -201,7 +196,7 @@ const PostComment = (props) => {
                         `${newhour ? newhour + " hours" : ""}` ||
                         `${newminute ? newminute + " minutes" : ""}`}
                     </p>
-                  </Col>
+                  </div>
                 </Row>
               </div>
             </Col>
