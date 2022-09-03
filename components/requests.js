@@ -149,22 +149,6 @@ const addpostcomment = async (comment, id, setFunc) => {
     setFunc(false);
   }
 
-
-
-  // const res = await fetch(AddPostcommentURL, {
-  //     method: "POST",
-  //     headers: {
-  //     "Content-Type": "application/json",
-  //     Accept: "*/*",
-  //     "Accept-Encoding": "gzip, deflate, br",
-  //     Connection: "keep-alive",
-  //     "Content-Length": comment.length,
-  //     Host: Host,
-  //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
-  //     },
-  //     body: postComment,
-  // });
-
 };
 
 const addsolncomment = async (comment, id, setFunc) => {
@@ -175,19 +159,6 @@ const addsolncomment = async (comment, id, setFunc) => {
       solution: id,
     });
     const res = await sendReq(AddSolncommentURL, document.cookie, "POST", solncomment, setFunc);
-    // const res = await fetch(AddSolncommentURL, {
-    //   method: "POST",
-    //   headers:  {
-    //     "Content-Type": "application/json",
-    //     Accept: "*/*",
-    //     "Accept-Encoding": "gzip, deflate, br",
-    //     Connection: "keep-alive",
-    //     "Content-Length": comment.length,
-    //     Host: Host,
-    //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
-    //   },
-    //   body: solncomment,
-    // });
     if (!res.status) {
       window.location.reload();
     }
