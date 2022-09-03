@@ -5,7 +5,6 @@ import RenderResult from "next/dist/server/render-result";
 
 const sendReq = async (url, tokenCookie = null, method = "GET", data = null, setfunc = null) => {
   let response = {};
-
   try {
     if (data) {
       if (tokenCookie) {
@@ -54,9 +53,6 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
           method: method,
           headers: headers
         })
-        .then(response => console.log(response))
-        .then(results => console.log(results))
-        .catch('error', error);
       }
       else {
         const headers = new Headers({
@@ -132,21 +128,6 @@ const addanswer = async (answer, id, setFunc) => {
     if (!resAddAnswer.status) {
       window.location.reload();
     }
-    // const res = await fetch(AddSolnURL, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "*/*",
-    //     "Accept-Encoding": "gzip, deflate, br",
-    //     Connection: "keep-alive",
-    //     "Content-Length": answer.length,
-    //     Host: Host,
-    //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
-    //   },
-    //   body: post,
-    // });
-
-    // console.log(res);
   }
   else {
     setFunc(false);
