@@ -71,6 +71,7 @@ const Content = () => {
           <div className={styles.questionsList}>
               <div className={styles.searchbox}>
                 <div style={{ position: "relative" }}>
+                <div className={styles.outerDiv}>
                 <img
                     src="/Vector.png"
                     style={{
@@ -93,7 +94,7 @@ const Content = () => {
                 </div>
               </div>
             </div>
-
+          </div>
           </Row>
         </Container>
         <Container>
