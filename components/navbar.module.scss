@@ -23,12 +23,12 @@
   }
 }
 .background{
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .logo {
   // background-color: red;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 
@@ -39,11 +39,11 @@
 
 
 .bignav{
-  justify-content: end;
+  justify-content: flex-end;
 }
 .navLink {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 2rem;
 
