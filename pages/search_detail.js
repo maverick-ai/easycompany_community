@@ -69,9 +69,8 @@ const Content = () => {
         <Container>
           <Row>
             <div className={styles.questionsList}>
-              <img src="/SearchVector.png" className={styles.SearchVector} />
               <div className={styles.searchbox}>
-                <div style={{ position: "relative" }}>
+                <div style={styles.outerDiv}>
                 <img
                     src="/Vector.png"
                     style={{
@@ -97,11 +96,6 @@ const Content = () => {
           </Row>
         </Container>
         <Container>
-          <Row>
-            <Col>
-              <h1>Trending Questions</h1>
-            </Col>
-          </Row>
           <Row>
             {searched && (
               <InfiniteScroll
