@@ -68,16 +68,16 @@ const Content = () => {
       >
         <Container>
           <Row>
-            <div className={styles.questionsList}>
-              <img src="/SearchVector.png" className={styles.SearchVector} />
+          <div className={styles.questionsList}>
               <div className={styles.searchbox}>
                 <div style={{ position: "relative" }}>
+                <div className={styles.outerDiv}>
                 <img
                     src="/Vector.png"
                     style={{
                       height: "18.76px",
                       position: "absolute",
-                      left: "11px",
+                      right: "10px",
                       top: "8px",
                     }}
                     onClick={newSearch}
@@ -94,14 +94,10 @@ const Content = () => {
                 </div>
               </div>
             </div>
+          </div>
           </Row>
         </Container>
         <Container>
-          <Row>
-            <Col>
-              <h1>Trending Questions</h1>
-            </Col>
-          </Row>
           <Row>
             {searched && (
               <InfiniteScroll
@@ -160,8 +156,9 @@ const Content = () => {
               </InfiniteScroll>
             )}
           </Row>
+          <FooterToolbar />
         </Container>
-        <FooterToolbar />
+        
       </div>
     </React.Fragment>
   );

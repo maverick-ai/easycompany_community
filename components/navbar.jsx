@@ -56,6 +56,7 @@ function MainNavbar(props) {
           </Navbar.Toggle>
           <Navbar.Collapse
             id="responsive-navbar-nav"
+            className={classes.bignav}
           >
             <Nav className="m" style={{ justifyContent: "center" }}>
               {NavLinks.map(({ name, path }) => (

@@ -549,7 +549,7 @@ const Solution = (props) => {
                       style={{
                         width: "25px",
                         position: "absolute",
-                        top: "11px",
+                        top: "10px",
                         right: "12px",
                       }}
                     />

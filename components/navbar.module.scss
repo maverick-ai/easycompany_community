@@ -21,17 +21,14 @@
     background: rgba(10, 10, 10, 0.5);
     backdrop-filter: blur( 40px );
   }
-  .navLink{
-    justify-content: end!important;
-  }
 }
 .background{
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 .logo {
   // background-color: red;
-  margin-top: 20px;
+  margin-top: 8px;
 }
 
 
@@ -41,10 +38,12 @@
 }
 
 
-
+.bignav{
+  justify-content: flex-end;
+}
 .navLink {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   margin: 0 2rem;
 

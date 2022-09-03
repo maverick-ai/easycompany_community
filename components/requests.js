@@ -5,7 +5,6 @@ import RenderResult from "next/dist/server/render-result";
 
 const sendReq = async (url, tokenCookie = null, method = "GET", data = null, setfunc = null) => {
   let response = {};
-
   try {
     if (data) {
       if (tokenCookie) {
@@ -54,9 +53,6 @@ const sendReq = async (url, tokenCookie = null, method = "GET", data = null, set
           method: method,
           headers: headers
         })
-        .then(response => console.log(response))
-        .then(results => console.log(results))
-        .catch('error', error);
       }
       else {
         const headers = new Headers({
@@ -132,21 +128,6 @@ const addanswer = async (answer, id, setFunc) => {
     if (!resAddAnswer.status) {
       window.location.reload();
     }
-    // const res = await fetch(AddSolnURL, {
-    //   method: "POST",
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //     Accept: "*/*",
-    //     "Accept-Encoding": "gzip, deflate, br",
-    //     Connection: "keep-alive",
-    //     "Content-Length": answer.length,
-    //     Host: Host,
-    //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
-    //   },
-    //   body: post,
-    // });
-
-    // console.log(res);
   }
   else {
     setFunc(false);
@@ -168,22 +149,6 @@ const addpostcomment = async (comment, id, setFunc) => {
     setFunc(false);
   }
 
-
-
-  // const res = await fetch(AddPostcommentURL, {
-  //     method: "POST",
-  //     headers: {
-  //     "Content-Type": "application/json",
-  //     Accept: "*/*",
-  //     "Accept-Encoding": "gzip, deflate, br",
-  //     Connection: "keep-alive",
-  //     "Content-Length": comment.length,
-  //     Host: Host,
-  //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
-  //     },
-  //     body: postComment,
-  // });
-
 };
 
 const addsolncomment = async (comment, id, setFunc) => {
@@ -194,19 +159,6 @@ const addsolncomment = async (comment, id, setFunc) => {
       solution: id,
     });
     const res = await sendReq(AddSolncommentURL, document.cookie, "POST", solncomment, setFunc);
-    // const res = await fetch(AddSolncommentURL, {
-    //   method: "POST",
-    //   headers:  {
-    //     "Content-Type": "application/json",
-    //     Accept: "*/*",
-    //     "Accept-Encoding": "gzip, deflate, br",
-    //     Connection: "keep-alive",
-    //     "Content-Length": comment.length,
-    //     Host: Host,
-    //     Authorization: `Token ${cookie.parse(document.cookie).token}`,
-    //   },
-    //   body: solncomment,
-    // });
     if (!res.status) {
       window.location.reload();
     }
