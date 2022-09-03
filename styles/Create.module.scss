@@ -143,10 +143,16 @@
         font-size: 1rem;
       }
       @media (max-width: 724px) {
-        font-size: 0.7rem;
+        font-size: 1rem;
       }
       @media (max-width: 400px) {
-        font-size: 0.7rem;
+        font-size: 18px;
+        letter-spacing: 0.24em;
+        text-align: center;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 300;
+        line-height: 20px;
         /* margin-top: 0.5rem; */
       }
     }
@@ -369,6 +375,10 @@
 .carouselHeading{
   margin-top: 150px;
   text-align: center;
+  @media (max-width: 768px) {
+    margin-top: 0px;
+    font-size: 40pxpx;
+  }
 }
 .carouselDiv{
   position: relative;
@@ -392,4 +402,9 @@
   font-weight: 700;
   font-size: calc(100vw * (36 / 1728));
   line-height: 44px;
+}
+.askImg{
+  width: 302px;
+  height: 237px;
+  margin-bottom: -50px;
 }
