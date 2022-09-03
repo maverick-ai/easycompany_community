@@ -70,7 +70,7 @@ const Content = () => {
           <Row>
             <div className={styles.questionsList}>
               <div className={styles.searchbox}>
-                <div style={styles.outerDiv}>
+                <div className={styles.outerDiv}>
                 <img
                     src="/Vector.png"
                     style={{
