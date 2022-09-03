@@ -21,9 +21,6 @@
     background: rgba(10, 10, 10, 0.5);
     backdrop-filter: blur( 40px );
   }
-  .navLink{
-    justify-content: end!important;
-  }
 }
 .background{
   justify-content: end;
@@ -41,10 +38,12 @@
 }
 
 
-
+.bignav{
+  justify-content: end;
+}
 .navLink {
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   margin: 0 2rem;
 
