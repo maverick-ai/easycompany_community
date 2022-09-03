@@ -68,15 +68,15 @@ const Content = () => {
       >
         <Container>
           <Row>
-            <div className={styles.questionsList}>
+          <div className={styles.questionsList}>
               <div className={styles.searchbox}>
-                <div style={styles.outerDiv}>
+                <div style={{ position: "relative" }}>
                 <img
                     src="/Vector.png"
                     style={{
                       height: "18.76px",
                       position: "absolute",
-                      left: "11px",
+                      right: "10px",
                       top: "8px",
                     }}
                     onClick={newSearch}
@@ -93,6 +93,7 @@ const Content = () => {
                 </div>
               </div>
             </div>
+
           </Row>
         </Container>
         <Container>
@@ -154,8 +155,9 @@ const Content = () => {
               </InfiniteScroll>
             )}
           </Row>
+          <FooterToolbar />
         </Container>
-        <FooterToolbar />
+        
       </div>
     </React.Fragment>
   );

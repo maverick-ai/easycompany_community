@@ -2,7 +2,7 @@
   width: calc(100vw * (1227/1728));
   height: calc(100vw * (350/1728));
   background-image: url(../public/searchBackground.png);
-  margin: 125px auto 110px;
+  margin: 125px auto 100px;
   background-size: 100% 100%;
 }
 
@@ -16,6 +16,7 @@
     overflow-x:hidden;
     width: 100vw;
     height: 50px;
+    margin: 100px auto 100px;
   }
   .SearchVector {
     display: inline;
@@ -99,15 +100,12 @@
 
 @media (max-width: 768px){
   .searchbox {
-    margin-top: 0px;
-    width: 65%;
+    margin-top: 0;
+    width: 90%;
     height: 50px;
-    background-color: black;
+    background-color: #121212;
     border-width: 0cm;
-    border-radius: 17.5px;
-  }
-  .outerDiv {
-    position: "relative" ;
+    border-radius: 8px;
   }
 }
 
@@ -137,11 +135,15 @@
   background-color: #121212;
   border-width: 0;
   color: aliceblue;
-  padding-left: 2.5em;
+  padding-left: 1rem;
   border: none;
   outline: none;
-  border-radius: 17.5px;
+  border-radius: 8px;
+  @media (max-width: 768px){
+    background-color: black;
+  }
 }
+
 @media screen and (min-width: 991px) {
   .searchbox {
     width: calc(100vw * (649/1728));
@@ -419,4 +421,31 @@
     margin-left: 3%;
     margin-right: auto;
   }
+}
+.textDiv{
+  // margin-top: 10px;
+  height: 30px;
+
+}
+.phoneText{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+.phoneMark{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(90deg, #e32a34, #b50eae);
+  background-clip: text;
+  color: transparent;
 }

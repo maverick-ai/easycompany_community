@@ -9,6 +9,7 @@
 }
 .FooterBar{
 margin-top: -30px;
+/* overflow-x: hidden; */
 }
 .footerimage2 {
   position: absolute;
