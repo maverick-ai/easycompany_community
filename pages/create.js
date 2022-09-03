@@ -133,7 +133,7 @@ export default function Create() {
                 <h1>Will Answer</h1> */}
                 <Carousel
               controls={false}
-              indicators={true}
+              indicators={false}
               touch={true}
               interval={2000}
             >

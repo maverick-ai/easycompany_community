@@ -43,10 +43,15 @@ const Questions = ({ questions, query }) => {
   return (
     <React.Fragment>
       <Container>
-        <Row style={{ margin: "6% 0 -3%" }}>
+          <img
+                className={styles.ImageQuestions}
+                src="questions.png"
+                style={{ width: "99%"}}
+              />
+        {/* <Row style={{ margin: "6% 0 -3%" }}>
           <Col xl={7} lg={7}>
             <div className={styles.QuestionsImgDiv}>
-              {/* <img src="/toparrw.svg" className={styles.toparrw} /> */}
+            
               <img
                 className={styles.ImageRenderring}
                 src="/quetsionpng.png"
@@ -57,16 +62,16 @@ const Questions = ({ questions, query }) => {
           <Col>
             <div>
               <div style={{ position: "relative" }}>
-                {/* <img src="/notcam.png" className={styles.upar} /> */}
+             
                 <div className={styles.phonepicdad}>
                   <img src="/Questions2.png" className={styles.phonepic} />
                 </div>
 
-                {/* <img src="/cam.png" className={styles.camera} /> */}
+
               </div>
             </div>
           </Col>
-        </Row>
+        </Row> */}
       </Container>
 
       <Container>
