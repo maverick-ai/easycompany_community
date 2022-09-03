@@ -1,0 +1,114 @@
+.PhotosDiv{
+    position: relative;
+    text-align: center;
+}
+
+.mainImg1{
+    width: 66vw;
+    height: 133px;
+}
+.text1 {
+    position: absolute;
+    top: 72px;
+    left: calc(100vw * (65/390));
+    width: 113px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    display: flex;
+    text-align: left;
+
+    color: #F29F9A;
+}
+
+.text2 {
+    position: relative;
+    top: -45px;
+    left: calc(100vw * (65/390));
+    width: 113px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    display: flex;
+    text-align: left;
+
+    color: #FFFFF8;
+}
+
+.text3 {
+    position: absolute;
+    top: 10px;
+    left: calc(100vw * (65/390));
+    width: 113px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 17px;
+    display: flex;
+    text-align: left;
+
+    color: #AA004C;
+}
+
+.suitcase {
+    position: absolute;
+    top: -57px;
+    left: calc(100vw * (290/390));
+    width: 69px;
+    height: 64px;
+}
+
+.collage{
+    position: absolute;
+    top: 120px;
+    width: 64px;
+    height: 82px;
+    left: calc(100vw * (1/390));
+    margin-bottom: -25px;
+}
+
+.globephone{
+    position: absolute;
+    left: calc(100vw * (308/390));
+    top: 133px;
+
+    width: 53px;
+    height: 50px;
+}
+
+.hotairballoon {
+    position: absolute;
+    top: 120px;
+    left: 0;
+    width: 61px;
+    height: 86px;
+}
+
+.airplane{
+    position: absolute;
+    top: 120px;
+    left: calc(100vw * (240/390));
+
+    width: 142px;
+    height: 55px;
+}
+
+.travelbook{
+    position: absolute;
+    left: calc(100vw * (280/390));
+    top: 100px;
+
+    width: 96px;
+    height: 67px;
+
+    transform: rotate(34.7deg);
+
+}

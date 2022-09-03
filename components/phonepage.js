@@ -22,6 +22,7 @@ function Page2() {
         <Section1 />
         <Section2 />
         <Section3 />
+        
         <Section4 />
         <Carousel_row />
         <We_are />
