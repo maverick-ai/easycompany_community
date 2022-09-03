@@ -140,7 +140,7 @@ export default function Create() {
   return (
     <Container className={styles.Main}>
       <Row>
-        <Col>
+        <Col lg={7} md={7} sm={7}>
           <div className={styles.Section}>
             <div>
               <h3 className={styles.carouselHeading}>ASK THE COMMUNITY</h3>
@@ -150,10 +150,10 @@ export default function Create() {
               controls={false}
               indicators={false}
               touch={true}
-              interval={2000}
+              interval={3000}
               >
               <Carousel.Item>
-                <div className={styles.whop}>
+                <div>
                   <img src="ask1.png" className={styles.carouselImg}/>
                   <p className={styles.carouselText}>
                   Get help from travellers like you
@@ -161,7 +161,7 @@ export default function Create() {
                 </div>
               </Carousel.Item>
               <Carousel.Item>
-                <div className={styles.whop}>
+                <div>
                 <img src="ask2.png" className={styles.carouselImg}/>
                   <p className={styles.carouselText}>
                   Get help from travellers like you
@@ -169,7 +169,7 @@ export default function Create() {
                 </div>
               </Carousel.Item>
               <Carousel.Item>
-                <div className={styles.whop}>
+                <div>
                 <img src="ask3.png" className={styles.carouselImg}/>
                   <p className={styles.carouselText}>
                   Get help from travellers like you
@@ -186,7 +186,6 @@ export default function Create() {
             </div>
           </div>
         </Col>
-        <div className={styles.Partition} />
         <Col>
           <div className={styles.RightSection}>
             <div className={styles.topmargin} />
