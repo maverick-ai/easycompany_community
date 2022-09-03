@@ -33,7 +33,7 @@ function MainNavbar(props) {
   const router = useRouter();
   return (
     <Container>
-      <Navbar collapseOnSelect={true} expand="lg" fixed="top">
+      <Navbar collapseOnSelect={true} expand="lg" fixed="top" className={classes.bigback}>
         <Container>
           <Navbar.Brand href="/" className={classes.logo}>
             <img
@@ -56,7 +56,6 @@ function MainNavbar(props) {
           </Navbar.Toggle>
           <Navbar.Collapse
             id="responsive-navbar-nav"
-            className={classes.background}
           >
             <Nav className="m" style={{ justifyContent: "center" }}>
               {NavLinks.map(({ name, path }) => (

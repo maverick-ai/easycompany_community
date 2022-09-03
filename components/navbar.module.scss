@@ -17,10 +17,9 @@
 // }
 
 @media only screen and (max-width: 991px) {
-  .background{
+  .bigback{
     background: rgba(10, 10, 10, 0.5);
-backdrop-filter: blur(40px);
-margin-left: 0;
+    backdrop-filter: blur( 40px );
   }
   .navLink{
     justify-content: end!important;
