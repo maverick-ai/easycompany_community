@@ -43,35 +43,12 @@ const Questions = ({ questions, query }) => {
   return (
     <React.Fragment>
       <Container>
+        <div className={styles.ImageQuestionsDiv}>
           <img
                 className={styles.ImageQuestions}
-                src="questions.png"
-                style={{ width: "99%"}}
+                src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/questions.png"
               />
-        {/* <Row style={{ margin: "6% 0 -3%" }}>
-          <Col xl={7} lg={7}>
-            <div className={styles.QuestionsImgDiv}>
-            
-              <img
-                className={styles.ImageRenderring}
-                src="/quetsionpng.png"
-                style={{ width: "99%", margin: "0 0" }}
-              />
-            </div>
-          </Col>
-          <Col>
-            <div>
-              <div style={{ position: "relative" }}>
-             
-                <div className={styles.phonepicdad}>
-                  <img src="/Questions2.png" className={styles.phonepic} />
-                </div>
-
-
-              </div>
-            </div>
-          </Col>
-        </Row> */}
+        </div>
       </Container>
 
       <Container>
