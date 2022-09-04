@@ -334,7 +334,6 @@ const DetailedPost = (props) => {
                         </div>
                       </Col>
                     </Row> */}
-                    <Row>
                     <div className={Styles.flexContainer}>
                         <div className={Styles.eyeDiv}>
                           <img
@@ -367,7 +366,6 @@ const DetailedPost = (props) => {
                           </span>
                         </div>
                       </div>
-                    </Row>
                   </div>
                 </Row>
                 <Row>

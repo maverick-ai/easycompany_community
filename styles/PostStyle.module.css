@@ -1,4 +1,5 @@
 .flexContainer{
+    width: 100%;
     display: flex;
 }
 .voteDiv{
@@ -49,8 +50,8 @@
         margin-left: "-10px";
     }
     .eyeDiv{
-        position: relative;
-        width: "110px";
+        display: inline-block;
+        width: 50%;
         /* margin-right: 90px; */
     }
     .eyeText{
@@ -58,15 +59,16 @@
         font-weight: "400";
     }
     .timerDiv{
-        position: relative;
-        width: "110px";
+        display: inline-block;
+        width: 50%;
+        text-align: right;
     }
     .timer{
         font-size: "16px";
         font-weight: "400";
     }
 }
-@media (max-width: 320px) {
+/* @media (max-width: 320px) {
     .timerDiv{
         left: 50px;
     }
@@ -75,4 +77,4 @@
     .timerDiv{
         left: 100px;
     }
-}
+} */
