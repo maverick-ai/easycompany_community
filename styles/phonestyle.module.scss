@@ -180,7 +180,31 @@ $grid-breakpoints: (
   font-style: normal;
   font-weight: 600;
   font-size: calc(0.01719 * (100vw) + 20px);
+  
+  position: absolute;
+  left: calc(100vw * (10/390));
+  top: -10px;
 }
+
+.love2 {
+  background-image: linear-gradient(
+    90deg,
+    #b50eae 21.48%,
+    rgba(227, 42, 52, 0.94) 86.58%
+  );
+  background-clip: text;
+  color: transparent;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-size: calc(0.01719 * (100vw) + 20px);
+  
+  position: absolute;
+  left: calc(100vw * (70/390));
+  top: 30px;
+}
+
 .card {
   width: 79.6px;
   height: auto;
@@ -252,6 +276,22 @@ $grid-breakpoints: (
     left: calc(100% * (300 / 1560));
   }
 }
+
+.arorrr {
+  height: calc(100vw * (243 / 1560));
+  left: calc(100% * (1510 / 1560))!important;
+  top: calc(100vw * (-130 / 1560));
+}
+
+.search{
+  position: absolute;
+  left: calc(100vw * (300/390));
+  top: 230px;
+
+  width: 77px;
+  height: 56px;
+}
+
 .whop {
   width: 90%;
   margin: 0 auto;
@@ -280,25 +320,22 @@ $grid-breakpoints: (
   border-width: 1px;
   margin: auto 2%;
 }
-.arorrr {
-  height: calc(100vw * (243 / 1560));
-  left: calc(100% * (340 / 1560));
-  top: calc(100vw * (-130 / 1560));
-}
+
 .maop {
   height: 52px;
+  width: 56px;
   position: absolute;
-  right: 10px;
-  top: 0;
+  left: calc(100vw * (283/390));
+  top: -30px;
 }
 .sunb {
   position: absolute;
   width: 79px;
-  left: 19px;
+  left: calc(100vw * (19/390));
 }
-.mapp {
+.mapImg {
   position: absolute;
-  left: 0;
+  left: 600;
   width: calc(100vw * (112 / 1728));
 }
 .headeasy {
@@ -309,7 +346,12 @@ $grid-breakpoints: (
   font-size: calc(0.01719 * (100vw) + 20px);
 }
 .sglobe {
-  height: calc(100vw * (125 / 1560));
+  width: calc(100vw * (44/360));
+  height: calc(100vw * (44/360));
+
+  position: absolute;
+  left: 318px;
+  top: -0px;
 }
 .destcard {
   position: relative;
@@ -400,7 +442,7 @@ $grid-breakpoints: (
 }
 
 .rowdest {
-  padding-left: 0;
+
 }
 /* abhaluend--------------------------------------------------------------------------------------------- */
 
@@ -473,7 +515,7 @@ $grid-breakpoints: (
   margin-top: 70px;
 }
 .travel {
-  height: calc(100vh * (80 / 1560));
+  height: calc(100vh * (70 / 1560));
 }
 .travimg {
   width: 116px;
@@ -485,8 +527,9 @@ $grid-breakpoints: (
 
 .world {
   position: absolute;
-  bottom: -60px;
-  height: calc(100vh * (65 / 1560));
+  bottom: -50px;
+  left: calc(100vw * (305/390));
+  height: calc(100vh * (50 / 1560));
 }
 
 .bigplace {
@@ -519,19 +562,21 @@ $grid-breakpoints: (
 
 .sun2 {
   height: calc(100vw * (600 / 1560));
-  margin-left: calc(100vw * (350 / 1560));
+  margin-left: calc(100vw * (300 / 1560));
   margin-top: 20px;
+  z-index: 1!important;
 }
 
 .sun3 {
-  margin-left: calc(100vw * (650 / 1560));
+  margin-left: calc(100vw * (685 / 1560));
   height: calc(100vw * (600 / 1560));
+  z-index: 0!important; 
 }
 
 .sun4 {
   height: calc(100vw * (600 / 1560));
   margin-left: calc(100vw * (1050 / 1560));
-  margin-top: 20px;
+  margin-top: 30px;
 }
 @media screen and (min-width: 576px) {
   .sun1 {

@@ -2,6 +2,7 @@ import styles from "../styles/404.module.css";
 
 const errorpage = () => {
     return (
+      <div>
         <main className={styles.mainContainer}>
       <div className={styles.subContainer}>
         <div className={styles.sunContainer}>
@@ -69,6 +70,7 @@ const errorpage = () => {
         <img src={"/404/grass2.svg"} />
       </div>
     </main>
+    </div>
     );
 }
 

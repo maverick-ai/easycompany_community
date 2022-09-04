@@ -21,16 +21,19 @@ function Carousel_row() {
             className={s.arorrr}
             style={{ position: "absolute" }}
           /> */}
+          <div>
           <span className={styles.love1}>
+            Who Are We?
             <span>
               <img
-                src="photos/arrorrr.svg"
+                src="phone_assets/arrowplane.png"
                 className={styles.arorrr}
                 style={{ position: "absolute" }}
               />
+
             </span>
-            Who Are We?
           </span>
+          </div>
           <div className={styles.horzrule} />
           <div style={{ width: "100%", height: "130px" }}>
             <Carousel
@@ -73,8 +76,9 @@ function Carousel_row() {
             className={styles.horzrule}
             style={{ margin: "0 0 10px 19px" }}
           />
-          <img src="photos/sunb.svg" className={styles.sunb} />
-          <img src="photos/maop.svg" className={styles.maop} />
+          <img src="phone_assets/sunbeach.png" className={styles.sunb} />
+          <img src="phone_assets/map.png" className={styles.maop} />
+          <img src="phone_assets/search.png" className={styles.search} />
         </div>
       </Row>
     </React.Fragment>

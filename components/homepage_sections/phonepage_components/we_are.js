@@ -16,39 +16,49 @@ function We_are() {
       >
         <h1 className={styles.headeasy}>
           WE ARE <br />
-          <span className={styles.love1}>EASYCOMMUNITY</span>
+          <span className={styles.love2}>EASYCOMMUNITY</span>
           <span>
-            <img src="photos/sglobe.svg" className={styles.sglobe} />
+            <img src="phone_assets/sglobe.png" className={styles.sglobe} />
           </span>
         </h1>
 
         <Row
-          style={{ marginTop: "10%", position: "relative" }}
+          style={{ margin: "10% auto 0", position: "relative" }}
           className={styles.rowdest}
         >
-          <div style={{ position: "absolute", top: "150px" }}>
-            <img src="photos/cenplane.svg" style={{ width: "79px" }} />
-          </div>
+          <Row>
+            <div>
+            <DestCard
+              img1="phone_assets/dest1.png"
+              para="We connect people who have questions about travel with people who have travelled enough to answer them all."
+            />
+            </div>
+          </Row>
+          
+          <Row>
           <DestCard
-            img1="photos/dest1.png"
+            img1="phone_assets/dest2.png"
             para="We connect people who have questions about travel with people who have travelled enough to answer them all."
           />
-          <DestCard
-            img1="photos/dest2.png"
-            para="We connect people who have questions about travel with people who have travelled enough to answer them all."
-          />
+          </Row>
 
+          <Row>
           <DestCard
-            img1="photos/dest3.png"
+            img1="phone_assets/dest3.png"
+            para="We connect people who have questions about travel with people who have travelled enough to answer them all."
+            />
+          </Row>
+
+          <Row>
+          <DestCard
+            img1="phone_assets/dest4.png"
             para="We connect people who have questions about travel with people who have travelled enough to answer them all."
           />
-          <DestCard
-            img1="photos/dest4.png"
-            para="We connect people who have questions about travel with people who have travelled enough to answer them all."
-          />
-          <div style={{ position: "relative", width: "100%", marginTop: "7%" }}>
+          </Row>
+
+          <div style={{ position: "relative", width: "100%!important", margin: "7% 0% 7%" }}>
             <img
-              src="photos/bgpic.svg"
+              src="phone_assets/bgpic.png"
               style={{
                 position: "absolute",
                 width: "100%",

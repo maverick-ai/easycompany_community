@@ -31,13 +31,13 @@ function Page2() {
         </Row>
         <div>
           <div style={{ position: "relative", height: "150px" }}>
-            <img src="photos/polar1.png" className={styles.polar1}></img>
+            <img src="phone_assets/polar1.png" className={styles.polar1}></img>
 
-            <img src="photos/polar2.png" className={styles.polar2}></img>
+            <img src="phone_assets/polar2.png" className={styles.polar2}></img>
 
-            <img src="photos/polar3.png" className={styles.polar3}></img>
+            <img src="phone_assets/polar3.png" className={styles.polar3}></img>
 
-            <img src="photos/polar4.png" className={styles.polar4}></img>
+            <img src="phone_assets/polar4.png" className={styles.polar4}></img>
           </div>
         </div>
         <Row>
@@ -53,7 +53,7 @@ function Page2() {
               </p>
 
               <img
-                src="photos/hotAirBalloon.png"
+                src="phone_assets/airballoon.png"
                 className={styles.hotAirBalloon}
               ></img>
             </div>

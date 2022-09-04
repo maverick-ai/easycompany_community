@@ -1,6 +1,8 @@
 .column {
-  margin: 3.5%;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  margin: auto;
+  /* justify-content: center; */
 }
 @media screen and (max-width: 992px) {
   .column {
@@ -9,10 +11,11 @@
 }
 .destcard {
   position: relative;
+  left: calc(100vw * (12/390));
   width: min-content;
 }
 .destcard1 {
-  height: 350px;
+  height: calc(100vh * (159/420));
   padding: 0 20px;
   text-align: center;
   justify-content: center;
@@ -29,9 +32,9 @@
 .destcardimg {
   position: absolute;
   left: -20px;
-  top: calc(100vw * (-150 / 1728));
+  top: -40px!important;
   text-align: center;
-  height: calc(100vw * (203 / 1400));
+  height: calc(100vh * (140/420));
 }
 .destcardp {
   font-weight: 500;
@@ -39,7 +42,7 @@
   line-height: calc(100vw * (30 / 1728));
   color: #ffffff;
   opacity: 1 !important;
-  top: 100px;
+  top: calc(100vh * (21/109));
   position: relative;
 }
 @media screen and (max-width: 1400px) and (min-width: 1300px) {
@@ -52,7 +55,7 @@
     width: 210px;
   }
   .destcardimg {
-    height: 198px;
+    height: calc(100vw * (140/420));
     top: -120px;
   }
 }
