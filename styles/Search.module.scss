@@ -13,10 +13,9 @@
 @media (max-width: 768px) {
   .questionsList{
     background-image: none;
-    overflow-x:hidden;
     width: 100vw;
     height: 50px;
-    margin: 100px auto 100px;
+    margin: 100px auto 70px;
   }
   .SearchVector {
     display: inline;
@@ -91,7 +90,7 @@
 .searchbox {
   width: calc(100vw * (600/1728));
   height: calc(100vw * (40/1728));
-  margin: calc(100vw * (140/1728)) auto calc(100vw * (120/1728));
+  margin: calc(100vw * (140/1728)) auto calc(100vw * (100/1728));
   justify-content: center;
   background-color: #121212;
   border-width: 0cm;
@@ -423,7 +422,8 @@
   }
 }
 .textDiv{
-  // margin-top: 10px;
+  margin-top: 10px;
+  margin-left: 10px;
   height: 30px;
 
 }
