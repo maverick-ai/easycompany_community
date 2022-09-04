@@ -1,12 +1,12 @@
 .questionsList {
-    /* width: 100vw !important;
-        margin: auto;
-        margin-top: 100px;
-        max-width: 1000px; */
-  
     width: 1300px;
     height: 327px;
-    /* background-image: url(../public/SEARCH1.png); */
+    margin: 155px auto 110px;
+    background-size: 100% 100%;
+  }
+  .questionsListPhone{
+    width: 1300px;
+    height: 327px;
     margin: 155px auto 110px;
     background-size: 100% 100%;
   }

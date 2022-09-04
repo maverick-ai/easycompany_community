@@ -11,6 +11,7 @@ import Image from "next/dist/client/image";
 import SearchBox from "../components/searchbox";
 import { useRouter } from "next/router";
 import FooterToolbar from "../components/FooterToolbar";
+import { text } from "@fortawesome/fontawesome-svg-core";
 
 // var page = 1;
 
@@ -53,6 +54,22 @@ const Content = () => {
 
   useEffect(newSearch, []);
 
+  const [winWidth, setWinWidth] = useState(true);
+ 
+  useEffect(() => {
+    if (window.innerWidth <= 768) {
+      setWinWidth(false);
+    } else {
+      setWinWidth(true);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 768) {
+        setWinWidth(false);
+      } else {
+        setWinWidth(true);
+      }
+    });
+  }, []);
   // const newSearchCall = useCallback(() => newSearch, [query]);
   return (
     // search-bar
@@ -68,10 +85,10 @@ const Content = () => {
       >
         <Container>
           <Row>
-          <div className={styles.questionsList}>
-              <div className={styles.searchbox}>
-                <div style={{ position: "relative" }}>
-                <div className={styles.outerDiv}>
+          {winWidth && (
+            <div className={styles.questionsList}>
+            <div className={styles.searchbox}>
+              <div style={{ position: "relative" }}>
                 <img
                     src="/Vector.png"
                     style={{
@@ -94,7 +111,35 @@ const Content = () => {
                 </div>
               </div>
             </div>
-          </div>
+          )}
+          {!winWidth && (
+            <div className={styles.questionsList}>
+            <div className={styles.searchbox}>
+            <div style={{ position: "relative" }}>
+                <img
+                    src="/Vector.png"
+                    style={{
+                      height: "18.76px",
+                      position: "absolute",
+                      right: "10px",
+                      top: "8px",
+                    }}
+                    onClick={newSearch}
+                  />
+                  <input
+                    className={styles.searchInput}
+                    id="query"
+                    type="text"
+                    autoComplete="query"
+                    value={query}
+                    onChange={onChangeHandler}
+                    required
+                  />
+                </div>
+            </div>
+            <div className={styles.textDiv}><h3 className={styles.phoneText}>The results are in<span className={styles.phoneMark}>!</span></h3></div>
+            </div>
+          )}
           </Row>
         </Container>
         <Container>
@@ -158,7 +203,6 @@ const Content = () => {
           </Row>
           <FooterToolbar />
         </Container>
-        
       </div>
     </React.Fragment>
   );
