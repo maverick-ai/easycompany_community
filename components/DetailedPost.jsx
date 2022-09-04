@@ -151,7 +151,7 @@ const DetailedPost = (props) => {
                     {/* <div className={styles.postuser}> */}
                     
                       
-                        <Col lg={2} md={5} xs={12}>
+                        <Col lg={2} md={3} xs={1}>
                           <div className={Styles.linkDiv}>
                             <Link
                               href={`/profile?user=${props.data.creator_by.creator_id}`}
@@ -162,7 +162,7 @@ const DetailedPost = (props) => {
                             </Link>
                           </div>
                         </Col>
-                        <Col lg={1} md={3} xs={6}>
+                        <Col lg={2} md={3} xs={6}>
                           <div className={Styles.timerDiv}>
                             <img
                               src="/av_timer.png"
@@ -182,7 +182,7 @@ const DetailedPost = (props) => {
                             </span>
                           </div>
                         </Col>
-                        <Col lg={1} md={3} xs={6}>
+                        <Col lg={2} md={3} xs={6}>
                           <div className={Styles.eyeDiv}>
                             <img
                               className={styles.eye}
@@ -298,8 +298,8 @@ const DetailedPost = (props) => {
                 <Row className={styles.toprow}>
                   <div className={Styles.topRowDiv}></div>
                   <div className={styles.postuser}>
-                    <Row>
-                      <Col xs={8} sm={8}>
+                    {/* <Row>
+                      <Col xs={6} sm={6}>
                         <div className={Styles.eyeDiv}>
                           <img
                             className={styles.eye}
@@ -313,7 +313,7 @@ const DetailedPost = (props) => {
                           </span>
                         </div>
                       </Col>
-                      <Col xs={2} sm={2}>
+                      <Col xs={6} sm={6}>
                         <div className={Styles.timerDiv}>
                           <img
                             src="/av_timer.png"
@@ -333,6 +333,40 @@ const DetailedPost = (props) => {
                           </span>
                         </div>
                       </Col>
+                    </Row> */}
+                    <Row>
+                    <div className={Styles.flexContainer}>
+                        <div className={Styles.eyeDiv}>
+                          <img
+                            className={styles.eye}
+                            src="/Eye.png"
+                            style={{ width: "18.75px" }}
+                          />
+                          <span className={Styles.eyeText}>
+                            <p className={styles.timerP}>
+                              {props.data.viewedByTheUsers} Views
+                            </p>
+                          </span>
+                        </div>
+                        <div className={Styles.timerDiv}>
+                          <img
+                            src="/av_timer.png"
+                            style={{
+                              width: "16px",
+                              margin: "auto 0 0 -10px"
+                            }}
+                          />
+                          <span className={Styles.timer}>
+                            <p className={styles.timerP}>
+                              {`${year ? year + " years" : ""}` ||
+                                `${month ? month + " Months" : ""}` ||
+                                `${newday ? newday + " days" : ""}` ||
+                                `${newhour ? newhour + " hours" : ""}` ||
+                                `${newminute ? newminute + " minutes" : ""}`}
+                            </p>
+                          </span>
+                        </div>
+                      </div>
                     </Row>
                   </div>
                 </Row>

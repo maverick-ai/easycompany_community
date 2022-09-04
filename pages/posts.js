@@ -146,7 +146,7 @@ const Post = ({ post, answers, solnComments, query }) => {
                     onClick={() =>
                       addanswer(ansValue, post.post_id, setIsLoggedIn)
                     }
-                    className={Styles.btn}
+                    className={Styles.btnPostAnswer}
                   >
                     Post Answer
                   </button></div>
