@@ -19,7 +19,7 @@ function Phone7() {
           </span>
         </Col>
         <Col md={2} sm={2} xs={2}>
-          <img src="photos/camImg.png" className={styles.camImg} />
+          <img src="phone_assets/camImg.png" className={styles.camImg} />
         </Col>
       </Row>
       <Row>

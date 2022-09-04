@@ -7,22 +7,22 @@ function Phone6() {
   return (
     <React.Fragment>
       <Col lg={5}>
-        <Row style={{ height: "300px" }}>
-          <div style={{ position: "relative" }}>
-            <img src="photos/travel.svg" className={styles.travel}></img>
+        <Row style={{ height: "240px" }}>
+            <div style={{ position: "relative" }}>
+              <img src="phone_assets/travel.png" className={styles.travel}></img>
             <div style={{ position: "absolute" }}>
-              <img src="photos/sun1.svg" className={styles.sun1}></img>
+              <img src="phone_assets/sun1.png" className={styles.sun1}></img>
             </div>
             <div style={{ position: "absolute" }}>
-              <img src="photos/sun2.svg" className={styles.sun2}></img>
+              <img src="phone_assets/sun2.png" className={styles.sun2}></img>
             </div>
             <div style={{ position: "absolute" }}>
-              <img src="photos/sun4.svg" className={styles.sun4}></img>
+              <img src="phone_assets/sun3.png" className={styles.sun4}></img>
             </div>
             <div style={{ position: "absolute" }}>
-              <img src="photos/sun3.svg" className={styles.sun3}></img>
+              <img src="phone_assets/sun4.png" className={styles.sun3}></img>
 
-              <img src="photos/world.svg" className={styles.world}></img>
+              <img src="phone_assets/world.png" className={styles.world}></img>
             </div>
           </div>
         </Row>
@@ -37,7 +37,7 @@ function Phone6() {
           </Col>
           <Col sm={4} xs={4}>
             <img
-              src="photos/globemaster.png"
+              src="phone_assets/globemaster.png"
               className={styles.globemaster}
             ></img>
           </Col>

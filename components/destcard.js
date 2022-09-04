@@ -1,14 +1,14 @@
 import st from "./destcard.module.css";
 import { Col } from "react-bootstrap";
-function   DestCard(props) {
+function DestCard(props) {
   return (
     <Col
       xxl={2}
       xl={2}
       lg={2}
       md={5}
-      sm={5}
-      xs={5}
+      sm={9}
+      xs={9}
       className={st.column}
       style={{ zIndex: "3" }}
     >
