@@ -286,9 +286,22 @@
     font-size: 11px;
   }
 }
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 433px) {
   .wrapper {
-    width: 360px !important;
+    width: 356px !important;
+  }
+  .votebox {
+    width: 80px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 390px) {
+  .wrapper {
+    width: 347px !important;
   }
   .votebox {
     width: 80px;
@@ -301,7 +314,7 @@
 }
 @media only screen and (max-width: 380px) {
   .wrapper {
-    width: 310px !important;
+    width: 307px !important;
   }
   .votebox {
     width: 80px;
@@ -317,7 +330,46 @@
     width: 280px !important;
   }
   .votebox {
-    width: 70px;
+    width: 75px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 300px) {
+  .wrapper {
+    width: 266px !important;
+  }
+  .votebox {
+    width: 75px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 290px) {
+  .wrapper {
+    width: 256px !important;
+  }
+  .votebox {
+    width: 75px;
+    height: 37px;
+    padding-top: 10px;
+  }
+  .listItem {
+    font-size: 11px;
+  }
+}
+@media only screen and (max-width: 280px) {
+  .wrapper {
+    width: 237px !important;
+  }
+  .votebox {
+    width: 75px;
     height: 37px;
     padding-top: 10px;
   }
