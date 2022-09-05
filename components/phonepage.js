@@ -33,9 +33,9 @@ function Page2() {
           <div style={{ position: "relative", height: "150px" }}>
             <img src="phone_assets/polar1.png" className={styles.polar1}></img>
 
-            <img src="phone_assets/polar2.png" className={styles.polar2}></img>
+            <img src="phone_assets/polar3.png" className={styles.polar2}></img>
 
-            <img src="phone_assets/polar3.png" className={styles.polar3}></img>
+            <img src="phone_assets/polar2.png" className={styles.polar3}></img>
 
             <img src="phone_assets/polar4.png" className={styles.polar4}></img>
           </div>

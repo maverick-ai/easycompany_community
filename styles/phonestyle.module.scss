@@ -603,7 +603,7 @@ $grid-breakpoints: (
 
 .white {
   margin-left: -20px;
-  margin-top: 130px;
+  margin-top: 100px;
   background: #fdfdfd;
   position: relative;
 }
@@ -657,7 +657,8 @@ $grid-breakpoints: (
 .polar2 {
   width: calc(100vw * (99 / 360));
   position: absolute;
-  left: 39vw;
+  top: 5px;
+  left: 36.5vw;
   z-index: 1;
   /* margin-left:  calc(100vw * (212/1560)); */
 }
@@ -665,8 +666,8 @@ $grid-breakpoints: (
 .polar3 {
   width: calc(100vw * (99 / 360));
   position: absolute;
-  left: 27vw;
-  top: 15vh;
+  left: 26vw;
+  top: 10vh;
   z-index: 2;
 
   /* margin-top: 170px;
@@ -676,8 +677,8 @@ $grid-breakpoints: (
 .polar4 {
   width: calc(100vw * (99 / 360));
   position: absolute;
-  left: 57vw;
-  top: 10vh;
+  left: 51vw;
+  top: 8vh;
   z-index: 0;
   /* margin-top: 130px;
   margin-left: calc(100vw * (340/1560));*/

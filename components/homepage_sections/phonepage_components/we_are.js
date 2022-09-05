@@ -61,10 +61,12 @@ function We_are() {
               src="phone_assets/bgpic.png"
               style={{
                 position: "absolute",
-                width: "100%",
+                width: "calc(100vw * (400/390))",
                 bottom: "0",
                 left: "0",
                 zIndex: "0",
+                marginLeft: '-20px',
+                marginRight: '-20px'
               }}
             />
           </div>
