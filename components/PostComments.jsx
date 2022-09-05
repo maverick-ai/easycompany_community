@@ -3,6 +3,10 @@ import CommentImage from "./DetailedPostComponents/CommentImage";
 import Image from "next/image";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faUserCircle);
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Styles from "../styles/Post.module.css";
 import { useEffect, useState } from "react";
@@ -52,14 +56,28 @@ const PostComment = (props) => {
           <Row>
             <Col lg={{ span: 8, offset: 1 }} md={{ span: 11, offset: 2 }}>
               <div className={`${Styles.commentboxdiv}`}>
-                <Row style={{ marginTop: "5px" }}>
-                  <div style={{ width: "10px", padding: "0px" }}></div>
-                  <Image
-                    src="/profileImage.png"
-                    height={28}
-                    width={28}
-                    quality={100}
-                  />
+                <div style={{ marginTop: "5px", display:"flex" }}>
+                  
+                  {props.comment.creator_by.image ? (
+                    <div style={{ marginTop: "5px"}}>
+                        <img
+                          src={props.comment.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      ) : (<div style={{ marginTop: "5px"}}>
+                        <FontAwesomeIcon icon="user-circle" 
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      )}
+                      <div style={{ width: "10px", padding: "0px" }}></div>
                   <Col lg={{ span: 8 }} md={8}>
                     <div className={Styles.userName}>
                       <Link
@@ -81,7 +99,7 @@ const PostComment = (props) => {
                       </p>
                     </div>
                   </Col>
-                </Row>
+                </div>
                 <p style={{ marginTop: "10px", width: "68%" }}>
                   {props.comment.commentByUser}
                 </p>
@@ -107,14 +125,29 @@ const PostComment = (props) => {
           <Row>
             <Col lg={{ span: 8, offset: 1 }} md={{ span: 11, offset: 2 }}>
               <div className={`${Styles.commentboxdiv}`}>
-                <Row style={{ marginTop: "5px" }}>
-                  <div style={{ width: "10px", padding: "0px" }}></div>
-                  <Image
-                    src="/profileImage.png"
-                    height={28}
-                    width={28}
-                    quality={100}
-                  />
+                <div style={{ marginTop: "5px" , display:"flex"}}>
+                  
+                  {props.comment.creator_by.image ? (
+                    <div style={{ marginTop: "5px"}}>
+                        <img
+                          src={props.comment.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                        </div>
+                      ) : (<div style={{ marginTop: "5px"}}>
+                        <FontAwesomeIcon icon="user-circle" 
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      </div>)}
+                      <div style={{ width: "10px", padding: "0px" }}></div>
                   <Col lg={{ span: 8 }} md={8}>
                     <div className={Styles.userName}>
                       <Link
@@ -136,7 +169,7 @@ const PostComment = (props) => {
                       </p>
                     </div>
                   </Col>
-                </Row>
+                </div>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
@@ -164,14 +197,26 @@ const PostComment = (props) => {
               <div className={`${Styles.commentboxdiv}`}>
                 <Row style={{ marginTop: "5px" }}>
                   <Col sm={2} xs={3}>
-                    <Image
-                      src="/profileImage.png"
-                      height={35}
-                      width={35}
-                      quality={100}
-                    />
+                  {props.comment.creator_by.image ? (
+                        <img
+                          src={props.comment.creator_by.image}
+                          style={{
+                            height: "35px",
+                            width: "35px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ) : (
+                        <FontAwesomeIcon icon="user-circle" 
+                          style={{
+                            height: "35px",
+                            width: "35px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      )}
                   </Col>
-                  <Col sm={10} xs={9}>
+                  <Col sm={9} xs={8}>
                     <div className={Styles.userName}>
                       <Link
                         href={`/profile?user=${props.comment.creator_by.creator_id}`}

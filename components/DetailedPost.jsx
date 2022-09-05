@@ -15,6 +15,12 @@ import PostComment from "./PostComments";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import moment from "moment";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faUserCircle);
+
 
 const DetailedPost = (props) => {
   console.log(props.data.creator_by.image);
@@ -135,8 +141,7 @@ const DetailedPost = (props) => {
                           }}
                         />
                       ) : (
-                        <img
-                          src="/profileImage.png"
+                        <FontAwesomeIcon icon="user-circle" 
                           style={{
                             height: "28px",
                             width: "28px",
@@ -427,14 +432,15 @@ const DetailedPost = (props) => {
                           }}
                         />
                       ) : (
-                        <img
-                          src="/profileImage.png"
+                        <FontAwesomeIcon icon="user-circle" 
                           style={{
                             height: "35px",
                             width: "35px",
                             borderRadius: "50%",
                           }}
                         />
+
+                        
                       )}
                       <div
                       style={{
@@ -654,8 +660,7 @@ const DetailedPost = (props) => {
               {postComment &&
                 postComment.length < props.data.comments.count &&
                 postComment.length % commentPageSize == 0 && (
-                  <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 1}} xs={{span: 6, offset: 1}}>
-                    
+                  <Col lg={{ span: 3, offset: 1 }} sm={{span: 6, offset: 1}} md={{span: 6, offset: 2}} xs={{span: 6, offset: 1}}>
                     <span
                       onClick={() => getnewpostcomments(props.data.post_id)}
                       className={`${styles.commentButton}`}>
