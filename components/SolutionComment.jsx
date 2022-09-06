@@ -124,15 +124,30 @@ const SolutionComment = (props) => {
       {props.imgIdx % 2 !== 0 && !winWidth && (
         <Container>
           <Row>
-            <Col lg={{ span: 8, offset: 1 }}>
+            <Col lg={{ span: 8, offset: 1 }} md={{ span: 11, offset: 2 }}>
               <div className={`${Styles.commentboxdiv}`}>
-                <Row style={{ marginTop: "5px" }}>
-                  <Image
-                    src="/profileImage.png"
-                    height={28}
-                    width={28}
-                    quality={100}
-                  />
+              <div style={{ marginTop: "5px", display:"flex" }}>
+                
+                {props.comment.creator_by.image ? (
+                  <div style={{ marginTop: "5px"}}>
+                        <img
+                          src={props.comment.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      ) : (<div style={{ marginTop: "5px"}}>
+                        <FontAwesomeIcon icon="user-circle" 
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      )}
+                      <div style={{ width: "10px", padding: "0px" }}></div>
                   <Col lg={{span: 8}}>
                   
                     <div className={Styles.userName}>
@@ -158,7 +173,7 @@ const SolutionComment = (props) => {
                     </div>
                     
                   </Col>
-                </Row>
+                </div>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
@@ -214,7 +229,7 @@ const SolutionComment = (props) => {
                   {props.comment.commentByUser}
                 </p>
                 <Row>
-                <div style={{textAlign:"right", marginBottom:"5px"}}>
+                <div style={{textAlign:"right", marginBottom:"8px"}}>
                   <img
                       src="/av_timer.png"
                       style={{ width: "14px"}}

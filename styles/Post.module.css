@@ -249,6 +249,10 @@ display: none;
     border-color: transparent;
 }
 
+.commentButton:hover {
+  cursor: pointer;
+}
+
 .underline{
   background: linear-gradient(278.43deg, #E42833 -23.73%,#B50EAE 170.2%) no-repeat;
   background-size: 100% 2px;
@@ -295,7 +299,7 @@ display: none;
 }
 
 @media (max-width: 768px) {
-  /* .commentButton {
+  .commentButton {
     position: relative;
     top: -20px;
     left: 5px;
@@ -325,7 +329,7 @@ display: none;
     background: #000000;
     border-radius: 36px;
     height: 45px;
-  } */
+  }
   .markdwn{
     margin-left: 0px;
   }

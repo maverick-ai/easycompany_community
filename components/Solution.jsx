@@ -488,14 +488,16 @@ const Solution = (props) => {
           {solnComment && solnComment.length < props.solution.comments.count && (
             <Col
               lg={{ span: 3, offset: 1 }}
-              sm={{ span: 6, offset: 2 }}
-              xs={{ span: 6, offset: 2 }}
+              md={{ span: 11, offset: 2 }}
+              sm={{ span: 6, offset: 1 }}
+              xs={{ span: 6, offset: 1 }}
             >
               <button
                 onClick={() => getnewsolncomments(props.solution.id)}
                 className={`${styles.commentButton}`}
               >
-                View All
+              <span className={styles.underline}>View All</span>
+                
               </button>
             </Col>
           )}
@@ -540,7 +542,7 @@ const Solution = (props) => {
                   <div style={{ position: "relative", width: "auto" }}>
                     <img
                       onClick={() =>
-                        addpostcomment(
+                        addsolncomment(
                           document.getElementById(
                             `solnComment${props.solution.id}`
                           ).value,
