@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.headerDiv{
+  position: relative;
+}
+
+.man {
+  position: absolute;
+  top: calc(100vw * (-70/390));
+  left: calc(100vw * (180/360));
+  z-index: 1;
+
+  width: calc(100vw * (103/360));
+}
+
+.headerLine {
+    width: 83.33%;
+    height: 5px!important;
+    background: linear-gradient(90deg, #e32a36 0%, #b50eae 95.14%);
+    opacity: 1;
+    border-radius: 2px;
+  }
+
+  .heading{
+    font-size: 44px;
+    font-weight: 700;
+    font-family: 'Inter';
+    font-style: normal;
+
+    margin-left: 20px;
+  }

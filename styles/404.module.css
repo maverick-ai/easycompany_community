@@ -1,10 +1,12 @@
 .mainContainer {
     height: 100vh;
-    width: 100vw;
+    width: 110vw;
     background-color: rgb(255, 188, 101);
     background: url("/404/background.svg");
     position: relative;
     display: flex;
+    margin-left: -5%;
+    /* margin-right: -%; */
   }
   
   .sunContainer {

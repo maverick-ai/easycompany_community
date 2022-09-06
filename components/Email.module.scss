@@ -14,16 +14,17 @@
         max-width: 100%;
       }
     input {
-        width: 100%;
+        width: 95%;
+        height: 43px;
         -webkit-appearance: none;
         outline: none;
         display: block;
         font-size: 16px;
         font-family: inherit;
         margin: 0;
-        padding: 8px 16px 8px 16px;
+        padding: 0px 16px 8px 16px;
         line-height: 50px;
-        border-radius: 12px;
+        border-radius: 4px;
         color: var(--text);
         border: 0px solid var(--bc, var(--border));
         background: var(--background);

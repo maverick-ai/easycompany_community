@@ -17,11 +17,10 @@ function We_are() {
         <h1 className={styles.headeasy}>
           WE ARE <br />
           <span className={styles.love2}>EASYCOMMUNITY</span>
-          <span>
-            <img src="phone_assets/sglobe.png" className={styles.sglobe} />
-          </span>
         </h1>
-
+        <span>
+          <img src="phone_assets/sglobe.png" className={styles.sglobe} />
+        </span>
         <Row
           style={{ margin: "10% auto 0", position: "relative" }}
           className={styles.rowdest}
@@ -56,13 +55,13 @@ function We_are() {
           />
           </Row>
 
-          <div style={{ position: "relative", width: "100%!important", margin: "7% 0% 7%" }}>
+          <div style={{ position: "relative", width: "100%!important", margin: "7% 7% 7% 0%" }}>
             <img
               src="phone_assets/bgpic.png"
               style={{
                 position: "absolute",
                 width: "calc(100vw * (400/390))",
-                bottom: "0",
+                bottom: "-15px",
                 left: "0",
                 zIndex: "0",
                 marginLeft: '-20px',

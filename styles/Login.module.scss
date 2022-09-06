@@ -13,6 +13,8 @@
   position: relative;
 }
 
+
+
 .bkimg {
   background: linear-gradient(
     90deg,
@@ -25,6 +27,10 @@
   @media (min-width: 578px) {
     height: 100vh;
     width: 100%;
+  }
+
+  @media (max-width: 578px){
+    display: none;
   }
 }
 
@@ -209,5 +215,6 @@
   @media (max-width: 578px) {
     margin-left: 57vw;
     margin-top: 15vh;
+    display: none;
   }
 }

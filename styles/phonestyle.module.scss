@@ -171,8 +171,7 @@ $grid-breakpoints: (
   background-image: linear-gradient(
     90deg,
     #b50eae 21.48%,
-    rgba(227, 42, 52, 0.94) 86.58%
-  );
+    rgba(227, 42, 52, 0.94) 86.58%);
   background-clip: text;
   color: transparent;
 
@@ -182,8 +181,8 @@ $grid-breakpoints: (
   font-size: calc(0.01719 * (100vw) + 20px);
   
   position: absolute;
-  left: calc(100vw * (10/390));
-  top: -10px;
+  left: calc(100vw * (30/390));
+  top: -15px;
 }
 
 .love2 {
@@ -199,10 +198,6 @@ $grid-breakpoints: (
   font-style: normal;
   font-weight: 600;
   font-size: calc(0.01719 * (100vw) + 20px);
-  
-  position: absolute;
-  left: calc(100vw * (70/390));
-  top: 30px;
 }
 
 .card {
@@ -268,25 +263,25 @@ $grid-breakpoints: (
 }
 @media screen and (max-width: 756px) {
   .arorrr {
-    left: calc(100% * (170 / 1560)) !important;
+    left: calc(100% * (165 / 1560)) !important;
   }
 }
 @media screen and (max-width: "768px") {
   .arorrr {
-    left: calc(100% * (300 / 1560));
+    left: calc(100% * (290 / 1560));
   }
 }
 
 .arorrr {
   height: calc(100vw * (243 / 1560));
-  left: calc(100% * (1510 / 1560))!important;
-  top: calc(100vw * (-130 / 1560));
+  left: calc(100% * (1490/ 1560))!important;
+  top: calc(100vw * (-120 / 1560));
 }
 
 .search{
   position: absolute;
   left: calc(100vw * (300/390));
-  top: 230px;
+  top: 175px;
 
   width: 77px;
   height: 56px;
@@ -322,8 +317,8 @@ $grid-breakpoints: (
 }
 
 .maop {
-  height: 52px;
-  width: 56px;
+  height: 65px;
+  width: 70px;
   position: absolute;
   left: calc(100vw * (283/390));
   top: -30px;
@@ -331,7 +326,7 @@ $grid-breakpoints: (
 .sunb {
   position: absolute;
   width: 79px;
-  left: calc(100vw * (19/390));
+  left: calc(100vw * (28/390));
 }
 .mapImg {
   position: absolute;
@@ -350,9 +345,16 @@ $grid-breakpoints: (
   height: calc(100vw * (44/360));
 
   position: absolute;
-  left: 318px;
-  top: -0px;
+  left: calc(100vw * (318/390));
+  top: -7px;
 }
+
+@media (min-width:'391px'){
+  .row1{
+    margin-bottom: 30px;
+  }
+}
+
 .destcard {
   position: relative;
   width: min-content;
@@ -528,7 +530,7 @@ $grid-breakpoints: (
 .world {
   position: absolute;
   bottom: -50px;
-  left: calc(100vw * (305/390));
+  left: calc(100vw * (308/390));
   height: calc(100vh * (50 / 1560));
 }
 
@@ -602,6 +604,8 @@ $grid-breakpoints: (
 }
 
 .white {
+  width: 115%;
+
   margin-left: -20px;
   margin-top: 100px;
   background: #fdfdfd;
@@ -614,18 +618,11 @@ $grid-breakpoints: (
     margin-top: 130px;
     background: #fdfdfd;
     border-radius: 30px;
+  
   }
 }
 
-.dot {
-  height: 10px;
-  width: 10px;
 
-  margin-left: 5%;
-  background-color: #ffffff;
-  border-radius: 50%;
-  display: inline-block;
-}
 
 .whitep {
   width: 85%;
@@ -724,11 +721,11 @@ $grid-breakpoints: (
 }
 
 .hotAirBalloon {
-  width: 40px;
+  width: calc(100vw * (60/360));
   position: absolute;
-  top: 35px;
-  right: 10px;
-}
+  top: 27px;
+  right: calc(100vw * (0/390));
+} 
 
 .heading2lastspan {
   background: linear-gradient(90deg, #e32a34 0%, #b50eae 21.41%);

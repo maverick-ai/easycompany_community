@@ -7,8 +7,8 @@ function Phone6() {
   return (
     <React.Fragment>
       <Col lg={5}>
-        <Row style={{ height: "240px" }}>
-            <div style={{ position: "relative" }}>
+        <Row style={{ height: "240px" }} className={styles.row1}>
+          <div style={{ position: "relative", marginBottom:'40px' }}>
               <img src="phone_assets/travel.png" className={styles.travel}></img>
             <div style={{ position: "absolute" }}>
               <img src="phone_assets/sun1.png" className={styles.sun1}></img>
@@ -21,7 +21,6 @@ function Phone6() {
             </div>
             <div style={{ position: "absolute" }}>
               <img src="phone_assets/sun4.png" className={styles.sun3}></img>
-
               <img src="phone_assets/world.png" className={styles.world}></img>
             </div>
           </div>
@@ -45,7 +44,7 @@ function Phone6() {
         <Row>
           <div>
             <span className={styles.dot}></span>
-            <img src="photos/Line3.png" className={styles.line3}></img>
+            <img src="phone_assets/line3.png" className={styles.line3}></img>
           </div>
         </Row>
         <Row>

@@ -1,5 +1,10 @@
 import styles from "../styles/404.module.css";
 
+function handleClick(){
+  
+}
+
+
 const errorpage = () => {
     return (
       <div>
@@ -46,7 +51,7 @@ const errorpage = () => {
         <img src={"/404/cloud.svg"} />
       </div>
       <section className = {styles.btnContainer}>
-        <button>Back to Home</button>
+        <button onClick="">Back to Home</button>
       </section>
 
       <section className={styles.bottomSupport}>

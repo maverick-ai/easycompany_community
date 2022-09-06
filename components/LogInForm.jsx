@@ -8,10 +8,10 @@ function LogInForm(props) {
   return (
     <div className={styles.containerForm}>
       <form className="form">
-        <p>Email Address</p>
+        <p className={styles.emailLabel}>Email Address</p>
         <EmailField EmailRef={props.EmailRef} />
         <div style={{ paddingTop: "25px" }}>
-          <p>Password</p>
+          <p className={styles.emailLabel}>Password</p>
           <PasswordField
             LogInCorrect={props.LogInCorrect}
             PasswordRef={props.PasswordRef}
@@ -22,10 +22,10 @@ function LogInForm(props) {
             }}
             className={styles.forgot}
           >
-            forgot password ?
+            Forgot Password ?
           </button>
         </div>
-        <div style={{ paddingTop: "25px", paddingBottom:"10px" }}>
+        <div style={{ paddingTop: "25px", paddingBottom:"10px", textAlign: 'center' }}>
           <button
             onClick={(event) => {
               event.preventDefault();

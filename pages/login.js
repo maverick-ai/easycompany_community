@@ -11,6 +11,8 @@ import { Row, Col, Container } from "react-bootstrap";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import publicIp from "public-ip";
+import LoginHeader from "../components/loginHeader";
+import SignUpHeader from "../components/SignUpHeader";
 
 function Login() {
   let userDetails = {};
@@ -311,14 +313,9 @@ function Login() {
             )}
             {winWidth < 576 && (
               <div>
-                <div style={{ position: "absolute", top: "10%", left: "0%" }}>
-                  <img style={{ width: "20%" }} src="/loginBall.svg" />
-                </div>
-                <div
-                  style={{ position: "absolute", top: "26%", left: "31.4%" }}
-                >
-                  <img style={{ width: "65%" }} src="/ball2.svg" />
-                </div>
+               <div className={styles.headerRow}>
+                  <hr className={styles.headerLine}></hr>
+               </div>
               </div>
             )}
           </div>
@@ -334,6 +331,12 @@ function Login() {
                 </Col>
               </Row>
               <Row>
+                <h1>Log In</h1>
+              </Row>
+              <Row>
+                <Col>
+                  <LoginHeader />
+                </Col>
                 <Col lg={{ offset: 2 }} md={12}>
                   <LogInForm
                     LogInCorrect={loginCorrectState}
@@ -341,23 +344,31 @@ function Login() {
                     EmailRef={emailInputRef}
                     PasswordRef={passwordInputRef}
                   />
+                  <div onClick={() => {
+                      setIsLogin(false);
+                    }}>
+                    <p>New User? Sign Up Instead</p>
+                  </div>
                 </Col>
               </Row>
             </Container>
           )}
           {!isLogin && (
             <Container>
-              <Row className={styles.Regtop}>
+              <Row>
+                <SignUpHeader />
+              </Row>
+              {/* <Row className={styles.Regtop}>
                 <Col lg={{ span: 6, offset: 2 }}>
                   <h1 style={{ fontSize: "45px" }}>
                     Sign <span className={Styles.In}>Up</span>
                   </h1>
                 </Col>
-              </Row>
+              </Row> */}
               <Row className={Styles.FirstNameRow}>
                 <Col lg={{ offset: 2 }}>
                   <div>
-                    <h6>First name</h6>
+                    <h6 className={Styles.label}>First name</h6>
 
                     <input
                       placeholder="Bruce"
@@ -370,7 +381,7 @@ function Login() {
               <Row className={Styles.LastNameRow}>
                 <Col lg={{ offset: 2 }}>
                   <div>
-                    <h6>Last name</h6>
+                    <h6 className={Styles.label}>Last name</h6>
                     <input
                       placeholder="Wayne"
                       ref={lastName}
@@ -383,7 +394,7 @@ function Login() {
               <Row className={Styles.LastNameRow}>
                 <Col lg={{ offset: 2 }}>
                   <div>
-                    <h6>Date of Birth</h6>
+                    <h6 className={Styles.label}>Date of Birth</h6>
                     <DatePicker
                       customInput={<DatePickerInput />}
                       // className={Styles.DatePickerCustomStyle}
@@ -405,7 +416,7 @@ function Login() {
               <Row className={Styles.emailRow}>
                 <Col lg={{ offset: 2 }}>
                   <div>
-                    <h6>Email</h6>
+                    <h6 className={Styles.label}>Email</h6>
                     <input
                       type="email"
                       placeholder="bruce@wayne.com"
@@ -418,7 +429,7 @@ function Login() {
               <Row className={Styles.passwordRow}>
                 <Col lg={{ offset: 2 }}>
                   <div>
-                    <h6>Password</h6>
+                    <h6 className={Styles.label}>Password</h6>
                     <input
                       placeholder="IamBatman123"
                       type="password"
@@ -431,7 +442,7 @@ function Login() {
               <Row className={Styles.LastNameRow}>
                 <Col lg={{ offset: 2 }}>
                   <div>
-                    <h6>Profile Image</h6>
+                    <h6 className={Styles.label}>Profile Image</h6>
                     <input
                       type="file"
                       onChange={(e) => {
@@ -442,8 +453,8 @@ function Login() {
                 </Col>
               </Row>
               <Row>
-                <div style={{ paddingBottom: "5px" }}>
-                  <Col lg={{ offset: 2 }}>
+                <div style={{ paddingBottom: "5px", justifyContent:'center', textAlign: 'center' }}>
+                  <Col>
                     <button
                       onClick={sendRegisterRequest}
                       className={Styles.buttonForm}
