@@ -1,12 +1,16 @@
 import { UpVoteSolnCommentURL, DownVoteSolnCommentURL } from "./constants";
 import Link from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
 import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Styles from "../styles/Post.module.css";
 import CommentImage from "./DetailedPostComponents/CommentImage";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faUserCircle);
 
 const SolutionComment = (props) => {
   const [winWidth, setWinWidth] = useState(false);
@@ -51,17 +55,31 @@ const SolutionComment = (props) => {
     <div className="row">
       {props.imgIdx % 2 === 0 && !winWidth && (
         <Container>
-          <Row>
+          <Row >
             <Col lg={{ span: 8, offset: 1 }} md={{ span: 11, offset: 2 }}>
               <div className={`${Styles.commentboxdiv}`}>
-                <Row style={{ marginTop: "5px" }}>
-                <div style={{ width: "10px", padding: "0px" }}></div>
-                  <Image
-                    src="/profileImage.png"
-                    height={28}
-                    width={28}
-                    quality={100}
-                  />
+                <div style={{ marginTop: "5px", display:"flex" }}>
+                
+                {props.comment.creator_by.image ? (
+                  <div style={{ marginTop: "5px"}}>
+                        <img
+                          src={props.comment.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      ) : (<div style={{ marginTop: "5px"}}>
+                        <FontAwesomeIcon icon="user-circle" 
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      )}
+                      <div style={{ width: "10px", padding: "0px" }}></div>
                   <Col lg={8} md={8}>
                     <div className={Styles.userName}>
                       <Link
@@ -85,7 +103,7 @@ const SolutionComment = (props) => {
                       </p>
                     </div>
                   </Col>
-                </Row>
+                </div>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
@@ -106,15 +124,30 @@ const SolutionComment = (props) => {
       {props.imgIdx % 2 !== 0 && !winWidth && (
         <Container>
           <Row>
-            <Col lg={{ span: 8, offset: 1 }}>
+            <Col lg={{ span: 8, offset: 1 }} md={{ span: 11, offset: 2 }}>
               <div className={`${Styles.commentboxdiv}`}>
-                <Row style={{ marginTop: "5px" }}>
-                  <Image
-                    src="/profileImage.png"
-                    height={28}
-                    width={28}
-                    quality={100}
-                  />
+              <div style={{ marginTop: "5px", display:"flex" }}>
+                
+                {props.comment.creator_by.image ? (
+                  <div style={{ marginTop: "5px"}}>
+                        <img
+                          src={props.comment.creator_by.image}
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      ) : (<div style={{ marginTop: "5px"}}>
+                        <FontAwesomeIcon icon="user-circle" 
+                          style={{
+                            height: "28px",
+                            width: "28px",
+                            borderRadius: "50%",
+                          }}
+                        /></div>
+                      )}
+                      <div style={{ width: "10px", padding: "0px" }}></div>
                   <Col lg={{span: 8}}>
                   
                     <div className={Styles.userName}>
@@ -140,7 +173,7 @@ const SolutionComment = (props) => {
                     </div>
                     
                   </Col>
-                </Row>
+                </div>
                 <p style={{ marginTop: "10px" }}>
                   {props.comment.commentByUser}
                 </p>
@@ -162,12 +195,24 @@ const SolutionComment = (props) => {
               <div className={`${Styles.commentboxdiv}`}>
                 <Row style={{ marginTop: "5px" }}>
                   <Col sm={2} xs={3}>
-                  <Image
-                    src="/profileImage.png"
-                    height={40}
-                    width={40}
-                    quality={100}
-                  /></Col>
+                  {props.comment.creator_by.image ? (
+                        <img
+                          src={props.comment.creator_by.image}
+                          style={{
+                            height: "40px",
+                            width: "40px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      ) : (
+                        <FontAwesomeIcon icon="user-circle" 
+                          style={{
+                            height: "40px",
+                            width: "40px",
+                            borderRadius: "50%",
+                          }}
+                        />
+                      )}</Col>
                   <Col sm={10} xs={9}>
                     <div className={Styles.userName}>
                       <Link
@@ -184,7 +229,7 @@ const SolutionComment = (props) => {
                   {props.comment.commentByUser}
                 </p>
                 <Row>
-                <div style={{textAlign:"right", marginBottom:"5px"}}>
+                <div style={{textAlign:"right", marginBottom:"8px"}}>
                   <img
                       src="/av_timer.png"
                       style={{ width: "14px"}}

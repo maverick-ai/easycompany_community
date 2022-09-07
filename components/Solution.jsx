@@ -19,6 +19,11 @@ import remarkGfm from "remark-gfm";
 import moment from "moment";
 
 import { useRouter } from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; // Import the FontAwesomeIcon component
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faUserCircle } from "@fortawesome/free-solid-svg-icons";
+
+library.add(faUserCircle);
 
 const Solution = (props) => {
   const [solnComment, setsolnComment] = useState(props.comments.comments);
@@ -143,8 +148,7 @@ const Solution = (props) => {
                           }}
                         />
                       ) : (
-                        <img
-                          src="/profileImage.png"
+                        <FontAwesomeIcon icon="user-circle" 
                           style={{
                             height: "28px",
                             width: "28px",
@@ -389,8 +393,7 @@ const Solution = (props) => {
                           }}
                         />
                       ) : (
-                        <img
-                          src="/anonypic.png"
+                        <FontAwesomeIcon icon="user-circle" 
                           style={{
                             height: "35px",
                             width: "35px",
@@ -415,7 +418,7 @@ const Solution = (props) => {
                   </div>
               </Row>
               <Row>
-                <div style={{ display: "flex", justifyContent: "end" }}>
+                <div style={{ display: "flex", justifyContent: "end", marginTop: "-23px"}}>
                   <div
                     style={{
                       marginTop: "4px",
@@ -485,14 +488,16 @@ const Solution = (props) => {
           {solnComment && solnComment.length < props.solution.comments.count && (
             <Col
               lg={{ span: 3, offset: 1 }}
-              sm={{ span: 6, offset: 2 }}
-              xs={{ span: 6, offset: 2 }}
+              md={{ span: 11, offset: 2 }}
+              sm={{ span: 6, offset: 1 }}
+              xs={{ span: 6, offset: 1 }}
             >
               <button
                 onClick={() => getnewsolncomments(props.solution.id)}
                 className={`${styles.commentButton}`}
               >
-                View All
+              <span className={styles.underline}>View All</span>
+                
               </button>
             </Col>
           )}
@@ -537,7 +542,7 @@ const Solution = (props) => {
                   <div style={{ position: "relative", width: "auto" }}>
                     <img
                       onClick={() =>
-                        addpostcomment(
+                        addsolncomment(
                           document.getElementById(
                             `solnComment${props.solution.id}`
                           ).value,

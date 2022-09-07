@@ -249,6 +249,10 @@ display: none;
     border-color: transparent;
 }
 
+.commentButton:hover {
+  cursor: pointer;
+}
+
 .underline{
   background: linear-gradient(278.43deg, #E42833 -23.73%,#B50EAE 170.2%) no-repeat;
   background-size: 100% 2px;
@@ -316,7 +320,6 @@ display: none;
     height: 37px;
   }
   .commentInput {
-    /* border: 2px solid rgba(180, 180, 180, 1); */
     padding-left: 10px;
     width: 105%!important;
     margin-bottom: 10px;
