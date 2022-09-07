@@ -137,10 +137,22 @@
   div {
     h3 {
       font-size: 1.563rem;
-      color: rgba(255, 255, 255, 0.5);
-      letter-spacing: 0.655em;
       padding: 1rem 0;
-      @media (max-width: 1200px) {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 300;
+      line-height: 43px;
+      letter-spacing: 0.24em;
+      color: #FFFFFF;
+      @media (min-width: 1700px) {
+        font-size: 35px;
+        letter-spacing: 0.4em;
+      }
+      @media (min-width: 1500px) {
+        font-size: 27px;
+        letter-spacing: 0.4em;
+      }
+      @media (max-width: 900px) {
         font-size: 1rem;
         letter-spacing: 0.4em;
       }
