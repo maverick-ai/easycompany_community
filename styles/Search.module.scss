@@ -90,6 +90,7 @@
 .searchbox {
   width: calc(100vw * (600/1728));
   height: calc(100vw * (40/1728));
+  margin-left: -1px;
   margin: calc(100vw * (140/1728)) auto calc(100vw * (100/1728));
   justify-content: center;
   border-width: 0cm;
@@ -98,6 +99,7 @@
 @media (max-width: 768px){
   .searchbox {
     margin-top: 0;
+    margin-left: 6px;
     width: 93%;
     height: 50px;
     background-color: #121212;

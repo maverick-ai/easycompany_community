@@ -383,12 +383,16 @@
   position: relative;
   background: #000000;
   border-radius: 64px;
+  max-width: 796px;
+  max-height: 842px;
   width: calc(100vw * (796 / 1728));
   height: calc(100vw * (600 / 1225));
   text-align: center;
 }
 .carouselImg{
   margin-top: 30px;
+  max-width: 748px;
+  max-height: 546px;
   width: calc(100vw * (700 / 1728));
   height: calc(100vw * (400 / 1225));
   border-radius: 54px;
@@ -401,6 +405,11 @@
   font-weight: 700;
   font-size: calc(100vw * (36 / 1728));
   line-height: 44px;
+}
+@media (min-width: 1728px) {
+  .carouselText{
+    font-size: 36px;
+  }
 }
 .askImg{
   width: 302px;
