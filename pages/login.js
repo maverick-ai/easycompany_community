@@ -346,8 +346,9 @@ function Login() {
                   />
                   <div onClick={() => {
                       setIsLogin(false);
-                    }}>
-                    <p>New User? Sign Up Instead</p>
+                    }}
+                    style={{display: 'flex', justifyContent: 'center'}}>
+                    <p style={{textAlign: 'center', fontSize: '16px'}}>New User?<br style={{lineBreak: '1px'}}></br>Sign Up Instead</p>
                   </div>
                 </Col>
               </Row>

@@ -7,13 +7,18 @@ import { CookiesProvider } from "react-cookie";
 import "@fortawesome/fontawesome-svg-core/styles.css"; // import Font Awesome CSS
 import { config } from "@fortawesome/fontawesome-svg-core";
 
+import { route } from "next/dist/server/router";
+
+
+
 config.autoAddCss = false;
+
 
 
 function MyApp({ Component, pageProps }) {
   return (
     <CookiesProvider>
-
+ 
     <div>
       <Head>
       <script dangerouslySetInnerHTML={{ __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
