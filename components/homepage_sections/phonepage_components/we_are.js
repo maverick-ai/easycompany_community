@@ -27,35 +27,54 @@ function We_are() {
         >
           <Row>
             <div>
+            <div style={{position: 'relative'}}>
+            <img className={styles.destImg1} src="phone_assets/dest1.png"></img>
             <DestCard
-              img1="phone_assets/dest1.png"
+              // img1="phone_assets/dest1.png"
               para="We connect people who have questions about travel with people who have travelled enough to answer them all."
             />
+            </div>
             </div>
           </Row>
           
           <Row>
+          <div>
+          <div style={{position: 'relative'}}>
+            <img className={styles.destImg2} src="phone_assets/dest2.png"></img>
           <DestCard
-            img1="phone_assets/dest2.png"
+            // img1="phone_assets/dest2.png"
             para="We connect people who have questions about travel with people who have travelled enough to answer them all."
           />
+          </div>
+          </div>
           </Row>
 
           <Row>
+          <div>
+          <div style={{position: 'relative'}}>
+          <img className={styles.destImg3} src="phone_assets/dest3.png"></img>
           <DestCard
-            img1="phone_assets/dest3.png"
+            // img1="phone_assets/dest3.png"
             para="We connect people who have questions about travel with people who have travelled enough to answer them all."
             />
+            </div>
+            </div>
           </Row>
 
           <Row>
+            <div>
+            <div style={{position: 'relative'}}>
+
+          <img className={styles.destImg4} src="phone_assets/dest4.png"></img>
           <DestCard
-            img1="phone_assets/dest4.png"
+            // img1="phone_assets/dest4.png"
             para="We connect people who have questions about travel with people who have travelled enough to answer them all."
           />
+          </div>
+          </div>
           </Row>
 
-          <div style={{ position: "relative", width: "100%!important", margin: "7% 7% 7% 0%" }}>
+          <div style={{ position: "relative", width: "100%!important", margin: "15% 7% 7% 0%" }}>
             <img
               src="phone_assets/bgpic.png"
               style={{

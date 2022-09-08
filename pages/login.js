@@ -348,7 +348,7 @@ function Login() {
                       setIsLogin(false);
                     }}
                     style={{display: 'flex', justifyContent: 'center'}}>
-                    <p style={{textAlign: 'center', fontSize: '16px'}}>New User?<br style={{lineBreak: '1px'}}></br>Sign Up Instead</p>
+                    <p style={{textAlign: 'center', fontSize: '16px'}}>New User?<br style={{lineBreakx: '1px'}}></br>Sign Up Instead</p>
                   </div>
                 </Col>
               </Row>
@@ -450,6 +450,11 @@ function Login() {
                         setImage(e.target.files[0]);
                       }}
                     />
+                  </div>
+                  <div>
+                    <div onClick={() => {setIsLogin(true);}} style={{position: 'relative'}}>
+                      <h6 className={Styles.OptSignIn}>Sign In Instead</h6>
+                    </div>
                   </div>
                 </Col>
               </Row>

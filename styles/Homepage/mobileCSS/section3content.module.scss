@@ -23,6 +23,10 @@
     text-align: left;
 
     color: #F29F9A;
+
+    @media (min-width: '576px'){
+        left: calc(100vw * (65/500));
+    }
 }
 
 .text2 {
@@ -40,6 +44,11 @@
     text-align: left;
 
     color: #FFFFF8;
+
+    @media (min-width: '576px'){
+        left: calc(100vw * (65/500));
+    }
+
 }
 
 .text3 {
@@ -57,7 +66,13 @@
     text-align: left;
 
     color: #AA004C;
+
+    @media (min-width: '576px'){
+        left: calc(100vw * (55/500));
+    }
 }
+
+
 
 .suitcase {
     position: absolute;

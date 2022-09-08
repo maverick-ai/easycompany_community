@@ -35,10 +35,14 @@ function Phone6() {
             </div>
           </Col>
           <Col sm={4} xs={4}>
+            <div>
+              <div style={{position: 'relative'}}>
             <img
               src="phone_assets/globemaster.png"
               className={styles.globemaster}
             ></img>
+            </div>
+            </div>
           </Col>
         </Row>
         <Row>
