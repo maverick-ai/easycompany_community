@@ -57,17 +57,18 @@ function Phone7() {
             <br />
             Join the greatest{" "}
             <span className={styles.highlightTravelComm}>
-              travel <br />
+              travel </span> <br />
+              <span className={styles.highlightTravelComm}>
               community{" "}
             </span>
             today!
           </span>
-
-          <img src="photos/globe2.png" className={styles.globe2} />
+          <img src="phone_assets/downArrow.png" className={styles.downArrow}></img>
+          <img src="phone_assets/globe2.png" className={styles.globe2} />
         </div>
       </Row>
       <Row>
-        <div style={{ textAlign: "center", marginTop: "5%" }}>
+        <div style={{ textAlign: "center", marginTop: "2%" }}>
           <button className={styles.JoinUs}>JOIN US</button>
         </div>
       </Row>

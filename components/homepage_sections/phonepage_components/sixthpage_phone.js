@@ -43,8 +43,11 @@ function Phone6() {
         </Row>
         <Row>
           <div>
-            <span className={styles.dot}></span>
-            <img src="phone_assets/line3.png" className={styles.line3}></img>
+            <div style={{position: 'relative'}}>
+              <span className={styles.dot}></span>
+              <img src="phone_assets/triangle.png" className={styles.triangle}></img>
+              <img src="phone_assets/line3.png" className={styles.line3}></img>
+            </div>
           </div>
         </Row>
         <Row>

@@ -25,7 +25,7 @@ function LogInForm(props) {
             Forgot Password ?
           </button>
         </div>
-        <div style={{ paddingTop: "25px", paddingBottom:"10px", textAlign: 'center' }}>
+        <div style={{ paddingTop: "20px", paddingBottom:"10px", textAlign: 'center' }}>
           <button
             onClick={(event) => {
               event.preventDefault();

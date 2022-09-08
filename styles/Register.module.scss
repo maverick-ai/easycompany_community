@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.label{
-  font-family: 'Inter';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 22px;
-}
 
 .ParentDiv {
   width: 100vw !important;
@@ -208,8 +201,8 @@ line-height: 22px;
   transition: 0.5s;
   @media (max-width: 578px) {
     margin-bottom: 10px;
-    width: 30%;
-    border-radius: 22.5px;
+    width: 100%;
+    border-radius: 4px;
     height: 35.34px;
     margin-left: auto;
     margin-right: auto;

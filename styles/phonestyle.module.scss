@@ -298,7 +298,7 @@ $grid-breakpoints: (
   color: #ffffff;
   /* or 150% */
 
-  text-align: center;
+  text-align: left;
 }
 .horzrule {
   width: 50%;
@@ -529,14 +529,19 @@ $grid-breakpoints: (
 
 .world {
   position: absolute;
-  bottom: -50px;
-  left: calc(100vw * (308/390));
-  height: calc(100vh * (50 / 1560));
+  bottom: -40px;
+  left: calc(100vw * (322.5/390));
+  height: calc(100vh * (40 / 1560));
+  @media (min-width: '357px'){
+    left: calc(100vw * (327/390));
+  }
 }
 
 .bigplace {
-  margin-left: 7%;
+  margin-left: 10px;
   margin-top: 5%;
+  margin-bottom: 8%;
+
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -549,13 +554,24 @@ $grid-breakpoints: (
 }
 
 .line3 {
+  position: absolute;
+  top: -2.5px;
+  left: calc(100vw * (16.7/389));
+
   margin-top: 15px;
   margin-bottom: 15px;
   height: 2px;
-  width: 80%;
+  width: 60%;
   background-color: #ffffff;
   /* border-radius: 50%; */
   display: inline-block;
+}
+
+.triangle{
+  width: 8px;
+  height: 8px;
+
+  margin-left: 3%;
 }
 
 .sun1 {
@@ -607,7 +623,7 @@ $grid-breakpoints: (
   width: 115%;
 
   margin-left: -20px;
-  margin-top: 100px;
+  margin-top: 60px;
   background: #fdfdfd;
   position: relative;
 }
@@ -794,7 +810,7 @@ $grid-breakpoints: (
 }
 
 .highlightTravelComm {
-  background: linear-gradient(90deg, #e32a34 0%, #b50eae 21.41%);
+  background: linear-gradient(90deg, #e32a34 0%, #b50eae 60.41%);
   background-clip: text;
   color: transparent;
 
@@ -910,3 +926,13 @@ $grid-breakpoints: (
     width: calc(100vw * (101 / 360));
   }
 }
+
+.downArrow {
+  position: absolute;
+
+  height: 30px;
+  width: 30px;
+  top: 75px;
+  left: calc(100vw * (83/356));
+}
+
