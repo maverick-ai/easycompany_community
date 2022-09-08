@@ -95,9 +95,12 @@ const Content = () => {
                       height: "18.76px",
                       position: "absolute",
                       right: "10px",
-                      top: "8px",
+                      top: "10px",
+                      cursor:"pointer",
                     }}
                     onClick={newSearch}
+
+                    
                   />
                   <input
                     className={styles.searchInput}

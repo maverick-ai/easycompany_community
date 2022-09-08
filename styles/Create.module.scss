@@ -137,10 +137,22 @@
   div {
     h3 {
       font-size: 1.563rem;
-      color: rgba(255, 255, 255, 0.5);
-      letter-spacing: 0.655em;
       padding: 1rem 0;
-      @media (max-width: 1200px) {
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 300;
+      line-height: 43px;
+      letter-spacing: 0.24em;
+      color: #FFFFFF;
+      @media (min-width: 1700px) {
+        font-size: 35px;
+        letter-spacing: 0.4em;
+      }
+      @media (min-width: 1500px) {
+        font-size: 27px;
+        letter-spacing: 0.4em;
+      }
+      @media (max-width: 900px) {
         font-size: 1rem;
         letter-spacing: 0.4em;
       }
@@ -383,12 +395,16 @@
   position: relative;
   background: #000000;
   border-radius: 64px;
+  max-width: 796px;
+  max-height: 842px;
   width: calc(100vw * (796 / 1728));
   height: calc(100vw * (600 / 1225));
   text-align: center;
 }
 .carouselImg{
   margin-top: 30px;
+  max-width: 748px;
+  max-height: 546px;
   width: calc(100vw * (700 / 1728));
   height: calc(100vw * (400 / 1225));
   border-radius: 54px;
@@ -401,6 +417,11 @@
   font-weight: 700;
   font-size: calc(100vw * (36 / 1728));
   line-height: 44px;
+}
+@media (min-width: 1728px) {
+  .carouselText{
+    font-size: 36px;
+  }
 }
 .askImg{
   width: 302px;
