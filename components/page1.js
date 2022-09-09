@@ -22,15 +22,15 @@ function Page1() {
         <Sixth_page />
         </div>
       </Container>
-      <Row style={{ margin: "18% 0 10% 0" }}>
-        <div style={{ position: "relative" }}>
+      <Row style={{ margin: "21% 0 10% 0" }}>
+        <div style={{ position: "relative", margin: "15% 0 0% 0" }}>
           <img
             src="desktopHome/bigpic.png"
             style={{
               width: "100%",
               position: "absolute",
               zIndex: "0",
-              bottom: "0",
+              bottom: '0px',
               left: "0",
             }}
           />

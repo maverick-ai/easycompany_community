@@ -71,22 +71,22 @@
 }
 
 .sunb {
-  margin-left: 35vw;
+  margin-left: 28vw;
   margin-top: -80px;
-  height: calc(100vw * (150 / 1560));
+  height: calc(100vw * (120 / 1560));
 }
 .white {
   margin-top: 130px;
   background: #fdfdfd;
   border-radius: 30px;
-  width: calc(100vw * (1055 / 1728));
+  width: calc(100vw * (1055 / 1728)); 
 }
 
 .whitep {
   padding-top: 30px;
   padding-bottom: 30px;
-  width: 85%;
-  padding: 4% 6%;
+  width: 80%;
+  padding: 4% 10% 4% 6%;
   font-family: "Inter";
   font-style: normal;
   font-weight: 500;
@@ -139,8 +139,8 @@
 .hotAirBalloon {
   width: calc(100vw * (98 / 1728));
   position: absolute;
-  left: calc(100vw * (-120 / 1560));
-  top: 250px;
+  left: calc(100vw * (650 / 1560));
+  top: 130px;
   z-index: 1;
 }
 @media screen and (min-width: 1526px) {
@@ -169,7 +169,7 @@
   }
 
   .sunb {
-    margin-left: 520px;
+    margin-left: 420px;
     margin-top: -80px;
     height: 147.5px;
   }
@@ -218,7 +218,37 @@
   .hotAirBalloon {
     width: 87px;
     position: absolute;
-    left: calc(100vw * (-120 / 1560));
-    top: 250px;
+    left: calc(100vw * (300 / 1560));
+    top: 260px;
+  }
+}
+
+@media screen and (min-width: '1261px') and (max-width: '1399px') {
+  .whitep {
+    width: 77%;
+  }
+
+  .hotAirBalloon {
+    left: -60px;
+  }
+}
+
+
+@media screen and (min-width: '1180px') and (max-width: '1200px') {
+  .whitep {
+    width: 77%;
+  }
+}
+
+@media screen and (min-width: '932px') and (max-width: '990px'){
+  .whitep{
+    width: 30%;
+    overflow-wrap: break-word;
+    padding-left: 5px; 
+    padding-right: 10%!important;
+  }
+
+  .white{
+    width: 30%;
   }
 }

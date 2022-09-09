@@ -1,30 +1,8 @@
-.headeasy {
-  font-family: "Inter";
-  font-style: normal;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: calc(0.01719 * (100vw) + 20px);
-}
-.sglobe {
-  height: calc(100vw * (125 / 1560));
-}
-.love1 {
-  background-image: linear-gradient(
-    90deg,
-    #b50eae 21.48%,
-    rgba(227, 42, 52, 0.94) 86.58%
-  );
-  background-clip: text;
-  color: transparent;
-
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 600;
-  font-size: calc(0.01719 * (100vw) + 20px);
-}
 .column {
-  margin: 3.5%;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  margin: auto;
+  /* justify-content: center; */
 }
 @media screen and (max-width: 992px) {
   .column {
@@ -33,15 +11,18 @@
 }
 .destcard {
   position: relative;
+  left: calc(100vw * (12/390));
   width: min-content;
 }
 .destcard1 {
-  height: 350px;
+  height: calc(100vh * (159/420));
   padding: 0 20px;
   text-align: center;
   justify-content: center;
   width: 250px;
   background: rgba(207, 219, 230, 0.55);
+
+  min-height: 300px;
 
   mix-blend-mode: lighten;
   box-shadow: inset -10px -3px 5px rgba(0, 0, 0, 0.25);
@@ -50,47 +31,46 @@
 
   border-radius: 50px;
 }
-.destcardimg2 {
-  position: absolute;
-  left: calc(100vw * (180/1380));
-  top: -15px;
-  z-index: 1;
 
+.destcardimg {
+  position: absolute;
+  left: -20px;
+  top: -50px!important;
   text-align: center;
-  justify-content: center;
-  width: calc(100vw * (264 / 1760));
+  height: calc(100vw * (50/420));
+
+
 }
+
 .destcardp {
   font-weight: 500;
   font-size: calc(100vw * (21 / 1728));
   line-height: calc(100vw * (30 / 1728));
   color: #ffffff;
   opacity: 1 !important;
-  top: 100px;
+  top: calc(100vh * (18/109));
   position: relative;
-
 }
 @media screen and (max-width: 1400px) and (min-width: 1300px) {
   .destcard1 {
     width: calc(100vw * (250 / 1560));
   }
 }
+
 @media screen and (max-width: 1300px) {
   .destcard1 {
     width: 210px;
   }
   .destcardimg {
-    height: 198px;
+    height: calc(100vw * (50/420));
     top: -120px;
   }
-  .destcardimg2 {
-    width: 166px;
-  }
 }
-@media screen and (max-width: 1100px) {
+
+@media screen and (max-width: 1100px) { 
   .destcardp {
     font-weight: 300;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 26px;
     color: #ffffff;
     opacity: 1 !important;

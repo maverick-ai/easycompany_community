@@ -530,7 +530,7 @@ $grid-breakpoints: (
 .world {
   position: absolute;
   bottom: -40px;
-  left: calc(100vw * (317.5/390));
+  // left: calc(100vw * (317.5/390));
   height: calc(100vh * (40 / 1560));
   @media (min-width: '357px'){
     left: calc(100vw * (330/390));

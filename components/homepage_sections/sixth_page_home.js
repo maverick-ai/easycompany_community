@@ -1,7 +1,9 @@
 import { Row, Col } from "react-bootstrap";
 import s from "./sixth_page.module.css";
+import st from '../destcard.module.css';
 import React from "react";
 import DestCard from "../destcard";
+import DestCardDesktop from "../destcardDesktop";
 
 function Sixth_page() {
   return (
@@ -21,37 +23,51 @@ function Sixth_page() {
             </span>
           </h1>
 
-          <Row style={{ marginTop: "10%" }}>
-            <DestCard
-              img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest1.png"
-              para="We connect people who have questions about travel with people who have travelled enough to answer them all."
-            />
-            <Col xxl={2} xl={2} lg={2} md={5} sm={5} className={s.column}>
-              <div style={{ width: "min-content", margin: "auto" }}>
-                <div className={s.destcard}>
-                  <div
-                    className={s.destcard1}
-                    style={{ PaddingTop: "20%", margin: "0 auto" }}
-                  >
-                    <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest2.png" className={s.destcardimg2} />
-                    <div>
-                      <p className={s.destcardp}>
-                        We connect people who have questions about travel with
-                        people who have travelled enough to answer them all.
-                      </p>
-                    </div>
-                  </div>
-                </div>
+          <Row style={{ marginTop: "5%" }}>
+            <Col style={{marginLeft:'-18%'}}>
+            <div>
+              <div style={{position: 'relative'}}>
+                {/* <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest1.png" className={st.destImg1}></img> */}
+              <DestCardDesktop
+                img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest1.png"
+                para="We connect people who have questions about travel with people who have travelled enough to answer them all."
+              />
               </div>
+            </div>
             </Col>
-            <DestCard
-              img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest3.png"
-              para="We connect people who have questions about travel with people who have travelled enough to answer them all."
-            />
-            <DestCard
-              img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest4.png"
-              para="We connect people who have questions about travel with people who have travelled enough to answer them all."
-            />
+            <Col style={{marginLeft:'-12%'}}>
+            <div>
+              <div style={{position: 'relative'}}>
+                <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest2.png" className={s.destcardimg2}></img>
+              <DestCardDesktop
+                // img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest1.png"
+                para="A digital space to find and contribute answers regarding travel and tourism."
+              />
+              </div>
+            </div>
+            </Col>
+            <Col style={{marginLeft:'-12%'}}>
+            <div>
+              <div style={{position: 'relative'}}>
+                {/* <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest3.png" className={st.destImg3}></img> */}
+              <DestCardDesktop
+                img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest3.png"
+                para="We are revolutionising how people travel by building a trusted community of fellow travellers."
+              />
+              </div>
+            </div>
+            </Col>
+            <Col style={{marginLeft:'-12%', marginRight: '5%'}}>
+            <div>
+              <div style={{position: 'relative'}}>
+                {/* <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest4.png" className={st.destImg4}></img> */}
+              <DestCardDesktop
+                img1="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest4.png"
+                para="Easycommunity is alive with thousands of trusted travellers who give you up-to-date information to plan your next trip with zero confusion."
+              />
+              </div>
+            </div>
+            </Col>
           </Row>
         </div>
       </Row>

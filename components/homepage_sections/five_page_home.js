@@ -62,13 +62,16 @@ function Five_page() {
       <Row>
         <Col lg={7} xs={7}>
           <div className={sy.white}>
+            <div style={{position: 'relative'}}>
             <p className={sy.whitep}>
               <span className={sy.whites}>Easycommunity</span> offers a vast
               collection of travel-related questions and answers. Improvise your
               dream trip by asking us your queries about new and offbeat places,
               food recommendations, or anything else. Find the best answer to
               your travel questions or help others get their questions answered!
-            </p>
+            </p>              
+            <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/hotAirBalloon.png" className={sy.hotAirBalloon}></img>
+            </div>
           </div>
         </Col>
         <Col>
@@ -83,11 +86,6 @@ function Five_page() {
               <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/polar4.png" className={sy.polar4}></img>
 
               <img src="desktopHome/globe.png" className={sy.globe1}></img>
-
-              <img
-                src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/hotAirBalloon.png"
-                className={sy.hotAirBalloon}
-              ></img>
             </div>
           </div>
         </Col>
