@@ -7,8 +7,6 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { useCookies } from "react-cookie";
 import Cookies from "react-cookie";
 function MainNavbar(props) {
-  
-  const [cookie, setCookie] = useCookies(["token"]);
 
   // console.log(cookie.token);
   const NavLinks = [
@@ -87,8 +85,5 @@ function MainNavbar(props) {
 
 export default MainNavbar;
 
-export async  function getServerSideProps(req){
-
-}
 
 

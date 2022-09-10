@@ -397,31 +397,44 @@
   background: #000000;
   border-radius: 64px;
   max-width: 796px;
-  max-height: 842px;
+  max-height: 700px;
   width: calc(100vw * (796 / 1728));
   height: calc(100vw * (600 / 1225));
   text-align: center;
+  @media (min-width: 1400px) {
+    max-height: 700px;
+  }
+}
+.carouselDiv div div button{
+  position: relative;
+  top: 70px;
+  max-width: 15px!important;
+  max-height: 15px!important;
+  width: calc(100vw * (15 / 1728))!important;
+  height: calc(100vw * (15 / 1728))!important;
+  margin-right: 18px!important;
+  border-radius: 100%!important;
 }
 .carouselImg{
   margin-top: 30px;
-  max-width: 748px;
-  max-height: 546px;
+  max-width: 700px;
+  max-height: 450px;
   width: calc(100vw * (700 / 1728));
-  height: calc(100vw * (400 / 1225));
+  height: calc(100vw * (350 / 1225));
   border-radius: 54px;
 }
 .carouselText{
   margin: auto;
-  margin-top: 16px;
+  margin-top: 26px;
   font-family: 'Inter';
   font-style: normal;
   font-weight: 700;
-  font-size: calc(100vw * (36 / 1728));
+  font-size: calc(100vw * (30 / 1728));
   line-height: 44px;
 }
 @media (min-width: 1728px) {
   .carouselText{
-    font-size: 36px;
+    font-size: 30px;
   }
 }
 .askImg{
