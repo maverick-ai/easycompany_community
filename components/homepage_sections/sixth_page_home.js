@@ -23,9 +23,9 @@ function Sixth_page() {
             </span>
           </h1>
 
-          <Row style={{ marginTop: "5%" }}>
+          <Row style={{ marginTop: "10%" }}>
             <Col style={{marginLeft:'-18%'}}>
-            <div>
+            <div >
               <div style={{position: 'relative'}}>
                 {/* <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/dest1.png" className={st.destImg1}></img> */}
               <DestCardDesktop

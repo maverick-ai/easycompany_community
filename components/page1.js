@@ -23,7 +23,7 @@ function Page1() {
         </div>
       </Container>
       <Row style={{ margin: "21% 0 10% 0" }}>
-        <div style={{ position: "relative", margin: "15% 0 0% 0" }}>
+        <div style={{ position: "relative", margin: "1% 0 0% 0" }}>
           <img
             src="desktopHome/bigpic.png"
             style={{

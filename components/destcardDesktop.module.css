@@ -13,6 +13,7 @@
   position: relative;
   left: calc(100vw * (12/390));
   width: min-content;
+  max-width: 240px;
 }
 .destcard1 {
   height: calc(100vh * (159/420));
@@ -20,6 +21,7 @@
   text-align: center;
   justify-content: center;
   width: 250px;
+  max-width: 240px;
   background: rgba(207, 219, 230, 0.55);
 
   min-height: 300px;
@@ -54,6 +56,34 @@
 @media screen and (max-width: 1400px) and (min-width: 1300px) {
   .destcard1 {
     width: calc(100vw * (250 / 1560));
+    max-width: 240px;
+  }
+}
+
+@media screen and (min-width: 1620px) and (max-width: 2610px){
+  .destcard {
+    min-height:500px!important;
+    min-width: 350px!important;
+  }
+  .destcard1 {
+    min-height: calc(100vw * (600/2160))!important;
+    min-width: 250px!important;
+  }
+  .destcardimg{
+    top: -140px!important;
+  }
+}
+@media screen and (min-width: 1460px) and (max-width: 1620px){
+  .destcard {
+    min-height:500px!important;
+    min-width: 350px!important;
+  }
+  .destcard1 {
+    min-height: calc(100vw * (490/2160))!important;
+    min-width: 250px!important;
+  }
+  .destcardimg{
+    top: -140px!important;
   }
 }
 

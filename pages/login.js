@@ -314,7 +314,7 @@ function Login() {
             {winWidth < 576 && (
               <div>
                <div className={styles.headerRow}>
-                  <hr className={styles.headerLine}></hr>
+                  {/* <hr className={styles.headerLine}></hr> */}
                </div>
               </div>
             )}
