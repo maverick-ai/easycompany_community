@@ -1,11 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
-
 .containerForm {
   z-index: 2;
   padding-top: 40px;
   box-sizing: border-box;
-
-  margin-left: 20px; 
 }
 
 .forgot {
@@ -17,42 +13,24 @@
 }
 
 .buttonForm {
-  font-style: Inter;
   padding: 0;
   border: none;
   outline: none;
   box-sizing: border-box;
   margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
   background: linear-gradient(90deg, #e32a36 0%, #b50eae 95.14%);
   box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.56);
   color: white;
   height: 50px;
-  width: 85%;
-  border-radius: 4px;
+  width: 80%;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 400;
   transition: 0.5s;
   @media (max-width: 578px) {
-    width: 90%;
-    border-radius: 4px;
-    height: 35.34px;
-    margin-left: --10px;
-    // margin-right: ;
-    font-style: bold;
+    width: 99%;
   }
 }
-
-// .emailLabel{
-//   font-family: 'Inter';
-//   margin-bottom: 6px;
-//   font-style: normal;
-//   font-weight: 700;
-//   font-size: 18px;
-//   line-height: 22px;
-//   text-transform: capitalize;
-// }
 
 .buttonForm:hover {
   box-shadow: none;

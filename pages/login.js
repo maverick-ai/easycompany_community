@@ -330,9 +330,9 @@ function Login() {
                   </h1>
                 </Col>
               </Row>
-              <Row>
+              {/* <Row>
                 <h1>Log In</h1>
-              </Row>
+              </Row> */}
               <Row>
                 <Col>
                   <LoginHeader />
