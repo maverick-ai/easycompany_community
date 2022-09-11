@@ -286,28 +286,34 @@ function Login() {
               </div>
             </Row>
             {winWidth > 1050 && (
-              <div>
-                <div style={{ position: "absolute", bottom: "0", left: "32%" }}>
-                  <img style={{ width: "65%" }} src="/loginNoodle.svg" />
+              <div style={{marginTop: '125%'}}>
+                <div style={{ position: "absolute", bottom: "0", left: "34%" }}>
+                  <img style={{ width: "25%" }} src="/LoginLeaf.png" />
                 </div>
-                <div style={{ position: "absolute", top: "5%", left: "0" }}>
-                  <img style={{ width: "65%" }} src="/LoginNoodle2.svg" />
+                <div style={{ position: "absolute", bottom: "0", left: "31%", top: '15%' }}>
+                  <img style={{ width: "15%" }} src="/LoginPlaneTop1.png" />
+                </div>
+                <div style={{ position: "absolute", bottom: "0", left: "36%", top: '10%' }}>
+                  <img style={{ width: "17.5%" }} src="/LoginPlaneTop2.png" />
+                </div>
+                <div style={{ position: "absolute", bottom: "5%", left: "9%" }}>
+                  <img style={{ width: "30%" }} src="/LoginBottomPlane.png" />
                 </div>
                 <div style={{ position: "absolute", bottom: "0%", left: "0%" }}>
-                  <img style={{ width: "65%" }} src="/loginBall.svg" />
+                  <img style={{ width: "15%" }} src="/login_globe.png" />
                 </div>
                 <div
-                  style={{ position: "absolute", bottom: "35%", left: "33%" }}
+                  style={{ position: "absolute", bottom: "32%", left: "0%" }}
                 >
-                  <img style={{ width: "65%" }} src="/ballouter.svg" />
+                  <img style={{ width: "17%" }} src="/LoginSuitcase.png" />
                 </div>
                 <div
-                  style={{ position: "absolute", bottom: "36%", left: "31.4%" }}
+                  style={{ position: "absolute", top: "12%", left: "33.35%" }}
                 >
-                  <img style={{ width: "65%" }} src="/ball2.svg" />
+                  <img style={{ width: "25%" }} src="/LoginWorld.png" />
                 </div>
-                <div style={{ position: "absolute", top: "10%", left: "36%" }}>
-                  <img style={{ width: "65%" }} src="/loginprop.svg" />
+                <div style={{ position: "absolute", top: "0%", left: "0%" }}>
+                  <img style={{ width: "20%" }} src="/LoginLeaf2.png" />
                 </div>
               </div>
             )}
@@ -334,7 +340,7 @@ function Login() {
                 <h1>Log In</h1>
               </Row> */}
               <Row>
-                <Col>
+                <Col style={{display: 'none'}}>
                   <LoginHeader />
                 </Col>
                 <Col lg={{ offset: 2 }} md={12}>
