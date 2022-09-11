@@ -32,6 +32,15 @@
   }
 }
 
+@media (min-width: 1050px){
+  .buttonDiv {
+    justify-content: left;
+  }
+  .buttonForm{
+    margin-left: -17.9%;
+  }
+}
+
 .buttonForm:hover {
   box-shadow: none;
 }

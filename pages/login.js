@@ -296,8 +296,8 @@ function Login() {
                 <div style={{ position: "absolute", bottom: "0", left: "36%", top: '10%' }}>
                   <img style={{ width: "17.5%" }} src="/LoginPlaneTop2.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "5%", left: "9%" }}>
-                  <img style={{ width: "30%" }} src="/LoginBottomPlane.png" />
+                <div style={{ position: "absolute", bottom: "0%", left: "9%" }}>
+                  <img style={{ width: "35%" }} src="/LoginBottomPlane.png" />
                 </div>
                 <div style={{ position: "absolute", bottom: "0%", left: "0%" }}>
                   <img style={{ width: "15%" }} src="/login_globe.png" />
@@ -331,7 +331,7 @@ function Login() {
             <Container>
               <Row className={styles.Logintop}>
                 <Col lg={{ span: 6, offset: 2 }}>
-                  <h1 style={{ fontSize: "45px" }}>
+                  <h1 className={styles.LogInHeadingDesktop} style={{ fontSize: "45px" }}>
                     Log <span className={styles.In}>In</span>
                   </h1>
                 </Col>
@@ -340,7 +340,7 @@ function Login() {
                 <h1>Log In</h1>
               </Row> */}
               <Row>
-                <Col style={{display: 'none'}}>
+                <Col className={styles.LoginHeaderCol}>
                   <LoginHeader />
                 </Col>
                 <Col lg={{ offset: 2 }} md={12}>
@@ -350,10 +350,11 @@ function Login() {
                     EmailRef={emailInputRef}
                     PasswordRef={passwordInputRef}
                   />
-                  <div onClick={() => {
-                      setIsLogin(false);
-                    }}
-                    style={{display: 'flex', justifyContent: 'center'}}>
+                  <div className={styles.signUpInstead} 
+                       onClick={() => {
+                        setIsLogin(false);
+                        }}
+                       style={{display: 'flex', justifyContent: 'center'}}>
                     <p style={{textAlign: 'center', fontSize: '16px'}}>New User?<br style={{lineBreakx: '1px'}}></br>Sign Up Instead</p>
                   </div>
                 </Col>
@@ -362,7 +363,7 @@ function Login() {
           )}
           {!isLogin && (
             <Container>
-              <Row>
+              <Row className={Styles.signUpHeaderRow}>
                 <SignUpHeader />
               </Row>
               {/* <Row className={styles.Regtop}>

@@ -37,6 +37,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 800px!important;
+  font-size: 64px;
   @media (max-width: 578px) {
     background: white;
     -webkit-background-clip: text;
@@ -61,6 +63,13 @@
   width: 66%;
 }
 
+@media (min-width: 1050px){
+  .signUpInstead{
+    // display: none!important;
+  }
+
+}
+
 .container {
   color: transparent;
   text-align: center;
@@ -73,6 +82,8 @@
 
 .toggle_switch {
   position: relative;
+  left: 10px;
+  top: -38px;
   width: 550px;
   display: inline-block;
   text-align: left;
@@ -209,9 +220,21 @@
 }
 
 .Toggletop {
-  margin-top: 34vh;
+  margin-top: 32vh;
   @media (max-width: 578px) {
     margin-left: 57vw;
     margin-top: 15vh;
+  }
+}
+
+.LogInHeadingDesktop {
+  font-weight: 800!important;
+  font-size: 56px!important;
+  font-style: bolder!important;
+}
+
+.LoginHeaderCol{
+  @media screen and (min-width: 1050px){
+    display: none;
   }
 }
