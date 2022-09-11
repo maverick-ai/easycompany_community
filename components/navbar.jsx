@@ -7,8 +7,6 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { useCookies } from "react-cookie";
 import Cookies from "react-cookie";
 function MainNavbar(props) {
-  
-  const [cookie, setCookie] = useCookies(["token"]);
 
   // console.log(cookie.token);
   const NavLinks = [
@@ -61,21 +59,22 @@ function MainNavbar(props) {
             <Nav className="m" style={{ justifyContent: "center" }}>
               {NavLinks.map(({ name, path }) => (
                 <Nav.Link
-                  href={path}
+                  // href={path}
                   key={name}
                   className={`${
                     router.pathname === path ? classes.active : ""
                   } ${classes.navLink}`}
                 >
-                  <p>{name}</p>
+                  <p onClick={()=>{
+                    router.push(path)
+                  }}>{name}</p>
                 </Nav.Link>
               ))}
 
-              <Nav.Link href="/login" className={classes.login}>
-                {Cookies&&<GradientBtn onClick={()=>{Cookies=0}}>Log out</GradientBtn>}
-                {!Cookies&&<GradientBtn>Log in</GradientBtn>}
+              {!Cookies&&<Nav.Link href="/login" className={classes.login}>
+                <GradientBtn>Log in</GradientBtn>
                 
-              </Nav.Link>
+              </Nav.Link>}
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -86,8 +85,5 @@ function MainNavbar(props) {
 
 export default MainNavbar;
 
-export async  function getServerSideProps(req){
-
-}
 
 

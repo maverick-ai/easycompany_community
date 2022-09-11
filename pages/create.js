@@ -140,7 +140,7 @@ export default function Create() {
   return (
     <Container className={styles.Main}>
       <Row>
-        <Col lg={7} md={7} sm={7}>
+        <Col lg={6} md={6} sm={6}>
           <div className={styles.Section}>
             <div>
               <h3 className={styles.carouselHeading}>ASK THE COMMUNITY</h3>
@@ -148,7 +148,7 @@ export default function Create() {
               <div className={styles.carouselDiv}>
                 <Carousel
               controls={false}
-              indicators={false}
+              indicators={true}
               touch={true}
               interval={3000}
               >

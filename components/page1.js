@@ -14,7 +14,7 @@ function Page1() {
   return (
     <React.Fragment>
       <Container>
-        <div style = {{maxWidth: '1400px'}}>
+        <div style = {{maxWidth: '1400px', marginTop:"20px"}}>
         <First_page />
         <Second_page />
         <Third_page />
