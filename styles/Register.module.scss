@@ -16,6 +16,10 @@
 
 .FirstNameRow {
   margin-top: 20px;
+
+  @media screen and (min-width: 576px){
+    margin-top: 15%;
+  }
 }
 
 .LastNameRow {
@@ -211,4 +215,16 @@
   max-width: 2vmin;
   transform-origin: center;
   width: 66%;
+}
+
+.signUpHeaderRow {
+  @media screen and (min-width: 1050px){
+    display: none!important;
+  }
+}
+
+.OptSignIn {
+  @media screen and (min-width: 578px){
+    display: none;
+  }
 }
