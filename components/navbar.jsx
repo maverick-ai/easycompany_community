@@ -50,7 +50,7 @@ function MainNavbar(props) {
               // marginTop: "2px"
             }}
           >
-            <i className="fa fa-bars"></i>
+            <i id="close-button" className="fa fa-bars"></i>
           </Navbar.Toggle>
           <Navbar.Collapse
             id="responsive-navbar-nav"
@@ -66,7 +66,8 @@ function MainNavbar(props) {
                   } ${classes.navLink}`}
                 >
                   <p onClick={()=>{
-                    router.push(path)
+                    router.push(path);
+                    document.getElementById("close-button").click();
                   }}>{name}</p>
                 </Nav.Link>
               ))}
