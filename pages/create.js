@@ -123,13 +123,13 @@ export default function Create() {
   const [winWidth, setWinWidth] = useState(true);
  
   useEffect(() => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 575) {
       setWinWidth(false);
     } else {
       setWinWidth(true);
     }
     window.addEventListener("resize", () => {
-      if (window.innerWidth <= 768) {
+      if (window.innerWidth <= 575) {
         setWinWidth(false);
       } else {
         setWinWidth(true);
