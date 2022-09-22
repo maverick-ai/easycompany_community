@@ -16,17 +16,25 @@
 
 .FirstNameRow {
   margin-top: 20px;
+  margin-left: -11%;
+
+  @media screen and (min-width: 576px){
+    margin-top: 15%;
+  }
 }
 
 .LastNameRow {
+  margin-left: -11%;
   margin-top: 20px;
 }
 
 .emailRow {
+  margin-left: -11%;
   margin-top: 20px;
 }
 
 .passwordRow {
+  margin-left: -11%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
@@ -57,7 +65,7 @@
   border-radius: 12px;
   border: 2px solid black;
   padding-left: 10px;
-  width: 80%;
+  width: 95%;
   line-height: 45px;
   background-color: black;
   color: white;
@@ -74,7 +82,7 @@
   border-radius: 12px;
   border: 2px solid black;
   padding-left: 10px;
-  width: 80%;
+  width: 95%;
   line-height: 45px;
   background-color: black;
   color: white;
@@ -91,7 +99,7 @@
   border-radius: 12px;
   border: 2px solid black;
   padding-left: 10px;
-  width: 80%;
+  width: 95%;
   line-height: 45px;
   background-color: black;
   color: white;
@@ -132,10 +140,10 @@
 }
 
 .DatePickerCustomStyle {
-  border-radius: 22px;
+  border-radius: 12px;
   border: 2px solid black;
   padding-left: 10px;
-  width: 80%;
+  width: 95%;
   max-width: 800px;
   text-align: start;
   line-height: 45px;
@@ -211,4 +219,16 @@
   max-width: 2vmin;
   transform-origin: center;
   width: 66%;
+}
+
+.signUpHeaderRow {
+  @media screen and (min-width: 1050px){
+    display: none!important;
+  }
+}
+
+.OptSignIn {
+  @media screen and (min-width: 578px){
+    display: none;
+  }
 }

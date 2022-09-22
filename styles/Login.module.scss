@@ -63,9 +63,14 @@
   width: 66%;
 }
 
-@media (min-width: 1050px){
+// .signUpInstead{
+//   display: none;
+//   @
+// }
+
+@media (min-width: 578px){
   .signUpInstead{
-    // display: none!important;
+    display: none!important;
   }
 
 }
