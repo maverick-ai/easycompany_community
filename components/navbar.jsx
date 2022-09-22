@@ -1,12 +1,29 @@
 import classes from "./navbar.module.scss";
 import "font-awesome/css/font-awesome.min.css";
 import GradientBtn from "../components/GradienButton";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import { useCookies } from "react-cookie";
 import Cookies from "react-cookie";
 function MainNavbar(props) {
+
+  const [winWidth, setWinWidth] = useState(true);
+ 
+  useEffect(() => {
+    if (window.innerWidth <= 992) {
+      setWinWidth(false);
+    } else {
+      setWinWidth(true);
+    }
+    window.addEventListener("resize", () => {
+      if (window.innerWidth <= 992) {
+        setWinWidth(false);
+      } else {
+        setWinWidth(true);
+      }
+    });
+  }, []);
 
   // console.log(cookie.token);
   const NavLinks = [
@@ -22,10 +39,10 @@ function MainNavbar(props) {
       path: "/search",
       name: "Search",
     },
-    {
-      path: "/profile",
-      name: "Profile",
-    },
+    // {
+    //   path: "/profile",
+    //   name: "Profile",
+    // },
   ];
 
   const router = useRouter();
@@ -67,10 +84,26 @@ function MainNavbar(props) {
                 >
                   <p onClick={()=>{
                     router.push(path);
-                    document.getElementById("close-button").click();
+                    if(!winWidth){document.getElementById("close-button").click();}
+                    
                   }}>{name}</p>
                 </Nav.Link>
               ))}
+              {Cookies&&
+                <Nav.Link
+                // href={path}
+                // key={Profile}
+                className={`${
+                  router.pathname === "/profile" ? classes.active : ""
+                } ${classes.navLink}`}
+              >
+                <p onClick={()=>{
+                  router.push("/profile");
+                  if(!winWidth){document.getElementById("close-button").click();}
+                  
+                }}>Profile</p>
+              </Nav.Link>
+              }
 
               {!Cookies&&<Nav.Link href="/login" className={classes.login}>
                 <GradientBtn>Log in</GradientBtn>
