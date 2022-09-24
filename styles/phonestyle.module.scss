@@ -764,11 +764,19 @@ $grid-breakpoints: (
     top: 13px;
   }
   @media (min-width: '493px'){
-    top: 2px;
+    width: 60px;
+    top: 17px;
+    right: 5.058824vw;
+  }
+  @media (min-width: '576px'){
+    width: 60px;
+    top: 20px;
+    right: 6.058824vw;
   }
   @media (min-width: '682px'){
-    top: -6px;
-    right: calc(100vw * (-20/680));
+    width: 60px;
+    top: 23px;
+    right: 4.058824vw;
   }
 } 
 
