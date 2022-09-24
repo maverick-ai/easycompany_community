@@ -9,7 +9,7 @@
 }
 .container {
     display: flex;
-    overflow-x: auto;
+    overflow-x: scroll;
     width: 100%;
     max-width: 100%;
     border: none;
