@@ -45,13 +45,7 @@ function TagsInput(props) {
   return (
     <div className={styles.containerOutside}>
       <div className={styles.container}>
-        {tags.map((tag, index) => (
-          <div className={styles.tag} key={index}>
-            {tag}
-            <button onClick={() => deleteTag(index)}>x</button>
-          </div>
-        ))}
-        <input
+      <input
           value={input}
           className={styles.InputTags}
           placeholder="Enter a tag"
@@ -59,6 +53,13 @@ function TagsInput(props) {
           onKeyUp={onKeyUp}
           onChange={onChange}
         />
+        {tags.map((tag, index) => (
+          <div className={styles.tag} key={index}>
+            {tag}
+            <button onClick={() => deleteTag(index)}>x</button>
+          </div>
+        ))}
+       
       </div>
     </div>
   );
