@@ -74,7 +74,7 @@ function Login() {
         setWinWidth(window.innerWidth);
       }
     });
-  }, [winWidth]);
+  }, []);
 
   const DatePickerInput = forwardRef(({ value, onClick }, ref) => (
     <button
@@ -241,7 +241,7 @@ function Login() {
               </div>
             )}
             <Row className={styles.Toggletop}>
-              <div className={styles.container}>
+              <div className={styles.container} style={{zIndex:"10"}}>
                 {label}
                 <div className={styles.toggle_switch}>
                   <input
@@ -287,20 +287,20 @@ function Login() {
             </Row>
             {winWidth > 1050 && (
               <div style={{marginTop: '125%'}}>
-                <div style={{ position: "absolute", bottom: "0", left: "34%" }}>
-                  <img style={{ width: "25%" }} src="/LoginLeaf.png" />
+                <div style={{ position: "absolute", bottom: "0", left: "34%", width: "25%" }}>
+                  <img style={{ width: "65%" }} src="/LoginLeaf.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0", left: "31%", top: '15%' }}>
-                  <img style={{ width: "15%" }} src="/LoginPlaneTop1.png" />
+                <div style={{ position: "absolute", bottom: "0", left: "31%", top: '15%', width: "15%" }}>
+                  <img style={{ width: "65%" }} src="/LoginPlaneTop1.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0", left: "36%", top: '10%' }}>
-                  <img style={{ width: "17.5%" }} src="/LoginPlaneTop2.png" />
+                <div style={{ position: "absolute", bottom: "0", left: "36%", top: '10%', width: "17.5%" }}>
+                  <img style={{ width: "65%" }} src="/LoginPlaneTop2.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0%", left: "9%" }}>
-                  <img style={{ width: "35%" }} src="/LoginBottomPlane.png" />
+                <div style={{ position: "absolute", bottom: "0%", left: "9%", width: "35%" }}>
+                  <img style={{ width: "100%" }} src="/LoginBottomPlane.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0%", left: "0%" }}>
-                  <img style={{ width: "15%" }} src="/login_globe.png" />
+                <div style={{ position: "absolute", bottom: "0%", left: "0%", width:"15%" }}>
+                  <img style={{ width: "100%" }} src="/login_globe.png" />
                 </div>
                 <div
                   style={{ position: "absolute", bottom: "32%", left: "0%" }}
@@ -308,12 +308,12 @@ function Login() {
                   <img style={{ width: "17%" }} src="/LoginSuitcase.png" />
                 </div>
                 <div
-                  style={{ position: "absolute", top: "12%", left: "33.35%" }}
+                  style={{ position: "absolute", top: "12%", left: "33.35%", width: "25%" }}
                 >
-                  <img style={{ width: "25%" }} src="/LoginWorld.png" />
+                  <img style={{ width: "68%" }} src="/LoginWorld.png" />
                 </div>
-                <div style={{ position: "absolute", top: "0%", left: "0%" }}>
-                  <img style={{ width: "20%" }} src="/LoginLeaf2.png" />
+                <div style={{ position: "absolute", top: "0%", left: "0%", width: "15%" }}>
+                  <img style={{ width: "80%" }} src="/LoginLeaf2.png" />
                 </div>
               </div>
             )}
@@ -330,20 +330,17 @@ function Login() {
           {isLogin && (
             <Container>
               <Row className={styles.Logintop}>
-                <Col lg={{ span: 6, offset: 2 }}>
+                <Col lg={{ span: 6, offset: 1 }}>
                   <h1 className={styles.LogInHeadingDesktop} style={{ fontSize: "45px" }}>
                     Log <span className={styles.In}>In</span>
                   </h1>
                 </Col>
               </Row>
-              {/* <Row>
-                <h1>Log In</h1>
-              </Row> */}
               <Row>
                 <Col className={styles.LoginHeaderCol}>
                   <LoginHeader />
                 </Col>
-                <Col lg={{ offset: 2 }} md={12}>
+                <Col lg={{ offset: 1 }} md={12}>
                   <LogInForm
                     LogInCorrect={loginCorrectState}
                     performLogin={performLogin}
@@ -363,18 +360,18 @@ function Login() {
           )}
           {!isLogin && (
             <Container>
-              <Row className={Styles.signUpHeaderRow}>
+              {winWidth < 577 &&(<Row className={Styles.signUpHeaderRow}>
                 <SignUpHeader />
-              </Row>
-              {/* <Row className={styles.Regtop}>
-                <Col lg={{ span: 6, offset: 2 }}>
+              </Row>)}
+              {winWidth > 577 &&(<Row className={styles.Regtop}>
+                <Col lg={{ span: 6, offset: 1 }}>
                   <h1 style={{ fontSize: "45px" }}>
                     Sign <span className={Styles.In}>Up</span>
                   </h1>
                 </Col>
-              </Row> */}
+              </Row>)}
               <Row className={Styles.FirstNameRow}>
-                <Col lg={{ offset: 2 }}>
+                <Col lg={{ offset: 2 }} md={{ offset :1}}>
                   <div>
                     <h6 className={Styles.label}>First name</h6>
 
@@ -387,7 +384,7 @@ function Login() {
                 </Col>
               </Row>
               <Row className={Styles.LastNameRow}>
-                <Col lg={{ offset: 2 }}>
+                <Col lg={{ offset: 1 }}>
                   <div>
                     <h6 className={Styles.label}>Last name</h6>
                     <input
@@ -400,7 +397,7 @@ function Login() {
               </Row>
 
               <Row className={Styles.LastNameRow}>
-                <Col lg={{ offset: 2 }}>
+                <Col lg={{ offset: 1 }}>
                   <div>
                     <h6 className={Styles.label}>Date of Birth</h6>
                     <DatePicker
@@ -422,7 +419,7 @@ function Login() {
                 </Col>
               </Row>
               <Row className={Styles.emailRow}>
-                <Col lg={{ offset: 2 }}>
+                <Col lg={{ offset: 2 }}  md={{ offset :1}}>
                   <div>
                     <h6 className={Styles.label}>Email</h6>
                     <input
@@ -435,7 +432,7 @@ function Login() {
                 </Col>
               </Row>
               <Row className={Styles.passwordRow}>
-                <Col lg={{ offset: 2 }}>
+                <Col lg={{ offset: 2 }}  md={{ offset :1}}>
                   <div>
                     <h6 className={Styles.label}>Password</h6>
                     <input
@@ -448,11 +445,12 @@ function Login() {
                 </Col>
               </Row>
               <Row className={Styles.LastNameRow}>
-                <Col lg={{ offset: 2 }}>
+                <Col lg={{ offset: 1 }}>
                   <div>
-                    <h6 className={Styles.label}>Profile Image</h6>
+                    <h6 className={Styles.label} style={{marginLeft:"3px"}}>Profile Image</h6>
                     <input
                       type="file"
+                      style={{marginLeft:"3px"}}
                       onChange={(e) => {
                         setImage(e.target.files[0]);
                       }}
