@@ -50,6 +50,8 @@
   .tag button {
     display: flex;
     padding-left: 15px;
+    padding-right: 5px;
+    padding-bottom: 2px;
     border: none;
     background-color: unset;
     cursor: pointer;

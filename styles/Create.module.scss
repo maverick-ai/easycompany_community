@@ -280,7 +280,7 @@
 }
 
 .Entry {
-  width: 100%;
+  width: 95%;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -389,7 +389,7 @@
   text-align: center;
   @media (max-width: 768px) {
     margin-top: 0px;
-    font-size: 40pxpx;
+    font-size: 40px;
   }
 }
 .carouselDiv{
@@ -398,6 +398,7 @@
   border-radius: 64px;
   max-width: 796px;
   max-height: 700px;
+  margin-bottom: 30px;
   width: calc(100vw * (796 / 1728));
   height: calc(100vw * (600 / 1225));
   text-align: center;

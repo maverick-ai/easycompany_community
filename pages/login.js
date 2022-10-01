@@ -446,7 +446,7 @@ function Login() {
               </Row>
               <Row className={Styles.LastNameRow}>
                 <Col lg={{ offset: 1 }}>
-                  <div>
+                  {/* <div>
                     <h6 className={Styles.label} style={{marginLeft:"3px"}}>Profile Image</h6>
                     <input
                       type="file"
@@ -455,7 +455,7 @@ function Login() {
                         setImage(e.target.files[0]);
                       }}
                     />
-                  </div>
+                  </div> */}
                   <div>
                     <div onClick={() => {setIsLogin(true);}} style={{position: 'relative'}}>
                       <h6 className={Styles.OptSignIn}>Sign In Instead</h6>
