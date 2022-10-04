@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../../styles/Homepage/mobileCSS/section2.module.scss";
 import Section2Carousel from "./section2_carousel";
 

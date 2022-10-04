@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "../../../styles/Homepage/mobileCSS/section1.module.scss";
 
 function Section1() {

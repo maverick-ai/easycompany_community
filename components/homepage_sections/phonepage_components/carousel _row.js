@@ -40,7 +40,7 @@ function Carousel_row() {
               controls={false}
               indicators={false}
               touch={true}
-              interval={3000}
+              interval={5000}
             >
               <Carousel.Item>
                 <div className={styles.whop}>

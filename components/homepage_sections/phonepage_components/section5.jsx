@@ -1,25 +1,13 @@
 import React from "react";
-import styles from "../../../styles/phonestyle.module.scss";
-import { Container, Col, Row } from "react-bootstrap";
+import styles from "../../../styles/Homepage/mobileCSS/section5.module.scss";
 import Carousel from "react-bootstrap/Carousel";
 
 function Section5() {
   return (
 
         <div
-          style={{
-            textAlign: "center",
-            position: "relative",
-            marginTop: "8%",
-            height: "300px",
-          }}
+         className={styles.MainDiv}
         >
-          {/* <img src="/mapp.svg" className={styles.mapp} /> */}
-          {/* <img
-            src="/arrorrr.svg"
-            className={s.arorrr}
-            style={{ position: "absolute" }}
-          /> */}
           <span className={styles.love1}>
             <span>
               <img
