@@ -189,7 +189,7 @@ function Login() {
           else if (res.date_of_birth) alert(res.date_of_birth);
           else if (res.gender) alert(res.gender);
           else if (res.work) alert(res.work);
-          else if (res.university) alert(res.university);          
+          else if (res.university) alert(res.university);
           else if (res.image) alert(res.image);
           else alert("Cannot register user right now, please try again later");
         } catch {
@@ -241,7 +241,7 @@ function Login() {
               </div>
             )}
             <Row className={styles.Toggletop}>
-              <div className={styles.container} style={{zIndex:"10"}}>
+              <div className={styles.container} style={{ zIndex: "10" }}>
                 {label}
                 <div className={styles.toggle_switch}>
                   <input
@@ -286,20 +286,57 @@ function Login() {
               </div>
             </Row>
             {winWidth > 1050 && (
-              <div style={{marginTop: '125%'}}>
-                <div style={{ position: "absolute", bottom: "0", left: "34%", width: "25%" }}>
+              <div style={{ marginTop: "125%" }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0",
+                    left: "34%",
+                    width: "25%",
+                  }}
+                >
                   <img style={{ width: "65%" }} src="/LoginLeaf.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0", left: "31%", top: '15%', width: "15%" }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0",
+                    left: "31%",
+                    top: "15%",
+                    width: "15%",
+                  }}
+                >
                   <img style={{ width: "65%" }} src="/LoginPlaneTop1.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0", left: "36%", top: '10%', width: "17.5%" }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0",
+                    left: "36%",
+                    top: "10%",
+                    width: "17.5%",
+                  }}
+                >
                   <img style={{ width: "65%" }} src="/LoginPlaneTop2.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0%", left: "9%", width: "35%" }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0%",
+                    left: "9%",
+                    width: "35%",
+                  }}
+                >
                   <img style={{ width: "100%" }} src="/LoginBottomPlane.png" />
                 </div>
-                <div style={{ position: "absolute", bottom: "0%", left: "0%", width:"15%" }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    bottom: "0%",
+                    left: "0%",
+                    width: "15%",
+                  }}
+                >
                   <img style={{ width: "100%" }} src="/login_globe.png" />
                 </div>
                 <div
@@ -308,20 +345,32 @@ function Login() {
                   <img style={{ width: "17%" }} src="/LoginSuitcase.png" />
                 </div>
                 <div
-                  style={{ position: "absolute", top: "12%", left: "33.35%", width: "25%" }}
+                  style={{
+                    position: "absolute",
+                    top: "12%",
+                    left: "33.35%",
+                    width: "25%",
+                  }}
                 >
                   <img style={{ width: "68%" }} src="/LoginWorld.png" />
                 </div>
-                <div style={{ position: "absolute", top: "0%", left: "0%", width: "15%" }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "0%",
+                    left: "0%",
+                    width: "15%",
+                  }}
+                >
                   <img style={{ width: "80%" }} src="/LoginLeaf2.png" />
                 </div>
               </div>
             )}
             {winWidth < 576 && (
               <div>
-               <div className={styles.headerRow}>
+                <div className={styles.headerRow}>
                   {/* <hr className={styles.headerLine}></hr> */}
-               </div>
+                </div>
               </div>
             )}
           </div>
@@ -331,7 +380,10 @@ function Login() {
             <Container>
               <Row className={styles.Logintop}>
                 <Col lg={{ span: 6, offset: 1 }}>
-                  <h1 className={styles.LogInHeadingDesktop} style={{ fontSize: "45px" }}>
+                  <h1
+                    className={styles.LogInHeadingDesktop}
+                    style={{ fontSize: "45px" }}
+                  >
                     Log <span className={styles.In}>In</span>
                   </h1>
                 </Col>
@@ -347,31 +399,42 @@ function Login() {
                     EmailRef={emailInputRef}
                     PasswordRef={passwordInputRef}
                   />
-                  <div className={styles.signUpInstead} 
-                       onClick={() => {
+                  <Col style={{width:"82%", marginTop:"15px"}}>
+                    <div
+                      className={styles.signUpInstead}
+                      onClick={() => {
                         setIsLogin(false);
-                        }}
-                       style={{display: 'flex', justifyContent: 'center'}}>
-                    <p style={{textAlign: 'center', fontSize: '16px'}}>New User?<br style={{lineBreakx: '1px'}}></br>Sign Up Instead</p>
-                  </div>
+                      }}
+                      style={{ display: "flex", justifyContent: "center" }}
+                    >
+                      <p style={{ textAlign: "center", fontSize: "16px" }}>
+                        New User?<br style={{ lineBreakx: "1px" }}></br>Sign Up
+                        Instead
+                      </p>
+                    </div>
+                  </Col>
                 </Col>
               </Row>
             </Container>
           )}
           {!isLogin && (
             <Container>
-              {winWidth < 577 &&(<Row className={Styles.signUpHeaderRow}>
-                <SignUpHeader />
-              </Row>)}
-              {winWidth > 577 &&(<Row className={styles.Regtop}>
-                <Col lg={{ span: 6, offset: 1 }}>
-                  <h1 style={{ fontSize: "45px" }}>
-                    Sign <span className={Styles.In}>Up</span>
-                  </h1>
-                </Col>
-              </Row>)}
+              {winWidth < 577 && (
+                <Row className={Styles.signUpHeaderRow}>
+                  <SignUpHeader />
+                </Row>
+              )}
+              {winWidth > 577 && (
+                <Row className={styles.Regtop}>
+                  <Col lg={{ span: 6, offset: 1 }}>
+                    <h1 style={{ fontSize: "45px" }}>
+                      Sign <span className={Styles.In}>Up</span>
+                    </h1>
+                  </Col>
+                </Row>
+              )}
               <Row className={Styles.FirstNameRow}>
-                <Col lg={{ offset: 2 }} md={{ offset :1}}>
+                <Col lg={{ offset: 2 }} md={{ offset: 1 }}>
                   <div>
                     <h6 className={Styles.label}>First name</h6>
 
@@ -419,7 +482,7 @@ function Login() {
                 </Col>
               </Row>
               <Row className={Styles.emailRow}>
-                <Col lg={{ offset: 2 }}  md={{ offset :1}}>
+                <Col lg={{ offset: 2 }} md={{ offset: 1 }}>
                   <div>
                     <h6 className={Styles.label}>Email</h6>
                     <input
@@ -432,7 +495,7 @@ function Login() {
                 </Col>
               </Row>
               <Row className={Styles.passwordRow}>
-                <Col lg={{ offset: 2 }}  md={{ offset :1}}>
+                <Col lg={{ offset: 2 }} md={{ offset: 1 }}>
                   <div>
                     <h6 className={Styles.label}>Password</h6>
                     <input
@@ -457,14 +520,25 @@ function Login() {
                     />
                   </div> */}
                   <div>
-                    <div onClick={() => {setIsLogin(true);}} style={{position: 'relative'}}>
+                    <div
+                      onClick={() => {
+                        setIsLogin(true);
+                      }}
+                      style={{ position: "relative" }}
+                    >
                       <h6 className={Styles.OptSignIn}>Sign In Instead</h6>
                     </div>
                   </div>
                 </Col>
               </Row>
               <Row>
-                <div style={{ paddingBottom: "5px", justifyContent:'center', textAlign: 'center' }}>
+                <div
+                  style={{
+                    paddingBottom: "5px",
+                    justifyContent: "center",
+                    textAlign: "center",
+                  }}
+                >
                   <Col>
                     <button
                       onClick={sendRegisterRequest}

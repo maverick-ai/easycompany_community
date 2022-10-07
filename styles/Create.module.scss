@@ -396,19 +396,19 @@
   position: relative;
   background: #000000;
   border-radius: 64px;
-  max-width: 796px;
-  max-height: 700px;
+  max-width: 656px;
+  max-height: 400px;
   margin-bottom: 30px;
-  width: calc(100vw * (796 / 1728));
-  height: calc(100vw * (600 / 1225));
+  width: calc(100vw * (636 / 1728));
+  height: calc(100vw * (400 / 1225));
   text-align: center;
   @media (min-width: 1400px) {
-    max-height: 700px;
+    max-height: 556px;
   }
 }
 .carouselDiv div div button{
   position: relative;
-  top: calc(100vw * (70 / 1000));
+  top: calc(100vw * (40 / 1000));
   max-width: 15px!important;
   max-height: 15px!important;
   width: calc(100vw * (15 / 1728))!important;
@@ -426,8 +426,8 @@
   margin-top: 30px;
   max-width: 700px;
   max-height: 450px;
-  width: calc(100vw * (700 / 1728));
-  height: calc(100vw * (350 / 1225));
+  width: calc(100vw * (500 / 1728));
+  height: calc(100vw * (250 / 1225));
   border-radius: 54px;
 }
 .carouselText{
