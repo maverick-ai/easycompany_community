@@ -1,15 +1,15 @@
 import { Row, Col } from "react-bootstrap";
-import s from "./third_page.module.css";
+import s from "./third_page.module.scss";
 import React from "react";
 
 function Third_page() {
   return (
     <React.Fragment>
-      <Row style = {{marginTop: '3.4rem'}}>
-        <div style={{ padding: " 5% 0" , maxWidth:"1400px"}}>
-          <div style={{ position: "relative", textAlign: "center" }}>
+      <Row className={s.pageContainer}>
+        <div className={s.pageContainer2}>
+          <div className={s.pageContainer3}>
             <div
-              style={{ width: "auto", textAlign: "center", margin: "0 auto" }}
+              className={s.headingSection}
             >
               <span className={s.p3h}>
                 <span>
@@ -27,24 +27,13 @@ function Third_page() {
           </div>
           {/* photos */}
           <div
-            style={{
-              textAlign: "center",
-              marginTop: "2%",
-              position: "relative",
-            }}
+            className={s.photosSection}
           >
             <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/plane.png" className={s.plane} />
             <div className={s.carddiv}>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/trio_1.png" className={s.card} />
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  textAlign: "center",
-                  justifySelf: "center",
-                  justifyContent: "center",
-                  marginTop: "10px",
-                }}
+                className={s.card1Section}
               >
                 <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/tri.png" className={s.tri} />
                 <div className={s.ques}>
@@ -55,19 +44,12 @@ function Third_page() {
             <div className={s.carddiv}>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/trio_2.png" className={s.card} />
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  textAlign: "center",
-                  justifySelf: "center",
-                  justifyContent: "center",
-                  marginTop: "10px",
-                }}
+                className={s.card1Section}
               >
                 <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/tri.png" className={s.tri} />
                 <div className={s.ques}>
                   <p className={s.questext}>
-                    Planning a trip to somewhere new?{" "}
+                    Looking for recommendations?
                   </p>
                 </div>
               </div>
@@ -75,18 +57,11 @@ function Third_page() {
             <div className={s.carddiv}>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/trio_3.png" className={s.card} />
               <div
-                style={{
-                  display: "flex",
-                  flexDirection: "row",
-                  textAlign: "center",
-                  justifySelf: "center",
-                  justifyContent: "center",
-                  marginTop: "10px",
-                }}
+                className={s.card1Section}
               >
                 <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/tri.png" className={s.tri} />
                 <div className={s.ques}>
-                  <p className={s.questext}> Looking for recommendations?</p>
+                  <p className={s.questext}>Planning a trip to somewhere new?</p>
                 </div>
               </div>
             </div>
@@ -95,8 +70,8 @@ function Third_page() {
         </div>
       </Row>
       {/* Globe */}
-      <Row style = {{marginTop:'1rem'}}>
-        <Col lg={6} md={6} sm={12} xs={12}>
+      <Row className={s.page2Container}>
+        <Col lg={6} md={6} sm={12} xs={12} className={s.leftText}>
           <Row>
             <Col>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/suitcase.png" className={s.suit}></img>
@@ -104,7 +79,7 @@ function Third_page() {
           </Row>
           <Row>
             <div className={s.outer}>
-              <p className={s.fontstyleouter} style = {{fontWeight: '300'}}>
+              <p className={s.fontstyleouter}>
                 <span className={s.fontstyleinner}>Easycommunity</span> has
                 answers to all of your questions! <br />
                 And if it doesn't yet ? Well,

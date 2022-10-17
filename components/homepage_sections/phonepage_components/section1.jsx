@@ -7,7 +7,7 @@ function Section1() {
           <h1 className={styles.text1}>
             FIND THE BEST<span><img className={styles.paperPlane} src="phone_assets/paperplaneHomepage.png"/></span>
             <br/>
-            <div style={{ position: "relative", display: "inline" }}>
+            <div className={styles.ansDiv}>
               <span className={styles.answers}>ANSWERS</span>
               <img
                 src="phone_assets/underline.png"
@@ -25,7 +25,7 @@ function Section1() {
               </button>
        
         </div>
-        <div style={{ textAlign: "center" }}>
+        <div className={styles.imgDiv}>
           <img src="phone_assets/landingpage_main.png" className={styles.mainImg}></img>
         </div>
       </div>

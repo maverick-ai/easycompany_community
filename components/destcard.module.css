@@ -30,11 +30,12 @@
   /* Note: backdrop-filter has minimal browser support */
 
   border-radius: 50px;
+  padding-top: 20%;
 }
 
 .destcardimg {
   position: absolute;
-  left: -20px;
+  left: 20px;
   top: -40px!important;
   text-align: center;
   height: calc(100vh * (50/420));
@@ -57,10 +58,6 @@
 @media screen and (max-width: 1300px) {
   .destcard1 {
     width: 210px;
-  }
-  .destcardimg {
-    height: calc(100vw * (120/420));
-    top: -120px;
   }
 }
 @media screen and (max-width: 1100px) {

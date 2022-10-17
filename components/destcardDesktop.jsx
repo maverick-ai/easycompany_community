@@ -1,4 +1,4 @@
-import st from "./destcardDesktop.module.css";
+import st from "./destcardDesktop.module.scss";
 import { Col } from "react-bootstrap";
 
 function DestCardDesktop(props) {
@@ -13,9 +13,9 @@ function DestCardDesktop(props) {
       className={st.column}
       style={{ zIndex: "3" }}
     >
-      <div style={{ width: "min-content", margin: "auto" }}>
+      <div className={st.cardContainer}>
         <div className={st.destcard}>
-          <div className={st.destcard1} style={{ PaddingTop: "20%" }}>
+          <div className={st.destcard1}>
             <img src={props.img1} className={st.destcardimg} />
             <div>
               <p className={st.destcardp}>{props.para}</p>

@@ -1,4 +1,4 @@
-import styles from './FooterToolbar.module.css';
+import styles from './FooterToolbar.module.scss';
 import { Container, Col, Row } from "react-bootstrap";
 
 function FooterToolbar(){
@@ -10,8 +10,8 @@ function FooterToolbar(){
             </div>
         </Row>
 
-          <Row style={{ textAlign: "center", margin: "3% 0" }}>
-          <div style={{ position: "relative" }}>
+          <Row className={styles.footerContentsSection}>
+          <div className={styles.footerContentsDiv}>
             <span className={styles.bottomText}><span><img src='footerfollow.png' className={styles.footerimage2}/></span>FOLLOW</span>
             <span className={styles.bottomText}>HELP</span>
             <span className={styles.bottomText}>CONTACT</span>
@@ -20,8 +20,8 @@ function FooterToolbar(){
         </Row>
 
         <Row>
-          <div style={{ textAlign: "center" }}>
-            <img src="desktopHome/logo.png" style={{width:"calc(100vw * (376/1728)"}}/>
+          <div className={styles.footerIcon}>
+            <img src="desktopHome/logo.png" className={styles.footerImg}/>
           </div>
         </Row>  
         

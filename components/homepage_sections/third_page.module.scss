@@ -1,3 +1,43 @@
+.pageContainer {
+  margin-top: 3.4rem;
+}
+
+.pageContainer2 {
+  padding: 5% 0; 
+  max-width: 1400px;
+}
+
+.pageContainer3 {
+  position: relative; 
+  text-align: center;
+}
+
+.headingSection {
+  width: auto; 
+  text-align: center; 
+  margin: 0 auto;
+}
+
+.photosSection {
+  text-align: center;
+  margin-top: 2%;
+  position: relative;
+}
+
+.card1Section {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-self: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.page2Container {
+  position: relative;
+  margin-top: 1rem;
+}
+
 .p3h {
   font-family: "Inter";
   font-style: normal;
@@ -24,6 +64,19 @@
   position: absolute;
   left: calc(100vw * (260 / 1728));
   top: calc(100vw * (-60 / 1756));
+  @media (max-width: 1400px) {
+    left: calc(100vw * (200 / 1728));
+  }
+  @media (max-width: 1300px) {
+    left: calc(100vw * (220 / 1728));
+  }
+  @media (max-width: 1200px) {
+    left: calc(100vw * (120 / 1728));
+  }
+  @media (max-width: 1100px) {
+    left: calc(100vw * (150 / 1728));
+    
+  }
 }
 .arrl {
   width: calc(100vw * (180/1728));
@@ -32,6 +85,19 @@
   position: absolute;
   /* right: calc(100vw * (70 / 1756)); */
   top: calc(100vw * (-10 / 1756));
+  @media (max-width: 1400px) {
+    right: calc(100vw * (150 / 1756));
+  }
+  @media (max-width: 1300px) {
+    right: calc(100vw * (180 / 1756));
+  }
+  @media (max-width: 1200px) {
+    top: calc(100vw * (10 / 1756));
+    right: calc(100vw * (100 / 1756));
+  }
+  @media (max-width: 1100px) {
+    right: calc(100vw * (120 / 1756));
+  }
 }
 .love {
   background-image: linear-gradient(
@@ -47,28 +113,38 @@
   position: absolute;
   left: 10.5rem;
   bottom: 60px;
+  @media (max-width: 1400px) {
+    left: 6rem;
+  }
+  @media (max-width: 1300px) {
+    left: 7rem;
+  }
+  @media (max-width: 1200px) {
+    left: 3rem;
+  }
+  @media (max-width: 1100px) {
+    left: 3.5rem;
+  }
 }
 .bag1 {
   width: calc(100vw * (171 / 1728));
   position: absolute;
   bottom: 40px;
   right: calc(100vw * (180 / 1580));
-}
-@media screen and (max-width: 1402px) {
-  .plane {
-    left: calc(100vw * (30 / 1580));
-    height: calc(100vw * (170 / 1580));
+  @media (max-width: 1400px) {
+    right: calc(100vw * (110 / 1580));
   }
-  .bag1 {
+  @media (max-width: 1300px) {
+    right: calc(100vw * (130 / 1580));
+  }
+  @media (max-width: 1200px) {
     right: calc(100vw * (50 / 1580));
   }
-  .compass {
-    left: calc(100vw * (30 / 1756));
-  }
-  .arrl {
-    right: calc(100vw * (0 / 1756));
+  @media (max-width: 1100px) {
+    right: calc(100vw * (70 / 1580));
   }
 }
+
 @media screen and (max-width: 992px) {
   .plane {
     left: 0;
@@ -133,24 +209,60 @@
 }
 .tri {
   position: absolute;
-  height: calc(100vw * (8 / 1080));
-  margin-top: 10px;
+  height: 4%;
+  margin-top: 13px;
   margin-right: 11%;
+  @media (min-width: 1500px) {
+    margin-right: 14%;
+  }
+  @media (max-width: 1400px) {
+    margin-right: 13%;
+  }
+  @media (max-width: 1200px) {
+    margin-right: 15%;
+  }
 }
 .ques {
   height: 38px;
   width: 8em;
   background-color: #4d4d4d;
   border-radius: 8px;
-  padding: 3px;
+  padding: 3px 5px;
+  @media (min-width: 1500px) {
+    padding: 5px 5px;
+    height: 50px;
+    width: 10rem;
+  }
+  @media (max-width: 1400px) {
+    padding: 3px 4px;
+  }
 }
 .questext {
   color: white;
 
-  font-size: calc(100vw * (13 / 1500));
+  font-size: calc(100vw * (9 / 1440));
 
   margin-bottom: auto;
   line-height: 15px;
+  // @media (min-width: 1800px) {
+  //   font-size: calc(100vw * (13 / 1440));
+  // }
+  @media (min-width: 1500px) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+  @media (max-width: 1400px) {
+    font-size: calc(100vw * (10 / 1440));
+  }
+  @media (max-width: 1300px){
+    font-size: calc(100vw * (11 / 1440));
+  }
+  @media (max-width: 1200px){
+    font-size: calc(100vw * (12 / 1440));
+  }
+  @media (max-width: 1100px){
+    font-size: calc(100vw * (13 / 1440));
+  }
 }
 @media screen and (max-width: 915px) {
   .ques {
@@ -202,6 +314,9 @@
   font-weight: 300;
   font-size: 2.1rem;
   color: #ffffff;
+  @media (max-width: 1200px) {
+    font-size: 2rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -221,6 +336,15 @@
   background-clip: text;
   color: transparent;
 }
+
+.leftText {
+  position: relative;
+  top: 65px;
+  @media (max-width: 1400px) {
+    top: 0px;
+  }
+}
+
 .globe {
   width: 100%;
   height: 100%;
@@ -257,14 +381,7 @@
     bottom: 50px;
     right: 175px;
   }
-  .questext {
-    color: white;
   
-    font-size: 14px;
-  
-    margin-bottom: auto;
-    line-height: 15px;
-  }
   .suit {
     height: 157px;
   }

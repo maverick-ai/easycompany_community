@@ -5,10 +5,10 @@ import sy from "./last_page.module.css";
 
 function LastPage() {
   return <React.Fragment>
-    <Row style={{ margin: " 8% 0 0 0" }}>
-          <div style={{ textAlign: "center" }}>
+    <Row className={sy.pageContainer}>
+          <div className={sy.section1}>
             <span className={sy.headingLast}>
-              <span style={{ position: "relative" }}>
+              <span className={sy.headingSection}>
                 <span>
                   <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/pin.png" className={sy.pin} />
                 </span>{" "}
@@ -28,11 +28,11 @@ function LastPage() {
           </div>
         </Row>
         <Row>
-          <div style={{ textAlign: "center", marginTop: "3%" }}>
+          <div className={sy.footerSection}>
             <button className={sy.JoinUs}>JOIN US</button>
           </div>
         </Row>
-        <div style={{ marginTop: '40px' }}>
+        <div className={sy.footer}>
           <FooterToolbar />
         </div>
 

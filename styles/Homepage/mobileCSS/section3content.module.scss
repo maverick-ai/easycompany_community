@@ -1,7 +1,41 @@
-.PhotosDiv{
+.pageContainer {
+    margin-bottom: 40px;
+}
+
+.imgSection1Container {
+    margin-bottom: 25px;
+}
+
+.imgSection2Container {
+    margin-bottom: 5px;
+}
+
+.imgSection3Container {
+    margin-bottom: 40px;
+}
+
+.PhotosDiv1{
+    height: 160px; 
+    margin-top: 30px;
     position: relative;
     text-align: center;
     top: calc(100vh * (15/681));
+}
+
+.PhotosDiv2 {
+    top: 15px;
+    height: 160px;
+    position: relative;
+    text-align: center;
+    top: calc(100vh * (5/681));
+}
+
+.PhotosDiv3 {
+    top: 25px; 
+    height: 160px;
+    position: relative;
+    text-align: center;
+    top: calc(100vh * (20/681));
 }
 
 .mainImg1{
@@ -89,6 +123,9 @@
     height: 82px;
     left: calc(100vw * (1/390));
     margin-bottom: -25px;
+    @media (max-width: 400px) {
+        left: calc(100vw * (-10/390));
+    }
 }
 
 .globephone{
@@ -106,15 +143,24 @@
     left: 0;
     width: 61px;
     height: 86px;
+    @media (max-width: 400px) {
+        left: -10px;
+    }
 }
 
 .airplane{
     position: absolute;
-    top: 120px;
+    top: 125px;
     left: calc(100vw * (240/390));
 
     width: 142px;
     height: 55px;
+    @media (max-width: 400px) {
+        left: calc(100vw * (220/390));
+    }
+    @media (max-width: 350px) {
+        left: calc(100vw * (200/390));
+    }
 }
 
 .travelbook{
@@ -126,5 +172,9 @@
     height: 67px;
 
     transform: rotate(34.7deg);
+    @media (max-width: 350px) {
+        width: 90px;
+        height: 65px;
+    }
 
 }

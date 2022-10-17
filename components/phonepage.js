@@ -24,12 +24,12 @@ function Page2() {
         <Section3 />
         <Section4 />
         <Carousel_row />
-        <We_are />
+        {/* <We_are /> */}
         <Row>
           <Phone6 />
         </Row>
         <div>
-          <div style={{ position: "relative", height: "150px" }}>
+          <div className={styles.phoneImgSection}>
             <img src="phone_assets/polar1.png" className={styles.polar1}></img>
 
             <img src="phone_assets/polar3.png" className={styles.polar2}></img>
@@ -39,7 +39,7 @@ function Page2() {
             <img src="phone_assets/polar4.png" className={styles.polar4}></img>
           </div>
         </div>
-        <Row>
+        {/* <Row>
           <Col sm={10} xs={10}>
             <div className={styles.white}>
               <p className={styles.whitep}>
@@ -57,7 +57,7 @@ function Page2() {
               ></img>
             </div>
           </Col>
-        </Row>
+        </Row> */}
         <Phone7 />
       </Container>
     </div>

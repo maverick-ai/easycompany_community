@@ -1,3 +1,16 @@
+.pageContainer {
+  margin: 15% 0 0 0;
+}
+
+.headingContainer {
+  position: relative;
+  left: 35px;
+}
+
+.listItemsContainer {
+  margin-top: 2%;
+}
+
 .heading2lastspan {
   background: linear-gradient(90deg, #e32a34 0%, #b50eae 21.41%);
   background-clip: text;

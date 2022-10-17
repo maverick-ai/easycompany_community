@@ -7,24 +7,25 @@ function Phone6() {
   return (
     <React.Fragment>
       <Col lg={5}>
-        <Row style={{ height: "240px" }} className={styles.row1}>
-          <div style={{ position: "relative", marginBottom:'40px' }}>
+        <Row className={styles.row1}>
+          <div className={styles.imgSection}>
               <img src="phone_assets/travel.png" className={styles.travel}></img>
-            <div style={{ position: "absolute" }}>
+            <div className={styles.imgDiv}>
               <img src="phone_assets/sun1.png" className={styles.sun1}></img>
             </div>
-            <div style={{ position: "absolute" }}>
+            <div className={styles.imgDiv}>
               <img src="phone_assets/sun2.png" className={styles.sun2}></img>
             </div>
-            <div style={{ position: "absolute" }}>
+            <div className={styles.imgDiv}>
               <img src="phone_assets/sun3.png" className={styles.sun4}></img>
             </div>
-            <div style={{ position: "absolute" }}>
+            <div className={styles.imgDiv}>
               <img src="phone_assets/sun4.png" className={styles.sun3}></img>
               <img src="phone_assets/world.png" className={styles.world}></img>
             </div>
           </div>
         </Row>
+        <div className={styles.imgBelowSection}>
         <Row>
           <Col sm={8} xs={8}>
             <div>
@@ -36,7 +37,7 @@ function Phone6() {
           </Col>
           <Col sm={4} xs={4}>
             <div>
-              <div style={{position: 'relative'}}>
+              <div className={styles.globemasterDiv}>
             <img
               src="phone_assets/globemaster.png"
               className={styles.globemaster}
@@ -47,13 +48,14 @@ function Phone6() {
         </Row>
         <Row>
           <div>
-            <div style={{position: 'relative'}}>
+            <div className={styles.triangleDiv}>
               <span className={styles.dot}></span>
               <img src="phone_assets/triangle.png" className={styles.triangle}></img>
               <img src="phone_assets/line3.png" className={styles.line3}></img>
             </div>
           </div>
         </Row>
+        </div>
         <Row>
           <div>
             <p className={styles.bigplace}>

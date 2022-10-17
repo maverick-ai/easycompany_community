@@ -1,5 +1,5 @@
 import { Row } from "react-bootstrap";
-import s from "./fourth_page.module.css";
+import s from "./fourth_page.module.scss";
 import React from "react";
 
 function Fourth_page() {
@@ -7,11 +7,7 @@ function Fourth_page() {
     <React.Fragment>
       <Row>
         <div
-          style={{
-            textAlign: "center",
-            position: "relative",
-            marginTop: "8%",
-          }}
+          className={s.pageContainer}
         >
           <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/map1.png" className={s.mapp} />
 
@@ -20,19 +16,13 @@ function Fourth_page() {
               <img
                 src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/arrow1.png"
                 className={s.arorrr}
-                style={{ position: "absolute" }}
               />
             </span>
             Who Are We?
           </span>
 
           <div
-            style={{
-              display: "flex",
-              flexDirection: "row",
-              justifyContent: "center",
-              marginTop: "3rem",
-            }}
+            className={s.contentContainer}
           >
             <div className={s.whop}>
               <p>

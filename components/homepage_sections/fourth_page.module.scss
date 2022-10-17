@@ -1,3 +1,16 @@
+.pageContainer {
+  text-align: center;
+  position: relative;
+  margin-top: 8%;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
 .mapp {
   position: absolute;
   left: 0;
@@ -19,16 +32,29 @@
   font-size: calc(0.01719 * (100vw) + 20px);
 }
 .arorrr {
+  position: absolute;
   width: calc(100vw * (246 / 1726));
   height: calc(100vw*(216/1726));
   left: calc(100% * (400 / 1560));
   top: calc(100vw * (-100 / 1560));
+  @media (max-width: 1400px) {
+    left: calc(100% * (360 / 1560));
+  }
+  @media (max-width: 1300px) {
+    left: calc(100% * (380 / 1560));
+  }
+  @media (max-width: 1200px) {
+    left: calc(100% * (340 / 1560));
+  } 
+  @media (max-width: 1100px) {
+    left: calc(100% * (360 / 1560));
+  }
 }
-@media screen and (max-width: 1402px) {
+/* @media screen and (max-width: 1402px) {
   .arorrr {
     left: calc(100% * (300 / 1560)) !important;
   }
-}
+} */
 @media screen and (max-width: 992px) {
   .arorrr {
     left: calc(100% * (200 / 1560)) !important;
@@ -57,11 +83,15 @@
   text-align: center;
 }
 .vr {
-  height: calc(100vw * (80 / 630));
-  border-left: #ffffff;
-  border-style: dashed;
-  border-width: 1px;
-  margin: auto 2%;
+  height: calc(100vw * (40 / 630));
+  border: none;
+  border-left: 1px dashed #ffffff;
+  // border-style: dashed;
+  // border-width: 1px;
+  margin: 0 2% auto 2%;
+  @media (max-width: 1200px) {
+    height: calc(100vw * (60 / 630));
+  }
 }
 .maop {
   height: calc(100vw * (137 / 1560));

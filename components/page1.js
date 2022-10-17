@@ -1,4 +1,5 @@
 import React from "react";
+import s from "./page1.module.scss"
 import { Container, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import First_page from "./homepage_sections/first_page_home";
@@ -14,7 +15,7 @@ function Page1() {
   return (
     <React.Fragment>
       <Container>
-        <div style = {{maxWidth: '1400px', marginTop:"20px"}}>
+        <div className={s.initialPagesContainer}>
         <First_page />
         <Second_page />
         <Third_page />
@@ -22,22 +23,16 @@ function Page1() {
         <Sixth_page />
         </div>
       </Container>
-      <Row style={{ margin: "21% 0 10% 0" }}>
-        <div style={{ position: "relative", margin: "1% 0 0% 0" }}>
+      <Row className={s.imgSection}>
+        <div className={s.imgContainer}>
           <img
             src="desktopHome/bigpic.png"
-            style={{
-              width: "100%",
-              position: "absolute",
-              zIndex: "0",
-              bottom: '0px',
-              left: "0",
-            }}
+            className={s.mainImg}
           />
         </div>
       </Row>
       <Container>
-        <div style = {{maxWidth: '1366px'}}>
+        <div className={s.lastPagesContainer}>
         <Five_page />
         <SecondLast />
         <LastPage />

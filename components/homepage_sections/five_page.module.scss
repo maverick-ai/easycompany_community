@@ -1,3 +1,21 @@
+// .section1Container {
+//   position: relative;
+//   bottom: 22rem;
+// }
+
+.imgSection {
+  position: relative; 
+  padding-top: 60px;
+}
+
+.imgDiv {
+  position: absolute;
+}
+
+.paraDiv {
+  position: relative;
+}
+
 .tw {
   display: flex;
   flex-direction: row;
@@ -72,7 +90,7 @@
 
 .sunb {
   margin-left: 28vw;
-  margin-top: -80px;
+  margin-top: -30px;
   height: calc(100vw * (120 / 1560));
 }
 .white {

@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 50px;
+  margin-left: 5vw;
 }
 
 .Section4FlexDiv{
@@ -14,9 +15,13 @@
   font-weight: normal;
   color: white;
   font-size: 4.5vw;
+  line-height: 25px;
   position: relative;
   top: 50%;
   transform: translateY(-50%);
+  @media (max-width: 400px) {
+    line-height: 20px;
+  }
 }
 
 .fontstyleinner {
@@ -36,6 +41,11 @@
 }
 
 .globe {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  left: -40px;
+  width: 125%;
+  @media (max-width: 400px) {
+    left: -30px
+  }
+  // height: 100%;
 }

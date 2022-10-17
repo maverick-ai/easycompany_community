@@ -8,12 +8,7 @@ function Carousel_row() {
     <React.Fragment>
       <Row>
         <div
-          style={{
-            textAlign: "center",
-            position: "relative",
-            marginTop: "8%",
-            height: "300px",
-          }}
+          className={styles.pageContainer}
         >
           {/* <img src="/mapp.svg" className={styles.mapp} /> */}
           {/* <img
@@ -28,14 +23,13 @@ function Carousel_row() {
               <img
                 src="phone_assets/arrowplane.png"
                 className={styles.arorrr}
-                style={{ position: "absolute" }}
               />
 
             </span>
           </span>
           </div>
           <div className={styles.horzrule} />
-          <div style={{ width: "100%", height: "130px" }}>
+          <div className={styles.carosuleDiv}>
             <Carousel
               controls={false}
               indicators={false}
@@ -73,8 +67,7 @@ function Carousel_row() {
             </Carousel>
           </div>
           <div
-            className={styles.horzrule}
-            style={{ margin: "0 0 10px 19px" }}
+            className={styles.bottomHr}
           />
           <img src="phone_assets/sunbeach.png" className={styles.sunb} />
           <img src="phone_assets/map.png" className={styles.maop} />

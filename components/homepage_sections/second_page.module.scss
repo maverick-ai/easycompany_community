@@ -1,3 +1,16 @@
+.mainContainer {
+  display: flex; 
+  align-items: center;
+  height: 100%;
+  margin-top: 1rem;
+  @media (max-width: 1400px) {
+    margin-top: 0.8rem;
+  }
+  @media (max-width: 1200px) {
+    margin-top: 0;
+  }
+}
+
 .p2div {
   margin-top: 5%;
 }
@@ -8,6 +21,9 @@
   font-size: 2.1rem;
   color: #ffffff;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @media (max-width: 1200px) {
+    font-size: 2rem;
+  }
 }
 .p2 {
   font-family: "Inter";
@@ -26,24 +42,38 @@
   background-clip: text;
   color: transparent;
 }
+
+.cardSection {
+  width: 100%; 
+  display: flex;
+  @media (max-width: 1400px) {
+    margin-top: 1rem;
+  }
+  @media (max-width: 1300px) {
+    margin-top: 1.5rem;
+  }
+}
+
+.cardDiv {
+  width: 25%;
+}
+
 .travimg {
   height: 330px;
-}
-@media screen and (max-width: 1400px) {
-  .travimg {
+
+  @media (max-width: 1400px) {
     height: 290px;
   }
-}
-@media screen and (max-width: 1200px) {
-  .travimg {
+
+  @media (max-width: 1200px) {
     height: 240px;
   }
-}
-@media screen and (max-width: 992px) {
-  .travimg {
+
+  @media (max-width: 992px) {
     height: 180px;
   }
 }
+
 @media screen and (min-width: 1526px) {
   .p3h {
     font-size: 32px;

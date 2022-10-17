@@ -4,13 +4,10 @@ import sy from "./second_last.module.css";
 
 function SecondLast() {
   return( <React.Fragment>
-    <Row style={{ margin: " 15% 0 0 0" }}>
+    <Row className={sy.pageContainer}>
           <div>
             <div
-              style={{
-                position: "relative",
-                left: "35px",
-              }}
+              className={sy.headingContainer}
             >
               <span className={sy.heading2last}>
                 With <span className={sy.heading2lastspan}>Easycommunity</span>,
@@ -20,7 +17,7 @@ function SecondLast() {
                 </span>
               </span>
             </div>
-            <div style={{ marginTop: "2%" }}>
+            <div className={sy.listItemsContainer}>
               <ul className={sy.points}>
                 <li className={sy.Li}>
                   <div className={sy.round} />

@@ -26,14 +26,39 @@ margin-top: -30px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
-  font-size: calc(100vw * (14 / 1728));
+  font-size: calc(100vw * (24 / 1728));
   margin: 0 4%;
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 400px) {
+    font-size: 10px;
+  }
+  
+}
+
+.footerContentsSection {
+  text-align: center; 
+  margin: 3% 0;
+}
+
+.footerContentsDiv {
+  position: relative;
+}
+
+.footerIcon {
+  text-align: center;
+}
+
+.footerImg {
+  width: calc(100vw * (376/1728));
 }
 
 @media (max-width: 768px) {
-  .bottomText {
-    font-size: 12px;
-  }
+  // .bottomText {
+  //   font-size: 12px;
+  // }
   .footerimage2 {
     display: none;
   

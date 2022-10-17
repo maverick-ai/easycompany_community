@@ -1,3 +1,8 @@
+.cardContainer {
+  width: min-content; 
+  margin: auto;
+}
+
 .column {
   /* display: flex;
   justify-content: center; */
@@ -36,7 +41,7 @@
 
 .destcardimg {
   position: absolute;
-  left: -20px;
+  left: -10px;
   top: -50px!important;
   text-align: center;
   height: calc(100vw * (50/420));
@@ -82,19 +87,16 @@
     min-height: calc(100vw * (490/2160))!important;
     min-width: 250px!important;
   }
-  .destcardimg{
-    top: -140px!important;
-  }
 }
 
 @media screen and (max-width: 1300px) {
   .destcard1 {
     width: 210px;
   }
-  .destcardimg {
-    height: calc(100vw * (50/420));
-    top: -120px;
-  }
+  // .destcardimg {
+  //   height: calc(100vw * (50/420));
+  //   top: -120px;
+  // }
 }
 
 @media screen and (max-width: 1100px) { 

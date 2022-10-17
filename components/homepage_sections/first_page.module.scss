@@ -1,0 +1,202 @@
+.mainContainer {
+  margin-top: 15rem;
+  margin-bottom: 5rem;
+  padding-top: 2rem;
+  position: relative;
+  @media (max-width: 1200px) {
+    margin-top: 11rem;
+  }
+}
+
+.leftHeading {
+  position: relative;
+  top: -150px;
+}
+
+.text1 {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 3rem;
+  line-height: 65px;
+  text-transform: uppercase;
+  color: #ffffff;
+
+  @media (max-width: 1400px) {
+    font-size: 2.5rem;
+  }
+  @media (max-width: 1200px) {
+    font-size: 2rem;
+    line-height: 50px;
+  }
+  // @media (max-width: 1100px) {
+  //   line-height: ;
+  // }
+}
+
+.bigArrow {
+  position: relative;
+  left: 95%;
+  top: 10px;
+  margin-top: 110px;
+  width: calc(100vw * (162 / 1728));
+  max-width: 115px;
+  @media (max-width: 1400px) {
+    left: 92%;
+  }
+  @media (max-width: 1200px) {
+    left: 90%;
+    top: 15px;
+  }
+}
+
+.atr {
+  position: absolute;
+  left: 95%;
+  top: -230px;
+  margin-top: 90px;
+  width: calc(100vw * (56 / 1728));
+  max-width: 50px;
+  @media (max-width: 1200px) {
+    top: -170px;
+  }
+}
+
+.answersSection {
+  position: relative;
+  display: inline;
+}
+
+.answers {
+  background-image: linear-gradient(90deg, #e32a34, #b50eae);
+  background-clip: text;
+  color: transparent;
+}
+
+.underline {
+  position: absolute;
+  height: 11px;
+  width: 220px;
+  top: 50px;
+  left: 0;
+
+  border-radius: 0px;
+  @media (max-width: 1400px) {
+    top: 40px;
+    width: 200px;
+  }
+  @media (max-width: 1200px) {
+    top: 34px;
+    width: 150px;
+  }
+}
+
+.vector {
+  position: absolute;
+  bottom: 40px;
+  left:-25px;
+  height: 40px;
+  width: 40px;
+  border-radius: 0px;
+}
+
+.Group11 {
+  bottom: 40px;
+  position: absolute;
+  width: 60px;
+  height: 50px;
+  right: -70px;
+}
+
+.joinCommSection {
+  margin: 50px 0 0 20px;
+}
+
+.join {
+  position: relative;
+  box-sizing: border-box;
+
+  width: calc(100vw * (261 / 1728));
+  height: 53px;
+
+  background: linear-gradient(
+    270deg,
+    rgba(181, 14, 174, 0.96) 2.39%,
+    #e32a34 97.18%
+  );
+  border-radius: 18px;
+  border: 0;
+}
+@media screen and (max-width: 1250px) {
+  .join {
+    width: 202px !important;
+  }
+  // .text1 {
+  //   font-size: 39px;
+  // }
+}
+
+.joinText {
+  width: auto;
+  height: auto;
+  font-family: "Inter";
+  font-weight: 800 !important;
+  font-size: 0.8rem;
+  line-height: 142.5%;
+  /* or 26px */
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+.mainImgSection {
+  text-align: center;
+}
+
+.mainImg {
+  position: relative;
+  width: 853px;
+  height: 654px;
+  top: -80px;
+  left: -189px;
+  @media (max-width: 1300px) {
+    width: 150%;
+    height: 150%;
+  }
+  @media (max-width: 1200px) {
+    top: -40px;
+    left: -120px;
+  }
+  @media (max-width: 1100px) {
+    width: 140%;
+    height: 140%;
+  }
+}
+// @media screen and (min-width: 991px) {
+//   .join {
+//     margin: 0 auto;
+//   }
+// }
+// @media screen and (min-width: 1526px) {
+//   .atr {
+//     position: relative;
+//     left: 90%;
+//     margin-top: 90px;
+//     width: 50px;
+//   }
+//   .cscscsc {
+//     position: relative;
+//     left: 80%;
+//     margin-top: 110px;
+//     width: 144px;
+//   }
+//   .join{
+//     width: 232px;
+//     height: 48px;
+//   }
+//   .joinText{
+//     font-size: 17px;
+//   }
+// }

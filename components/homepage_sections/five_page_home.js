@@ -1,11 +1,11 @@
 import { Row, Col } from "react-bootstrap";
-import sy from "./five_page.module.css";
+import sy from "./five_page.module.scss";
 import React from "react";
 
 function Five_page() {
   return (
-    <React.Fragment>
-      <Row>
+    <React.Fragment className={sy.pageContainer}>
+      <Row className={sy.section1Container}>
         <Col lg={5} md={5}>
           <Row>
             <div className={sy.tw}>
@@ -40,29 +40,29 @@ function Five_page() {
           </Row>
         </Col>
         <Col lg={7} md={7}>
-          <div style={{ position: "relative", paddingTop: "60px" }}>
-            <div style={{ position: "absolute" }}>
+          <div className={sy.imgSection}>
+            <div className={sy.imgDiv}>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun1.png" className={sy.sun1}></img>
             </div>
-            <div style={{ position: "absolute" }}>
+            <div className={sy.imgDiv}>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun2.png" className={sy.sun2}></img>
             </div>
-            <div style={{ position: "absolute" }}>
+            <div className={sy.imgDiv}>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun4.png" className={sy.sun4}></img>
             </div>
-            <div style={{ position: "absolute" }}>
+            <div className={sy.imgDiv}>
               <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sun3.png" className={sy.sun3}></img>
             </div>
           </div>
         </Col>
       </Row>
-      <div style={{ position: "absolute" }}>
+      <div className={sy.imgDiv}>
         <img src="https://spaces-shortsqueeze.sgp1.digitaloceanspaces.com/static/easycommunity/sunb.png" className={sy.sunb}></img>
       </div>
-      <Row>
+      <Row className={sy.section2Container}>
         <Col lg={7} xs={7}>
           <div className={sy.white}>
-            <div style={{position: 'relative'}}>
+            <div className={sy.paraDiv}>
             <p className={sy.whitep}>
               <span className={sy.whites}>Easycommunity</span> offers a vast
               collection of travel-related questions and answers. Improvise your
@@ -76,7 +76,7 @@ function Five_page() {
         </Col>
         <Col>
           <div>
-            <div style={{ position: "relative" }}>
+            <div className={sy.paraDiv}>
               <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/polar1.png" className={sy.polar1}></img>
 
               <img src="https://spaces-shortsqueeze.sgp1.cdn.digitaloceanspaces.com/static/easycommunity/polar2.png" className={sy.polar2}></img>

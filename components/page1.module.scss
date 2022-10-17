@@ -1,0 +1,29 @@
+.initialPagesContainer {
+    max-width: 1400px;
+    margin-top: 20px;
+}
+
+.imgSection {
+    margin: 21% 0 10% 0;
+}
+
+.imgContainer {
+    position: relative;
+    margin: 1% 0 0% 0;
+
+}
+
+.mainImg {
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    left: 0;
+    @media (max-width: 1300px) {
+        bottom: 280px;
+    }
+}
+
+.lastPagesContainer {
+    max-width: 1366px;
+}

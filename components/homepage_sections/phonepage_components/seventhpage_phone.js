@@ -7,7 +7,7 @@ import FooterToolbar from "../../FooterToolbar";
 function Phone7() {
   return (
     <React.Fragment>
-      <Row style={{ marginTop: "10%" }}>
+      <Row className={styles.seventhPageContainer}>
         <Col
           md={{ span: 8, offset: 1 }}
           sm={{ span: 8, offset: 1 }}
@@ -23,7 +23,7 @@ function Phone7() {
         </Col>
       </Row>
       <Row>
-        <div style={{ width: "80%", margin: "6% auto" }}>
+        <div className={styles.bulletSection}>
           <ul className={styles.points}>
             <li className={styles.Li}>
               <div className={styles.round} />
@@ -49,8 +49,8 @@ function Phone7() {
           </ul>
         </div>
       </Row>
-      <Row style={{ margin: " 8% 0 0 0" }}>
-        <div style={{ textAlign: "center", position: "relative" }}>
+      <Row className={styles.footerSection}>
+        <div className={styles.footerSection1}>
           <span className={styles.headingLast}>
             {" "}
             Ready to see what's out there?
@@ -68,7 +68,7 @@ function Phone7() {
         </div>
       </Row>
       <Row>
-        <div style={{ textAlign: "center", marginTop: "2%" }}>
+        <div className={styles.footerSection2}>
           <button className={styles.JoinUs}>JOIN US</button>
         </div>
       </Row>

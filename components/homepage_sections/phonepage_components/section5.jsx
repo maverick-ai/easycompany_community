@@ -13,13 +13,12 @@ function Section5() {
               <img
                 src="photos/arrorrr.svg"
                 className={styles.arorrr}
-                style={{ position: "absolute" }}
               />
             </span>
             Who Are We?
           </span>
           <div className={styles.horzrule} />
-          <div style={{ width: "100%", height: "130px" }}>
+          <div className={styles.carouselDiv}>
             <Carousel
               controls={false}
               indicators={false}
