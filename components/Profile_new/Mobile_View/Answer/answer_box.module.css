@@ -1,0 +1,69 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 19px;
+    width: 100%;
+}
+
+.answers {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    width: 60%;
+}
+
+.date {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-right: 8%;
+}
+
+.pink_box {
+    background: linear-gradient(116.6deg, #B50EAE -56.74%, #E42833 135.97%);
+    border-radius: 2px;
+    width: 31px;
+    height: 27px;
+}
+
+.sub_box{
+    display: flex;
+    align-items: center;
+    gap: 5%;
+    margin-left: 5%;
+    width: calc((190/300)*100%);
+}
+
+.rectangle {
+    position: relative;
+}
+
+.num {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    color: #FFFFFF;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    /* display: flex;
+    align-items: center;
+    text-align: center; */
+    color: #FFFFFF;
+}

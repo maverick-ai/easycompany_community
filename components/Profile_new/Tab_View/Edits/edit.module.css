@@ -1,0 +1,63 @@
+.card{
+    width: 100%;
+    position: relative;
+    background: #202020;
+    box-shadow: 0px 60px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    height: 499px;
+    z-index: 999;
+}
+
+.container{
+    width: calc((322/1100)*100%);
+    margin: auto;
+    position: absolute;
+    left: calc((751/1100)*100%);
+    top: -160px;
+}
+
+.vertical_bar1{
+    position: absolute;
+    top: 0;
+    left: calc((299/322)*100%);
+}
+.vertical_bar2{
+    position: absolute;
+    top: 0;
+    left: calc((309/322)*100%);
+} 
+
+.notifications{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 29px;
+    width: calc((216/322)*100%);;
+    margin-left: calc((58/322)*100%);
+}
+
+.bell{
+    position: relative;
+}
+
+.comments{
+    position: relative;
+}
+
+.airplane{
+    position: absolute;
+    bottom: -7px;
+    left: -17px;
+}
+
+.log_out{
+    background: rgba(112, 112, 112, 0.3);
+    border-radius: 8px;
+    border: none;
+    color: #FFFFFF;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 28px;
+}

@@ -1,0 +1,140 @@
+.container {
+    width: 100%;
+    margin-top: 247px;
+    background: linear-gradient(180deg, #71151B 0%, #71151B 0.01%, #5B0756 100%);
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.57);
+    position: relative;
+}
+
+.username {
+    padding-left: 10px;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 57px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    width: calc((357/1100)*100%);
+    margin-left: calc((293/1100)*100%);
+    margin-right: calc((450/1100)*100%);
+    margin-bottom: 95px;
+}
+
+.active_details {
+    padding-bottom: 30px;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 30px;
+    width: calc((700/1100)*100%);
+}
+
+.details {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.box {
+    position: relative;
+    width: 29px;
+    height: 29px;
+    margin-right: 7px;
+}
+
+.membership {
+    width: 20px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.last_seen {
+    width: 29px;
+    height: 29px;
+}
+
+
+.visited {
+    width: 23px;
+    height: 29px;
+    margin-right: 5px;
+}
+
+.membership_details {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.last_seen_details {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.visited_details {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    text-align: left;
+}
+
+.bag {
+    position: absolute;
+    left: calc((609/1100)*100%);
+    top: -140px;
+}
+
+.slanted_bar1{
+    position: absolute;
+    bottom: -120px;
+    left: 0px;
+    z-index: 999;
+}
+.slanted_bar2{
+    position: absolute;
+    bottom: -160px;
+    left: 0px;
+    z-index: 999;
+}
+
+.star{
+    z-index: 999;
+    position: absolute;
+    bottom: -100px;
+    left: 60%;
+}
+
+
+@media screen and (max-width: 1050px){
+    .username{
+        padding-left: 40px;
+    }
+}

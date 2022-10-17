@@ -1,0 +1,21 @@
+.votes {
+    width: calc((326/360)*100%);
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 999;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 7px;
+}
+

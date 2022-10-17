@@ -1,0 +1,116 @@
+.container {
+    background: #202020;
+    box-shadow: 4px 4px 50px rgba(0, 0, 0, 0.66);
+    border-radius: 24px;
+    width: calc((1320/1720)*100%);
+    margin: auto;
+    margin-top: 113px;
+    padding-top: 61px;
+    padding-bottom: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 999;
+}
+
+.guide {
+    background: #282828;
+    box-shadow: 0px 60px 40px rgba(0, 0, 0, 0.5);
+    border-radius: 24px;
+    width: calc((548/1320)*100%);
+    position: relative;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 41px;
+    margin-left: calc((57/548)*100%);
+    margin-bottom: 27px;
+}
+
+.dots_group {
+    position: absolute;
+    top: 24px;
+    left: 76%;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 103px;
+}
+
+.guide_level {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 44px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 247px;
+}
+
+.dp{
+    position: relative;
+}
+
+.profile_icon{
+    border: 4px solid #B50EAE;
+    border-radius: 50%;
+}
+
+.circle{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.star{
+    position: absolute;
+    bottom: 9px;
+    right: 6px;
+}
+
+.dots3{
+    position: absolute;
+    bottom: 0%;
+    /* right: -150px */
+    left: calc((1440/1320)*100%);
+}
+
+.dots4{
+    position: absolute;
+    bottom: -180px;
+    right: calc((1440/1320)*100%);
+}
+
+.double_star{
+    position: absolute;
+    right: 20px;
+    bottom: -117px;
+}
+
+.slanted_bar1{
+    position: absolute;
+    bottom: -262px;
+    left: calc((872/1320)*100%);
+    z-index: 0;
+}
+.slanted_bar2{
+    position: absolute;
+    bottom: -262px;
+    left: calc((890/1320)*100%);
+}

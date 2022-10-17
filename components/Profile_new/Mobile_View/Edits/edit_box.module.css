@@ -1,0 +1,29 @@
+.container {
+    background: #282828;
+    box-shadow: -1px 6px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 12px 5px 7px;
+}
+
+.clock_box{
+    display: flex;
+    align-items: center;
+    gap: calc((5/68)*100%);
+}
+
+.activity_txt {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+
+

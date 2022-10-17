@@ -1,0 +1,84 @@
+.box {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    padding-left: 10%
+}
+
+
+.months,
+.days {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+
+.time,
+.type{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 34px;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 21px;
+}
+.days .header{
+    margin-bottom: 0px;
+}
+.months .header{
+    margin-bottom: 0px;
+}
+
+.up,
+.down,
+.questions,
+.answers {
+    display: flex;
+    align-items: center;
+    margin-bottom: 22px;
+}
+
+.up{
+    margin-bottom: 68px;
+}
+
+.count {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(271.08deg, #E42833 41.04%, #B50EAE 60.76%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 60px;
+}
+
+.word {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}

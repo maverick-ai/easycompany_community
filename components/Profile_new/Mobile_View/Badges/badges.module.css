@@ -1,0 +1,73 @@
+.badges {
+    background: #282828;
+    box-shadow: 0px 24px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: calc((302/360)*100%);
+    margin: auto;
+    margin-top: 42px;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    z-index: 999;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: calc((12/303)*100%);
+    margin-bottom: 10px;
+}
+
+.medals {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+.bronze,
+.silver,
+.gold {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 9px;
+}
+
+.box{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.contribution {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 18px;
+}
+
+.count {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+    margin-top: 5px;
+}
