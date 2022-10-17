@@ -35,7 +35,7 @@
   font-style: normal;
   font-weight: calc(100vw * (500 / 1728));
   font-size: calc(100vw * (30 / 1728));
-  line-height: 35px;
+  line-height: 40px;
   /* or 133% */
 
   color: #ffffff;
@@ -43,8 +43,18 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
+.vr {
+  position: absolute;
+  height: 16px;
+  border: none;
+  border-left: 1px solid #ffffff;
+  top: 32px;
+  left: 20px;
+}
+
 .Li {
   /*background-color: linear-gradient(180deg, #e32a34 0%, #b50eae 21.41%);*/
+  position: relative;
   list-style-type: none;
   display: flex;
   font-size: 1.3rem;

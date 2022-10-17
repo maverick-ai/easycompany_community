@@ -51,6 +51,7 @@ function Phone7() {
       </Row>
       <Row className={styles.footerSection}>
         <div className={styles.footerSection1}>
+          <img src="phone_assets/globe2.png" className={styles.globe2} />
           <span className={styles.headingLast}>
             {" "}
             Ready to see what's out there?
@@ -64,7 +65,6 @@ function Phone7() {
             today!
           </span>
           <img src="phone_assets/downArrow.png" className={styles.downArrow}></img>
-          <img src="phone_assets/globe2.png" className={styles.globe2} />
         </div>
       </Row>
       <Row>

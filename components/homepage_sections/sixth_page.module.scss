@@ -14,16 +14,20 @@
 }
 
 .textDiv {
-  position: relative;
+  position: absolute;
   width: 12rem;
-  top: -250px;
-  left: 25px;
+  top: 125px;
+  left: 40px;
   @media (min-width: 1450px) {
-    top: -300px;
+    top: 135px;
     width: 15rem;
   }
+  @media (max-width: 1400px) {
+    top: 110px;
+  }
   @media (max-width: 1200px) {
-    left: 15px;
+    left: 30px;
+    top: 120px;
     width: 10rem;
   }
 

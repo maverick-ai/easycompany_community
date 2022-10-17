@@ -21,14 +21,14 @@ function SecondLast() {
               <ul className={sy.points}>
                 <li className={sy.Li}>
                   <div className={sy.round} />
-
+                  <div className={sy.vr} />
                   <div>
                     Know exclusive details of travel locations from our network.
                   </div>
                 </li>
                 <li className={sy.Li}>
                   <div className={sy.round} />
-
+                  <div className={sy.vr} />
                   <div>Learn from other travellers’ experiences.</div>
                 </li>
                 <li className={sy.Li}>
