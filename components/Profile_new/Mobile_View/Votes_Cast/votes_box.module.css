@@ -1,0 +1,136 @@
+.box {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.time,
+.type {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 37px;
+    margin-top: 13px;
+}
+
+.days,
+.months {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 19px;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 22px;
+    justify-content: space-around;
+}
+
+.days .header {
+    margin-bottom: 14px;
+}
+
+.months .header {
+    margin-bottom: 14px;
+}
+
+.up,
+.down,
+.questions,
+.answers {
+    display: flex;
+    align-items: center;
+    margin-bottom: 26px;
+    gap: 10px;
+    justify-content: space-around;
+}
+
+.up{
+    margin-bottom: 69px;
+}
+
+.count {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(91.32deg, #B50EAE -4.69%, #E42833 103.84%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    width: 50px;
+    align-self:center;
+    justify-content: space-around;
+}
+
+.word {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    width: 100px;
+    align-self:center;
+    justify-content: space-around;
+
+}
+
+@media screen and (max-width: 320px) {
+
+    .up,
+    .down,
+    .questions,
+    .answers {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 26px;
+        gap: 10px
+    }
+
+    .days,
+.months {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin-bottom: 19px;
+}
+
+.time,
+.type {
+    display: flex;
+    flex-direction: column;
+    width: 35%;
+    margin-bottom: 37px;
+    margin-top: 13px;
+}
+}
+
+.star{
+    position: absolute;
+    bottom: -58px;
+    left: 4%;
+}
+.dots{
+    position: absolute;
+    bottom: -46px;
+    right: 0px;
+}

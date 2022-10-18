@@ -1,0 +1,19 @@
+.reputation {
+    width: calc((505/1100)*100%);
+    margin-bottom: 70px;
+    position: relative;
+    z-index: 999;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}

@@ -1,0 +1,90 @@
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    width: 100%;
+    flex-direction: column;
+    z-index: 999;
+}
+
+.chart {
+    width: 80%;
+    margin: auto;
+    margin-top: 42px;
+    margin-bottom: 23px;
+}
+
+.box2 {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    justify-content: space-between;
+}
+
+.tag,
+.top_tags {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    /* width: fit-content; */
+}
+
+.cumulative {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 9px;
+}
+
+.addon {
+    background: linear-gradient(280.85deg, #E42833 -26.64%, #B50EAE 132.86%);
+    border-radius: 5px;
+    width: 89px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    text-align: center;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 21px;
+    color: #FFFFFF;
+}
+
+.word {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 15px;
+}
+
+.places {
+    background: rgba(112, 112, 112, 0.3);
+    box-shadow: 1px 6px 30px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 4px;
+    width: 118px;
+    text-align: center;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 18px;
+    color: #FFFFFF;
+
+}

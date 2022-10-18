@@ -1,0 +1,38 @@
+.bookmark {
+    width: calc((326/360)*100%);
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 999;
+    position: relative;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 7px;
+}
+
+.bar1{
+    position: absolute;
+    bottom: 370px;
+    left: 50%;
+}
+.bar2{
+    position: absolute;
+    bottom: 370px;
+    left: 45%;
+}
+.star{
+    position: absolute;
+    bottom: 430px;
+    right: 7%;
+}
+

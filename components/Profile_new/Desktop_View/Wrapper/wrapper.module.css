@@ -1,0 +1,58 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: calc((1320/1720)*100%);
+    margin: auto;
+    margin-top: 120px;
+    position: relative;
+}
+
+.globe {
+    position: absolute;
+    top: 66%;
+    left: 50%;
+    transform: translate(-50%, -66%);
+}
+
+.bar1{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+}
+.bar2{
+    position: absolute;
+    top: 20%;
+    left: 23%;
+}
+
+.star1{
+    position: absolute;
+    top: 24%;
+    left: 50%;
+    transform: translate(-50%, -24%);
+}
+.star2{
+    position: absolute;
+    top: 63%;
+    left: 0;
+    transform: translate(0, -62%);
+}
+.star3{
+    position: absolute;
+    bottom: 10%;
+    right: -5%;
+    
+}
+
+.slanted_bar1{
+    position: absolute;
+    left: 10%;
+    bottom: 0;
+}
+.slanted_bar2{
+    position: absolute;
+    left: 12%;
+    bottom: 0;
+}

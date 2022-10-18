@@ -1,0 +1,7 @@
+.activity{
+    margin-left: calc((228/360)*100%);
+    margin-right: calc((11/360)*100%);
+    margin-bottom: 16px;
+    width: calc((121/360)*100%);
+   
+}

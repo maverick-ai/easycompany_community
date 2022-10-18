@@ -1,0 +1,9 @@
+.prof_picture{
+    position: absolute;
+    border-radius: 50%;
+    width: 77px;
+    height: 77px;
+    border: 4px solid rgba(217, 217, 217, 0.32);
+    left: calc((24/360)*100%);
+    top: -38px;
+}

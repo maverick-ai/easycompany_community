@@ -1,0 +1,35 @@
+.answer {
+    width: calc((530/1320)*100%);
+    margin-bottom: 93px;
+    position: relative;
+    z-index: 999;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 34px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.view {
+    position: absolute;
+    bottom: 30px;
+    right: 5%;
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    background: #282828;
+    border: none;
+}

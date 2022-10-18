@@ -1,0 +1,37 @@
+.answer {
+    width: calc((326/360)*100%);
+    margin: auto;
+    margin-top: 87px;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 999;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 7px;
+}
+
+.bag{
+    position: absolute;
+    bottom: 1980px;
+    left: 30%;
+}
+.star{
+    position: absolute;
+    bottom: 2040px;
+    right: 12%;
+}
+.dots{
+    position: absolute;
+    bottom: 2000px;
+    right: 2%;
+}

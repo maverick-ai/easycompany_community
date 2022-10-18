@@ -1,0 +1,37 @@
+.reputation {
+    width: calc((326/360)*100%);
+    margin: auto;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 999;
+}
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-bottom: 7px;
+}
+
+.star{
+    position: absolute;
+    left: -3%;
+    bottom: -35px;
+}
+.bar1{
+    position: absolute;
+    right: 0%;
+    bottom: 690px;
+}
+.bar2{
+    position: absolute;
+    right: 0%;
+    bottom: 720px;
+}
+

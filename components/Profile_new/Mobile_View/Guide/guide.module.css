@@ -1,0 +1,89 @@
+.container {
+    background: #282828;
+    box-shadow: 0px 16px 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    width: calc((302/360)*100%);
+    margin: auto;
+    margin-top: 40px;
+    padding-top: 17px;
+    padding-bottom: 49px;
+    /* display: flex;
+    align-items: center;
+    justify-content: space-around; */
+    position: relative;
+    z-index: 999;
+}
+
+
+.header {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 23px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    margin-left: calc((10/302)*100%);
+    margin-bottom: 20px;
+}
+
+.dots_group {
+    position: absolute;
+    top: 13px;
+    left: 76%;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.guide_level {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    max-width: 146px;
+}
+
+.dp {
+    position: relative;
+}
+
+.profile_icon {
+    border: 4px solid #B50EAE;
+    border-radius: 50%;
+}
+
+.circle {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+
+.star {
+    position: absolute;
+    bottom: 5px;
+    right: 3px;
+}
+
+.line1{
+    position: absolute;
+    bottom: -10%;
+    left: -10%;
+    z-index: 0;
+}
+.line2{
+    position: absolute;
+    bottom: -21%;
+    left: -10%;
+    z-index: 0;
+}

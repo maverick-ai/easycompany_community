@@ -1,0 +1,34 @@
+.container {
+    width: calc((216/428)*100%);
+    ;
+    margin-left: calc((83/428)*100%);
+    margin-top: 83px;
+}
+
+.edit {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.account {
+    display: flex;
+    align-items: center;
+}
+
+.pen{
+    margin-right: 9px;
+}
+
+.edit_word ,.your_account{
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    margin-left: 7px;
+}
+
