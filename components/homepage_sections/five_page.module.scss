@@ -14,6 +14,14 @@
 
 .paraDiv {
   position: relative;
+  @media (min-width: 1526px) {
+    width: 78rem;
+    left: -25px;
+  }
+}
+
+.cardDiv {
+  position: relative;
 }
 
 .tw {
@@ -101,8 +109,8 @@
 }
 
 .whitep {
-  padding-top: 30px;
-  padding-bottom: 30px;
+  padding-top: 40px;
+  padding-bottom: 40px;
   width: 80%;
   padding: 4% 10% 4% 6%;
   font-family: "Inter";
@@ -158,6 +166,7 @@
   width: calc(100vw * (98 / 1728));
   position: absolute;
   left: calc(100vw * (650 / 1560));
+  // left: 570px;
   top: 130px;
   z-index: 1;
 }
@@ -195,8 +204,9 @@
     width: 938px;
   }
   .whitep {
+    height: 225px;
     font-size: 17.6px;
-    width: 85%;
+    width: 70%;
   }
   .polar1 {
     width: 220px;
@@ -236,18 +246,14 @@
   .hotAirBalloon {
     width: 87px;
     position: absolute;
-    left: calc(100vw * (300 / 1560));
-    top: 260px;
+    left: 680px;
+    top: 135px;
   }
 }
 
 @media screen and (min-width: '1261px') and (max-width: '1399px') {
   .whitep {
     width: 77%;
-  }
-
-  .hotAirBalloon {
-    left: -60px;
   }
 }
 
