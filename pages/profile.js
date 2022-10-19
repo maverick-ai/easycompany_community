@@ -53,7 +53,9 @@ const Profile = ({ userData, query, login }) => {
           </div>
 
           <Col lg={8}>
-            <ProfileHead userData={userData} dateJoined={dateJoined} lastSeen={lastSeen}/>
+            <ProfileHead userData={userData} dateJoined={dateJoined} 
+            // lastSeen={lastSeen}
+            />
           </Col>
         </Row>
 
@@ -159,6 +161,8 @@ const Profile = ({ userData, query, login }) => {
 export default Profile;
 
 export async function getServerSideProps({ query, req }) {
+  console.log("query here");
+  console.log(query);
   let userData = {};
   try {
     if (query.user) {

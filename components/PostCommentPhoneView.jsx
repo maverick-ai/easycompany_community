@@ -22,7 +22,7 @@ function PostCommentPhoneView(props){
                 <Col sm={10} xs={9}>
                   <div className={Styles.userName}>
                     <Link
-                      href={`/profile?user=${props.comment.creator_by.creator_id}`}
+                      href={`/profilenew?user=${props.comment.creator_by.creator_id}`}
                     >
                       {props.comment.creator_by.first_name +
                         " " +

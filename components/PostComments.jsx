@@ -81,7 +81,7 @@ const PostComment = (props) => {
                   <Col lg={{ span: 8 }} md={8}>
                     <div className={Styles.userName}>
                       <Link
-                        href={`/profile?user=${props.comment.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.comment.creator_by.creator_id}`}
                       >
                         {props.comment.creator_by.first_name +
                           " " +
@@ -151,7 +151,7 @@ const PostComment = (props) => {
                   <Col lg={{ span: 8 }} md={8}>
                     <div className={Styles.userName}>
                       <Link
-                        href={`/profile?user=${props.comment.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.comment.creator_by.creator_id}`}
                       >
                         {props.comment.creator_by.first_name +
                           " " +
@@ -219,7 +219,7 @@ const PostComment = (props) => {
                   <Col sm={9} xs={8}>
                     <div className={Styles.userName}>
                       <Link
-                        href={`/profile?user=${props.comment.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.comment.creator_by.creator_id}`}
                       >
                         {props.comment.creator_by.first_name +
                           " " +

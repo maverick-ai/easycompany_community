@@ -159,7 +159,7 @@ const DetailedPost = (props) => {
                         <Col lg={2} md={3} xs={1}>
                           <div className={Styles.linkDiv}>
                             <Link
-                              href={`/profile?user=${props.data.creator_by.creator_id}`}
+                              href={`/profilenew?user=${props.data.creator_by.creator_id}`}
                             >
                               {props.data.creator_by.first_name +
                                 " " +
@@ -449,7 +449,7 @@ const DetailedPost = (props) => {
                       }}
                     >
                       <Link
-                        href={`/profile?user=${props.data.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.data.creator_by.creator_id}`}
                       >
                         {props.data.creator_by.first_name +
                           " " +

@@ -83,7 +83,7 @@ const SolutionComment = (props) => {
                   <Col lg={8} md={8}>
                     <div className={Styles.userName}>
                       <Link
-                        href={`/profile?user=${props.comment.creator_by.creator_id}`}>
+                        href={`/profilenew?user=${props.comment.creator_by.creator_id}`}>
                         {props.comment.creator_by.first_name +
                           " " +
                           props.comment.creator_by.last_name}
@@ -152,7 +152,7 @@ const SolutionComment = (props) => {
                   
                     <div className={Styles.userName}>
                       <Link
-                        href={`/profile?user=${props.comment.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.comment.creator_by.creator_id}`}
                       >
                         {props.comment.creator_by.first_name +
                           " " +
@@ -216,7 +216,7 @@ const SolutionComment = (props) => {
                   <Col sm={10} xs={9}>
                     <div className={Styles.userName}>
                       <Link
-                        href={`/profile?user=${props.comment.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.comment.creator_by.creator_id}`}
                       >
                         {props.comment.creator_by.first_name +
                           " " +

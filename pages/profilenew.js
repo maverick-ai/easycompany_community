@@ -5,6 +5,14 @@ import { useState, useEffect } from "react";
 import Mobile_Main from '../components/Profile_new/Mobile_View/Main/Main';
 import Tag_main from '../components/Profile_new/Tab_View/Main/Tag_main';
 import Desktop_Main from '../components/Profile_new/Desktop_View/Main/Desktop_Main';
+import {
+  UserProfileURL,
+  UserPostsURL,
+  UserSolutionsURL,
+  PublicUserProfileURL,
+  PublicUserSolutionsURL,
+  PublicUserPostsURL,
+} from "../components/constants";
 function Homepage(props) {
     console.log("main props");
     console.log(props);
@@ -62,7 +70,32 @@ export async function getServerSideProps({query, req}) {
     console.log("req here");
     console.log(req.headers.cookie);
     console.log("aaaaaaa");
-    userData = await sendReq(`https://backend.easycompany.space/api/user_stats/`, req.headers.cookie);
+    // userData = await sendReq(`https://backend.easycompany.space/api/user_stats/`, req.headers.cookie);
+    try {
+      if (query.user) {
+        userData = await sendReq(`${PublicUserProfileURL}${query.user}/`);
+      } else if (req.headers.cookie) {
+        userData = await sendReq(`${UserProfileURL}`, req.headers.cookie);
+      } else {
+        throw "redirect to login";
+      }
+    } catch (err) {
+      if (err == "redirect to login") {
+        return {
+          redirect: {
+            destination: "/login",
+            permanent: false,
+          },
+        };
+      } else {
+        return {
+          redirect: {
+            destination: "/404",
+            permanent: false,
+          },
+        };
+      }
+    }
 
     console.log(userData);
     // return {

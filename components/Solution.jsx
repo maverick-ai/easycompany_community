@@ -168,7 +168,7 @@ const Solution = (props) => {
                       }}
                     >
                       <Link
-                        href={`/profile?user=${props.solution.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.solution.creator_by.creator_id}`}
                       >
                         {props.solution.creator_by.first_name +
                           " " +
@@ -408,7 +408,7 @@ const Solution = (props) => {
                       }}
                     >
                       <Link
-                        href={`/profile?user=${props.solution.creator_by.creator_id}`}
+                        href={`/profilenew?user=${props.solution.creator_by.creator_id}`}
                       >
                         {props.solution.creator_by.first_name +
                           " " +
