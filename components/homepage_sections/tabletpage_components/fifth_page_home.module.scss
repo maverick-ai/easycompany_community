@@ -1,0 +1,123 @@
+.pageContainer {
+    position: relative;
+    margin-top: 5rem;
+    text-align: center;
+}
+
+.headContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1rem;    
+}
+
+.headeasy {
+    font-family: "Inter";
+    font-style: normal;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 2.1rem;
+}
+
+.love1 {
+    background-image: linear-gradient(
+      90deg,
+      #b50eae 21.48%,
+      rgba(227, 42, 52, 0.94) 86.58%
+    );
+    background-clip: text;
+    color: transparent;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.1rem;
+}
+
+.sglobe {
+    height: 80px;
+}
+
+.cardSection {
+    margin-top: 7rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.card {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cardDiv {
+    width: 250px;
+    height: 24rem;
+    position: relative;
+    background: #CFDBE6;
+    mix-blend-mode: lighten;
+    opacity: 0.55;
+    box-shadow: inset -10px -3px 5px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(180px);
+    /* Note: backdrop-filter has minimal browser support */
+    border-radius: 50px;
+    padding: 125px 20px 50px 20px;
+    z-index: 0;
+}
+
+.destImg1 {
+    position: absolute;
+    left: 10px;
+    top: -70px;
+    text-align: center;
+    height: 180px;
+    z-index: 1;
+}
+
+.textDiv {
+    position: absolute;
+    width: 12rem;
+    top: 125px;
+    left: 80px;
+}
+
+.cardText {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.15rem;
+    line-height: 30px;
+    /* or 143% */
+  
+    text-align: center;
+  
+    color: #FFFFFF;
+}
+
+.destImg2 {
+    position: absolute;
+    left: -10px;
+    top: -50px;
+    text-align: center;
+    height: 150px;
+}
+
+.destImg3 {
+    position: absolute;
+    left: 20px;
+    top: -70px;
+    text-align: center;
+    height: 180px;
+}
+
+.destImg4 {
+    position: absolute;
+    left: 40px;
+    top: -80px;
+    text-align: center;
+    height: 200px;
+}

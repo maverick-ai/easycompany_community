@@ -1,5 +1,5 @@
 import React from "react";
-import { Row} from "react-bootstrap";
+import { Row } from "react-bootstrap";
 import sy from "./second_last.module.css";
 
 function SecondLast() {

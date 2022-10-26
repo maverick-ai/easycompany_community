@@ -6,7 +6,7 @@ function FooterToolbar(){
         <div className={styles.FooterBar}>
           <Row>
             <div className={styles.globeImgDiv} >
-            <img className={styles.globeImg} src="./globe.png"></img>
+              <img className={styles.globeImg} src="./globe.png"></img>
             </div>
         </Row>
 

@@ -1,0 +1,311 @@
+.leftContainer {
+    position: relative;
+    left: -9.5vw;
+    @media (max-width: 900px) {
+        left: -4vw;
+    }
+    @media (max-width: 800px) {
+        left: 0px;
+    }
+}
+
+.tw {
+    display: flex;
+    flex-direction: row;
+    margin-top: 5rem;
+}
+
+.travel {
+    height: 70px;
+    @media (max-width: 900px) {
+        height: 60px;
+    }
+    @media (max-width: 800px) {
+        height: 50px;
+    }
+}
+
+.world {
+    margin-top: 3px;
+    height: 55px;
+    @media (max-width: 900px) {
+        height: 45px;
+    }
+    @media (max-width: 800px) {
+        height: 40px;
+    }
+}
+
+.textDiv {
+    display: flex;
+    width: 32rem;
+}
+
+.bigplace {
+    margin-top: 1rem;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.3rem;
+    line-height: 40px;
+    color: #ffffff;
+    @media (max-width: 900px) {
+        font-size: 1.2rem;
+        line-height: 35px;
+    }
+    @media (max-width: 800px) {
+        font-size: 1.1rem;
+        line-height: 30px;
+    }
+}
+
+.fontstyleinner {
+    background: linear-gradient(270.22deg, #b50eae 42.24%, #e32a34 99.91%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.line3 {
+    margin-top: 18px;
+    margin-bottom: 20px;
+    height: 2px;
+    width: 75%;
+    background-color: #ffffff;
+    /* border-radius: 50%; */
+    display: inline-block;
+}
+
+.globe1 {
+    width: 147px;
+    position: absolute;
+    left: 38.8vw;
+    top: 535px;
+    z-index: 1;
+    @media (max-width: 900px) {
+        top: 485px;
+    }
+    @media (max-width: 800px) {
+        top: 445px;
+    }
+}
+
+.imgSection {
+    position: relative; 
+    left: -3.15vw;
+    top: 65px;
+    @media (max-width: 900px) {
+        left: -4.15vw;
+    }
+    @media (max-width: 800px) {
+        left: -7.15vw;
+    }
+}
+
+.imgDiv {
+    position: absolute;
+}
+
+.sun1 {
+    position: absolute;
+    height: 250px;
+    left: -7.05vw;
+    top: 25px;
+    @media (max-width: 900px) {
+        height: 225px;
+    }
+    @media (max-width: 800px) {
+        height: 200px;
+    }
+}
+
+.sun2 {
+    position: absolute;
+    height: 250px;
+    left: -3.23vw;
+    top: 255px;
+    @media (max-width: 900px) {
+        height: 225px;
+        top: 240px;
+    }
+    @media (max-width: 800px) {
+        height: 200px;
+        top: 215px;
+    }
+}
+  
+.sun3 {
+    position: absolute;
+    // left: 200px;
+    // top: 175px;
+    left: 10vw;
+    top: -14px;
+    height: 250px;
+    @media (max-width: 900px) {
+        height: 225px;
+        top: -5px;
+    }
+    @media (max-width: 800px) {
+        height: 200px;
+    }
+}
+  
+.sun4 {
+    position: absolute;
+    height: 250px;
+    left: 14vw;
+    top: 175px;
+    @media (max-width: 900px) {
+        height: 225px;
+    }
+    @media (max-width: 800px) {
+        height: 200px;
+    }
+}
+
+.whiteContainer {
+    position: relative;
+    display: flex;
+    width: 63rem;
+    left: -310px;
+    @media (max-width: 900px) {
+        width: 65rem;
+    }
+    @media (max-width: 800px) {
+        width: 63rem;
+    }
+}
+
+.white {
+    margin-top: 10rem;
+    background: #fdfdfd;
+    border-radius: 30px;
+    height: 220px;
+}
+
+.paraDiv {
+    position: absolute;
+    left: 210px;
+    @media (max-width: 950px) {
+        left: 220px;
+    }
+    @media (max-width: 900px) {
+        left: 260px;
+    }
+    @media (max-width: 850px) {
+        left: 280px;
+    }
+    @media (max-width: 800px) {
+        left: 300px;
+    }
+} 
+
+.whitep {
+    padding: 3rem 0.5rem;
+    margin-bottom: 0px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.1rem;
+    line-height: 30px;
+    color: black;
+    @media (max-width: 800px) {
+        font-size: 1rem;
+    }
+}
+
+.whites {
+    background: linear-gradient(90deg, #e32a34 0%, #b50eae 21.41%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+}
+
+.sunb {
+    position: absolute;
+    left: 295px;
+    top: 650px;
+    width: 250px;
+    @media (max-width: 900px) {
+        top: 610px
+    }
+    @media (max-width: 800px) {
+        top: 580px;
+        left: 315px;
+    }
+}
+
+.cardDiv {
+    position: relative;
+    left: 315px;
+    top: -75px;
+    @media (max-width: 900px) {
+        left: 345px;
+    }
+    @media (max-width: 800px) {
+        left: 375px;
+    }
+}
+
+.polar1 {
+    width: 250px;
+    position: absolute;
+    left: 15vw;
+    top: 25px;
+    @media (max-width: 900px) {
+        width: 225px;
+    }
+    @media (max-width: 800px) {
+        width: 200px;
+    }
+  }
+  
+.polar2 {
+    width: 250px;
+    position: absolute;
+    left: 42vw;
+    top: -10px;
+    z-index: 0;
+    @media (max-width: 900px) {
+        width: 225px;
+    }
+    @media (max-width: 800px) {
+        width: 200px;
+    }
+}
+  
+.polar3 {
+    width: 250px;
+    position: absolute;
+    left: 31vw;
+    top: 175px;
+    @media (max-width: 900px) {
+        width: 225px;
+    }
+    @media (max-width: 800px) {
+        width: 200px;
+    }
+}
+  
+.polar4 {
+    width: 250px;
+    position: absolute;
+    left: 58.5vw;
+    top: 130px;
+    @media (max-width: 900px) {
+        width: 225px;
+    }
+    @media (max-width: 800px) {
+        width: 200px;
+    }
+}

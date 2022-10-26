@@ -1,8 +1,30 @@
 .globeImg {
+  position: relative;
   width: calc(100vw * (1025 / 1728));
   margin-top: 40px;
-  max-width: 750px;
+  
   /* margin-right: calc(100vw * (331/1728)); */
+  @media (min-width: 991px) {
+    max-width: 750px;
+  }
+  @media (max-width: 990px) {
+    top: -45px;
+    width: 55rem;
+    left: -95px;
+  }
+  @media (max-width: 900px) {
+    width: 50rem;
+    left: -50px;
+  }
+  @media (max-width: 800px) {
+    width: 45rem;
+    left: -10px;
+  }
+  @media (max-width: 767px) {
+    left: 0px;
+    top: 0px;
+    width: calc(100vw * (1025 / 1728));
+  }
 }
 .globeImgDiv {
   text-align: center;
@@ -28,6 +50,9 @@ margin-top: -30px;
   font-weight: 700;
   font-size: calc(100vw * (24 / 1728));
   margin: 0 4%;
+  @media (max-width: 990px) {
+    font-size: calc(100vw * (30 / 1728));
+  }
   @media (max-width: 768px) {
     font-size: 12px;
   }
@@ -45,6 +70,12 @@ margin-top: -30px;
 
 .footerContentsDiv {
   position: relative;
+  @media (max-width: 990px) {
+    top: -1rem; 
+  }
+  @media (max-width: 767px) {
+    top: 0px;
+  }
 }
 
 .footerIcon {

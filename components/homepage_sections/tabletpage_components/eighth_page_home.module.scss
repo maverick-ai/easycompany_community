@@ -1,0 +1,104 @@
+.pageContainer {
+    position: relative;
+    margin-top: 5rem;
+    display: flex;
+    width: 55rem;
+    left: -5rem;
+    @media (max-width: 900px) {
+        left: -3rem;
+        width: 50rem;
+    }
+    @media (max-width: 800px) {
+        left: 0rem;
+        width: 45rem;
+    }
+}
+
+.section1 {
+    text-align: center;
+}
+  
+.headingSection {
+    position: relative;
+}
+  
+.footerSection {
+    text-align: center;
+    margin-top: 3%;
+} 
+.footer {
+    margin-top: 40px;
+}
+  
+.headingLast {
+    display: inline-block;
+  
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 2.5rem;
+    line-height: 53px;
+    text-align: center;
+  
+    color: #ffffff;
+    @media (max-width: 900px) {
+        font-size: 2.3rem;
+    }
+    @media (max-width: 800px) {
+        font-size: 2.1rem;
+    }
+}
+.pin {
+    position: absolute;
+    bottom: 25px;
+    left: -70px;
+    width: 55px;
+}
+.highlightTravelComm {
+    background: linear-gradient(90deg, #e32a34 0%, #b50eae 21.41%);
+    background-clip: text;
+    color: transparent;
+  
+    font-weight: 800;
+}
+.globe2 {
+    position: relative;
+    bottom: -15px;
+    left: 400px;
+    width: 70px;
+    @media (max-width: 900px) {
+        left: 370px;
+    }
+    @media (max-width: 800px) {
+        left: 345px;
+    }
+}
+.JoinUs {
+    position: relative;
+    top: -55px;
+    left: 0px;
+    width: 180px;
+    height: 60px;
+  
+    background: linear-gradient(
+      270deg,
+      rgba(181, 14, 174, 0.96) 2.39%,
+      #e32a34 97.18%
+    );
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-radius: 28px;
+    border: 0;
+}
+.lastGlobe {
+    width: calc(100vw * (1025 / 1728));
+}
+.bottomText {
+    color: white;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: calc(100vw * (20 / 1728));
+    margin: 0 4%;
+}
