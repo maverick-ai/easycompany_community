@@ -3,7 +3,6 @@ import styles from "../styles/phonestyle.module.scss";
 import { Container, Col, Row } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import DestCard from "./destcard";
-import "react-multi-carousel/lib/styles.css";
 import Carousel_row from "./homepage_sections/phonepage_components/carousel _row";
 
 

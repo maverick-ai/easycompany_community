@@ -4,7 +4,7 @@ import React from "react";
 
 function Five_page() {
   return (
-    <React.Fragment className={sy.pageContainer}>
+    <React.Fragment>
       <Row className={sy.section1Container}>
         <Col lg={5} md={5}>
           <Row>
